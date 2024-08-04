@@ -2,19 +2,21 @@
   --main-bg-color:#f1f0e9;
   --link-color:#000000;
   --link-hover-color:#210acf;
-  --body-text-size:1.25rem;
+  --body-text-size:1.15rem;
 }
 
 @font-face {
   font-family: 'Inconsolata';
-  src: url('/fonts/Inconsolata-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  src: url('/fonts/inconsolata-variable-latin.woff2') format('woff2');
   font-weight: 1 999;
+  font-display: swap;
 }
 
 html {
   height:100%;
   padding:env(safe-area-inset); /* for iphone notch */
   -webkit-text-size-adjust:100%; /* Prevent font scaling in landscape while allowing user zoom */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -27,7 +29,7 @@ body {
   background-image:radial-gradient(#d9e7eb, #e6d5de);
   background-attachment:fixed;
   background-repeat:no-repeat;
-  font-family:'Inconsolata', Menlo, Monaco, Consolas, Liberation Mono, Lucida Console, monospace;
+  font-family:'Inconsolata', Monaco, Menlo, Consolas, Liberation Mono, Lucida Console, monospace;
   font-size:var(--body-text-size);
   line-height:1.4;
   overflow-wrap: break-word;
@@ -36,6 +38,7 @@ body {
 main {
   clear:both;
   width:100%;
+  margin-bottom:3em;
 }
 
 main h2:first-child {
@@ -190,7 +193,6 @@ h2 {
   font-size:1.4rem;
   margin:1em 0;
   letter-spacing:.04em;
-  font-variation-settings:"wght" 800, "wdth" 130;
 }
 
 h3 {
@@ -288,6 +290,12 @@ img {
   filter:url(#threshold) blur(0.1px);
 }
 
+@media (scripting: none) {
+  #morph-text {
+    filter:none;
+  }
+}
+
 #morphtext1, #morphtext2 {
   position:absolute;
   display:inline-block;
@@ -317,7 +325,7 @@ img {
 }
 
 .about-header-text {
-  flex: 1 1 80px;
+  flex: 1 1 100px;
 }
 
 .about-header-text h2 {

@@ -1,13 +1,8 @@
-/*
-	This pen cleverly utilizes SVG filters to create a "Morphing Text" effect. Essentially, it layers 2 text elements on top of each other, and blurs them depending on which text element should be more visible. Once the blurring is applied, both texts are fed through a threshold filter together, which produces the "gooey" effect. Check the CSS - Comment the #container rule's filter out to see how the blurring works!
-*/
-
 const elts = {
 	morphtext1: document.getElementById("morphtext1"),
 	morphtext2: document.getElementById("morphtext2")
 };
 
-// The strings to morph between. You can change these to anything you want!
 const texts = [
 	"Multimedia Artist",
 	"Creative Technologist",
@@ -17,7 +12,6 @@ const texts = [
 	"Human Being"
 ];
 
-// Controls the speed of morphing.
 const morphTime = 1.8;
 const cooldownTime = 0.8;
 
@@ -43,9 +37,7 @@ function doMorph() {
 	setMorph(fraction);
 }
 
-// A lot of the magic happens here, this is what applies the blur filter to the text.
 function setMorph(fraction) {
-	// fraction = Math.cos(fraction * Math.PI) / -2 + .5;
 	
 	elts.morphtext2.style.filter = `blur(${Math.min(3 / fraction - 3, 100)}px)`;
 	elts.morphtext2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
@@ -90,5 +82,4 @@ function animate() {
 	}
 }
 
-// Start the animation.
 animate();

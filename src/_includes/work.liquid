@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<a href="/works">Back to works</a>
+
+{{content}}
+
+{% assign previousWork = collections.work | getPreviousCollectionItem: page %}
+{% assign nextWork = collections.work | getNextCollectionItem: page %}
+
+{% if previousWork %}Previous Blog Post: <a href="{{ previousWork.url }}">{{ previousWork.data.workTitle }}</a>{% endif %}
+{% if nextWork %}Next Blog Post: <a href="{{ nextWork.url }}">{{ nextWork.data.workTitle }}</a>{% endif %}
