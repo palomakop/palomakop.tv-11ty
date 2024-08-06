@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.13",
+    "@11ty/eleventy": "^3.0.0-beta.1",
     "@11ty/eleventy-img": "^4.0.2"
   },
   "name": "palomakop.github.io-11ty",
@@ -13,5 +13,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "type": "module"
 }

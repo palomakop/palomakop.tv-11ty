@@ -1,6 +1,6 @@
-const { DateTime } = require("luxon");
+import { DateTime } from "luxon";
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("./src/fonts");
   eleventyConfig.addPassthroughCopy("./src/css");
@@ -15,11 +15,7 @@ module.exports = function(eleventyConfig) {
     return `<a href="${url}" target="_blank" rel="noopener">${linkText}</a>`;
   });
 
-  return {
-    dir: {
-      input: "src",
-      output: "_site"
-    }
-  };
+  eleventyConfig.setInputDirectory("src");
+  eleventyConfig.setOutputDirectory("_site");
 
 };
