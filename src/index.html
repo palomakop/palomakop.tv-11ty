@@ -119,5 +119,18 @@ customStyle: 'body { background-image: radial-gradient(#c1e0ca, #c2dde8, #daf7f5
 
 </div>
 
+<svg id="filters">
+  <defs>
+    <filter id="threshold">
+      <feColorMatrix in="SourceGraphic"
+          type="matrix"
+          values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 255 -100" />
+    </filter>
+  </defs>
+</svg>
+
 
 

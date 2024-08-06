@@ -119,45 +119,6 @@
 
 </footer>
 
-<svg id="filters">
-  <defs>
-    <filter id="threshold">
-      <feColorMatrix in="SourceGraphic"
-          type="matrix"
-          values="1 0 0 0 0
-                  0 1 0 0 0
-                  0 0 1 0 0
-                  0 0 0 255 -100" />
-    </filter>
-    <filter id="teal-white" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feColorMatrix type="matrix" values=".33 .33 .33 0 0
-                .33 .33 .33 0 0
-                .33 .33 .33 0 0
-                0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
-      <feComponentTransfer in="colormatrix" result="componentTransfer">
-            <feFuncR type="table" tableValues="0.07 1"/>
-        <feFuncG type="table" tableValues="0.15 1"/>
-        <feFuncB type="table" tableValues="0.13 1"/>
-        <feFuncA type="table" tableValues="0 1"/>
-        </feComponentTransfer>
-      <feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
-    </filter>
-    <filter id="off-white" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feColorMatrix type="matrix" values=".33 .33 .33 0 0
-                .33 .33 .33 0 0
-                .33 .33 .33 0 0
-                0 0 0 1 0" in="SourceGraphic" result="colormatrix"/>
-      <feComponentTransfer in="colormatrix" result="componentTransfer">
-            <feFuncR type="table" tableValues="0.95 0.95"/>
-        <feFuncG type="table" tableValues="0.94 0.94"/>
-        <feFuncB type="table" tableValues="0.92 0.92"/>
-        <feFuncA type="table" tableValues="0 1"/>
-        </feComponentTransfer>
-      <feBlend mode="normal" in="componentTransfer" in2="SourceGraphic" result="blend"/>
-    </filter>
-  </defs>
-</svg>
-
 
   </div>
 
