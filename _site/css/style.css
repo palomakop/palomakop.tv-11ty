@@ -91,7 +91,6 @@ header {
 @media (hover:hover) {
   #header-image:hover {
     filter:var(--svg-hover-filter);
-    transform:translate(-1.2px, -1.5px);
   }
 }
 
@@ -217,7 +216,6 @@ footer ul li img {
   footer ul li:hover {
     color:#000000;
     filter:var(--svg-hover-filter);
-    transform:translate(-1px, -1.2px);
   }
 }
 
