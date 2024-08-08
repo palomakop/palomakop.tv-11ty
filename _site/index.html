@@ -60,7 +60,7 @@
         <a href="/" class="current-link">about</a>
       </li>
       <li>
-        <a href="/works" class="">works</a>
+        <a href="/work" class="">work</a>
       </li>
       <li>
         <a href="/blog" class="">blog</a>
@@ -126,13 +126,56 @@
 
   <h2>Artist Bio</h2>
 
-  <p class="bio-highlight">
-    Paloma Kop is an experimental multimedia artist, ambient musician, and creative technologist from the Catskill Mountains of upstate New York. Their practice incorporates electronic media, from analog video and synthesizers to digital systems and code, as well as various physical materials and processes. They are especially interested in feedback loops, recursion, self-organizing and emergent structures, patterns in nature, psychedelia, and embodied sensory experience.
-  </p>
+  <nav class="script-button">
+    <ul>
+      <li>
+        <button id="first-person-button" onclick="firstPerson()" class="current-link">First-Person Bio</button>
+      </li>
+      <li>
+        <button id="third-person-button" onclick="thirdPerson()">Third-Person Bio</button>
+      </li>
+    </ul>
+  </nav>
 
-  <p>
-    They received a BFA in Visual Arts and Computer Science from Purchase College in 2014, and an MFA in Electronic Integrated Arts at Alfred University in 2020. They have shown work and performed at spaces and events such as Ambient Church (NYC), Eastern Bloc (Montréal), /'fu:bar/ Festival (Zagreb), Maverick Concert Hall (Woodstock), and Ann Arbor Film Festival (Michigan). They have done visiting artist talks and workshops at universities such as CalArts, NYU, and SAIC. They also practice vinyasa yoga and mindfulness meditation.
-  </p>
+  <div id="bio-text-1st-person">
+    <p class="bio-highlight">
+      I am an experimental multimedia artist, ambient musician, and creative technologist from the Catskill Mountains of upstate New York. My practice incorporates electronic media, from analog video and synthesizers to digital systems and code, as well as various physical materials and processes. I am especially interested in feedback loops, recursion, self-organizing and emergent structures, patterns in nature, psychedelia, and embodied sensory experience.
+    </p>
+  
+    <p>
+      I received an MFA in Electronic Integrated Arts at Alfred University in 2020, and a BFA in Visual Arts and Computer Science from Purchase College in 2014. I have shown work and performed at spaces and events such as Ambient Church (NYC), Eastern Bloc (Montréal), /'fu:bar/ Festival (Zagreb), Maverick Concert Hall (Woodstock), and Ann Arbor Film Festival (Michigan). I have done visiting artist talks and workshops at universities such as CalArts, NYU, and SAIC. I am also trained in vinyasa yoga and mindfulness meditation.
+    </p>
+  </div>
+  <div id="bio-text-3rd-person" style="display:none;">
+    <p class="bio-highlight">
+      Paloma Kop is an experimental multimedia artist, ambient musician, and creative technologist from the Catskill Mountains of upstate New York. Their practice incorporates electronic media, from analog video and synthesizers to digital systems and code, as well as various physical materials and processes. They are especially interested in feedback loops, recursion, self-organizing and emergent structures, patterns in nature, psychedelia, and embodied sensory experience.
+    </p>
+  
+    <p>
+      They received an MFA in Electronic Integrated Arts at Alfred University in 2020, and a BFA in Visual Arts and Computer Science from Purchase College in 2014. They have shown work and performed at spaces and events such as Ambient Church (NYC), Eastern Bloc (Montréal), /'fu:bar/ Festival (Zagreb), Maverick Concert Hall (Woodstock), and Ann Arbor Film Festival (Michigan). They have done visiting artist talks and workshops at universities such as CalArts, NYU, and SAIC. They are also trained in vinyasa yoga and mindfulness meditation.
+    </p>
+  </div> 
+ 
+ <script>
+  var firstPersonBioText = document.getElementById("bio-text-1st-person");
+  var thirdPersonBioText = document.getElementById("bio-text-3rd-person");
+  var firstPersonButton = document.getElementById("first-person-button");
+  var thirdPersonButton = document.getElementById("third-person-button");
+
+  function firstPerson() {
+    firstPersonBioText.style.display = 'block';
+    thirdPersonBioText.style.display = 'none';
+    firstPersonButton.classList.add('current-link');
+    thirdPersonButton.classList.remove('current-link');
+  }
+
+  function thirdPerson() {
+    firstPersonBioText.style.display = 'none';
+    thirdPersonBioText.style.display = 'block';
+    firstPersonButton.classList.remove('current-link');
+    thirdPersonButton.classList.add('current-link');
+  }
+ </script>
 
 </div>
 
@@ -142,7 +185,7 @@
   </h2>
 
   <p>
-    I run a small, independent design/technology studio called <a href="https://moonark.studio" target="_blank" rel="noopener">Moon Ark</a>. I'm available for websites, videos & video editing, graphics, and consulting. Feel free to <a href="/contact">get in touch</a>!
+    I run a small, independent design/technology studio called <a href="https://moonark.studio" target="_blank" rel="noopener">Moon Ark</a>, through which I offer web design services, videos & video editing, graphics, and consulting. If you're interested in working together on a project, feel free to <a href="/contact">get in touch</a>!
   </p>
 
 </div>
@@ -153,7 +196,7 @@
   </h2>
 
   <p>
-    As a practitioner of tech and electronic media, I try to counterbalance the cultural push towards compulsive productivity. I believe that technology should be used to enrich people's lives; corporate-owned social media networks, invasive data harvesting, and hype trains such as cryptocurrency and so-called "artificial intelligence" all serve to do the opposite. Under capitalism, companies are incentivized to manipulate and extract as much as possible.
+    As a practitioner of tech and electronic media, I try to counterbalance the cultural push towards compulsive productivity. I believe that technology should be used to enrich people's lives; corporate-owned social media networks, invasive data harvesting, and hype trains such as cryptocurrency and so-called "artificial intelligence" all serve interests contrary to humans' well-being and the environment. Under capitalism, companies are incentivized to use technology to manipulate and extract as much as possible.
   </p>
   <p>
     DIY websites, decentralized networks, and creative communities inspire me to seek another path. A path that moves at a human speed, with space to breathe. One that values careful cultivation over explosive growth, thoughtfulness over conformity. Building and maintaining this website has become part of my exploration towards this path.
@@ -213,7 +256,7 @@
       <footer>
 
   <p>
-    Page last updated: Aug 6, 2024
+    Page last updated: Aug 7, 2024
   </p>
 
   <ul>

@@ -1,8 +1,15 @@
 :root {
   --main-bg-color:#f1f0e9;
+  --white:#f9f9f0;
   --link-color:#000000;
   --link-hover-color:#210acf;
+  --button-hover-color:rgb(0, 0, 0, 0.6);
   --body-text-size:1.15rem;
+  --svg-hover-filter:
+    invert(96%)
+    sepia(8%)
+    hue-rotate(20deg)
+    drop-shadow(1.2px 1.2px 0px rgb(0, 0, 0, 1));
 }
 
 @font-face {
@@ -29,7 +36,7 @@ body {
   background-image:radial-gradient(#d9e7eb, #e6d5de);
   background-attachment:fixed;
   background-repeat:no-repeat;
-  font-family:'Inconsolata', Monaco, Menlo, Consolas, Liberation Mono, Lucida Console, monospace;
+  font-family:'Inconsolata', monospace;
   font-size:var(--body-text-size);
   line-height:1.4;
   overflow-wrap: break-word;
@@ -69,28 +76,29 @@ main h2:first-child {
 
 header {
   display:flex;
+  align-items:flex-end;
   flex-wrap:wrap;
-  padding:20px 0px 50px;
+  gap:1rem 1.5rem;
+  margin:1.3em 0 3.5em;
 }
 
 #header-image {
   width:320px;
   max-width:100%;
   height:40px;
-  margin-right:20px;
 }
 
 @media (hover:hover) {
   #header-image:hover {
-    color:#000000;
-    filter:invert();
+    filter:var(--svg-hover-filter);
+    transform:translate(-1.2px, -1.5px);
   }
 }
 
 h1 {
   display:block;
-  float:left;
   margin:0;
+  height:40px;
 }
 
 /* NAVIGATION */
@@ -108,23 +116,26 @@ nav ul {
   gap:1rem;
 }
 
+nav.centered ul {
+  justify-content:center;
+}
+
 nav ul li {
-  float:left;
   font-size:var(--body-text-size);
   margin:0;
 }
 
-nav ul li a{
+nav ul li a {
   display:block;
   border:solid 1.5px;
   border-radius:5px;
-  padding:3px 8px;
+  padding:0.1em 0.5em;
   text-decoration:none;
 }
 
 nav ul li a.current-link {
   border:solid 1.5px;
-  color:#ffffff;
+  color:var(--white);
   background-color:#000000;
   border-radius:5px;
   pointer-events:none;
@@ -132,9 +143,42 @@ nav ul li a.current-link {
 
 @media (hover:hover) {
   nav ul li a:hover {
-    color:#ffffff;
-    background-color:#000000;
+    color:var(--white);
+    background-color:var(--button-hover-color);
     text-decoration:none;
+  }
+}
+
+/* BUTTONS */
+
+button {
+  color:#000000;
+  border:1.5px solid;
+  border-radius:5px;
+  padding:0.1em 0.5em;
+  font-size:var(--body-text-size);
+  line-height:1.4;
+  font-family:'Inconsolata', monospace;  background:none transparent;
+  cursor:pointer;
+}
+
+button.current-link {
+  color:var(--white);
+  background-color:#000000;
+  pointer-events:none;
+}
+
+@media (hover:hover) {
+  button:hover {
+    color:var(--white);
+    background-color:var(--button-hover-color);
+    background-blend-mode: multiply;
+  }
+}
+
+@media (scripting: none) {
+  .script-button {
+    display:none;
   }
 }
 
@@ -152,13 +196,12 @@ footer ul {
   list-style-type:none;
   padding:0;
   margin:0;
-  float:left;
+  display:flex;
+  gap:1em;
 }
 
 footer ul li {
   float:left;
-  padding:3px 8px 3px 0px;
-  margin:6px 8px 6px 0px;
 }
 
 footer ul li a{
@@ -173,7 +216,8 @@ footer ul li img {
 @media (hover:hover) {
   footer ul li:hover {
     color:#000000;
-    filter:invert();
+    filter:var(--svg-hover-filter);
+    transform:translate(-1px, -1.2px);
   }
 }
 
@@ -191,23 +235,25 @@ footer ul li img {
 h2 {
   text-transform:uppercase;
   font-size:1.4rem;
-  margin:1em 0;
+  margin:1em 0 0.8em;
   letter-spacing:.04em;
+  font-variation-settings:"wght" 700, "wdth" 130;
 }
 
 h3 {
   letter-spacing:.02em;
   margin-top:1.5em;
-  font-variation-settings:"wght" 800, "wdth" 130;
+  font-variation-settings:"wght" 700, "wdth" 130;
 }
 
 p {
   max-width:720px;
   font-variation-settings:"wght" 400, "wdth" 95;
+  margin: 0.8em 0 1em;
 }
 
 b {
-  font-variation-settings:"wght" 800, "wdth" 95;
+  font-variation-settings:"wght" 700, "wdth" 95;
 }
 
 a {
@@ -325,15 +371,15 @@ img {
 }
 
 .about-header-text {
-  flex: 1 1 100px;
+  flex: 1 1 60px;
 }
 
 .about-header-text h2 {
-  font-variation-settings:"wght" 600, "wdth" 130;
+  font-variation-settings:"wght" 550, "wdth" 130;
   line-height:1em;
   margin:0 0 0.3rem;
   font-size:2.3rem;
-  letter-spacing:0.02em;
+  letter-spacing:0.015em;
 }
 
 .about-header-text h3 {
@@ -341,7 +387,7 @@ img {
   line-height:1.2em;
   padding:0;
   height:2.4em;
-  font-size:1.5em;
+  font-size:1.4em;
   font-variation-settings:"wght" 475, "wdth" 90;
 }
 
@@ -363,7 +409,7 @@ img {
 }
 
 .bio-highlight {
-  font-size:1.4rem;
+  font-size:1.3rem;
   line-height:1.3em;
-  font-variation-settings:"wght" 425, "wdth" 95;
+  font-variation-settings:"wght" 420, "wdth" 95;
 }
