@@ -1,6 +1,13 @@
 <!DOCTYPE HTML>
 
-<!--
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="{{description}}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+  <!--
   ╔═╗╔═╗╦  ╔═╗╔╦╗╔═╗╦╔═╔═╗╔═╗╔╦╗╦  ╦
   ╠═╝╠═╣║  ║ ║║║║╠═╣╠╩╗║ ║╠═╝ ║ ╚╗╔╝
   ╩  ╩ ╩╩═╝╚═╝╩ ╩╩ ╩╩ ╩╚═╝╩o  ╩  ╚╝
@@ -18,15 +25,8 @@
 
 -->
 
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="{{description}}">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-
   <!-- page title -->
-  <title>{{title}}</title>
+  <title>{{title}}{% unless title == "Paloma Kop" %} ♦ Paloma Kop {% endunless %}</title>
 
   <link rel="icon" type="image/x-icon" sizes="any" href="https://s3.amazonaws.com/palomakop.tv/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="https://s3.amazonaws.com/palomakop.tv/favicon.svg">

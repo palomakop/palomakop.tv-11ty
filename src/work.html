@@ -1,6 +1,6 @@
 ---
 layout: wide
-title: Work ♦ Paloma Kop
+title: Work
 ---
 
 <h2>Selected Work</h2>
@@ -12,8 +12,13 @@ title: Work ♦ Paloma Kop
     <a href="{{ work.url }}">
     {% image work.data.thumbnail, "Image of Paloma Kop in studio", 640, "" %}
     <div class="caption">
-      <h2><span class="title">{{ work.data.workTitle }}</span>, {{ work.data.workYear }}</h2>
+      <h2><span class="title">{{ work.data.title }}</span>, {{ work.data.workYear }}</h2>
       <p>{{ work.data.description }}</p>
+      <p class="tags">
+      {%- for tag in work.data.workTags -%}
+      <span>{{ tag }}</span>
+      {%- endfor -%}
+      </p>
     </div>
     </a>
   </div>

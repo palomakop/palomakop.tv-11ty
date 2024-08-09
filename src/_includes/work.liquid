@@ -19,12 +19,12 @@ layout: default
   <ul>
   {% if previousWork %}
     <li>
-      <a href="{{ previousWork.url }}">&larr;{{ previousWork.data.workTitle }}</a>
+      <a href="{{ previousWork.url }}">&larr;{{ previousWork.data.title }}</a>
     </li>
     {% endif %}
     {% if nextWork %}
     <li>
-      <a href="{{ nextWork.url }}">{{ nextWork.data.workTitle }}&rarr;</a>
+      <a href="{{ nextWork.url }}">{{ nextWork.data.title }}&rarr;</a>
     </li>
     {% endif %}
   </ul>

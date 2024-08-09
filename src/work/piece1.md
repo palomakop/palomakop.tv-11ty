@@ -1,5 +1,7 @@
 ---
-title: Piece 1 ♦ Paloma Kop
+title: Piece 1
+workTags: ["test tag"]
+description: About this piece
 ---
 ## Hello 1
 
