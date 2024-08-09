@@ -3,28 +3,38 @@
   --white:#f9f9f0;
   --link-color:#000000;
   --link-hover-color:#210acf;
-  --button-hover-color:rgb(0, 0, 0, 0.6);
-  --body-text-size:1.15rem;
+  --button-hover-color:rgb(25, 25, 0, 0.5);
   --hover-filter:
       invert(96%)
       sepia(8%)
       hue-rotate(20deg);
   --svg-hover-filter:
-    var(--hover-filter)
-    drop-shadow(1.4px 1.4px 1px rgb(0, 0, 0, 1));
+      var(--hover-filter)
+      drop-shadow(1.4px 1.4px 1px rgb(0, 0, 0, 1));
+  --body-font:'Roboto Mono', Andale Mono, Consolas, monospace;
+  --h1-font-size:1.9rem;
+  --h2-font-size:1.4rem;
+  --h3-font-size:1.2rem;
+  --body-font-size:1rem;
+  --small-font-size:0.9rem;
+  --black-weight:500;
+  --bold-weight:450;
+  --medium-weight:400;
+  --normal-weight:350;
 }
 
 @font-face {
-  font-family: 'Inconsolata';
-  src: url('/fonts/inconsolata-variable-latin.woff2') format('woff2');
+  font-family: 'Roboto Mono';
+  src: url('https://s3.amazonaws.com/palomakop.tv/fonts/robotoMono-variable-latin.woff2') format('woff2');
   font-weight: 1 999;
   font-display: swap;
 }
 
+
 html {
   height:100%;
   padding:env(safe-area-inset); /* for iphone notch */
-  -webkit-text-size-adjust:100%; /* Prevent font scaling in landscape while allowing user zoom */
+  -webkit-font-size-adjust:100%; /* Prevent font scaling in landscape while allowing user zoom */
   scroll-behavior: smooth;
 }
 
@@ -35,12 +45,11 @@ body {
   top:0;
   margin:0;
   background-color:var(--main-bg-color);
-  background-image:radial-gradient(#d9e7eb, #e6d5de);
   background-attachment:fixed;
   background-repeat:no-repeat;
-  font-family:'Inconsolata', monospace;
-  font-size:var(--body-text-size);
-  line-height:1.4;
+  font-family:var(--body-font);
+  font-size:var(--body-font-size);
+  line-height:1.6;
   overflow-wrap: break-word;
 }
 
@@ -55,8 +64,14 @@ main h2:first-child {
 }
 
 .container {
-  width:90%;
-  margin:0 auto;
+  width:100%;
+  min-height:100%;
+  box-sizing: border-box;
+  padding:0 5vw;
+  margin:0;
+  position: absolute;
+  top:0;
+  background-image:radial-gradient(#d9e7eb, #e6d5de);
 }
 
 .column-container {
@@ -67,7 +82,7 @@ main h2:first-child {
 @media only screen and (max-width:784px) {
   .container {
     width:auto;
-    margin:0 32px;
+    padding:0 3ch;
   }
   .column-container {
     width:100%;
@@ -78,7 +93,7 @@ main h2:first-child {
 
 header {
   display:flex;
-  align-items:flex-end;
+  align-items:center;
   flex-wrap:wrap;
   gap:1rem 1.5rem;
   margin:1.3em 0 3.5em;
@@ -100,12 +115,13 @@ h1 {
   display:block;
   margin:0;
   height:40px;
+  font-size:var(--h1-font-size);
 }
 
 /* NAVIGATION */
 
 nav.bold a {
-  font-variation-settings:"wght" 700, "wdth" 95;
+  font-weight:var(--black-weight);
 }
 
 nav ul {
@@ -122,7 +138,7 @@ nav.centered ul {
 }
 
 nav ul li {
-  font-size:var(--body-text-size);
+  font-size:var(--body-font-size);
   margin:0;
 }
 
@@ -154,12 +170,13 @@ nav ul li a.current-link {
 
 button {
   color:#000000;
+  background-color:transparent;
   border:1.5px solid;
   border-radius:5px;
   padding:0.1em 0.5em;
-  font-size:var(--body-text-size);
-  line-height:1.4;
-  font-family:'Inconsolata', monospace;  background:none transparent;
+  font-size:var(--body-font-size);
+  line-height:1.6;
+  font-family:var(--body-font);
   cursor:pointer;
 }
 
@@ -189,8 +206,12 @@ footer {
   clear:both;
   margin-top:1rem;
   padding:10px 0px;
+}
+
+footer p {
   font-style:italic;
-  font-size:1rem;
+  font-weight:var(--medium-weight);
+  font-size:var(--small-font-size);
 }
 
 footer ul {
@@ -198,7 +219,8 @@ footer ul {
   padding:0;
   margin:0;
   display:flex;
-  gap:1em;
+  flex-wrap:wrap;
+  gap:0em 1em;
 }
 
 footer ul li {
@@ -207,6 +229,8 @@ footer ul li {
 
 footer ul li a{
   text-decoration:none;
+  display:flex;
+  flex-wrap:none;
 }
 
 footer ul li img {
@@ -232,35 +256,33 @@ footer ul li img {
 
 /* TEXT */
 
+h2, h3, h4, h5, h6 {
+  font-weight:var(--bold-weight);
+}
+
 h2 {
-  text-transform:uppercase;
-  font-size:1.4rem;
+  font-size:var(--h2-font-size);
   margin:1em 0 0.8em;
-  letter-spacing:.04em;
-  font-variation-settings:"wght" 700, "wdth" 130;
 }
 
 h3 {
-  letter-spacing:.02em;
   margin-top:1.5em;
-  font-variation-settings:"wght" 700, "wdth" 130;
 }
 
 p {
   max-width:720px;
-  font-variation-settings:"wght" 400, "wdth" 95;
+  font-weight:var(--normal-weight);
   margin: 0.8em 0 1em;
 }
 
 b {
-  font-variation-settings:"wght" 700, "wdth" 95;
+  font-weight:var(--black-weight);
 }
 
 a {
   color:var(--link-color);
   text-decoration:underline;
   text-decoration-thickness:1.5px;
-  font-variation-settings:"wght" 500, "wdth" 95;
 }
 
 @media (hover:hover) {
@@ -291,7 +313,7 @@ ul.larger-bullets li::marker {
 
 code {
   font-family: Courier, monospace;
-  font-size:var(--body-text-size);
+  font-size:var(--body-font-size);
   background-color:#dcdcdc96;
   padding:1px 4px;
 }
@@ -381,20 +403,19 @@ img {
 }
 
 .about-header-text h2 {
-  font-variation-settings:"wght" 550, "wdth" 130;
-  line-height:1em;
-  margin:0 0 0.3rem;
-  font-size:2.3rem;
-  letter-spacing:0.015em;
+  font-weight:var(--medium-weight);
+  margin:0;
+  font-size:var(--h1-font-size);
+  letter-spacing:0.02em;
 }
 
 .about-header-text h3 {
   margin:0;
-  line-height:1.2em;
+  line-height:1em;
   padding:0;
   height:2.4em;
-  font-size:1.4em;
-  font-variation-settings:"wght" 475, "wdth" 90;
+  font-size:var(--h2-font-size);
+  font-weight:var(--normal-weight);
 }
 
 @media only screen and (min-width:785px) {
@@ -412,12 +433,6 @@ img {
 
 .about-text {
   margin:1.8em 0 2em;
-}
-
-.bio-highlight {
-  font-size:1.3rem;
-  line-height:1.3em;
-  font-variation-settings:"wght" 420, "wdth" 95;
 }
 
 /* GALLERY */
@@ -477,23 +492,21 @@ img {
   text-align:center;
   margin:0;
   text-transform:none;
-  font-size:1.2rem;
-  font-variation-settings:"wght" 700, "wdth" 110;
+  font-size:var(--body-font-size);
 }
 
 .gallery-item p {
   text-align:center;
   margin:.2em 0 .5em 0;
-  font-size:var(--body-text-size);
+  font-size:var(--small-font-size);
 }
 
 .gallery-item p.tags {
   display:flex;
   justify-content:center;
   gap:0.5em;
-  font-size:0.9em;
-  letter-spacing:0.02em;
-  font-variation-settings:"wght" 500, "wdth" 95;
+  font-size:var(--small-font-size);
+  font-weight:var(--medium-weight);
 }
 
 .gallery-item .tags span {

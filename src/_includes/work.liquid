@@ -5,7 +5,7 @@ layout: default
 <nav>
   <ul>
     <li>
-      <a href="/work">&larr;Back to index</a>
+      <a href="/work">&lt; Back to index</a>
     </li>
   </ul>
 </nav>
@@ -19,12 +19,12 @@ layout: default
   <ul>
   {% if previousWork %}
     <li>
-      <a href="{{ previousWork.url }}">&larr;{{ previousWork.data.title }}</a>
+      <a href="{{ previousWork.url }}">&lt; {{ previousWork.data.title }}</a>
     </li>
     {% endif %}
     {% if nextWork %}
     <li>
-      <a href="{{ nextWork.url }}">{{ nextWork.data.title }}&rarr;</a>
+      <a href="{{ nextWork.url }}">{{ nextWork.data.title }} &gt;</a>
     </li>
     {% endif %}
   </ul>
