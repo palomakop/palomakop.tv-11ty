@@ -7,7 +7,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve"
+    "start": "npx @11ty/eleventy --serve",
+    "clear": "rm -r _site;rm -r .cache"
   },
   "keywords": [],
   "author": "",

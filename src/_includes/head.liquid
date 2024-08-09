@@ -22,7 +22,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="{{ogDescription}}">
+  <meta name="description" content="{{description}}">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
   <!-- page title -->
@@ -38,11 +38,11 @@
 
   <!-- css -->
   <style>
-    {{customStyle}}
+  {{customStyle}}
   </style>
 
   <!-- opengraph tags -->
-  <meta property="og:description" content="{{ogDescription}}">
-  <meta property="og:image" content="{{ogImage}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:image" content="{% imageUrl thumbnail 1200 %}">
 
 </head>

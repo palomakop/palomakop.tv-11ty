@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-
+import path from "path";
 import Image from "@11ty/eleventy-img";
 
 export default function(eleventyConfig) {
@@ -20,25 +20,47 @@ export default function(eleventyConfig) {
   eleventyConfig.setInputDirectory("src");
   eleventyConfig.setOutputDirectory("_site");
 
-	eleventyConfig.addShortcode("image", async function (src, alt, width, classes) {
-		let metadata = await Image(src, {
-			widths: [width],
-			formats: ["jpeg"],
-      outputDir: "./_site/img/"
-		});
+  eleventyConfig.addShortcode("image", async function (src, alt, width, classes) {
+    let metadata = await Image(src, {
+      widths: [width],
+      formats: ["jpeg"],
+      outputDir: "./_site/img/",
+      filenameFormat: function (id, src, width, format, options) {
+        const extension = path.extname(src);
+        const name = path.basename(src, extension);
 
-		let imageAttributes = {
-			alt,
-			loading: "lazy",
-			decoding: "async",
-		};
+        return `${name}-${width}w-${id}.${format}`;
+      },
+    });
+
+    let imageAttributes = {
+      alt,
+      loading: "lazy",
+      decoding: "async",
+    };
 
     if (classes) {
       imageAttributes.class = classes;
     }
 
-		// You bet we throw an error on a missing alt (alt="" works okay)
-		return Image.generateHTML(metadata, imageAttributes);
-	});
+    return Image.generateHTML(metadata, imageAttributes);
+  });
+
+  eleventyConfig.addShortcode("imageUrl", async function (src, width) {
+    let metadata = await Image(src, {
+      widths: [width],
+      formats: ["jpeg"],
+      outputDir: "./_site/img/",
+      filenameFormat: function (id, src, width, format, options) {
+        const extension = path.extname(src);
+        const name = path.basename(src, extension);
+
+        return `${name}-${width}w-${id}.${format}`;
+      },
+    });
+
+    let data = metadata.jpeg[metadata.jpeg.length - 1];
+    return data.url;
+  });
 
 };

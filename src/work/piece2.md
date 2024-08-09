@@ -1,9 +1,7 @@
 ---
-layout: work
-tags: work
 title: Piece 2 ♦ Paloma Kop
-workTitle: Piece 2
+thumbnail: https://s3.amazonaws.com/palomakop.tv/works/magnetic-field-recordings/thumbnail.jpg
 ---
-## Hi 2
+## Hello 2
 
 This is an example piece in the 'works' collection.

@@ -1,9 +1,7 @@
 ---
-layout: work
-tags: work
 title: Piece 3 ♦ Paloma Kop
-workTitle: Piece 3
+thumbnail: https://s3.amazonaws.com/palomakop.tv/works/edge-of-light/thumbnail.jpg
 ---
-## Hi for the third time
+## Hello 3
 
 This is an example piece in the 'works' collection.

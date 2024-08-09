@@ -2,12 +2,30 @@
 layout: default
 ---
 
-<a href="/work">Back to index</a>
+<nav>
+  <ul>
+    <li>
+      <a href="/work">&larr;Back to index</a>
+    </li>
+  </ul>
+</nav>
 
 {{content}}
 
 {% assign previousWork = collections.work | getPreviousCollectionItem: page %}
 {% assign nextWork = collections.work | getNextCollectionItem: page %}
 
-{% if previousWork %}Previous Blog Post: <a href="{{ previousWork.url }}">{{ previousWork.data.workTitle }}</a>{% endif %}
-{% if nextWork %}Next Blog Post: <a href="{{ nextWork.url }}">{{ nextWork.data.workTitle }}</a>{% endif %}
+<nav class="centered">
+  <ul>
+  {% if previousWork %}
+    <li>
+      <a href="{{ previousWork.url }}">&larr;{{ previousWork.data.workTitle }}</a>
+    </li>
+    {% endif %}
+    {% if nextWork %}
+    <li>
+      <a href="{{ nextWork.url }}">{{ nextWork.data.workTitle }}&rarr;</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>

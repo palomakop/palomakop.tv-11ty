@@ -5,11 +5,13 @@
   --link-hover-color:#210acf;
   --button-hover-color:rgb(0, 0, 0, 0.6);
   --body-text-size:1.15rem;
+  --hover-filter:
+      invert(96%)
+      sepia(8%)
+      hue-rotate(20deg);
   --svg-hover-filter:
-    invert(96%)
-    sepia(8%)
-    hue-rotate(20deg)
-    drop-shadow(1.2px 1.2px 0px rgb(0, 0, 0, 1));
+    var(--hover-filter)
+    drop-shadow(1.4px 1.4px 1px rgb(0, 0, 0, 1));
 }
 
 @font-face {
@@ -302,6 +304,12 @@ details summary {
   width:fit-content;
 }
 
+::selection {
+  color:var(--white);
+  background:var(--button-hover-color);
+  border-radius:5px;
+}
+
 /* IMAGES */
 
 .graphic {
@@ -410,4 +418,87 @@ img {
   font-size:1.3rem;
   line-height:1.3em;
   font-variation-settings:"wght" 420, "wdth" 95;
+}
+
+/* GALLERY */
+
+.gallery {
+  margin-top:35px;
+}
+
+.gallery-item img {
+  border:solid 1.5px;
+  border-radius:5px;
+  object-fit:cover;
+}
+
+@media only screen and (min-width:785px) {
+  .gallery {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+    justify-content:flex-start;
+    justify-items:stretch;
+    gap:35px;
+  }
+
+  .gallery-item img {
+    aspect-ratio:4/3;
+    width:100%;
+    width:calc(100% - 3px);
+    height:auto;
+  }
+}
+
+@media only screen and (max-width:784px) {
+  .gallery-item {
+    width:100%;
+    margin-bottom:35px;
+  }
+
+  .gallery-item img {
+    aspect-ratio:4/3;
+    width:100%;
+    width:calc(100% - 3px);
+    height:auto;
+  }
+}
+
+.gallery-item a {
+  text-decoration:none;
+}
+
+@media (hover:hover) {
+  .gallery-item a:hover {
+    color:#000000;
+  }
+  .gallery-item a:hover img {
+    filter:var(--hover-filter);
+  }
+  .gallery-item a:hover .caption {
+    filter:var(--svg-hover-filter);
+  }
+}
+
+.gallery-item h2 {
+  text-align:center;
+  margin:0;
+  font-size:1em;
+  text-transform:none;
+}
+
+.gallery-item p {
+  text-align:center;
+  margin:.2em 0 .5em 0;
+  font-size:var(--body-text-size);
+}
+
+.gallery-item .tag {
+  background:#000000;
+  border-radius:5px;
+  color:#FFFFFF;
+  padding:3px 6px;
+}
+
+.gallery-item .title {
+  font-style:italic;
 }
