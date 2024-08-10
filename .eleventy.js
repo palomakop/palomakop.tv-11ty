@@ -14,6 +14,44 @@ function makeId(length) {
   return result;
 }
 
+async function makeImage(src, alt, width, classes) {
+  let metadata = await Image(src, {
+    widths: [width],
+    formats: ["auto"],
+    outputDir: "./_site/img/",
+    filenameFormat: function (id, src, width, format, options) {
+      const extension = path.extname(src);
+      const name = path.basename(src, extension);
+
+      return `${name}-${width}w-${id}.${format}`;
+    },
+  });
+  let imageAttributes = {
+    alt,
+    loading: "lazy",
+    decoding: "async",
+  };
+  if (classes) {
+    imageAttributes.class = classes;
+  }
+  return Image.generateHTML(metadata, imageAttributes);
+}
+
+async function makeImageUrl(src, width) {
+  let metadata = await Image(src, {
+    widths: [width],
+    formats: ["auto"],
+    outputDir: "./_site/img/",
+    filenameFormat: function (id, src, width, format, options) {
+      const extension = path.extname(src);
+      const name = path.basename(src, extension);
+      return `${name}-${width}w-${id}.${format}`;
+    },
+  });
+  let data = metadata.jpeg[metadata.jpeg.length - 1];
+  return data.url;
+}
+
 export default function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("./src/fonts");
@@ -28,54 +66,38 @@ export default function(eleventyConfig) {
 
   // IMAGE <img> TAG
   eleventyConfig.addShortcode("image", async function (src, alt, width, classes) {
-    let metadata = await Image(src, {
-      widths: [width],
-      formats: ["jpeg"],
-      outputDir: "./_site/img/",
-      filenameFormat: function (id, src, width, format, options) {
-        const extension = path.extname(src);
-        const name = path.basename(src, extension);
-
-        return `${name}-${width}w-${id}.${format}`;
-      },
-    });
-    let imageAttributes = {
-      alt,
-      loading: "lazy",
-      decoding: "async",
-    };
-    if (classes) {
-      imageAttributes.class = classes;
-    }
-    return Image.generateHTML(metadata, imageAttributes);
+    makeImage(src, alt, width, classes);
   });
 
   // IMAGE - URL ONLY
   eleventyConfig.addShortcode("imageUrl", async function (src, width) {
-    let metadata = await Image(src, {
-      widths: [width],
-      formats: ["jpeg"],
-      outputDir: "./_site/img/",
-      filenameFormat: function (id, src, width, format, options) {
-        const extension = path.extname(src);
-        const name = path.basename(src, extension);
-        return `${name}-${width}w-${id}.${format}`;
-      },
-    });
-    let data = metadata.jpeg[metadata.jpeg.length - 1];
-    return data.url;
+    makeImageUrl(src, width);
   });
 
   // LIGHTBOX / PHOTO GRID SHORTCODES
-  // types: vertical, 2-col, 3-col, tarot
+  // types: vertical, two-column, three-column, tarot
   eleventyConfig.addPairedShortcode("photoGrid", function(content, type, name) {
     let id = makeId(10);
-    return `<photogrid class="${type} ${id}">${content}</photogrid>
+    return `<photo-grid class="${type} ${id}">${content}</photo-grid>
     <script>var ${id} = new SimpleLightbox({elements: '.${id} a'});</script>`;
   });
 
-  eleventyConfig.addShortcode("photoGridItem", function(type, name) {
-    return `<div class="photo-grid-${type} ${name}">`;
+  eleventyConfig.addShortcode("photoGridItem", async function(src, description, showCaption, isFullWidth) {
+    let widthInPixels;
+    if (isFullWidth){
+      widthInPixels = 1440;
+    } else {
+      widthInPixels = 720;
+    }
+    let caption = "";
+    if (showCaption) {
+      caption = `title="${description}"`;
+    }
+    let fullWidthClass = "";
+    if (isFullWidth) {
+      fullWidthClass = `class="full-width"`;
+    }
+    return `<a href="${await makeImageUrl(src, 2000)}" ${caption} ${fullWidthClass}>${await makeImage(src, description, widthInPixels)}</a>`;
   });
 
   eleventyConfig.setInputDirectory("src");

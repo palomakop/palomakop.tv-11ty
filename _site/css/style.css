@@ -522,81 +522,81 @@ img {
 
 /* PHOTO GRIDS */
 
-photogrid {
+photo-grid {
   display:grid;
   gap:1.2em;
 }
 
-photogrid:not(.tarot) {
+photo-grid:not(.tarot) {
   margin-bottom:1.4em;
 }
 
-photogrid.tarot {
+photo-grid.tarot {
   gap:2em;
   margin:2em 0;
-  justify-items: center;
+  justify-items:center;
 }
 
-.news-item photogrid.vertical, photogrid.2-col, photogrid.3-col {
+.news-item photo-grid.vertical, photo-grid.two-column, photo-grid.three-column {
   margin-top:1.4em;
 }
 
-photogrid.2-col img, photogrid.3-col img {
+photo-grid.two-column img, photo-grid.three-column img {
   max-width:100%;
 }
 
 @media only screen and (min-width:501px) {
-  photogrid.tarot img {
+  photo-grid.tarot img {
     max-width:400px;
     max-height:95vh;
   }
 }
 
 @media only screen and (max-width:500px) {
-  photogrid.tarot img {
+  photo-grid.tarot img {
     max-width:100%;
     max-height:85vh;
   }
 }
 
-photogrid.tarot a {
+photo-grid.tarot a {
   text-decoration:none;
   text-align:center;
   font-style:italic;
 }
 
-photogrid.tarot a:hover {
+photo-grid.tarot a:hover {
   color:#000000;
 }
 
-photogrid:not(.tarot) img {
+photo-grid:not(.tarot) img {
   border-radius:5px;
   margin-bottom:0;
   max-height:1080px;
 }
 
-photogrid a {
+photo-grid a {
   line-height:1;
   cursor: zoom-in;
 }
 
 @media only screen and (min-width:501px) {
-  photogrid.2-col {
+  photo-grid.two-column {
     grid-template-columns: 1fr 1fr;
   }
-  photogrid.3-col .full-width {
+  photo-grid.three-column .full-width {
     grid-column:span 2;
   }
-  photogrid.3-col {
+  photo-grid.three-column {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  photogrid.3-col .full-width {
+  photo-grid.three-column .full-width {
     grid-column:span 3;
   }
 }
 
 @media only screen and (max-width:500px) {
-  photogrid.2-col, photogrid.3-col {
+  photo-grid.two-column, photo-grid.three-column {
     grid-template-columns: 1fr;
   }
 }
