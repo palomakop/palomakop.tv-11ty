@@ -14,8 +14,9 @@ layout: default
 
 {{content}}
 
-{% assign previousWork = collections.work | getPreviousCollectionItem: page %}
-{% assign nextWork = collections.work | getNextCollectionItem: page %}
+{% assign workCollection = collections.work | sort: "data.workYear" | reverse %}
+{% assign previousWork = workCollection | getPreviousCollectionItem: page %}
+{% assign nextWork = workCollection | getNextCollectionItem: page %}
 
 <nav class="centered">
   <ul>
