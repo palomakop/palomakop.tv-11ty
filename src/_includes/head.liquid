@@ -7,23 +7,22 @@
   <meta name="description" content="{{description}}">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
-  <!--
-  ╔═╗╔═╗╦  ╔═╗╔╦╗╔═╗╦╔═╔═╗╔═╗╔╦╗╦  ╦
-  ╠═╝╠═╣║  ║ ║║║║╠═╣╠╩╗║ ║╠═╝ ║ ╚╗╔╝
-  ╩  ╩ ╩╩═╝╚═╝╩ ╩╩ ╩╩ ╩╚═╝╩o  ╩  ╚╝
+    <!--
+    ╔═╗╔═╗╦  ╔═╗╔╦╗╔═╗╦╔═╔═╗╔═╗╔╦╗╦  ╦
+    ╠═╝╠═╣║  ║ ║║║║╠═╣╠╩╗║ ║╠═╝ ║ ╚╗╔╝
+    ╩  ╩ ╩╩═╝╚═╝╩ ╩╩ ╩╩ ╩╚═╝╩o  ╩  ╚╝
 
-  ♦ handmade with 11ty by paloma kop, 2024 ♦
+    ♦ built with <3 by paloma kop, 2024 ♦
 
-  ╔══════════════════════════════════════════╗
-  ║ This website and its contents are        ║
-  ║ released under a Creative Commons        ║
-  ║ Attribution-NonCommercial-ShareAlike     ║
-  ║ 4.0 International License.               ║
-  ╚══════════════════════════════════════════╝
-  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-  https://creativecommons.org/licenses/by-nc-sa/4.0/
-
--->
+    ╔══════════════════════════════════════════╗
+    ║ This website and its contents are        ║
+    ║ released under a Creative Commons        ║
+    ║ Attribution-NonCommercial-ShareAlike     ║
+    ║ 4.0 International License.               ║
+    ╚══════════════════════════════════════════╝
+    ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+    https://creativecommons.org/licenses/by-nc-sa/4.0/
+    -->
 
   <!-- page title -->
   <title>{{title}}{% unless title == "Paloma Kop" %} ♦ Paloma Kop {% endunless %}</title>
@@ -38,11 +37,17 @@
 
   <!-- css -->
   <style>
-  {{customStyle}}
+  {{ customStyle }}
   </style>
 
   <!-- opengraph tags -->
   <meta property="og:description" content="{{description}}">
   <meta property="og:image" content="{% imageUrl thumbnail 1200 %}">
+
+  {% if lightbox %}
+  <!-- simple lightbox -->
+  <link href="/css/slb.css" rel="stylesheet">
+  <script src="/js/slb.js"></script>
+  {% endif %}
 
 </head>

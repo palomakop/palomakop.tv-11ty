@@ -16,6 +16,7 @@
   "description": "",
   "type": "module",
   "devDependencies": {
-    "@11ty/eleventy-img": "^4.0.2"
+    "@11ty/eleventy-img": "^4.0.2",
+    "prettier": "^3.3.3"
   }
 }

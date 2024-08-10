@@ -7,7 +7,9 @@ title: Work
 
 <div class="gallery">
 
-{%- for work in collections.work -%}
+{% assign workCollection = collections.work | sort: "data.workYear" | reverse %}
+
+{%- for work in workCollection -%}
   <div class="gallery-item">
     <a href="{{ work.url }}">
     {% image work.data.thumbnail, "Image of Paloma Kop in studio", 640, "" %}

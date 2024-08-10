@@ -519,3 +519,84 @@ img {
 .gallery-item .title {
   font-style:italic;
 }
+
+/* PHOTO GRIDS */
+
+photogrid {
+  display:grid;
+  gap:1.2em;
+}
+
+photogrid:not(.tarot) {
+  margin-bottom:1.4em;
+}
+
+photogrid.tarot {
+  gap:2em;
+  margin:2em 0;
+  justify-items: center;
+}
+
+.news-item photogrid.vertical, photogrid.2-col, photogrid.3-col {
+  margin-top:1.4em;
+}
+
+photogrid.2-col img, photogrid.3-col img {
+  max-width:100%;
+}
+
+@media only screen and (min-width:501px) {
+  photogrid.tarot img {
+    max-width:400px;
+    max-height:95vh;
+  }
+}
+
+@media only screen and (max-width:500px) {
+  photogrid.tarot img {
+    max-width:100%;
+    max-height:85vh;
+  }
+}
+
+photogrid.tarot a {
+  text-decoration:none;
+  text-align:center;
+  font-style:italic;
+}
+
+photogrid.tarot a:hover {
+  color:#000000;
+}
+
+photogrid:not(.tarot) img {
+  border-radius:5px;
+  margin-bottom:0;
+  max-height:1080px;
+}
+
+photogrid a {
+  line-height:1;
+  cursor: zoom-in;
+}
+
+@media only screen and (min-width:501px) {
+  photogrid.2-col {
+    grid-template-columns: 1fr 1fr;
+  }
+  photogrid.3-col .full-width {
+    grid-column:span 2;
+  }
+  photogrid.3-col {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  photogrid.3-col .full-width {
+    grid-column:span 3;
+  }
+}
+
+@media only screen and (max-width:500px) {
+  photogrid.2-col, photogrid.3-col {
+    grid-template-columns: 1fr;
+  }
+}
