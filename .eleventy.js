@@ -14,6 +14,10 @@ function makeId(length) {
   return result;
 }
 
+function makeExtLink(linkText, url) {
+  return `<a href="${url}" target="_blank" rel="noopener" class="external-link">${linkText}</a>`;
+}
+
 async function makeImage(src, alt, width, classes) {
   let metadata = await Image(src, {
     widths: [width],
@@ -61,17 +65,17 @@ export default function(eleventyConfig) {
 
   // EXTERNAL LINK
   eleventyConfig.addShortcode("extLink", function(linkText, url) {
-    return `<a href="${url}" target="_blank" rel="noopener">${linkText}</a>`;
+    return makeExtLink(linkText, url);
   });
 
   // IMAGE <img> TAG
   eleventyConfig.addShortcode("image", async function (src, alt, width, classes) {
-    makeImage(src, alt, width, classes);
+    return makeImage(src, alt, width, classes);
   });
 
   // IMAGE - URL ONLY
   eleventyConfig.addShortcode("imageUrl", async function (src, width) {
-    makeImageUrl(src, width);
+    return makeImageUrl(src, width);
   });
 
   // LIGHTBOX / PHOTO GRID SHORTCODES
@@ -84,7 +88,7 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addShortcode("photoGridItem", async function(src, description, showCaption, isFullWidth) {
     let widthInPixels;
-    if (isFullWidth){
+    if (isFullWidth) {
       widthInPixels = 1440;
     } else {
       widthInPixels = 720;
@@ -98,6 +102,36 @@ export default function(eleventyConfig) {
       fullWidthClass = `class="full-width"`;
     }
     return `<a href="${await makeImageUrl(src, 2000)}" ${caption} ${fullWidthClass}>${await makeImage(src, description, widthInPixels)}</a>`;
+  });
+
+  // VIDEO EMBED
+  eleventyConfig.addShortcode("video", async function(vimeoId, videoFileUrl, duration, watchLinksJson) {
+    let oEmbed = await fetch(`https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F${vimeoId}&width=1440`).then((response) => response.json());
+
+    let thumbnailUrl = [oEmbed.thumbnail_url.split("-d_")[0], "-d_1440.jpg"].join("");
+    let height = oEmbed.height
+
+    let watchLinksHtml = "";
+    if (watchLinksJson && watchLinksJson.length > 0) {
+      watchLinksHtml = ` | Watch on: `
+      let watchLinks = JSON.parse(watchLinksJson);
+      let links = []
+      for (var serviceName in watchLinks){
+        var url = watchLinks[serviceName];
+        links.push(makeExtLink(serviceName, url));
+      }
+      watchLinksHtml += links.join(" | ");
+    }
+
+    let aspectPaddingPercent = height / 1440 * 100;
+
+    return `<div class="video-container">
+    <div class="video-iframe-container" style="padding-top:${aspectPaddingPercent}%;">
+    <iframe src="https://player.vimeo.com/video/997233593?h=e3c50d489b&title=0&byline=0&portrait=0" width="1440" height="${height}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><video class="html-video-fallback" width="1440" height="${height}" controls="controls" preload="metadata" poster="${thumbnailUrl}" style="aspect-ratio: 1440/${height}"><source src="${videoFileUrl}" type="video/mp4" /><b>Your browser does not support the video tag. Here is a direct links to the <a href="${videoFileUrl}">MP4 file</a>.</b></video>
+      <div class="video-caption">
+        ${duration}${watchLinksHtml}
+      </div>
+    </div>`;
   });
 
   eleventyConfig.setInputDirectory("src");

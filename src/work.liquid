@@ -12,7 +12,7 @@ title: Work
 {%- for work in workCollection -%}
   <div class="gallery-item">
     <a href="{{ work.url }}">
-    {% image work.data.thumbnail, "Image of Paloma Kop in studio", 640, "" %}
+    {% image work.data.thumbnail, work.data.thumbnailAlt, 1440, "" %}
     <div class="caption">
       <h2><span class="title">{{ work.data.title }}</span>, {{ work.data.workYear }}</h2>
       <p>{{ work.data.description }}</p>

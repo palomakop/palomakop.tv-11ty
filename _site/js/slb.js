@@ -89,9 +89,9 @@
         loadingTextClass: '',
 
         // customize / localize controls captions
-        closeBtnCaption: '(esc)',
-        nextBtnCaption: 'next&rarr;',
-        prevBtnCaption: '&larr;previous',
+        closeBtnCaption: '( close )',
+        nextBtnCaption: 'next &gt;',
+        prevBtnCaption: '&lt; previous',
         loadingCaption: 'loading...',
 
         bindToItems: true, // set click event handler to trigger lightbox on provided $items
@@ -321,7 +321,7 @@
                             '<div class="slbWrap">' +
                                 '<div class="slbContentOuter">' +
                                     '<div class="slbContent"></div>' +
-                                    '<button type="button" title="' + o.closeBtnCaption + '" class="slbCloseBtn ' + o.closeBtnClass + '">(esc)</button>' +
+                                    '<button type="button" title="' + o.closeBtnCaption + '" class="slbCloseBtn ' + o.closeBtnClass + '">( close )</button>' +
                                     (this.items.length > 1
                                         ? '<div class="slbArrows">' +
                                              '<button type="button" title="' + o.prevBtnCaption + '" class="prev slbArrow' + o.prevBtnClass + '">' + o.prevBtnCaption + '</button>' +
