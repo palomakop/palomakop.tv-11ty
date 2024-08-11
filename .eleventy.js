@@ -26,7 +26,6 @@ async function makeImage(src, alt, width, classes) {
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src);
       const name = path.basename(src, extension);
-
       return `${name}-${width}w-${id}.${format}`;
     },
   });
@@ -52,7 +51,7 @@ async function makeImageUrl(src, width) {
       return `${name}-${width}w-${id}.${format}`;
     },
   });
-  let data = metadata.jpeg[metadata.jpeg.length - 1];
+  let data = metadata[Object.keys(metadata)[0]][0]
   return data.url;
 }
 
@@ -82,8 +81,7 @@ export default function(eleventyConfig) {
   // types: vertical, two-column, three-column, tarot
   eleventyConfig.addPairedShortcode("photoGrid", function(content, type, name) {
     let id = makeId(10);
-    return `<photo-grid class="${type} ${id}">${content}</photo-grid>
-    <script>var ${id} = new SimpleLightbox({elements: '.${id} a'});</script>`;
+    return `<photo-grid class="${type} ${id}">${content}</photo-grid><script>var ${id} = new SimpleLightbox({elements: '.${id} a'});</script>`;
   });
 
   eleventyConfig.addShortcode("photoGridItem", async function(src, description, showCaption, isFullWidth) {
@@ -125,13 +123,7 @@ export default function(eleventyConfig) {
 
     let aspectPaddingPercent = height / 1440 * 100;
 
-    return `<div class="video-container">
-    <div class="video-iframe-container" style="padding-top:${aspectPaddingPercent}%;">
-    <iframe src="https://player.vimeo.com/video/997233593?h=e3c50d489b&title=0&byline=0&portrait=0" width="1440" height="${height}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><video class="html-video-fallback" width="1440" height="${height}" controls="controls" preload="metadata" poster="${thumbnailUrl}" style="aspect-ratio: 1440/${height}"><source src="${videoFileUrl}" type="video/mp4" /><b>Your browser does not support the video tag. Here is a direct links to the <a href="${videoFileUrl}">MP4 file</a>.</b></video>
-      <div class="video-caption">
-        ${duration}${watchLinksHtml}
-      </div>
-    </div>`;
+    return `<div class="video-container"><div class="video-iframe-container" style="padding-top:${aspectPaddingPercent}%;"><iframe src="https://player.vimeo.com/video/997233593?h=e3c50d489b&title=0&byline=0&portrait=0" width="1440" height="${height}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><video class="html-video-fallback" width="1440" height="${height}" controls="controls" preload="metadata" poster="${thumbnailUrl}" style="aspect-ratio: 1440/${height}"><source src="${videoFileUrl}" type="video/mp4" /><b>Your browser does not support the video tag. Here is a direct links to the <a href="${videoFileUrl}">MP4 file</a>.</b></video><div class="video-caption">${duration}${watchLinksHtml}</div></div>`;
   });
 
   eleventyConfig.setInputDirectory("src");

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<nav>
+<nav class="top">
   <ul>
     <li>
       <a href="/work">&lt; Back to index</a>
@@ -10,25 +10,23 @@ layout: default
   </ul>
 </nav>
 
-<h2><i>{{title}}</i>, {{workYear}}</h2>
-
 {{content}}
 
 {% assign workCollection = collections.work | sort: "data.workYear" | reverse %}
 {% assign previousWork = workCollection | getPreviousCollectionItem: page %}
 {% assign nextWork = workCollection | getNextCollectionItem: page %}
 
-<nav class="centered">
+<nav class="centered bottom">
   <ul>
   {% if previousWork %}
     <li>
       <a href="{{ previousWork.url }}">&lt; {{ previousWork.data.title }}</a>
     </li>
-    {% endif %}
-    {% if nextWork %}
+  {% endif %}
+  {% if nextWork %}
     <li>
       <a href="{{ nextWork.url }}">{{ nextWork.data.title }} &gt;</a>
     </li>
-    {% endif %}
+  {% endif %}
   </ul>
 </nav>

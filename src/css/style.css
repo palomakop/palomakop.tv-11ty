@@ -137,6 +137,14 @@ nav.centered ul {
   justify-content:center;
 }
 
+nav.top {
+  margin-bottom:2.5rem;
+}
+
+nav.bottom {
+  margin-top:3.5rem;
+}
+
 nav ul li {
   font-size:var(--body-font-size);
   margin:0;
@@ -469,7 +477,7 @@ img {
     grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
     justify-content:flex-start;
     justify-items:stretch;
-    gap:4vw;
+    gap:3vw 4vw;
   }
 
   .gallery-item {
@@ -544,8 +552,8 @@ photo-grid:not(.tarot) {
 }
 
 photo-grid.tarot {
-  gap:2em;
-  margin:2em 0;
+  gap:5rem;
+  margin:4rem 0;
   justify-items:center;
 }
 
@@ -569,16 +577,6 @@ photo-grid.two-column img, photo-grid.three-column img {
     max-width:100%;
     max-height:85vh;
   }
-}
-
-photo-grid.tarot a {
-  text-decoration:none;
-  text-align:center;
-  font-style:italic;
-}
-
-photo-grid.tarot a:hover {
-  color:#000000;
 }
 
 photo-grid:not(.tarot) img {
