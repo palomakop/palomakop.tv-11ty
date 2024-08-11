@@ -14,19 +14,22 @@ layout: default
 
 {% assign workCollection = collections.work | sort: "data.workYear" | reverse %}
 {% assign previousWork = workCollection | getPreviousCollectionItem: page %}
+{% unless previousWork %}
+{% assign previousWork = workCollection | last: page %}
+{% endunless %}
+
 {% assign nextWork = workCollection | getNextCollectionItem: page %}
+{% unless nextWork %}
+{% assign nextWork = workCollection | first: page %}
+{% endunless %}
 
 <nav class="centered bottom">
   <ul>
-  {% if previousWork %}
     <li>
       <a href="{{ previousWork.url }}">&lt; {{ previousWork.data.title }}</a>
     </li>
-  {% endif %}
-  {% if nextWork %}
     <li>
       <a href="{{ nextWork.url }}">{{ nextWork.data.title }} &gt;</a>
     </li>
-  {% endif %}
   </ul>
 </nav>
