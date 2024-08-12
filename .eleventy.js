@@ -123,7 +123,7 @@ export default function(eleventyConfig) {
 
     let aspectPaddingPercent = height / 1440 * 100;
 
-    return `<div class="video-container"><div class="video-iframe-container" style="padding-top:${aspectPaddingPercent}%;"><iframe src="https://player.vimeo.com/video/${vimeoId}?dnt=1&title=0&byline=0&portrait=0" width="1440" height="${height}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><video class="html-video-fallback" width="1440" height="${height}" controls="controls" preload="metadata" poster="${thumbnailUrl}" style="aspect-ratio: 1440/${height}"><source src="${videoFileUrl}" type="video/mp4" /><b>Your browser does not support the video tag. Here is a direct links to the <a href="${videoFileUrl}">MP4 file</a>.</b></video><div class="video-caption">${duration}${watchLinksHtml}</div></div>`;
+    return `<div class="video-container"><div class="video-iframe-container" style="padding-top:${aspectPaddingPercent}%;"><iframe src="https://player.vimeo.com/video/${vimeoId}?dnt=1&title=0&byline=0&portrait=0" width="1440" height="${height}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><video class="html-video-fallback" width="1440" height="${height}" controls="controls" preload="metadata" poster="${thumbnailUrl}" style="aspect-ratio: 1440/${height}"><source src="${videoFileUrl}" type="video/mp4" /><b>Your browser does not support the video tag. Here is a direct link to the <a href="${videoFileUrl}">MP4 file</a>.</b></video><div class="video-caption">${duration}${watchLinksHtml}</div></div>`;
   });
 
   eleventyConfig.setInputDirectory("src");
