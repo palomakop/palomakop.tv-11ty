@@ -28,7 +28,7 @@ if (jsPlayer) {
 		jsPlayer.pause.style.display = 'block';
 		jsPlayer.play.style.display = 'none';
 		jsPlayer.playing = true;
-		jsPlayer.action.innerHTML = 'Now Playing&hellip;';
+		jsPlayer.action.innerHTML = 'playing&hellip;';
 		jsPlayer.player.play();
 		jsPlayer.updateSeek();
 	};
@@ -37,7 +37,7 @@ if (jsPlayer) {
 		jsPlayer.pause.style.display = 'none';
 		clearTimeout(jsPlayer.seeking);
 		jsPlayer.playing = false;
-		jsPlayer.action.innerHTML = 'Paused&hellip;';
+		jsPlayer.action.innerHTML = 'paused&hellip;';
 		jsPlayer.player.pause();
 	};
 	jsPlayer.loadPlaylist = function jaPlayerLoadPlaylist(){
@@ -100,7 +100,7 @@ if (jsPlayer) {
 							jsPlayer.idx++;
 							jsPlayer.playTrack(jsPlayer.idx);
 						} else {
-							jsPlayer.action.innerHTML = 'Paused&hellip;';
+							jsPlayer.action.innerHTML = 'paused&hellip;';
 							jsPlayer.player.pause();
 							jsPlayer.idx = 0;
 							jsPlayer.loadTrack(jsPlayer.idx);
@@ -129,11 +129,11 @@ if (jsPlayer) {
 							jsPlayer.idx--;
 							jsPlayer.loadTrack(jsPlayer.idx);
 							if (jsPlayer.playing) {
-								jsPlayer.action.innerHTML = 'Now Playing&hellip;';
+								jsPlayer.action.innerHTML = 'playing&hellip;';
 								jsPlayer.player.play();
 							}
 						} else {
-							jsPlayer.action.innerHTML = 'Paused&hellip;';
+							jsPlayer.action.innerHTML = 'paused&hellip;';
 							jsPlayer.playing = false;
 							jsPlayer.player.pause();
 							jsPlayer.idx = 0;
@@ -148,11 +148,11 @@ if (jsPlayer) {
 							jsPlayer.idx++;
 							jsPlayer.loadTrack(jsPlayer.idx);
 							if (jsPlayer.playing) {
-								jsPlayer.action.innerHTML = 'Now Playing&hellip;';
+								jsPlayer.action.innerHTML = 'playing&hellip;';
 								jsPlayer.player.play();
 							}
 						} else {
-							jsPlayer.action.innerHTML = 'Paused&hellip;';
+							jsPlayer.action.innerHTML = 'paused&hellip;';
 							jsPlayer.playing = false;
 							jsPlayer.player.pause();
 							jsPlayer.idx = 0;
@@ -163,14 +163,14 @@ if (jsPlayer) {
 				if (jsPlayer.seek) {
 					jsPlayer.seek.addEventListener('mousedown', function seekClicked(){
 						clearTimeout(jsPlayer.seeking);
-						jsPlayer.action.innerHTML = 'Paused&hellip;';
+						jsPlayer.action.innerHTML = 'paused&hellip;';
 						jsPlayer.player.pause();
 					}, true);
 					jsPlayer.seek.addEventListener('mouseup', function seekReleased(){
 						jsPlayer.player.currentTime = jsPlayer.seek.value * jsPlayer.player.duration / 100;
 						jsPlayer.updateSeek();
 						if (jsPlayer.playing) {
-							jsPlayer.action.innerHTML = 'Now Playing&hellip;';
+							jsPlayer.action.innerHTML = 'playing&hellip;';
 							jsPlayer.player.play();
 						}
 					}, true);
