@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<nav class="top">
+<nav class="top bold">
   <ul>
     <li>
       <a href="/work">&lt; Back to index</a>
@@ -13,6 +13,7 @@ layout: default
 {{content}}
 
 {% assign workCollection = collections.work | sort: "data.workYear" | reverse %}
+
 {% assign previousWork = workCollection | getPreviousCollectionItem: page %}
 {% unless previousWork %}
 {% assign previousWork = workCollection | last: page %}
@@ -23,7 +24,7 @@ layout: default
 {% assign nextWork = workCollection | first: page %}
 {% endunless %}
 
-<nav class="centered bottom">
+<nav class="centered bottom bold">
   <ul>
     <li>
       <a href="{{ previousWork.url }}">&lt; {{ previousWork.data.title }}</a>

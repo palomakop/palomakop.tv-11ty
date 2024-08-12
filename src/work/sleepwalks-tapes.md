@@ -11,3 +11,5 @@ thumbnailAlt: a hand holding an irridescent blue cassette tape against the sky
 ---
 
 <h2><i>{{title}}</i>, {{workYear}}</h2>
+
+<iframe style="border: 0; width: 350px; height: 753px;" src="https://bandcamp.com/EmbeddedPlayer/album=3167668230/size=large/bgcol=333333/linkcol=0f91ff/transparent=true/" seamless><a href="https://palomakop.bandcamp.com/album/young-ugly">YOUNG &amp; UGLY by SLEEPWALKS</a></iframe>

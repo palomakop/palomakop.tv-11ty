@@ -23,7 +23,7 @@ Using a modified record player, a laser, and hand formed glass, I created a ligh
 - photoGridItem last 2 args: showCaption, isFullWidth
   - (note: all items in a vertical photo grid should be full width)
 {% endcomment %}
-{% photoGrid "tarot" %}
+{% photoGrid "two-column" %}
 {% photoGridItem "https://s3.amazonaws.com/palomakop.tv/works/lumiagraph/lumiagraph_1_3000px.jpg", "Lumiagraph apparatus", false, false %}
 {% photoGridItem "https://s3.amazonaws.com/palomakop.tv/works/lumiagraph/lumiagraph_2_3000px.jpg", "Close view in dark", false, false %}
 {% photoGridItem "https://s3.amazonaws.com/palomakop.tv/works/lumiagraph/lumiagraph_3_3000px.jpg", "Installation view", false, false %}
