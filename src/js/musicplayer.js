@@ -1,58 +1,56 @@
 // HTML5 audio player + playlist controls
-var jsPlayer = document.querySelector('.player-wrap');
-if (jsPlayer) {
-	jsPlayer = {
-		wrap: jsPlayer,
-		player: (jsPlayer.querySelector('audio') || { play: function(){}, pause: function(){} }),
-		play: (jsPlayer.querySelector('.play') || {}),
-		pause: (jsPlayer.querySelector('.pause') || {}),
-		seek: (jsPlayer.querySelector('.seek') || {}),
-		prev: (jsPlayer.querySelector('.prev') || {}),
-		next: (jsPlayer.querySelector('.next') || {}),
-		button: (jsPlayer.querySelector('.button') || { style: {} }),
-		wrapList: (document.querySelector('.playlist-wrap') || {}),
-		action: (jsPlayer.querySelector('.action') || {}),
-		title: (jsPlayer.querySelector('.title') || {}),
-		current: (jsPlayer.querySelector('.current') || {}),
-		duration: (jsPlayer.querySelector('.duration') || {}),
-		trackCount: 0,
-    seeking: null,
-		playing: false,
-		tracks: [],
-		track: [],
-		idx: 0
-	};
+function MusicPlayer(document, id) {
+	var musicPlayerElement = document.querySelector(`#${id}`);
+	var jsPlayer = musicPlayerElement.querySelector('.player-wrap');
+	this.wrap = jsPlayer;
+	this.player = (jsPlayer.querySelector('audio') || { play: function () { }, pause: function () { } }),
+	this.play = (jsPlayer.querySelector('.play') || {});
+	this.pause = (jsPlayer.querySelector('.pause') || {});
+	this.seek = (jsPlayer.querySelector('.seek') || {});
+	this.prev = (jsPlayer.querySelector('.prev') || {});
+	this.next = (jsPlayer.querySelector('.next') || {});
+	this.button = (jsPlayer.querySelector('.button') || { style: {} });
+	this.wrapList = (musicPlayerElement.querySelector('.playlist-wrap') || {});
+	this.action = (jsPlayer.querySelector('.action') || {});
+	this.title = (jsPlayer.querySelector('.title') || {});
+	this.current = (jsPlayer.querySelector('.current') || {});
+	this.duration = (jsPlayer.querySelector('.duration') || {});
+	this.trackCount = 0;
+	this.seeking = null;
+	this.playing = false;
+	this.tracks = [];
+	this.track = [];
+	this.idx = 0;
 
-	jsPlayer.playClicked = function jsPlayerPlayClicked(){
-		jsPlayer.button.style.visibility = 'hidden';
-		jsPlayer.pause.style.display = 'block';
-		jsPlayer.play.style.display = 'none';
-		jsPlayer.playing = true;
-		jsPlayer.action.innerHTML = 'playing&hellip;';
-		jsPlayer.player.play();
-		jsPlayer.updateSeek();
+	function playClicked(myPlayer) {
+		myPlayer.button.style.visibility = 'hidden';
+		myPlayer.pause.style.display = 'block';
+		myPlayer.play.style.display = 'none';
+		myPlayer.playing = true;
+		myPlayer.action.innerHTML = 'playing&hellip;';
+		myPlayer.player.play();
+		updateSeek(myPlayer);
 	};
-	jsPlayer.pauseClicked = function jsPlayerPauseClicked(){
-		jsPlayer.play.style.display = 'block';
-		jsPlayer.pause.style.display = 'none';
-		clearTimeout(jsPlayer.seeking);
-		jsPlayer.playing = false;
-		jsPlayer.action.innerHTML = 'paused&hellip;';
-		jsPlayer.player.pause();
+	function pauseClicked(myPlayer) {
+		myPlayer.play.style.display = 'block';
+		myPlayer.pause.style.display = 'none';
+		clearTimeout(myPlayer.seeking);
+		myPlayer.playing = false;
+		myPlayer.action.innerHTML = 'paused&hellip;';
+		myPlayer.player.pause();
 	};
-	jsPlayer.loadPlaylist = function jaPlayerLoadPlaylist(){
-		jsPlayer.playlist = jsPlayer.wrapList? jsPlayer.wrapList.querySelectorAll('ol > li') : [];
-		var len = jsPlayer.playlist.length,
-			tmp, i;
+	function loadPlaylist(myPlayer) {
+		myPlayer.playlist = myPlayer.wrapList ? myPlayer.wrapList.querySelectorAll('ol > li') : [];
+		var len = myPlayer.playlist.length, tmp, i;
 		for (i = 0; i < len; i++) {
-			if (!jsPlayer.playlist[i].dataset) {
-				jsPlayer.playlist[i].dataset = {};
+			if (!myPlayer.playlist[i].dataset) {
+				myPlayer.playlist[i].dataset = {};
 			}
-			tmp = jsPlayer.playlist[i].querySelector('a');
-			if (tmp && !jsPlayer.playlist[i].dataset.idx) {
-				jsPlayer.playlist[i].dataset.idx = i + 1;
-				jsPlayer.trackCount++;
-				jsPlayer.tracks.push({
+			tmp = myPlayer.playlist[i].querySelector('a');
+			if (tmp && !myPlayer.playlist[i].dataset.idx) {
+				myPlayer.playlist[i].dataset.idx = i + 1;
+				myPlayer.trackCount++;
+				myPlayer.tracks.push({
 					"file": tmp.href,
 					"name": (tmp.textContent || tmp.innerText).replace(/^\s+|\s+$/g, ''),
 					"track": i + 1
@@ -60,173 +58,176 @@ if (jsPlayer) {
 			}
 		}
 	};
-	jsPlayer.loadTrack = function jsPlayerLoadTrack(idx){
-		var len = jsPlayer.playlist.length,
-			i;
-		for (i=0; i < len; i++) {
-			if (jsPlayer.playlist[i].classList) {
+	function loadTrack(myPlayer, idx) {
+		var len = myPlayer.playlist.length, i;
+		for (i = 0; i < len; i++) {
+			if (myPlayer.playlist[i].classList) {
 				if (i === idx) {
-					jsPlayer.playlist[i].classList.add('sel');
+					myPlayer.playlist[i].classList.add('sel');
 				} else {
-					jsPlayer.playlist[i].classList.remove('sel');
+					myPlayer.playlist[i].classList.remove('sel');
 				}
 			}
 		}
-		jsPlayer.title.innerHTML = jsPlayer.tracks[idx].name;
-		jsPlayer.player.src = jsPlayer.tracks[idx].file;
+		myPlayer.title.innerHTML = myPlayer.tracks[idx].name;
+		myPlayer.player.src = myPlayer.tracks[idx].file;
 	};
-	jsPlayer.playTrack = function jsPlayerPlayTrack(idx){
-		jsPlayer.loadTrack(idx);
-		jsPlayer.playing = true;
-		jsPlayer.playClicked();
+	function playTrack(myPlayer, idx) {
+		loadTrack(myPlayer, idx);
+		myPlayer.playing = true;
+		playClicked(myPlayer);
 	};
-	jsPlayer.init = function jsPlayerInit(){
-		var track = (jsPlayer.wrap && jsPlayer.wrap.dataset && jsPlayer.wrap.dataset.url)? jsPlayer.wrap : null,
-			tmp, i;
+	function setDuration(myPlayer) {
+		myPlayer.duration.innerHTML = formatTime(myPlayer.player.duration);
+		myPlayer.current.innerHTML = formatTime(myPlayer.player.currentTime);
+		myPlayer.seek.value = myPlayer.player.currentTime / myPlayer.player.duration;
+	};
+	function updateSeek(myPlayer) {
+		myPlayer.seek.value = 100 * myPlayer.player.currentTime / myPlayer.player.duration;
+		myPlayer.current.innerHTML = formatTime(myPlayer.player.currentTime);
+		if (myPlayer.playing) {
+			myPlayer.seeking = setTimeout(updateSeek, 800, myPlayer);
+		}
+	};
+	function formatTime(val) {
+		var h = 0, m = 0, s;
+		val = parseInt(val, 10);
+		if (val > 60 * 60) {
+			h = parseInt(val / (60 * 60), 10);
+			val -= h * 60 * 60;
+		}
+		if (val > 60) {
+			m = parseInt(val / 60, 10);
+			val -= m * 60;
+		}
+		s = val;
+		val = (h > 0) ? h + ':' : '';
+		val += (m > 0) ? ((m < 10 && h > 0) ? '0' : '') + m + ':' : '0:';
+		val += ((s < 10) ? '0' : '') + s;
+		return val;
+	};
+	function init(myPlayer) {
+		var track = (myPlayer.wrap && myPlayer.wrap.dataset && myPlayer.wrap.dataset.url) ? myPlayer.wrap : null, tmp, i;
 		if (!!document.createElement('audio').canPlayType('audio/mpeg')) {
-			if (jsPlayer.wrapList && jsPlayer.wrapList.querySelectorAll('ol > li').length > 0) {
-				jsPlayer.loadPlaylist();
+			if (myPlayer.wrapList && myPlayer.wrapList.querySelectorAll('ol > li').length > 0) {
+				loadPlaylist(myPlayer);
 			} else if (track) {
-				jsPlayer.tracks = [{
+				myPlayer.tracks = [{
 					"file": track.dataset.url,
 					"name": (track.dataset.title || ''),
 					"track": 1
 				}];
 			}
-			if (jsPlayer.tracks.length > 0) {
-				if (jsPlayer.player) {
-					jsPlayer.player.addEventListener('ended', function playerEnded(){
-						if (jsPlayer.idx + 1 < jsPlayer.trackCount) {
-							jsPlayer.idx++;
-							jsPlayer.playTrack(jsPlayer.idx);
+			if (myPlayer.tracks.length > 0) {
+				if (myPlayer.player) {
+					myPlayer.player.addEventListener('ended', function playerEnded() {
+						if (myPlayer.idx + 1 < myPlayer.trackCount) {
+							myPlayer.idx++;
+							playTrack(myPlayer, myPlayer.idx);
 						} else {
-							jsPlayer.action.innerHTML = 'paused&hellip;';
-							jsPlayer.player.pause();
-							jsPlayer.idx = 0;
-							jsPlayer.loadTrack(jsPlayer.idx);
+							myPlayer.action.innerHTML = 'paused&hellip;';
+							myPlayer.player.pause();
+							myPlayer.idx = 0;
+							loadTrack(myPlayer, myPlayer.idx);
 						}
 					}, true);
-					jsPlayer.player.addEventListener('loadeddata', function playerLoadeddata(){
-						jsPlayer.setDuration();
+					myPlayer.player.addEventListener('loadeddata', function playerLoadeddata() {
+						setDuration(myPlayer);
 					}, true);
 				}
-				if (jsPlayer.play) {
-					jsPlayer.play.addEventListener('click', jsPlayer.playClicked, true);
-				}
-				if (jsPlayer.pause) {
-					jsPlayer.pause.addEventListener('click', jsPlayer.pauseClicked, true);
-				}
-				if (jsPlayer.button) {
-					jsPlayer.button.addEventListener('click', function buttonClicked(event){
+				if (myPlayer.play) {
+					myPlayer.play.addEventListener('click', function playWasClicked(event) {
 						event.preventDefault();
-						jsPlayer.playClicked();
+						playClicked(myPlayer);
 					}, true);
 				}
-				if (jsPlayer.prev) {
-					jsPlayer.prev.addEventListener('click', function prevClicked(event){
+				if (myPlayer.pause) {
+					myPlayer.pause.addEventListener('click', function pauseWasClicked(event) {
 						event.preventDefault();
-						if (jsPlayer.idx - 1 > -1) {
-							jsPlayer.idx--;
-							jsPlayer.loadTrack(jsPlayer.idx);
-							if (jsPlayer.playing) {
-								jsPlayer.action.innerHTML = 'playing&hellip;';
-								jsPlayer.player.play();
+						pauseClicked(myPlayer);
+					}, true);
+				}
+				if (myPlayer.button) {
+					myPlayer.button.addEventListener('click', function buttonClicked(event){
+						event.preventDefault();
+						playClicked(myPlayer);
+					}, true);
+				}
+				if (myPlayer.prev) {
+					myPlayer.prev.addEventListener('click', function prevClicked(event) {
+						event.preventDefault();
+						if (myPlayer.idx - 1 > -1) {
+							myPlayer.idx--;
+							loadTrack(myPlayer, myPlayer.idx);
+							if (myPlayer.playing) {
+								myPlayer.action.innerHTML = 'playing&hellip;';
+								myPlayer.player.play();
 							}
 						} else {
-							jsPlayer.action.innerHTML = 'paused&hellip;';
-							jsPlayer.playing = false;
-							jsPlayer.player.pause();
-							jsPlayer.idx = 0;
-							jsPlayer.loadTrack(jsPlayer.idx);
+							myPlayer.action.innerHTML = 'paused&hellip;';
+							myPlayer.playing = false;
+							myPlayer.player.pause();
+							myPlayer.idx = 0;
+							loadTrack(myPlayer, myPlayer.idx);
 						}
 					}, true);
 				}
-				if (jsPlayer.next) {
-					jsPlayer.next.addEventListener('click', function nextClicked(event){
+				if (myPlayer.next) {
+					myPlayer.next.addEventListener('click', function nextClicked(event) {
 						event.preventDefault();
-						if (jsPlayer.idx + 1 < jsPlayer.trackCount) {
-							jsPlayer.idx++;
-							jsPlayer.loadTrack(jsPlayer.idx);
-							if (jsPlayer.playing) {
-								jsPlayer.action.innerHTML = 'playing&hellip;';
-								jsPlayer.player.play();
+						if (myPlayer.idx + 1 < myPlayer.trackCount) {
+							myPlayer.idx++;
+							loadTrack(myPlayer, myPlayer.idx);
+							if (myPlayer.playing) {
+								myPlayer.action.innerHTML = 'playing&hellip;';
+								myPlayer.player.play();
 							}
 						} else {
-							jsPlayer.action.innerHTML = 'paused&hellip;';
-							jsPlayer.playing = false;
-							jsPlayer.player.pause();
-							jsPlayer.idx = 0;
-							jsPlayer.loadTrack(jsPlayer.idx);
+							myPlayer.action.innerHTML = 'paused&hellip;';
+							myPlayer.playing = false;
+							myPlayer.player.pause();
+							myPlayer.idx = 0;
+							myPlayer.loadTrack(myPlayer.idx);
 						}
 					}, true);
 				}
-				if (jsPlayer.seek) {
-					jsPlayer.seek.addEventListener('mousedown', function seekClicked(){
-						clearTimeout(jsPlayer.seeking);
-						jsPlayer.action.innerHTML = 'paused&hellip;';
-						jsPlayer.player.pause();
+				if (myPlayer.seek) {
+					myPlayer.seek.addEventListener('mousedown', function seekClicked() {
+						clearTimeout(myPlayer.seeking);
+						myPlayer.action.innerHTML = 'paused&hellip;';
+						myPlayer.player.pause();
 					}, true);
-					jsPlayer.seek.addEventListener('mouseup', function seekReleased(){
-						jsPlayer.player.currentTime = jsPlayer.seek.value * jsPlayer.player.duration / 100;
-						jsPlayer.updateSeek();
-						if (jsPlayer.playing) {
-							jsPlayer.action.innerHTML = 'playing&hellip;';
-							jsPlayer.player.play();
+					myPlayer.seek.addEventListener('mouseup', function seekReleased() {
+						myPlayer.player.currentTime = myPlayer.seek.value * myPlayer.player.duration / 100;
+						updateSeek(myPlayer);
+						if (myPlayer.playing) {
+							myPlayer.action.innerHTML = 'playing&hellip;';
+							myPlayer.player.play();
 						}
 					}, true);
 				}
-				if (jsPlayer.wrapList) {
-					jsPlayer.wrapList.addEventListener('click', function listClicked(event){
+				if (myPlayer.wrapList) {
+					myPlayer.wrapList.addEventListener('click', function listClicked(event) {
 						var parent = event.target.parentNode;
 						if (parent.parentNode.tagName.toLowerCase() === 'ol') {
 							event.preventDefault();
-							var len = jsPlayer.playlist.length,
-							i;
+							var len = myPlayer.playlist.length, i;
 							for (i = 0; i < len; i++) {
 								if (parent.dataset.idx == i + 1) {
-									jsPlayer.idx = i;
-									jsPlayer.playTrack(jsPlayer.idx);
+									myPlayer.idx = i;
+									playTrack(myPlayer, myPlayer.idx);
 									i = len;
 								}
 							}
 						}
 					}, true);
 				}
-				jsPlayer.setDuration = function setDuration() {
-					jsPlayer.duration.innerHTML = jsPlayer.formatTime(jsPlayer.player.duration);
-					jsPlayer.current.innerHTML = jsPlayer.formatTime(jsPlayer.player.currentTime);
-					jsPlayer.seek.value = jsPlayer.player.currentTime / jsPlayer.player.duration;
-				};
-				jsPlayer.updateSeek = function updateSeek() {
-					jsPlayer.seek.value = 100 * jsPlayer.player.currentTime / jsPlayer.player.duration;
-					jsPlayer.current.innerHTML = jsPlayer.formatTime(jsPlayer.player.currentTime);
-					if (jsPlayer.playing) {
-						jsPlayer.seeking = setTimeout(jsPlayer.updateSeek, 500);
-					}
-				};
-				jsPlayer.formatTime = function formatTime(val) {
-					var h = 0, m = 0, s;
-					val = parseInt(val, 10);
-					if (val > 60 * 60) {
-						h = parseInt(val / (60 * 60), 10);
-						val -= h * 60 * 60;
-					}
-					if (val > 60) {
-						m = parseInt(val / 60, 10);
-						val -= m * 60;
-					}
-					s = val;
-					val = (h > 0)? h + ':' : '';
-					val += (m > 0)? ((m < 10 && h > 0)? '0' : '') + m + ':' : '0:';
-					val += ((s < 10)? '0' : '') + s;
-					return val;
-				};
 			}
 		}
-		if (jsPlayer.tracks.length > 0) {
-			jsPlayer.wrap.className += ' enabled';
-			jsPlayer.loadTrack(jsPlayer.idx);
+		if (myPlayer.tracks.length > 0) {
+			myPlayer.wrap.className += ' enabled';
+			loadTrack(myPlayer, myPlayer.idx);
 		}
 	};
-	jsPlayer.init();
+	init(this);
 }
