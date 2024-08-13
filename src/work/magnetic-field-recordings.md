@@ -9,7 +9,7 @@ thumbnail: https://s3.amazonaws.com/palomakop.tv/works/magnetic-field-recordings
 thumbnailAlt: oscilloscope patterns superimposed on a photo of a river
 ---
 
-<h2><i>{{title}}</i>, {{workYear}}</h2>
+## *{{title}}*, {{workYear}}
 
 {% video "997226540", "https://player.vimeo.com/progressive_redirect/playback/997226540/rendition/720p/file.mp4?loc=external&signature=c48d8fe8dacfad99e3af2b3f9d68fe1bdd92a25d3d06ecc185b52f3a50048398", "24:43", '{"Youtube":"https://youtu.be/U2yc05uA4mk","Peertube":"https://videos.scanlines.xyz/w/xdShBpXw6ZDoU9kDMYNUTv"}' %}
 

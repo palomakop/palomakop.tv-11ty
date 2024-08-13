@@ -10,7 +10,7 @@ thumbnail: https://s3.amazonaws.com/palomakop.tv/works/tarot-of-subtle-forms/tar
 thumbnailAlt: black and white drawing of an organic matrix
 ---
 
-<h2><i>{{title}}</i>, {{workYear}}</h2>
+## *{{title}}*, {{workYear}}
 
 *Tarot of Subtle Forms* is a series in progress, a visual lexicon of archetypal concepts from Buddhism. Each card has a title in English, and if relevant, in a romanized form of Pali, Sanskrit, Chinese, or Japanese. The order and symbology of the cards represent my own personal interpretations emerging from my study and practice of meditation and tarot.
 

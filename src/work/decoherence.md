@@ -9,7 +9,7 @@ thumbnail: https://s3.amazonaws.com/palomakop.tv/works/decoherence/poster.jpg
 thumbnailAlt: smoke-like abstract reflection patterns forming on the surface of water
 ---
 
-<h2><i>{{title}}</i>, {{workYear}}</h2>
+## *{{title}}*, {{workYear}}
 
 {% video "997233812", "https://player.vimeo.com/progressive_redirect/playback/997233812/rendition/720p/file.mp4?loc=external&signature=4bbdbb47aaf237b492132e1aa2768d071a483fee6438e61fc941f60dd591ed6e", "7:45", '{"Youtube":"https://youtu.be/QR2SEAlNO_4","Peertube":"https://videos.scanlines.xyz/w/fG14BjGhMy1akAUjD83vBS"}' %}
 

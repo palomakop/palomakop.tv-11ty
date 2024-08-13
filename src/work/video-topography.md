@@ -10,7 +10,7 @@ thumbnail: https://s3.amazonaws.com/palomakop.tv/works/video-topography/video_to
 thumbnailAlt: abstract glass sculpture with three-dimensional glowing lines floating inside a prism
 ---
 
-<h2><i>{{title}}</i>, {{workYear}}</h2>
+## *{{title}}*, {{workYear}}
 
 {% comment %}
 - list of photoGrid possible types:

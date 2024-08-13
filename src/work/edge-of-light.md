@@ -10,7 +10,7 @@ thumbnail: https://s3.amazonaws.com/palomakop.tv/works/edge-of-light/poster.jpg
 thumbnailAlt: abstract video art projected on a large spherical white weather balloon
 ---
 
-<h2><i>{{title}}</i>, {{workYear}}</h2>
+## *{{title}}*, {{workYear}}
 
 {% video "997229580", "https://player.vimeo.com/progressive_redirect/playback/997229580/rendition/720p/file.mp4?loc=external&signature=62362392f6d172e13441c098f4759b8324ac37ff5d307e3dd882008c2cd6d787", "25:45", '{"Youtube":"https://youtu.be/3Vii30QzmeI","Peertube":"https://videos.scanlines.xyz/w/uJTa1bchqGCByWpQqDE7SS"}' %}
 
