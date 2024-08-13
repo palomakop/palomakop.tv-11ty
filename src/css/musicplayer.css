@@ -189,3 +189,12 @@ music-player .playlist-wrap li.sel::after {
   display: inline-block;
   position:absolute;
 }
+
+music-player .player-caption {
+  font-size:var(--small-font-size);
+  font-weight:var(--black-weight);
+  margin-top:1.6em;
+  display:flex;
+  flex-wrap:wrap;
+  gap:0 2ch;
+}

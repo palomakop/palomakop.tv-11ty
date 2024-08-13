@@ -52,6 +52,9 @@ musicPlayer: true
       <li><a href="https://s3.amazonaws.com/palomakop.tv/works/sleepwalks-tapes/young-and-ugly/08_solaris_arpex.mp3">solaris arpex</a></li>
       <li><a href="https://s3.amazonaws.com/palomakop.tv/works/sleepwalks-tapes/young-and-ugly/09_multidawn.mp3">multidawn</a></li>
       </ol>
+      <div class="player-caption">
+        <span>Released 2017-04-20</span><span><a href="https://palomakop.bandcamp.com/album/young-ugly" target="_blank" rel="noopener">Listen on Bandcamp</a></span>
+      </div>
     </div>
   </div>
 </div>
