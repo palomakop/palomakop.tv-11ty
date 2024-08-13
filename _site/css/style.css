@@ -685,7 +685,7 @@ music-player .timer div {
 
 music-player .action {
   font-style:italic;
-  color var(--button-hover-color);
+  color:var(--button-hover-color);
 }
 
 music-player .ellipsis {
