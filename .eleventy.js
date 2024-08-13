@@ -29,10 +29,12 @@ async function makeImage(src, alt, width, classes) {
       return `${name}-${width}w-${id}.${format}`;
     },
   });
+  let data = metadata[Object.keys(metadata)[0]][0];
   let imageAttributes = {
     alt,
     loading: "lazy",
     decoding: "async",
+    style: `aspect-ratio:${data.width}/${data.height}`
   };
   if (classes) {
     imageAttributes.class = classes;
@@ -51,7 +53,7 @@ async function makeImageUrl(src, width) {
       return `${name}-${width}w-${id}.${format}`;
     },
   });
-  let data = metadata[Object.keys(metadata)[0]][0]
+  let data = metadata[Object.keys(metadata)[0]][0];
   return data.url;
 }
 
@@ -120,10 +122,20 @@ export default function(eleventyConfig) {
       }
       watchLinksHtml += links.join(" | ");
     }
-
     let aspectPaddingPercent = height / 1440 * 100;
-
     return `<div class="video-container"><div class="video-iframe-container" style="padding-top:${aspectPaddingPercent}%;"><iframe src="https://player.vimeo.com/video/${vimeoId}?dnt=1&title=0&byline=0&portrait=0" width="1440" height="${height}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><video class="html-video-fallback" width="1440" height="${height}" controls="controls" preload="metadata" poster="${thumbnailUrl}" style="aspect-ratio: 1440/${height}"><source src="${videoFileUrl}" type="video/mp4" /><b>Your browser does not support the video tag. Here is a direct link to the <a href="${videoFileUrl}">MP4 file</a>.</b></video><div class="video-caption">${duration}${watchLinksHtml}</div></div>`;
+  });
+
+  // MUSIC PLAYER
+  eleventyConfig.addPairedShortcode("musicPlayer", async function(content, albumTitle, albumArtUrl, releaseDate, bcUrl) {
+    let id = makeId(10);
+    let bcLink = makeExtLink("Listen on Bandcamp", bcUrl);
+    let albumArt = await makeImage(albumArtUrl, "", 960, "album-art");
+    return `<music-player id="${id}"><div class="player-wrap"><div class="album-art-container">${albumArt}<div class="button"><svg viewBox="0 0 14 14"><path d="M0,0 L0,14 L11,7 L0,0 Z"/></svg></div></div><div class="player-container"><div class="info"><h3>${albumTitle}</h3><p class="title ellipsis"></p><div class="timer"><div class="current">0:00:00</div><div class="slash">/</div><div class="duration">0:00:00</div><div class="action">&nbsp;</div></div></div><div class="player"><audio preload></audio><div class="playpause"><div class="play"><svg viewBox="0 0 14 14"><path d="M0,0 L0,14 L11,7 L0,0 Z"/></svg></div><div class="pause"><svg viewBox="0 0 14 14"><path d="M0,14 L4,14 L4,0 L0,0 L0,14 L0,14 Z M8,0 L8,14 L12,14 L12,0 L8,0 L8,0 Z"/></svg></div></div><div class="scrubber"><input type="range" min="0" max="100" step=".1" value="0" class="seek"></div><div class="prev"><svg viewBox="0 0 12 12"><path d="M3.5,6 L12,12 L12,0 L3.5,6 Z M0,0 L0,12 L2,12 L2,0 L0,0 L0,0 Z"/></svg></div><div class="next"><svg viewBox="0 0 12 12"><path d="M0,12 L8.5,6 L0,0 L0,12 L0,12 Z M10,0 L10,12 L12,12 L12,0 L10,0 L10,0 Z"/></svg></div></div><div class="fallback-message"><p>Web player requires javascript; click track name to open mp3 file.</p></div><div class="playlist-wrap"><ol>${content}</ol><div class="player-caption"><span>Released ${releaseDate}</span><span>${bcLink}</span></div></div></div></div></music-player><script>var ${id} = new MusicPlayer(document, "${id}");</script>`;
+  });
+
+  eleventyConfig.addShortcode("musicPlayerTrack", function(name, url) {
+    return `<li><a href="${url}">${name}</a></li>`;
   });
 
   eleventyConfig.setInputDirectory("src");

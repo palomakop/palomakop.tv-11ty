@@ -465,7 +465,7 @@ img {
   border:solid 1.5px;
   border-radius:5px;
   object-fit:cover;
-  aspect-ratio:4/3;
+  aspect-ratio:4/3 !important;
   width:100%;
   box-sizing: border-box;
   height:auto;
@@ -569,6 +569,8 @@ photo-grid.two-column img, photo-grid.three-column img {
   photo-grid.tarot img {
     max-width:400px;
     max-height:95vh;
+    width: auto;
+    height: auto;
   }
 }
 
@@ -576,6 +578,8 @@ photo-grid.two-column img, photo-grid.three-column img {
   photo-grid.tarot img {
     max-width:100%;
     max-height:85vh;
+    width: auto;
+    height: auto;
   }
 }
 
