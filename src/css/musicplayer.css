@@ -6,7 +6,7 @@ music-player {
   border-radius:10px;
   overflow:hidden;
   max-width:480px;
-  margin:3em 0 4em;
+  margin:3em 0;
 }
 
 music-player .album-art-container {

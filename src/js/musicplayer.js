@@ -183,11 +183,9 @@ function MusicPlayer(document, id) {
 								myPlayer.player.play();
 							}
 						} else {
-							myPlayer.action.innerHTML = 'paused&hellip;';
-							myPlayer.playing = false;
-							myPlayer.player.pause();
+							pauseClicked(myPlayer)
 							myPlayer.idx = 0;
-							myPlayer.loadTrack(myPlayer.idx);
+							loadTrack(myPlayer, myPlayer.idx);
 						}
 					}, true);
 				}

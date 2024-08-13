@@ -69,6 +69,7 @@ function MusicPlayer(document, id) {
 				}
 			}
 		}
+		console.log(myPlayer);
 		myPlayer.title.innerHTML = myPlayer.tracks[idx].name;
 		myPlayer.player.src = myPlayer.tracks[idx].file;
 	};
@@ -183,11 +184,9 @@ function MusicPlayer(document, id) {
 								myPlayer.player.play();
 							}
 						} else {
-							myPlayer.action.innerHTML = 'paused&hellip;';
-							myPlayer.playing = false;
-							myPlayer.player.pause();
+							pauseClicked(myPlayer)
 							myPlayer.idx = 0;
-							myPlayer.loadTrack(myPlayer.idx);
+							loadTrack(myPlayer, myPlayer.idx);
 						}
 					}, true);
 				}
