@@ -12,9 +12,9 @@
       var(--hover-filter)
       drop-shadow(1.4px 1.4px 1px rgb(0, 0, 0, 1));
   --body-font:'Roboto Mono', Andale Mono, Consolas, monospace;
-  --h1-font-size:1.9rem;
+  --h1-font-size:2rem;
   --h2-font-size:1.4rem;
-  --h3-font-size:1.2rem;
+  --h3-font-size:1.25rem;
   --body-font-size:1.1rem;
   --small-font-size:0.9rem;
   --black-weight:500;
@@ -561,7 +561,8 @@ photo-grid.tarot {
   border-radius:10px;
   justify-items:center;
   padding:5.5rem 0 5rem;
-  background-color:#00000010;
+  background-color:none;
+  transition:background-color 1s;
 }
 
 .news-item photo-grid.vertical, photo-grid.two-column, photo-grid.three-column {
@@ -578,6 +579,13 @@ photo-grid.two-column img, photo-grid.three-column img {
     max-height:95vh;
     width: auto;
     height: auto;
+  }
+}
+
+@media only screen and (min-width:785px) {
+  photo-grid.tarot{
+    background-color:#00000010;
+    transition:background-color 1s;
   }
 }
 
