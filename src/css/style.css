@@ -15,12 +15,13 @@
   --h1-font-size:1.9rem;
   --h2-font-size:1.4rem;
   --h3-font-size:1.2rem;
-  --body-font-size:1rem;
+  --body-font-size:1.1rem;
   --small-font-size:0.9rem;
   --black-weight:500;
   --bold-weight:450;
   --medium-weight:400;
   --normal-weight:350;
+  --text-size-adjust:100%;
 }
 
 @font-face {
@@ -35,10 +36,9 @@ html {
   height:100%;
   padding:env(safe-area-inset); /* for iphone notch */
   /* Prevent font scaling in landscape while allowing user zoom */
-  font-size-adjust:100%; 
-  -webkit-font-size-adjust:100%;
-  -moz-text-size-adjust:100%;
-  -ms-text-size-adjust:100%;
+  text-size-adjust:var(--text-size-adjust);
+  -webkit-text-size-adjust:var(--text-size-adjust);
+  -moz-text-size-adjust:var(--text-size-adjust);
   scroll-behavior: smooth;
 }
 
