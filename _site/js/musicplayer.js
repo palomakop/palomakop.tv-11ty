@@ -84,7 +84,11 @@ function MusicPlayer(document, id) {
 		myPlayer.seek.value = myPlayer.player.currentTime / myPlayer.player.duration;
 	};
 	function updateSeek(myPlayer) {
-		myPlayer.seek.value = 100 * myPlayer.player.currentTime / myPlayer.player.duration;
+		if (isNaN(myPlayer.player.duration)) {
+			myPlayer.seek.value = 0;
+		} else {
+			myPlayer.seek.value = 100 * myPlayer.player.currentTime / myPlayer.player.duration;
+		}
 		myPlayer.current.innerHTML = formatTime(myPlayer.player.currentTime);
 		if (myPlayer.playing) {
 			myPlayer.seeking = setTimeout(updateSeek, 800, myPlayer);
