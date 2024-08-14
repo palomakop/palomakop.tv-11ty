@@ -203,6 +203,19 @@ function MusicPlayer(document, id) {
 							myPlayer.player.play();
 						}
 					}, true);
+					myPlayer.seek.addEventListener('dragstart', function seekClicked() {
+						clearTimeout(myPlayer.seeking);
+						myPlayer.action.innerHTML = 'paused&hellip;';
+						myPlayer.player.pause();
+					}, true);
+					myPlayer.seek.addEventListener('dragend', function seekReleased() {
+						myPlayer.player.currentTime = myPlayer.seek.value * myPlayer.player.duration / 100;
+						updateSeek(myPlayer);
+						if (myPlayer.playing) {
+							myPlayer.action.innerHTML = 'playing&hellip;';
+							myPlayer.player.play();
+						}
+					}, true);
 				}
 				if (myPlayer.wrapList) {
 					myPlayer.wrapList.addEventListener('click', function listClicked(event) {
