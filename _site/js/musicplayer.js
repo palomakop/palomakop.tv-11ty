@@ -72,6 +72,8 @@ function MusicPlayer(document, id) {
 		myPlayer.title.innerHTML = myPlayer.tracks[idx].name;
 		myPlayer.player.src = myPlayer.tracks[idx].file;
 		myPlayer.seek.value = 0;
+		myPlayer.duration.innerHTML = "0:00";
+		myPlayer.current.innerHTML = "0:00";
 	};
 	function playTrack(myPlayer, idx) {
 		loadTrack(myPlayer, idx);
