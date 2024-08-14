@@ -69,7 +69,6 @@ function MusicPlayer(document, id) {
 				}
 			}
 		}
-		console.log(myPlayer);
 		myPlayer.title.innerHTML = myPlayer.tracks[idx].name;
 		myPlayer.player.src = myPlayer.tracks[idx].file;
 	};

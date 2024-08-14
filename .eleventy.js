@@ -3,8 +3,8 @@ import Image from "@11ty/eleventy-img";
 import prettier from "prettier";
 
 function makeId(length) {
-  let result = '';
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = 'id';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   const charactersLength = characters.length;
   let counter = 0;
   while (counter < length) {
