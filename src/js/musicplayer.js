@@ -203,12 +203,12 @@ function MusicPlayer(document, id) {
 							myPlayer.player.play();
 						}
 					}, true);
-					myPlayer.seek.addEventListener('dragstart', function seekClicked() {
+					myPlayer.seek.addEventListener('touchstart', function seekClicked() {
 						clearTimeout(myPlayer.seeking);
 						myPlayer.action.innerHTML = 'paused&hellip;';
 						myPlayer.player.pause();
 					}, true);
-					myPlayer.seek.addEventListener('dragend', function seekReleased() {
+					myPlayer.seek.addEventListener('touchend', function seekReleased() {
 						myPlayer.player.currentTime = myPlayer.seek.value * myPlayer.player.duration / 100;
 						updateSeek(myPlayer);
 						if (myPlayer.playing) {
