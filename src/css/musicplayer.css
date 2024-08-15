@@ -163,7 +163,7 @@ music-player input.seek::-moz-range-thumb {
 }
 
 music-player .playlist-wrap ol {
-  padding-left:3ch;
+  padding-left:4ch;
 }
 
 music-player .playlist-wrap li {
