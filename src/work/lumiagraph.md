@@ -5,7 +5,10 @@ workYear: "2019"
 description: An installation with glass, lasers, and a modified record player
 lightbox: true
 customStyle: >
-  .container{background-image: radial-gradient(#f2e6e6, #e8e8e8);}
+  :root {
+  --main-bg-color:#e8e8e8;
+  --main-bg-gradient:radial-gradient(#f2e6e6, #e8e8e8);
+  }
 thumbnail: https://s3.amazonaws.com/palomakop.tv/works/lumiagraph/lumiagraph_3_3000px.jpg
 thumbnailAlt: red abstract light patterns in a dark space
 ---

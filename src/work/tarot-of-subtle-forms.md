@@ -5,7 +5,10 @@ workYear: "2023-"
 description: A visual lexicon of Buddhist teachings
 lightbox: true
 customStyle: >
-  .container{background-image: radial-gradient(#d5dcdf, #dddddd, #d0dada);}
+  :root {
+    --main-bg-color:#d0dada;
+    --main-bg-gradient:radial-gradient(#d5dcdf, #dddddd, #d0dada);
+  }
 thumbnail: https://s3.amazonaws.com/palomakop.tv/works/tarot-of-subtle-forms/tarot_thumb.jpg
 thumbnailAlt: black and white drawing of an organic matrix
 ---

@@ -5,7 +5,10 @@ workYear: "2020"
 description: A live performance with analog video feedback and projection mapping
 lightbox: true
 customStyle: >
-  .container{background-image: radial-gradient(#f2e6e6, #e8e8e8);}
+  :root {
+  --main-bg-color:#f7f1f4;
+  --main-bg-gradient:radial-gradient(#fff7f9, #f7f1f4);
+  }
 thumbnail: https://s3.amazonaws.com/palomakop.tv/works/edge-of-light/poster.jpg
 thumbnailAlt: abstract video art projected on a large spherical white weather balloon
 ---
