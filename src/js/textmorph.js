@@ -6,7 +6,6 @@ const elts = {
 const texts = [
 	"Multimedia Artist",
 	"Creative Technologist",
-	"Ambient Musician",
 	"Visualist",
 	"Educator",
 	"Human Being"
