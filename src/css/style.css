@@ -78,6 +78,7 @@ main h2:first-child {
   position: absolute;
   top:0;
   background-image:var(--main-bg-gradient);
+  background-attachment:fixed;
 }
 
 .column-container {
