@@ -1,9 +1,50 @@
 ---
 layout: default
+customStyle: >
+  :root {
+    --main-bg-color:#cfd3ed;
+    --main-bg-gradient:radial-gradient(#e9f7da, #cfebed, #cfd3ed);
+  }
 ---
+
+{% assign postCollection = collections.posts | reverse %}
+{% assign pageNumber = 0 %}
+{% for post in postCollection %}
+  {% if post.url == page.url %}
+    {% assign pageNumber = forloop.index | minus: 1 | divided_by: 5 | floor %}
+    {% assign indexNumber = forloop.index %}
+  {% endif %}
+{% endfor %}
+
+<nav class="top bold">
+  <ul>
+    <li>
+      <a href="/blog/{% if pageNumber > 0 %}page/{{ pageNumber }}/{% endif %}#{{date}}">&lt; Back to index</a>
+    </li>
+  </ul>
+</nav>
 
 <h2>{{title}}</h2>
 
 This is a blog post:
 
 {{content}}
+
+{% assign previousPost = postCollection | getPreviousCollectionItem: page %}
+
+{% assign nextPost = postCollection | getNextCollectionItem: page %}
+
+<nav class="bottom bold">
+  <ul>
+  {% if previousPost %}
+    <li>
+      <a href="{{ previousPost.url }}">&lt; {{previousPost.data.title}}</a>
+    </li>
+  {% endif %}
+  {% if nextPost %}
+    <li>
+      <a href="{{ nextPost.url }}">{{nextPost.data.title}} &gt;</a>
+    </li>
+  {% endif %}
+  </ul>
+</nav>

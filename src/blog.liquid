@@ -1,14 +1,44 @@
 ---
 layout: default
 title: Blog
+permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber }}/{% endif %}index.html"
+pagination:
+  data: collections.posts
+  size: 5
+  reverse: true
+  alias: posts
+customStyle: >
+  :root {
+    --main-bg-color:#cfd3ed;
+    --main-bg-gradient:radial-gradient(#e9f7da, #cfebed, #cfd3ed);
+  }
 ---
 
 <h2>Blog</h2>
 
 This is my blog.
 
-{% for post in collections.posts %}
+{% for post in posts %}
   <a href="{{ post.url }}">
-    <h3>{{ post.data.title }}</h3>
+    <h3 id="{{post.data.date}}">{{ post.data.title }}</h3>
   </a>
 {% endfor %}
+
+<nav class="bottom bold">
+  <ul>
+  {% if pagination.href.previous %}
+    <li>
+      <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards">
+        &lt; Newer Posts
+      </a>
+    </li>
+  {% endif %}
+  {% if pagination.href.next %}
+    <li>
+      <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards">
+        Older posts &gt;
+      </a>
+    </li>
+  {% endif %}
+  </ul>
+</nav>
