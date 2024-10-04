@@ -757,6 +757,7 @@ video.html-video-fallback {
 /* FORMS */
 
 form {
+  width:100%;
   max-width:450px;
   margin-top:2em;
 }
@@ -767,6 +768,7 @@ form label {
 
 form input {
   width:100%;
+  box-sizing:border-box;
   height:2em;
   border:1.5px solid;
   border-radius:5px;
@@ -789,6 +791,7 @@ form input:focus {
 
 form textarea {
   width:100%;
+  box-sizing:border-box;
   height:8em;
   resize:none;
   border:1.5px solid;
