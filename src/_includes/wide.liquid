@@ -1,24 +1,13 @@
 ---
 layout: global
 ---
-{% include "head.liquid" %}
 
-<body>
+{% include "header.liquid" %}
 
-  <div class="container">
+<main>
 
-      {% include "header.liquid" %}
+  {{content}}
 
-      <main>
+</main>
 
-        {{content}}
-
-      </main>
-
-      {% include "footer.liquid" %}
-
-  </div>
-
-</body>
-
-</html>
+{% include "footer.liquid" %}
