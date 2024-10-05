@@ -164,6 +164,11 @@ nav ul li a {
   text-decoration:none;
 }
 
+nav ul li b {
+  display:block;
+  padding:0.1em;
+}
+
 nav ul li a.current-link {
   border:solid 1.5px;
   color:var(--white);

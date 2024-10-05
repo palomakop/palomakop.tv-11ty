@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Blog
-permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber }}/{% endif %}index.html"
+permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 pagination:
   data: collections.posts
   size: 5
@@ -16,11 +16,21 @@ customStyle: >
 
 <h2>Blog</h2>
 
-This is my blog.
+<p>This is my blog.</p>
+
+<nav class="top">
+  <ul>
+    <li><b>Page:</b></li>
+{%- for pageEntry in pagination.pages %}
+    <li><a href="{{ pagination.hrefs[ forloop.index0 ] }}"{% if page.url == pagination.hrefs[ forloop.index0 ] %} class="current-link"{% endif %}>{{ forloop.index }}</a></li>
+{%- endfor %}
+    <li><b>...</b></li>
+  </ul>
+</nav>
 
 {% for post in posts %}
   <a href="{{ post.url }}">
-    <h3 id="{{post.data.date}}">{{ post.data.title }}</h3>
+    <h3 id="{{post.data.date}}">{{post.data.date}} ● {{ post.data.title }}</h3>
   </a>
 {% endfor %}
 

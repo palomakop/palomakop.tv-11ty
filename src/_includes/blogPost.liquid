@@ -11,7 +11,7 @@ customStyle: >
 {% assign pageNumber = 0 %}
 {% for post in postCollection %}
   {% if post.url == page.url %}
-    {% assign pageNumber = forloop.index | minus: 1 | divided_by: 5 | floor %}
+    {% assign pageNumber = forloop.index | minus: 1 | divided_by: 5 | floor | plus: 1 %}
     {% assign indexNumber = forloop.index %}
   {% endif %}
 {% endfor %}
@@ -24,7 +24,7 @@ customStyle: >
   </ul>
 </nav>
 
-<h2>{{date}} / {{title}}</h2>
+<h2>{{date}} ● {{title}}</h2>
 
 This is a blog post:
 
