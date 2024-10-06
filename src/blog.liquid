@@ -14,19 +14,37 @@ customStyle: >
   }
 ---
 
+<nav class="top bold">
+  <ul>
+    <li>
+      <a href="{{ pagination.href.first }}{{ paginationAnchor }}" data-direction="backwards" {% unless pagination.href.previous %}class="current-link"{% endunless %}>
+        &lt;&lt;
+      </a>
+    </li>
+    <li>
+      <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards" {% unless pagination.href.previous %}class="current-link"{% endunless %}>
+        &lt;
+      </a>
+    </li>
+    <li>
+      <b>{{ pagination.pageNumber | plus: 1 }} / {{ pagination.pages | size }}</b>
+    </li>
+    <li>
+      <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards" {% unless pagination.href.next %}class="current-link"{% endunless %}>
+        &gt;
+      </a>
+    </li>
+    <li>
+      <a href="{{ pagination.href.last }}{{ paginationAnchor }}" data-direction="forwards" {% unless pagination.href.next %}class="current-link"{% endunless %}>
+        &gt;&gt;
+      </a>
+    </li>
+  </ul>
+</nav>
+
 <h2>Blog</h2>
 
 <p>This is my blog.</p>
-
-<nav class="top">
-  <ul>
-    <li><b>Page:</b></li>
-{%- for pageEntry in pagination.pages %}
-    <li><a href="{{ pagination.hrefs[ forloop.index0 ] }}"{% if page.url == pagination.hrefs[ forloop.index0 ] %} class="current-link"{% endif %}>{{ forloop.index }}</a></li>
-{%- endfor %}
-    <li><b>...</b></li>
-  </ul>
-</nav>
 
 {% for post in posts %}
   <a href="{{ post.url }}">
@@ -36,19 +54,28 @@ customStyle: >
 
 <nav class="bottom bold">
   <ul>
-  {% if pagination.href.previous %}
     <li>
-      <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards">
-        &lt; Newer Posts
+      <a href="{{ pagination.href.first }}{{ paginationAnchor }}" data-direction="backwards" {% unless pagination.href.previous %}class="current-link"{% endunless %}>
+        &lt;&lt;
       </a>
     </li>
-  {% endif %}
-  {% if pagination.href.next %}
     <li>
-      <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards">
-        Older posts &gt;
+      <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards" {% unless pagination.href.previous %}class="current-link"{% endunless %}>
+        &lt;
       </a>
     </li>
-  {% endif %}
+    <li>
+      <b>{{ pagination.pageNumber | plus: 1 }} / {{ pagination.pages | size }}</b>
+    </li>
+    <li>
+      <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards" {% unless pagination.href.next %}class="current-link"{% endunless %}>
+        &gt;
+      </a>
+    </li>
+    <li>
+      <a href="{{ pagination.href.last }}{{ paginationAnchor }}" data-direction="forwards" {% unless pagination.href.next %}class="current-link"{% endunless %}>
+        &gt;&gt;
+      </a>
+    </li>
   </ul>
 </nav>
