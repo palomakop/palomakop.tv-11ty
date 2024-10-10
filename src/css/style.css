@@ -6,6 +6,7 @@
   --link-color:#000000;
   --link-hover-color:#210acf;
   --button-hover-color:rgb(25, 25, 0, 0.5);
+  --subtle-bg-color:#00000010;
   --hover-filter:
       invert(96%)
       sepia(8%)
@@ -62,7 +63,7 @@ body {
 main {
   clear:both;
   width:100%;
-  margin-bottom:4em;
+  margin-bottom:6rem;
 }
 
 main h2:first-child {
@@ -223,7 +224,7 @@ button.current-link {
 
 footer {
   clear:both;
-  margin-top:1rem;
+  margin-top:2rem;
   padding:10px 0px;
 }
 
@@ -231,46 +232,58 @@ footer p {
   font-style:italic;
   font-weight:var(--medium-weight);
   font-size:var(--small-font-size);
+  border-bottom:2px dotted;
+  padding-bottom:0.4em;
 }
 
 footer ul {
   list-style-type:none;
   padding:0;
-  margin:0;
+  margin:1.2em 0;
   display:flex;
   flex-wrap:wrap;
-  gap:0em 1em;
+  gap:0.5em 1.3em;
+  align-items:baseline;
 }
 
 footer ul li {
   float:left;
+  margin:0;
 }
 
 footer ul li a{
   text-decoration:none;
   display:flex;
   flex-wrap:none;
+  align-items:center;
 }
 
 footer ul li img {
-  height:30px;
-  width:30px;
+  height:1.1rem;
+  width:1.1rem;
 }
 
 @media (hover:hover) {
-  footer ul li:hover {
+  footer ul li a:hover {
     color:#000000;
     filter:var(--svg-hover-filter);
+    text-decoration:none;
   }
 }
 
-.license-icons {
-  margin-top:5px;
+footer li span {
+  font-weight:var(--black-weight);
+  font-size:var(--small-font-size);
+  margin-left:0.7ch;
 }
 
-.license-icons img {
-  height:20px;
-  width:20px;
+@media only screen and (max-width:784px) {
+  footer ul {
+    gap:0.6em;
+  }
+  footer ul li {
+    flex-basis: 13ch;
+  }
 }
 
 /* TEXT */
@@ -600,7 +613,7 @@ photo-grid.two-column img, photo-grid.three-column img {
 
 @media only screen and (min-width:785px) {
   photo-grid.tarot{
-    background-color:#00000010;
+    background-color:var(--subtle-bg-color);
     transition:background-color 1s;
   }
 }
