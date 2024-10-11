@@ -24,11 +24,13 @@ customStyle: >
   </ul>
 </nav>
 
-<h2>{{date}} ● {{title}}</h2>
+<article class="news-item">
 
-This is a blog post:
+  <h2>{{date}} ● {{title}}</h2>
 
-{{content}}
+  {{content}}
+
+</article>
 
 {% assign previousPost = postCollection | getPreviousCollectionItem: page %}
 

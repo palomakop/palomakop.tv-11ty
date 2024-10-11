@@ -8,51 +8,11 @@
 
 
 
-
-
-/* NEWS */
-
 .news-archive {
   font-style:italic;
 }
 
-.news-item {
-  margin-top:3em;
-  margin-bottom:4em;
-}
 
-.news-item img {
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-  border-radius:5px;
-  margin-bottom:1.4em;
-}
-
-@media only screen and (min-width:785px) {
-  .news-item img {
-    max-width:720px;
-    max-height:720px;
-    height:auto;
-    width:auto;
-  }
-}
-
-@media only screen and (max-width:784px) {
-  .news-item img {
-    width:100%;
-    height:auto;
-  }
-}
-
-.news-item h2 {
-  text-transform:none;
-  letter-spacing:0em;
-  font-size:1.2em;
-  padding:0.5rem;
-  border-top:2px dotted;
-  border-bottom:2px dotted;
-}
 
 /* ABOUT PAGE */
 

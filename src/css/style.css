@@ -972,3 +972,59 @@ form button {
   margin:0.2em 0;
   font-weight:bold;
 }
+
+/* NEWS */
+
+.news-item {
+  margin-top:3em;
+  margin-bottom:4em;
+}
+
+.news-item img {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius:5px;
+  margin-bottom:1.4em;
+}
+
+@media only screen and (min-width:785px) {
+  .news-item img {
+    max-width:720px;
+    max-height:720px;
+    height:auto;
+    width:auto;
+  }
+}
+
+@media only screen and (max-width:784px) {
+  .news-item img {
+    width:100%;
+    height:auto;
+  }
+}
+
+.news-item h2, .news-item h3 {
+  text-transform:none;
+  letter-spacing:0em;
+  font-size:1.2em;
+  padding:0.5rem 0;
+  border-top:2px dotted;
+  border-bottom:2px dotted;
+}
+
+.news-item h3 a {
+  text-decoration:none;
+  font-weight:var(--black-font-weight);
+}
+
+.news-item .permalink {
+  font-weight:var(--bold-font-weight);
+  margin-top:-1em;
+}
+
+.news-item .permalink a {
+  font-style:italic;
+  text-decoration:dotted underline;
+  text-decoration-thickness:2px;
+}

@@ -42,14 +42,16 @@ customStyle: >
   </ul>
 </nav>
 
-<h2>Blog</h2>
+<h2>Web Log</h2>
 
-<p>This is my blog.</p>
+<p>Here are some things I've been up to. To stay updated, subscribe to my <a href="/newsletter">email newsletter</a>, or visit my <a href="/now">now page</a>!</p>
 
 {% for post in posts %}
-  <a href="{{ post.url }}">
-    <h3 id="{{post.data.date}}">{{post.data.date}} ● {{ post.data.title }}</h3>
-  </a>
+  <article id="{{post.data.date}}" class="news-item">
+    <h3><a href="{{ post.url }}">{{post.data.date}} ● {{ post.data.title }}</a></h3>
+    <p class="permalink">Permalink: <a href="{{ post.url }}">{{ post.url }}</a></p>
+    {{post.content}}
+  </article>
 {% endfor %}
 
 <nav class="bottom bold">
