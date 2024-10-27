@@ -1,28 +1,17 @@
 ---
 layout: global
 ---
-{% include "head.liquid" %}
 
-<body>
+<div class="column-container">
 
-  <div class="container">
+  {% include "header.liquid" %}
 
-    <div class="column-container">
+  <main class="cv">
 
-      {% include "header.liquid" %}
+    {{content}}
 
-      <main class="cv">
+  </main>
 
-        {{content}}
+  {% include "footer.liquid" %}
 
-      </main>
-
-      {% include "footer.liquid" %}
-
-    </div>
-
-  </div>
-
-</body>
-
-</html>
+</div>
