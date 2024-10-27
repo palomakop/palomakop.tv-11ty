@@ -21,7 +21,7 @@ lightbox: true
 
 {% include "paginav.liquid" %}
 
-<article-list>
+<div class="article-list">
 {% for post in posts %}
   <article id="{{post.data.date}}" class="blog-post">
     <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
@@ -31,6 +31,6 @@ lightbox: true
     <img src="https://s3.amazonaws.com/palomakop.tv/now/icons/cube.svg" class="graphic" style="margin-top:1.5rem;width:1.3em;height:1.3em;">
   </article>
 {% endfor %}
-</article-list>
+</div>
 
 {% include "paginav.liquid" %}

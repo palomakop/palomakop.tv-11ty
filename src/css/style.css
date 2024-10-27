@@ -1003,11 +1003,10 @@ form button {
 
 /* BLOG */
 
-article-list {
+.article-list {
   display:flex;
   flex-wrap:wrap;
   gap:1rem;
-  max-width:100%;
 }
 
 .blog-post img {
