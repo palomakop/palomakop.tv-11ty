@@ -12,72 +12,25 @@ customStyle: >
     --main-bg-color:#cfd3ed;
     --main-bg-gradient:radial-gradient(#e9f7da, #cfebed, #cfd3ed);
   }
+lightbox: true
 ---
 
-<nav class="top bold">
-  <ul>
-    <li>
-      <a href="{{ pagination.href.first }}{{ paginationAnchor }}" data-direction="backwards" {% unless pagination.href.previous %}class="current-link"{% endunless %}>
-        &lt;&lt;
-      </a>
-    </li>
-    <li>
-      <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards" {% unless pagination.href.previous %}class="current-link"{% endunless %}>
-        &lt;
-      </a>
-    </li>
-    <li>
-      <b>{{ pagination.pageNumber | plus: 1 }} / {{ pagination.pages | size }}</b>
-    </li>
-    <li>
-      <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards" {% unless pagination.href.next %}class="current-link"{% endunless %}>
-        &gt;
-      </a>
-    </li>
-    <li>
-      <a href="{{ pagination.href.last }}{{ paginationAnchor }}" data-direction="forwards" {% unless pagination.href.next %}class="current-link"{% endunless %}>
-        &gt;&gt;
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<h2>Web Log</h2>
+<h2>Blog</h2>
 
 <p>Here are some things I've been up to. To stay updated, subscribe to my <a href="/newsletter">email newsletter</a>, or visit my <a href="/now">now page</a>!</p>
 
+{% include "paginav.liquid" %}
+
+<article-list>
 {% for post in posts %}
-  <article id="{{post.data.date}}" class="news-item">
-    <h3><a href="{{ post.url }}">{{post.data.date}} ● {{ post.data.title }}</a></h3>
-    <p class="permalink">Permalink: <a href="{{ post.url }}">{{ post.url }}</a></p>
+  <article id="{{post.data.date}}" class="blog-post">
+    <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+    <p class="metadata">{{page.date | date: "%B %e, %Y"}} | <a href="{{ post.url }}">Permalink</a></p>
+    {% image post.data.thumbnail, post.data.thumbnailAlt, 1440, "" %}
     {{post.content}}
+    <img src="https://s3.amazonaws.com/palomakop.tv/now/icons/cube.svg" class="graphic" style="margin-top:1.5rem;width:1.3em;height:1.3em;">
   </article>
 {% endfor %}
+</article-list>
 
-<nav class="bottom bold">
-  <ul>
-    <li>
-      <a href="{{ pagination.href.first }}{{ paginationAnchor }}" data-direction="backwards" {% unless pagination.href.previous %}class="current-link"{% endunless %}>
-        &lt;&lt;
-      </a>
-    </li>
-    <li>
-      <a href="{{ pagination.href.previous }}{{ paginationAnchor }}" data-direction="backwards" {% unless pagination.href.previous %}class="current-link"{% endunless %}>
-        &lt;
-      </a>
-    </li>
-    <li>
-      <b>{{ pagination.pageNumber | plus: 1 }} / {{ pagination.pages | size }}</b>
-    </li>
-    <li>
-      <a href="{{ pagination.href.next }}{{ paginationAnchor }}" data-direction="forwards" {% unless pagination.href.next %}class="current-link"{% endunless %}>
-        &gt;
-      </a>
-    </li>
-    <li>
-      <a href="{{ pagination.href.last }}{{ paginationAnchor }}" data-direction="forwards" {% unless pagination.href.next %}class="current-link"{% endunless %}>
-        &gt;&gt;
-      </a>
-    </li>
-  </ul>
-</nav>
+{% include "paginav.liquid" %}

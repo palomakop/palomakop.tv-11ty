@@ -153,8 +153,13 @@ nav.bottom {
 }
 
 nav ul li {
-  font-size:var(--body-font-size);
+  font-size:1.03rem;
+  font-weight:var(--medium-weight);
   margin:0;
+}
+
+nav ul li .divider {
+  padding:0 .5ch;
 }
 
 nav ul li a {
@@ -163,17 +168,26 @@ nav ul li a {
   border-radius:5px;
   padding:0.1em 0.5em;
   text-decoration:none;
+  font-weight:var(--medium-weight);
 }
 
 nav ul li b {
   display:block;
-  padding:0.1em;
+  padding:calc(0.1em + 1.5px) 0.3em;
 }
 
 nav ul li a.current-link {
   border:solid 1.5px;
   color:var(--white);
   background-color:#000000;
+  border-radius:5px;
+  pointer-events:none;
+}
+
+nav ul li a.unavailable {
+  border:solid 1.5px;
+  color:var(--white);
+  background-color:rgb(25, 25, 0, 0.3);
   border-radius:5px;
   pointer-events:none;
 }
@@ -594,7 +608,7 @@ photo-grid.tarot {
   transition:background-color 1s;
 }
 
-.news-item photo-grid.vertical, photo-grid.two-column, photo-grid.three-column {
+.blog-post photo-grid.vertical, photo-grid.two-column, photo-grid.three-column {
   margin-top:1.4em;
 }
 
@@ -986,14 +1000,15 @@ form button {
   font-weight:bold;
 }
 
-/* NEWS */
+/* BLOG */
 
-.news-item {
-  margin-top:3em;
-  margin-bottom:4em;
+article-list {
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
 }
 
-.news-item img {
+.blog-post img {
   display:block;
   margin-left:auto;
   margin-right:auto;
@@ -1002,7 +1017,7 @@ form button {
 }
 
 @media only screen and (min-width:785px) {
-  .news-item img {
+  .blog-post img {
     max-width:720px;
     max-height:720px;
     height:auto;
@@ -1011,33 +1026,45 @@ form button {
 }
 
 @media only screen and (max-width:784px) {
-  .news-item img {
+  .blog-post img {
     width:100%;
     height:auto;
   }
 }
 
-.news-item h2, .news-item h3 {
-  text-transform:none;
-  letter-spacing:0em;
-  font-size:1.2em;
+.blog-post h2 {
+  font-size:1.4em;
+  text-align:center;
   padding:0.5rem 0;
-  border-top:2px dotted;
-  border-bottom:2px dotted;
+  border-bottom:2.5px dotted;
+  margin-bottom:0.5rem;
 }
 
-.news-item h3 a {
+.blog-post h3 {
+  letter-spacing:0em;
+  font-size:1.3em;
+  padding:0 0 0.5rem;
+  border-bottom:2.5px dotted;
+  text-align:center;
+  margin-bottom:0.5rem;
+}
+
+.blog-post h3 a {
   text-decoration:none;
   font-weight:var(--black-font-weight);
 }
 
-.news-item .permalink {
+.blog-post .metadata {
   font-weight:var(--bold-font-weight);
-  margin-top:-1em;
+  font-size:var(--small-font-size);
+  text-align:center;
+  margin-top:0;
+  margin-bottom:1.5em;
 }
 
-.news-item .permalink a {
-  font-style:italic;
-  text-decoration:dotted underline;
-  text-decoration-thickness:2px;
+.blog-post .subtitle {
+  font-weight:var(--bold-font-weight);
+  text-align:center;
+  margin-top:0;
+  margin-bottom:1.3em;
 }

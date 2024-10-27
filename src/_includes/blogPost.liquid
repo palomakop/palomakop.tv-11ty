@@ -19,14 +19,20 @@ customStyle: >
 <nav class="top bold">
   <ul>
     <li>
-      <a href="/blog/{% if pageNumber > 1 %}page/{{ pageNumber }}/{% endif %}#{{date}}">&lt; Back to index</a>
+      <a href="/blog/{% if pageNumber > 1 %}page/{{ pageNumber }}/{% endif %}#{{date}}">&lt; View in feed</a>
     </li>
   </ul>
 </nav>
 
-<article class="news-item">
+<article class="blog-post">
 
-  <h2>{{date}} ● {{title}}</h2>
+  <h2>{{title}}</h2>
+
+  <p class="subtitle">{{page.date | date: "%B %e, %Y"}}</p>
+
+  <p></p>
+
+  {% image thumbnail, thumbnailAlt, 1440, "" %}
 
   {{content}}
 
@@ -36,7 +42,7 @@ customStyle: >
 
 {% assign nextPost = postCollection | getNextCollectionItem: page %}
 
-<nav class="bottom bold">
+<nav class="bottom bold centered">
   <ul>
   {% if previousPost %}
     <li>
