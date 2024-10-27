@@ -342,7 +342,7 @@ a {
   }
 }
 
-.external-link:after {
+.external-link:after, a[href^="http"]:not([href*="palomakop.tv"]):after {
   content:"";
   width:0.55em;
   height:0.55em;

@@ -1,7 +1,7 @@
 {
-  "tags": "posts",
-  "layout": "blogPost",
-  "description": "",
-  "permalink": "blog/{{date}}_{{ title  | truncatewords: 5 | slugify }}/",
-  "lightbox": true
+"tags": "posts",
+"layout": "blogPost",
+"description": "",
+"permalink": "blog/{{date}}_{{ title| truncatewords: 5 | slugify }}/",
+"lightbox": true
 }
