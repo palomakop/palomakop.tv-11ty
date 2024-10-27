@@ -1007,6 +1007,11 @@ form button {
   display:flex;
   flex-wrap:wrap;
   gap:1rem;
+  width:100%;
+}
+
+.blog-post {
+  width:100%;
 }
 
 .blog-post img {
