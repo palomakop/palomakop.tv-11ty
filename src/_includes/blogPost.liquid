@@ -28,7 +28,7 @@ customStyle: >
 
   <h2>{{title}}</h2>
 
-  <p class="subtitle">{{page.date | date: "%B %e, %Y"}}</p>
+  <p class="subtitle">{{date | addTimeToIsoDate | date: "%B %e, %Y"}}</p>
 
   <p></p>
 

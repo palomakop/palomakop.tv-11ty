@@ -95,6 +95,7 @@
   background:none;
   opacity:0.6;
   font-size:var(--body-font-size);
+  filter:drop-shadow(1.4px 1.4px 1px rgb(0, 0, 0, 1));
 }
 
 .slbCloseBtn::-moz-focus-inner, .slbArrow::-moz-focus-inner {

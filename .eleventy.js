@@ -65,6 +65,12 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/dflip");
   eleventyConfig.addPassthroughCopy("CNAME");
 
+  // TO UTC STRING
+  eleventyConfig.addLiquidFilter("addTimeToIsoDate", async function(date) {
+    date = date + "T08:00:00Z";
+    return date;
+  });
+
   // EXTERNAL LINK
   eleventyConfig.addShortcode("extLink", function(linkText, url) {
     return makeExtLink(linkText, url);
@@ -82,7 +88,7 @@ export default function(eleventyConfig) {
 
   // LIGHTBOX / PHOTO GRID SHORTCODES
   // types: vertical, two-column, three-column, tarot
-  eleventyConfig.addPairedShortcode("photoGrid", function(content, type, name) {
+  eleventyConfig.addPairedShortcode("photoGrid", function(content, type) {
     let id = makeId(10);
     return `<photo-grid class="${type} ${id}">${content}</photo-grid><script>var ${id} = new SimpleLightbox({elements: '.${id} a'});</script>`;
   });

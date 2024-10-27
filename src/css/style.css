@@ -56,6 +56,7 @@ body {
   background-repeat:no-repeat;
   font-family:var(--body-font);
   font-size:var(--body-font-size);
+  font-weight:var(--normal-weight);
   line-height:1.6;
   overflow-wrap:break-word;
   word-wrap:break-word;
@@ -660,7 +661,7 @@ photo-grid a {
   photo-grid.two-column {
     grid-template-columns:1fr 1fr;
   }
-  photo-grid.three-column .full-width {
+  photo-grid.two-column .full-width {
     grid-column:span 2;
   }
   photo-grid.three-column {
