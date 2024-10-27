@@ -1,6 +1,7 @@
 import path from "path";
 import Image from "@11ty/eleventy-img";
 import prettier from "prettier";
+import pluginRss from "@11ty/eleventy-plugin-rss";
 
 function makeId(length) {
   let result = 'id';
@@ -64,6 +65,8 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addPassthroughCopy("./src/dflip");
   eleventyConfig.addPassthroughCopy("CNAME");
+
+  eleventyConfig.addPlugin(pluginRss);
 
   // TO UTC STRING
   eleventyConfig.addLiquidFilter("addTimeToIsoDate", async function(date) {
