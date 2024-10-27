@@ -27,7 +27,7 @@
       <title>{{ post.data.title }}</title>
       <link>{{ absolutePostUrl }}</link>
       <description>
-        <![CDATA[<a href="{{ absolutePostUrl }}"><img src="{{ post.data.thumbnail }}" alt="{{ post.data.thumbnailAlt }}" style="width: 400px;height: auto;"/></a>{{ post.content | renderTransforms(post.data.page, metadata.base) }}]]>
+        <![CDATA[<a href="{{ absolutePostUrl }}"><img src="{{ post.data.thumbnail }}" alt="{{ post.data.thumbnailAlt }}" style="width: 400px;height: auto;"/></a>]]>{{ post.content | renderTransforms(post.data.page, metadata.base) }}
       </description>
       <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
       <dc:creator>{{ metadata.author.name }}</dc:creator>
