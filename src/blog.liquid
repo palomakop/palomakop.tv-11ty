@@ -25,7 +25,7 @@ lightbox: true
 {% for post in posts %}
   <article id="{{post.data.date}}" class="blog-post">
     <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-    <p class="metadata">{{page.date | date: "%B %e, %Y"}} | <a href="{{ post.url }}">Permalink</a></p>
+    <p class="metadata">{{post.data.date | date: "%B %e, %Y"}} | <a href="{{ post.url }}">Permalink</a></p>
     {% image post.data.thumbnail, post.data.thumbnailAlt, 1440, "" %}
     {{post.content}}
     <img src="https://s3.amazonaws.com/palomakop.tv/now/icons/cube.svg" class="graphic" style="margin-top:1.5rem;width:1.3em;height:1.3em;">
