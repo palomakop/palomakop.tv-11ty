@@ -76,7 +76,7 @@ export default function(eleventyConfig) {
   })
 
   // TO UTC STRING
-  eleventyConfig.addLiquidFilter("addTimeToIsoDate", async function(date) {
+  eleventyConfig.addFilter("addTimeToIsoDate", async function (date) {
     date = date + "T08:00:00Z";
     return date;
   });
