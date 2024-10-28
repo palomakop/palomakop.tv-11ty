@@ -68,6 +68,13 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss);
 
+  // REMOVE CERTAIN TAGS FOR RSS
+  eleventyConfig.addNunjucksFilter("rssSanitize", function(content) {
+    content = content.replace(/<script>.*<\/script>/g, "");
+    content = content.replace(/<\/?photo-grid.*>/g, "");
+    return content;
+  })
+
   // TO UTC STRING
   eleventyConfig.addLiquidFilter("addTimeToIsoDate", async function(date) {
     date = date + "T08:00:00Z";
