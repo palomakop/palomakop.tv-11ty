@@ -159,16 +159,11 @@ export default function(eleventyConfig) {
   eleventyConfig.setOutputDirectory("_site");
 
   eleventyConfig.addTransform("prettier", function (content, outputPath) {
-    const extname = path.extname(outputPath);
-    switch (extname) {
-      case ".html":
-      case ".json":
-        // Strip leading period from extension and use as the Prettier parser.
-        const parser = extname.replace(/^./, "");
-        return prettier.format(content, { parser });
-
-      default:
-        return content;
+    if (content.startsWith("<!DOCTYPE HTML>")) {
+      const parser = "html"
+      return prettier.format(content, { parser });
+    } else {
+      return content;
     }
   });
 
