@@ -1,7 +1,12 @@
 <footer>
 
   <p>
-    Page last updated: {{page.date | date: "%B %e, %Y"}}
+    Page last updated: 
+    {% if tags contains "posts" %}
+      {{date | addTimeToIsoDate | date: "%B %e, %Y"}}
+    {% else %}
+      {{page.date | date: "%B %e, %Y"}}
+    {% endif %}
   </p>
 
   <ul>

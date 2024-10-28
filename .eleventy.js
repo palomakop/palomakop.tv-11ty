@@ -77,7 +77,7 @@ export default function(eleventyConfig) {
 
   // TO UTC STRING
   eleventyConfig.addFilter("addTimeToIsoDate", async function (date) {
-    date = date + "T08:00:00Z";
+    date = date + "T09:00:00Z";
     return date;
   });
 
