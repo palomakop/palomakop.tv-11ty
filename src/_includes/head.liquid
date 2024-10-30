@@ -33,12 +33,36 @@
   title="Paloma Kop ♦ RSS Feed"
   href="/rss.xml" />
   <link href="/css/style.css" rel="stylesheet">
+
+  {% if dark %}
+  <link href="/css/dark.css" rel="stylesheet">
+  {% endif %}
+
   <link href="https://merveilles.town/@palomakop" rel="me">
 
+  {% if customStyleSheet %}
+  <link href="/css/{{customStyleSheet}}.css" rel="stylesheet">
+  {% endif %}
+
+  {% if customStyle %}
   <!-- css -->
   <style>
   {{ customStyle }}
   </style>
+  {% endif %}
+
+  {% if bgImage %}
+  <style>
+  :root {
+    --main-bg-gradient:none;
+  }
+  .bg {
+    background-image:url('{{bgImage}}');
+    {% if bgImageOpacity %}opacity:{{bgImageOpacity}};{% endif %}
+  }
+  </style>
+  {% endif %}
+
 
   <!-- opengraph tags -->
   <meta property="og:description" content="{{description}}">

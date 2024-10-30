@@ -4,10 +4,19 @@ date: git Last Modified
 description: Paloma Kop - experimental multimedia artist
 thumbnail: https://s3.amazonaws.com/palomakop.tv/og_image.jpg
 thumbnailAlt: ""
+customStyle: false
+customStyleSheet: false
+bgImage: false
+bgImageOpacity: false
+dark: false
 ---
 {% include "head.liquid" %}
 
 <body>
+
+  {% if bgImage %}
+  <div class="bg"></div>
+  {% endif %}
 
   <div class="container">
 

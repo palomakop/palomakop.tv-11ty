@@ -99,6 +99,18 @@ main h2:first-child {
   }
 }
 
+.bg {
+  width:100vw;
+  height:100vh;
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+  background-image:url("https://s3.amazonaws.com/palomakop.tv/mfa/refraction_projection.jpg");
+  background-size:cover;
+}
+
 /* HEADER */
 
 header {
@@ -179,19 +191,18 @@ nav ul li b {
   padding:calc(0.1em + 1.5px) 0.3em;
 }
 
-nav ul li a.current-link {
-  border:solid 1.5px;
-  color:var(--white);
-  background-color:#000000;
-  border-radius:5px;
+a.current-link {
   pointer-events:none;
 }
 
+nav ul li a.current-link {
+  color:var(--white);
+  background-color:#000000;
+}
+
 nav ul li a.unavailable {
-  border:solid 1.5px;
   color:var(--white);
   background-color:rgb(25, 25, 0, 0.3);
-  border-radius:5px;
   pointer-events:none;
 }
 
@@ -343,7 +354,7 @@ a {
   }
 }
 
-.external-link:after, a[href^="http"]:not(nav *):not(footer *):not([href*="palomakop.tv"]):after {
+.external-link:after, a[href^="http"]:not(nav *):not(footer *):not([href*="palomakop.tv"]):not(.now-button):after {
   content:"";
   width:0.5em;
   height:0.5em;
@@ -1027,7 +1038,7 @@ form button {
 @media only screen and (min-width:785px) {
   .blog-post img {
     max-width:720px;
-    max-height:720px;
+    max-height:max(100vh, 500px);
     height:auto;
     width:auto;
   }
@@ -1042,7 +1053,6 @@ form button {
 
 .blog-post h2 {
   font-size:1.4em;
-  text-align:center;
   padding:0.5rem 0;
   border-bottom:2.5px dotted;
   margin-bottom:0.5rem;
@@ -1053,7 +1063,6 @@ form button {
   font-size:1.3em;
   padding:0 0 0.5rem;
   border-bottom:2.5px dotted;
-  text-align:center;
   margin-bottom:0.5rem;
 }
 
@@ -1065,14 +1074,25 @@ form button {
 .blog-post .metadata {
   font-weight:var(--bold-font-weight);
   font-size:var(--small-font-size);
-  text-align:center;
   margin-top:0;
   margin-bottom:1.5em;
 }
 
 .blog-post .subtitle {
   font-weight:var(--bold-font-weight);
-  text-align:center;
   margin-top:0;
   margin-bottom:1.3em;
+}
+
+/* PAGE NAVIGATION */
+nav.paginav {
+  margin: 1.5em 0;
+}
+
+nav.paginav ul {
+  gap: 0.6rem;
+}
+
+nav.paginav a {
+  border-radius:0.6em;
 }

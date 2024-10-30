@@ -145,3 +145,7 @@ a.now-button {
   text-decoration:none;
   background-color:rgb(241, 240, 233);
 }
+
+footer p {
+  border-bottom:none;
+}

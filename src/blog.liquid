@@ -10,7 +10,7 @@ pagination:
 customStyle: >
   :root {
     --main-bg-color:#cfd3ed;
-    --main-bg-gradient:radial-gradient(#e9f7da, #cfebed, #cfd3ed);
+    --main-bg-gradient:radial-gradient(#d7e4c8, #cbe7e9, #d7dbf5);
   }
 lightbox: true
 ---
@@ -28,7 +28,6 @@ lightbox: true
     <p class="metadata">{{post.data.date | addTimeToIsoDate | date: "%B %e, %Y"}} | <a href="{{ post.url }}">Permalink</a></p>
     {% image post.data.thumbnail, post.data.thumbnailAlt, 1440, "" %}
     {{post.content}}
-    <img src="https://s3.amazonaws.com/palomakop.tv/now/icons/cube.svg" class="graphic" style="margin-top:1.5rem;width:1.3em;height:1.3em;">
   </article>
 {% endfor %}
 </div>

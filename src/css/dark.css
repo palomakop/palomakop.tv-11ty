@@ -1,0 +1,51 @@
+body {
+  background-color:#000000;
+  color:#ffffff;
+}
+
+a {
+  color:#ffffff;
+  text-decoration:underline;
+  text-decoration-thickness:1.5px;
+}
+
+@media (hover:hover) {
+  a:hover {
+    text-decoration:dotted underline;
+    text-decoration-thickness:2px;
+    color:#b1a0d2;
+  }
+}
+
+#header-image {
+  filter:invert();
+}
+
+@media (hover:hover) {
+  #header-image:hover {
+    filter:invert(0.7);
+  }
+}
+
+@media (hover:hover) {
+  nav ul li a:hover {
+    color:#ffffff;
+    background-color:transparent;
+    filter:invert(0.3);
+  }
+}
+
+footer ul li img {
+  filter:invert();
+}
+
+@media (hover:hover) {
+  footer ul li a:hover {
+    color:#ffffff;
+    filter:invert(0.3);
+  }
+}
+
+.external-link:after, a[href^="http"]:not(nav *):not(footer *):not([href*="palomakop.tv"]):after {
+  filter:invert();
+}
