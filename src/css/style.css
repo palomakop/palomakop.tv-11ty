@@ -354,7 +354,7 @@ a {
   }
 }
 
-.external-link:after, a[href^="http"]:not(nav *):not(footer *):not([href*="palomakop.tv"]):not(.now-button):after {
+.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):after {
   content:"";
   width:0.5em;
   height:0.5em;
