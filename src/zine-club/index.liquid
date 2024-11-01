@@ -6,6 +6,11 @@ customStyle: >
     --main-bg-color:#eceee7;
     --main-bg-gradient:radial-gradient(#e1f6dd, #eeefdd, #f8ecf2, #eef2ea);
   }
+clubMembers: 25
+mysteryObjectsSent: 65
+quarterlyEzinesSent: 43
+monthlyIncome: 155
+fundingGoal: 200
 ---
 
 <div class="column-container">
@@ -107,18 +112,20 @@ customStyle: >
   <h2 style="margin-top:2em;" id="stats">Current stats</h2>
 
   <ul>
-    <li>👤 <b>Members:</b> 25</li>
-    <li>✉️ <b>Mystery Objects sent:</b> 65</li>
-    <li>📖 <b>E-zines sent:</b> 43</li>
-    <li>💸 <b>Monthly income:</b> $155</li>
-    <li>🏁 <b>Current goal:</b> $200/month</li>
+    <li>🗓️ <b>Club has existed for:</b> {% assign myVar="now" | date: "%s" %}{{ '2024-04-01' | date: "%s" | minus: myVar | divided_by: 3600 | divided_by: 24  | divided_by: 30.437 | round | abs }} months</li>
+    <li>👤 <b>Members:</b> {{clubMembers}}</li>
+    <li>✉️ <b>Mystery Objects sent:</b> {{mysteryObjectsSent}}</li>
+    <li>📖 <b>E-zines sent:</b> {{quarterlyEzinesSent}}</li>
+    <li>💸 <b>Monthly income:</b> ${{monthlyIncome}}</li>
+    <li>🏁 <b>Current goal:</b> ${{fundingGoal}}/month</li>
     <li>🌀 <b>Weird art is being supported:</b> Yes!</li>
 
   </ul>
 
+  {% assign fundingPercentage=monthlyIncome | divided_by: fundingGoal | times: 100 | round %}
   <div class="funding-thermometer">
-    <div class="funding-mercury">
-      <span class="funding-percentage">78%</span>
+    <div class="funding-mercury" style="background-size:calc(10000% / {{fundingPercentage}});width:{{fundingPercentage}}%;">
+      <span class="funding-percentage">{{fundingPercentage}}%</span>
     </div>
   </div>
 
