@@ -29,6 +29,9 @@ async function makeImage(src, alt, width, classes) {
       const name = path.basename(src, extension);
       return `${name}-${width}w-${id}.${format}`;
     },
+    sharpOptions: {
+      animated: true,
+    },
   });
   let data = metadata[Object.keys(metadata)[0]][0];
   let imageAttributes = {
@@ -53,6 +56,9 @@ async function makeImageUrl(src, width) {
       const name = path.basename(src, extension);
       return `${name}-${width}w-${id}.${format}`;
     },
+    sharpOptions: {
+      animated: true,
+    },
   });
   let data = metadata[Object.keys(metadata)[0]][0];
   return data.url;
@@ -72,6 +78,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addNunjucksFilter("rssSanitize", function(content) {
     content = content.replace(/<script>.*<\/script>/g, "");
     content = content.replace(/<\/?photo-grid.*>/g, "");
+    content = content.replace(/<video class="html-video-fallback".*<\/video>/g, "");
     return content;
   })
 

@@ -2,7 +2,7 @@
   <ul>
     <li>
       <a href="{{ pagination.href.first }}{{ paginationAnchor }}" data-direction="backwards" {% unless pagination.href.previous %}class="unavailable"{% endunless %}>
-        &lt;&lt;
+        <span style="letter-spacing:-0.11em;">&lt;</span>&lt;
       </a>
     </li>
     <li>
@@ -20,7 +20,7 @@
     </li>
     <li>
       <a href="{{ pagination.href.last }}{{ paginationAnchor }}" data-direction="forwards" {% unless pagination.href.next %}class="unavailable"{% endunless %}>
-        &gt;&gt;
+        <span style="letter-spacing:-0.11em;">&gt;</span>&gt;
       </a>
     </li>
   </ul>
