@@ -710,7 +710,7 @@ video {
 }
 
 .video-iframe-container {
-  height:auto;
+  height:0;
   position:relative;
   overflow:hidden;
   width:100%;
