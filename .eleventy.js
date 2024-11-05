@@ -78,7 +78,8 @@ export default function(eleventyConfig) {
   eleventyConfig.addNunjucksFilter("rssSanitize", function(content) {
     content = content.replace(/<script>.*<\/script>/g, "");
     content = content.replace(/<\/?photo-grid.*>/g, "");
-    content = content.replace(/<video class="html-video-fallback".*<\/video>/g, "");
+    // content = content.replace(/<video class="html-video-fallback".*<\/video>/g, "");
+    content = content.replace(/<div class="video-iframe-container.*<\/iframe><\/div>/g, "");
     return content;
   })
 
