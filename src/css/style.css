@@ -697,13 +697,13 @@ photo-grid img {
 /* VIDEOS */
 
 .video-container {
-  max-width:100%;
+  width:100%;
   height:auto;
   margin-bottom:1.5em;
 }
 
 video {
-  max-width:100%;
+  width:100%;
   height:auto;
   border-radius:5px;
   margin-bottom:0.5em;
