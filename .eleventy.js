@@ -79,8 +79,8 @@ export default function(eleventyConfig) {
     content = content.replace(/<script>.*<\/script>/g, "");
     content = content.replace(/<\/?photo-grid.*>/g, "");
     content = content.replace(/<video class="html-video-fallback".*<\/video>/g, "");
-    content = content.replace(/<div class="video-iframe-container" style="padding-top:.*%;">/g, "");
-    content = content.replace(/<\/iframe><\/div>/g, "</iframe>");
+    // content = content.replace(/<div class="video-iframe-container" style="padding-top:.*%;">/g, "");
+    // content = content.replace(/<\/iframe><\/div>/g, "</iframe>");
     // content = content.replace(/<div class="video-iframe-container.*<\/iframe><\/div>/g, "");
     return content;
   })
@@ -150,7 +150,7 @@ export default function(eleventyConfig) {
       watchLinksHtml += links.join(" | ");
     }
     let aspectPaddingPercent = height / 500 * 100;
-    return `<div class="video-container"><div class="video-iframe-container" style="padding-top:${aspectPaddingPercent}%;"><iframe src="https://player.vimeo.com/video/${vimeoId}?dnt=1&title=0&byline=0&portrait=0" width="500" height="${height}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><video class="html-video-fallback" width="500" height="${height}" controls="controls" preload="metadata" poster="${thumbnailUrl}" style="aspect-ratio: 500/${height}"><source src="${videoFileUrl}" type="video/mp4" /><b>Your browser does not support the video tag. Here is a direct link to the <a href="${videoFileUrl}">MP4 file</a>.</b></video><div class="video-caption">${duration}${watchLinksHtml}</div></div>`;
+    return `<div class="video-container"><div class="video-iframe-container" style="padding-top:${aspectPaddingPercent}%;height:auto;position:relative;overflow:hidden;width:100%;max-width:720px;"><iframe src="https://player.vimeo.com/video/${vimeoId}?dnt=1&title=0&byline=0&portrait=0" width="500" height="${height}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100%;"></iframe></div><video class="html-video-fallback" width="500" height="${height}" controls="controls" preload="metadata" poster="${thumbnailUrl}" style="aspect-ratio: 500/${height}"><source src="${videoFileUrl}" type="video/mp4" /><b>Your browser does not support the video tag. Here is a direct link to the <a href="${videoFileUrl}">MP4 file</a>.</b></video><div class="video-caption">${duration}${watchLinksHtml}</div></div>`;
   });
 
   // MUSIC PLAYER

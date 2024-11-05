@@ -1039,7 +1039,7 @@ form button {
 
 @media only screen and (min-width:785px) {
   .blog-post img {
-    max-width:720px;
+    max-width:100%;
     max-height:max(100vh, 500px);
     height:auto;
     width:auto;
