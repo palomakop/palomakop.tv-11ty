@@ -38,7 +38,7 @@ async function makeImage(src, alt, width, classes) {
     alt,
     loading: "lazy",
     decoding: "async",
-    style: `aspect-ratio:${data.width}/${data.height};max-width:100%;`
+    style: `aspect-ratio:${data.width}/${data.height};max-width:100%;height:auto;`
   };
   if (classes) {
     imageAttributes.class = classes;
