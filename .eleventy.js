@@ -38,7 +38,7 @@ async function makeImage(src, alt, width, classes) {
     alt,
     loading: "lazy",
     decoding: "async",
-    style: `aspect-ratio:${data.width}/${data.height}`
+    style: `aspect-ratio:${data.width}/${data.height};max-width:100%;`
   };
   if (classes) {
     imageAttributes.class = classes;
@@ -78,8 +78,10 @@ export default function(eleventyConfig) {
   eleventyConfig.addNunjucksFilter("rssSanitize", function(content) {
     content = content.replace(/<script>.*<\/script>/g, "");
     content = content.replace(/<\/?photo-grid.*>/g, "");
-    // content = content.replace(/<video class="html-video-fallback".*<\/video>/g, "");
-    content = content.replace(/<div class="video-iframe-container.*<\/iframe><\/div>/g, "");
+    content = content.replace(/<video class="html-video-fallback".*<\/video>/g, "");
+    content = content.replace(/<div class="video-iframe-container" style="padding-top:.*%;">/g, "");
+    content = content.replace(/<\/iframe><\/div>/g, "</iframe>");
+    // content = content.replace(/<div class="video-iframe-container.*<\/iframe><\/div>/g, "");
     return content;
   })
 
