@@ -15,7 +15,7 @@ thumbnailAlt: abstract video art projected on a large spherical white weather ba
 
 ## *{{title}}*, {{workYear}}
 
-{% video "997229580", "https://player.vimeo.com/progressive_redirect/playback/997229580/rendition/720p/file.mp4?loc=external&signature=62362392f6d172e13441c098f4759b8324ac37ff5d307e3dd882008c2cd6d787", "25:45", '{"Youtube":"https://youtu.be/3Vii30QzmeI","Peertube":"https://videos.scanlines.xyz/w/uJTa1bchqGCByWpQqDE7SS"}' %}
+{% video "997229580", "https://player.vimeo.com/progressive_redirect/playback/997229580/rendition/720p/file.mp4?loc=external&signature=62362392f6d172e13441c098f4759b8324ac37ff5d307e3dd882008c2cd6d787", '{"Youtube":"https://youtu.be/3Vii30QzmeI","Peertube":"https://videos.scanlines.xyz/w/uJTa1bchqGCByWpQqDE7SS"}' %}
 
 *Edge of Light* was a light art exhibition curated by fellow artist {% extLink "Jonathan Sims", "https://chromadetic.com/" %} for HoloCenter. I performed this a/v set for the exhibition opening, using an 8 foot spherical weather balloon as my projection surface. The opening performances were curated by {% extLink "Testu Collective", "https://www.testucollective.com/" %}, and the documentation was shot by Shintaro Ueyama.
 
