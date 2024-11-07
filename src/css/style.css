@@ -355,7 +355,7 @@ a {
   }
 }
 
-.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.thumbnail-fallback):after {
+.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):after {
   content:"";
   width:0.5em;
   height:0.5em;
@@ -730,10 +730,6 @@ video {
 }
 
 video.html-video-fallback {
-  display:none;
-}
-
-.video-container .thumbnail-fallback {
   display:none;
 }
 
