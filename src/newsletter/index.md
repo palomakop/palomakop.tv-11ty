@@ -6,6 +6,7 @@ customStyle: >
     --main-bg-color:#dadfd6;
     --main-bg-gradient:radial-gradient(#e4dfee, #f1dbdb, #d9e2d7);
   }
+latestIssue: https://buttondown.com/palomakop/archive/pk-newsletter-november/
 ---
 
 ## Subscribe to my Email Newsletter
@@ -24,4 +25,4 @@ I usually send out updates every 1-3 months about my activities as an artist and
   <button type="submit" value="Subscribe">Subscribe</button>
 </form>
 
-<p style="margin-top:2em;">Read the latest issue {% extLink "here", "https://buttondown.email/palomakop/archive/pk-newsletter-june/" %}.</p>
+<p style="margin-top:2em;">Read the latest issue {% extLink "here", latestIssue %}.</p>
