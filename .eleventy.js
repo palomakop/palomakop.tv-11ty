@@ -71,6 +71,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addPassthroughCopy("./src/dflip");
   eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy("./src/button.gif");
 
   eleventyConfig.addPlugin(pluginRss);
 
