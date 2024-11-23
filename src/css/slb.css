@@ -64,27 +64,25 @@
   display:block;
   line-height:0;
   box-sizing:border-box;
-  padding:2em 0;
+  padding:2.25rem 0;
   margin:0 auto;
   cursor:e-resize;
 }
 
 .slbCaption {
-  display:inline-block;
-  max-width:100%;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+  width:fit-content;
+  line-height:1em;
   word-wrap:normal;
   position:absolute;
   left:0;
   right:0;
-  bottom:0;
-  padding:0.5em 0;
-  color:var(--white);
+  bottom:0.5em;
+  margin:0 auto;
   color:#f9f9f0c1;
+  background-color:#00000055;
   text-align:center;
-  font-size:var(--body-font-size);
+  font-style:italic;
+  font-size:0.9rem;
 }
 
 .slbCloseBtn, .slbArrow {

@@ -11,6 +11,7 @@ mysteryObjectsSent: 65
 quarterlyEzinesSent: 43
 monthlyIncome: 155
 fundingGoal: 200
+lightbox: true
 ---
 
 <div class="column-container">
@@ -108,6 +109,23 @@ fundingGoal: 200
   </p>
 
   <a class="rainbutton" href="https://billing.stripe.com/p/login/28o9E92ga3yH3kIfYY" target="_blank" rel="noopener">Edit or cancel your subscription</a>
+
+  <h2 style="margin-top:2em;">Gallery of Past Zines and Objects</h2>
+
+{% photoGrid "three-column" %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/stickers.jpg", "Exquisite Machines", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/self_same.png", "Self-Same Zine", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/foil_postcard.jpg", "Foil postcard", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/spore_card.jpg", "Life Cycle of Aritanian Flowers", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/8_card_spread.jpg", "Life Cycle of Aritanian Flowers", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/3_card_spread.jpg", "Life Cycle of Aritanian Flowers", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/messy_spread.jpg", "Life Cycle of Aritanian Flowers", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/places.png", "Places Zine", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/pcb_front.jpg", "PCB Object", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/pcb_back.jpg", "PCB Object", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/kicad_3d.png", "PCB Object", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/kicad.png", "PCB Object", true, false %}
+{% endphotoGrid %}
 
   <h2 style="margin-top:2em;" id="stats">Current stats</h2>
 
