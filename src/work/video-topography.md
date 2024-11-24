@@ -15,13 +15,6 @@ thumbnailAlt: abstract glass sculpture with three-dimensional glowing lines floa
 
 ## *{{title}}*, {{workYear}}
 
-{% comment %}
-- list of photoGrid possible types:
-  - vertical, two-column, three-column, tarot
-  - (tarot is a vertical single-column of images with transparency)
-- photoGridItem last 2 args: showCaption, isFullWidth
-  - (note: all items in a vertical photo grid should be full width)
-{% endcomment %}
 {% photoGrid "vertical" %}
 {% photoGridItem "https://s3.amazonaws.com/palomakop.tv/works/video-topography/video_topography_1_3000px.jpg", "Video Topography sculpture - front view; it looks a bit like an empty glowing fish tank with floating patterns of lines inside", false, true %}
 {% photoGridItem "https://s3.amazonaws.com/palomakop.tv/works/video-topography/video_topography_2_3000px.jpg", "Close-up view of the etched lines in glass", false, true %}

@@ -330,7 +330,7 @@ h3 {
   margin-top:1.5em;
 }
 
-p {
+p, details {
   max-width:720px;
   font-weight:var(--normal-weight);
   margin:0.8em 0 1em;
