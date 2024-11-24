@@ -355,7 +355,7 @@ a {
   }
 }
 
-.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):after {
+.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):after {
   content:"";
   width:0.5em;
   height:0.5em;
@@ -1058,7 +1058,7 @@ form button {
   }
 }
 
-.blog-post h2 {
+.blog-post h2, .archive-year {
   font-size:1.4em;
   padding:0.5rem 0;
   border-bottom:2.5px dotted;
@@ -1079,16 +1079,56 @@ form button {
 }
 
 .blog-post .metadata {
-  font-weight:var(--bold-font-weight);
   font-size:var(--small-font-size);
   margin-top:0;
   margin-bottom:1.5em;
 }
 
 .blog-post .subtitle {
-  font-weight:var(--bold-font-weight);
+  font-weight:var(--bold-weight);
   margin-top:0;
   margin-bottom:1.3em;
+}
+
+/* BLOG POST ARCHIVE */
+
+ul.post-archive {
+  list-style:none;
+  padding:0;
+}
+
+.post-archive li {
+  display:flex;
+  gap:2ch;
+}
+
+@media only screen and (max-width:380px) {
+  .post-archive li  {
+    flex-wrap:wrap-reverse;
+    gap:0;
+}
+  .post-archive li *  {
+      width:100%;
+  }
+}
+
+.post-archive li a {
+  font-weight:var(--bold-weight);
+  
+}
+
+.post-archive li span {
+  width:6ch;
+  height:fit-content;
+  flex-shrink:0;
+  font-style:italic;
+}
+
+.posts-number {
+  font-size:var(--small-font-size);
+  opacity:0.3;
+  font-style:italic;
+  font-weight:var(--bold-weight);
 }
 
 /* PAGE NAVIGATION */

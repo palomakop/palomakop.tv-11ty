@@ -114,6 +114,8 @@
         beforeDestroy: null,
         afterDestroy: null,
 
+        videoRegex: new RegExp(/videos.scanlines.xyz|vimeo.com/) // regex which tests load url for iframe content
+
     };
 
     assign(SimpleLightbox.prototype, {
@@ -274,6 +276,14 @@
 
             this.loading(true);
 
+            if (this.options.videoRegex.test(url)) {
+
+                callback.call(self, parseHtml(
+                    '<div class="slbIframeCont"><iframe class="slbIframe" frameborder="0" allowfullscreen src="' + url + '"></iframe></div>')
+                );
+
+            } else {
+
             var $imageCont = parseHtml(
                 '<div class="slbImageWrap"><img class="slbImage" src="' + url + '" /></div>'
             );
@@ -296,15 +306,21 @@
 
             });
 
+        }
+
             return this;
 
         },
 
         loadImage: function(url, callback) {
 
-            var image = new Image();
-            callback && (image.onload = callback);
-            image.src = url;
+            if (!this.options.videoRegex.test(url)) {
+
+                var image = new Image();
+                callback && (image.onload = callback);
+                image.src = url;
+
+            }
 
         },
 

@@ -1,0 +1,56 @@
+---
+layout: default
+title: Archive of Blog Posts
+customStyle: >
+  :root {
+    --main-bg-color:#cfd3ed;
+    --main-bg-gradient:radial-gradient(#d7e4c8, #cbe7e9, #d7dbf5);
+  }
+lightbox: true
+---
+
+<nav class="top bold">
+  <ul>
+    <li>
+      <a href="/blog/">&lt; Return to blog</a>
+    </li>
+  </ul>
+</nav>
+
+<h2>Archive of Blog Posts</h2>
+
+{% assign blog_start_year = 2017 %}
+{% assign current_year = "now" | date: "%Y" | to_integer %}
+{% assign posts = collections.posts | reverse %}
+
+<p>I've made {{collections.posts | size}} blog posts over the past {{ current_year | minus: blog_start_year | plus: 1 }} years. Here is a list of all of them.</p>
+
+<p><b>Jump to year:</b>
+{% for i in (blog_start_year..current_year) %}
+    <a href="#{{i}}">{{i}}</a>
+{% endfor %}
+
+{% for i in (blog_start_year..current_year) reversed %}
+{% assign section_year = i %}
+
+<h3 id="{{section_year}}" class="archive-year">{{section_year}}</h3>
+
+{% assign num_posts = 0 %}
+
+<ul class="post-archive">
+{% for post in posts %}
+{% assign post_year = post.data.date | addTimeToIsoDate | date: "%Y" | to_integer %}
+{% if post_year == section_year %}
+{% assign num_posts = num_posts | plus: 1 %}
+  <li>
+    <span>{{post.data.date | addTimeToIsoDate | date: "%d %b"}}</span>
+    <a href="{{ post.url }}">{{ post.data.title }}</a>
+  </li>
+{% endif %}
+{% endfor %}
+</ul>
+
+<p class="posts-number">({{num_posts}} posts made {% if section_year == current_year %}so far{% endif %} in {{section_year}})</p>
+
+{% endfor %}
+
