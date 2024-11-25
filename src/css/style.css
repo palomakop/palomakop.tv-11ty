@@ -355,7 +355,11 @@ a {
   }
 }
 
-.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):after {
+.external-link, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.centered) {
+  padding-right:0.7em;
+}
+
+.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):after {
   content:"";
   width:0.5em;
   height:0.5em;
@@ -365,6 +369,8 @@ a {
   background-repeat:no-repeat;
   background-size:contain;
   display:inline-block;
+  position:absolute;
+  translate:0.1em 0.6em;
 }
 
 ul {
@@ -665,7 +671,7 @@ photo-grid:not(.tarot) img {
   max-height:1080px;
 }
 
-photo-grid a {
+photo-grid a:not(.lightbox-ignore) {
   line-height:1;
   cursor:zoom-in;
 }
@@ -693,6 +699,34 @@ photo-grid img {
   photo-grid.two-column, photo-grid.three-column {
     grid-template-columns:1fr;
   }
+}
+
+photo-grid .video-grid-item a img {
+  aspect-ratio: 4 / 3 !important;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+photo-grid .video-thumb-caption {
+  margin-top:0.3em;
+  background:var(--unsubtle-bg-color);
+  padding:0.2em 0.5em 0.5em;
+  border-radius:10px;
+}
+
+photo-grid .video-thumb-caption h5 {
+  font-size:1em;
+  margin:0.5em;
+}
+
+photo-grid .video-thumb-caption ul {
+  margin:0.5em;
+  padding-left:3ch;
+  font-size:1rem;
+}
+
+photo-grid .video-thumb-caption li {
+  margin:0.2em 0;
 }
 
 /* VIDEOS */
@@ -918,7 +952,7 @@ form button {
 
 @media (hover:hover) {
   .tier a:hover img {
-    filter:invert();
+    filter:invert() grayscale(100%);
   }
 }
 

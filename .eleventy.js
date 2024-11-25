@@ -15,8 +15,12 @@ function makeId(length) {
   return result;
 }
 
-function makeExtLink(linkText, url) {
-  return `<a href="${url}" target="_blank" rel="noopener" class="external-link">${linkText}</a>`;
+function makeExtLink(linkText, url, optionalClass) {
+  let classString = "external-link";
+  if (optionalClass) {
+    classString = classString + " " + optionalClass;
+  }
+  return `<a href="${url}" target="_blank" rel="noopener" class="${classString}">${linkText}</a>`;
 }
 
 async function makeImage(src, alt, width, classes) {
@@ -93,8 +97,8 @@ export default function(eleventyConfig) {
   });
 
   // EXTERNAL LINK
-  eleventyConfig.addShortcode("extLink", function(linkText, url) {
-    return makeExtLink(linkText, url);
+  eleventyConfig.addShortcode("extLink", function(linkText, url, optionalClass) {
+    return makeExtLink(linkText, url, optionalClass);
   });
 
   // IMAGE <img> TAG
@@ -111,7 +115,7 @@ export default function(eleventyConfig) {
   // types: vertical, two-column, three-column, tarot
   eleventyConfig.addPairedShortcode("photoGrid", function(content, type) {
     let id = makeId(10);
-    return `<photo-grid class="${type} ${id}">${content}</photo-grid><script>var ${id} = new SimpleLightbox({elements: '.${id} a'});</script>`;
+    return `<photo-grid class="${type} ${id}">${content}</photo-grid><script>var ${id} = new SimpleLightbox({elements: '.${id} a:not(.lightbox-ignore)'});</script>`;
   });
 
   eleventyConfig.addShortcode("photoGridItem", async function(src, description, showCaption, isFullWidth) {

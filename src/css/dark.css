@@ -1,3 +1,7 @@
+:root {
+  --unsubtle-bg-color:#00000077;
+}
+
 body {
   background-color:#000000;
   color:#ffffff;
@@ -6,7 +10,7 @@ body {
 a {
   color:#ffffff;
   text-decoration:underline;
-  text-decoration-thickness:1.5px;
+  text-underline-offset:2px;
 }
 
 @media (hover:hover) {
@@ -48,4 +52,8 @@ footer ul li img {
 
 .external-link:after, a[href^="http"]:not(nav *):not(footer *):not([href*="palomakop.tv"]):after {
   filter:invert();
+}
+
+.tier-lower {
+  background-color:var(--unsubtle-bg-color);
 }
