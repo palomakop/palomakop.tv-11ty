@@ -16,7 +16,7 @@ a {
 @media (hover:hover) {
   a:hover {
     text-decoration:dotted underline;
-    text-decoration-thickness:2px;
+    text-decoration-thickness:1.25px;
     color:#b1a0d2;
   }
 }

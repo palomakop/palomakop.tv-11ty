@@ -345,12 +345,13 @@ a {
   text-decoration:underline;
   text-decoration-thickness:1.25px;
   font-weight:var(--normal-weight);
+  text-underline-offset:2px;
 }
 
 @media (hover:hover) {
   a:hover, details summary:hover {
     text-decoration:dotted underline;
-    text-decoration-thickness:2px;
+    text-decoration-thickness:1.25px;
     color:var(--link-hover-color);
   }
 }
@@ -402,7 +403,8 @@ details summary {
   cursor:pointer;
   color:#000000;
   text-decoration:underline;
-  text-decoration-thickness:1.5px;
+  text-underline-offset:2px;
+  text-decoration-thickness:1.25px;
   width:fit-content;
 }
 
@@ -616,7 +618,7 @@ photo-grid {
 }
 
 photo-grid:not(.tarot) {
-  margin-bottom:1.4em;
+  margin-bottom:1.5em;
 }
 
 photo-grid.tarot {
@@ -629,8 +631,8 @@ photo-grid.tarot {
   transition:background-color 1s;
 }
 
-.blog-post photo-grid.vertical, photo-grid.two-column, photo-grid.three-column {
-  margin-top:1.4em;
+photo-grid.vertical, photo-grid.two-column, photo-grid.three-column {
+  margin-top:1.5em;
 }
 
 photo-grid.two-column img, photo-grid.three-column img {
