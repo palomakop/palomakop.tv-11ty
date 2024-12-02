@@ -1,0 +1,12 @@
+# Redirects from what the browser requests to what we serve
+/works/decoherence      /work/decoherence
+/works/edge-of-light    /work/edge-of-light
+/works/ferrofluid       /work/ferrofluid
+/works/lumiagraph       /work/lumiagraph
+/works/magnetic-field-recordings /work/magnetic-field-recordings
+/works/signal-culture-series /work/signal-culture-series
+/works/sleepwalks-tapes /work/sleepwalks-tapes
+/works/tarot-of-subtle-forms /work/tarot-of-subtle-forms
+/works/video-topography /work/video-topography
+/news                   /blog
+/about                  /
