@@ -356,11 +356,11 @@ a {
   }
 }
 
-.external-link, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.centered) {
+.external-link, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.centered):not(.rainbutton) {
   padding-right:0.7em;
 }
 
-.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):after {
+.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.rainbutton):after {
   content:"";
   width:0.5em;
   height:0.5em;
