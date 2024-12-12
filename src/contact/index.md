@@ -33,6 +33,9 @@ customStyle: >
     <input type="checkbox" name="mailing-list">
   </label>
   <input type="checkbox" name="botcheck" class="hidden" style="display: none;" aria-hidden="true">
+  <div class="h-captcha" data-captcha="true" data-theme="dark" data-size="compact"></div>
   <input type="hidden" name="redirect" value="https://palomakop.tv/contact/submitted">
   <button type="submit">Send</button>
 </form>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>
