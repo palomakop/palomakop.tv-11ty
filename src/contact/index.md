@@ -14,8 +14,15 @@ customStyle: >
   name="contact"
   method="POST"
   action="/contact/submitted"
+  netlify-honeypot="email-address"
   netlify
   >
+  <div style="display:none;">
+    <label>
+      Don't fill this out if you are a person:
+      <input type="email" name="email-address">
+    </label>
+  </div>
   <label>
     Your email:
     <input type="email" name="email" required>
