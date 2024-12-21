@@ -423,6 +423,19 @@ details summary {
   max-width:300px;
 }
 
+.about-title-graphic {
+  display:block;
+  margin:1em 0 0.7em;
+  max-width:100%;
+  clear:both;
+  width:7ch;
+  height:1.4rem;
+}
+
+.about-title-graphic:hover {
+  transform: scaleX(-1);
+}
+
 .pixel-art {
   image-rendering:-webkit-crisp-edges;
   image-rendering:-moz-crisp-edges;
@@ -522,7 +535,7 @@ img-caption {
 }
 
 .about-text {
-  margin:1.8em 0 2em;
+  margin:1.8em 0 2.5em;
 }
 
 /* GALLERY */
