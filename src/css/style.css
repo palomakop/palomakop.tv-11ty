@@ -1126,6 +1126,29 @@ form button {
   margin-bottom:1.3em;
 }
 
+/* QUOTES */
+
+.quote-card {
+  border:solid 1.5px;
+  border-radius:25px;
+  padding:1.5em 2em;
+  margin:2em auto 3em;
+  max-width:45ch;
+  background-color:var(--subtle-bg-color);
+  background-color:#f3f0ea;
+}
+
+.quote-card blockquote {
+  margin:0;
+  font-style:italic;
+}
+
+.quote-card p {
+  text-align:right;
+  margin:1em 2em 0;
+  font-weight:var(--bold-weight)
+}
+
 /* BLOG POST ARCHIVE */
 
 ul.post-archive {
@@ -1160,11 +1183,12 @@ ul.post-archive {
   font-style:italic;
 }
 
-.posts-number {
+.subtle-caption {
   font-size:var(--small-font-size);
   opacity:0.3;
   font-style:italic;
   font-weight:var(--bold-weight);
+  display:block;
 }
 
 /* PAGE NAVIGATION */

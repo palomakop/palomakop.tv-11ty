@@ -11,7 +11,7 @@ clubMembers: 33
 mysteryObjectsSent: 93
 quarterlyEzinesSent: 68
 monthlyIncome: 211
-fundingGoal: 200
+fundingGoal: 300
 ---
 
 <div class="column-container">
@@ -123,11 +123,44 @@ fundingGoal: 200
 {% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/places.png", "Places Zine", true, false %}
 {% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/pcb_front.jpg", "PCB Object", true, false %}
 {% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/pcb_back.jpg", "PCB Object", true, false %}
-{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/kicad_3d.png", "PCB Object", true, false %}
 {% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/kicad.png", "PCB Object", true, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/zine-club/gallery/kicad_3d.png", "PCB Object", true, false %}
 {% endphotoGrid %}
 
-  <h2 style="margin-top:2em;" id="stats">Current stats</h2>
+  <h2 style="margin-top:2em;">Testimonials</h2>
+
+  <div class="quote-card">
+    <blockquote>
+      I've been a lucky recipient of a veritable question mark in an envelope every other month, and while I never know exactly what's inside, I know it's gonna be good. Thank you Paloma Kop for sharing your art to our mailboxes!
+    </blockquote>
+    <p>— Rachel</p>
+  </div>
+
+  <div class="quote-card">
+    <blockquote>
+      Being a member of the Zine Club has added a pocket dimension to my reality. Occasionally, and often when I least suspect it, a transmission or object appears from this dimension and it forces me to take a break from my normal life to ponder the other world that I glimpse through these findings. I love it. 
+    </blockquote>
+    <p>— Jon D</p>
+  </div>
+
+  <div class="quote-card">
+    <blockquote>
+      Something enigmatic to hold and consider. To stick, shuffle, touch, attach, etc. And thoughtful enough to not become waste.
+    </blockquote>
+    <p>— Casey</p>
+  </div>
+
+  <div class="quote-card">
+    <blockquote>
+      Big fan of the Zine Club Mystery Objects, it is always a fun surprise and the objects have been unique and interesting. This is a great way to support an independent artist while also having fun mystery objects sent to you to brighten your day. Highly recommend!
+    </blockquote>
+    <p>— Thomas</p>
+  </div>
+
+
+  
+
+  <h2 style="margin-top:2em;" id="stats">Current Stats</h2>
 
   <ul>
     <li>🗓️ <b>Club has existed for:</b> {% assign myVar="now" | date: "%s" %}{{ '2024-04-01' | date: "%s" | minus: myVar | divided_by: 3600 | divided_by: 24  | divided_by: 30.437 | round | abs }} months</li>
@@ -137,7 +170,6 @@ fundingGoal: 200
     <li>💸 <b>Monthly income:</b> ${{monthlyIncome}}</li>
     <li>🏁 <b>Current goal:</b> ${{fundingGoal}}/month</li>
     <li>🌀 <b>Weird art is being supported:</b> Yes!</li>
-
   </ul>
 
   {% assign fundingPercentage=monthlyIncome | divided_by: fundingGoal | times: 100 | round %}
@@ -149,6 +181,12 @@ fundingGoal: 200
 
   <p class=funding-caption>Goal progress</p>
 
-  <p>The goal has been reached! Thanks to you, this project is self-sustaining and I am able to create better zines and objects due to economy of scale.</p>
+  <p>When the current goal is reached, I'll be able to increase the amount of time I spend creating each zine/object. This will significantly expand the scale of projects I'm able to take on within the context of this club.</p>
+
+  <h3>Previously Achieved Goals</h3>
+
+  <p>✅ <b>$200/month</b>: The project is sustainable for me in the long term.
+  <span class="subtle-caption">December 2024</span>
+  </p>
 
 </div>
