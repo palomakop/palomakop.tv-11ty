@@ -1040,7 +1040,7 @@ form button {
 .funding-mercury {
   border-radius:13.5px 0 0 13.5px;
   height:100%;
-  background-image:linear-gradient(to right, #ff6666, #ffad33, #e6e600, #70db70, #4dd2ff, #9a9ae5, #ea62ea, #ff6666);
+  background-image:linear-gradient(to left, #ff6666, #ffad33, #e6e600, #70db70, #4dd2ff, #9a9ae5 );
   display:flex;
   justify-content:right;
   align-items:center;
