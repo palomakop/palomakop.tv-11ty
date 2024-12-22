@@ -99,7 +99,7 @@ a.now-button {
 @media (hover:hover) {
   a.now-button:hover {
     color:#ffffef;
-    background-color:rgba(255, 255, 255, 0.3);
+    background-color:rgba(255, 255, 239, 0.3);
   }
 }
 
