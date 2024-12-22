@@ -54,6 +54,7 @@ footer {
 .caption {
   font-size:0.8em;
   font-style:italic;
+  padding-bottom:0.1em;
 }
 
 h1 {
@@ -89,8 +90,8 @@ a.now-button {
   display:block;
   border:solid 1.5px;
   border-radius:10px;
-  margin-bottom:5px;
-  padding:0.5em 1.5ch;
+  margin-bottom:0.5em;
+  padding:0.5em 1.5ch 0.55em;
   margin:0 0 0.75em;
   text-decoration:none;
   color:#ffffef;
