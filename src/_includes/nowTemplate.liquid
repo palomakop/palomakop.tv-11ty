@@ -1,0 +1,56 @@
+---
+layout: global
+title: Now
+customStyleSheet: now_style
+dark: true
+bgImage: https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/glitch_bg.jpg
+bgImageOpacity: 0.7
+---
+
+<div class="mobile-column-container">
+  <header>
+    <h1>Paloma Kop</h1>
+    <p class="tagline">Experimental Multimedia Artist</p>
+    <ul class="social-logos">
+      <li>
+        <a href="https://merveilles.town/@palomakop" target="_blank" rel="noopener">
+          <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/masto.svg">
+        </a>
+      </li>
+      <li>
+        <a href="https://videos.scanlines.xyz/c/palomakop_channel/video-playlists" target="_blank" rel="noopener">
+          <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/pt.svg">
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/@palomakop" target="_blank" rel="noopener">
+          <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/yt.svg">
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/palomakop" target="_blank" rel="noopener">
+          <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/ig.svg">
+        </a>
+      </li>
+      <li>
+        <a href="https://palomakop.bandcamp.com" target="_blank" rel="noopener">
+          <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/bc.svg">
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <main>
+
+    {{content}}
+
+  </main>
+
+  <footer>
+    <p>
+      This is my /now page. It was last updated on {{page.date | date: "%B %e, %Y"}}.
+    </p>
+  </footer>
+
+
+</div>

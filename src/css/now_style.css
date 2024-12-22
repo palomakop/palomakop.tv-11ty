@@ -1,19 +1,22 @@
-:root {
-  --main-bg-gradient:none;
-}
-
 body {
   text-align:center;
+  color:#ffffef;
 }
 
 header {
   display:block;
   padding-bottom:0;
   margin:0;
+  padding:2em 0;
 }
 
 main {
   margin:0;
+  padding:0 0 3em;
+}
+
+footer {
+  margin-bottom:1.5em;
 }
 
 .mobile-column-container {
@@ -36,33 +39,16 @@ main {
   left:0;
   z-index:-1;
   opacity:1;
-  background-image:url("https://s3.amazonaws.com/palomakop.tv/now/gradient.jpg");
+  background-image:none;
   background-size:cover;
   background-position: center; 
 }
 
-header {
-  padding:20px 0 30px;
-}
-
-main {
-  padding:0 0 30px;
-}
-
-.sigil {
-  width:50px;
-  height:50px;
-  display:block;
-  margin:1em auto;
-}
-
 .tagline {
-  font-size:0.9em;
-  display:block;
-  margin:16px auto;
-  max-width:32ch;
-  font-weight:bold;
+  font-weight:var(--bold-weight);
   letter-spacing:0.01em;
+  margin:1rem 0;
+  text-align:center;
 }
 
 .caption {
@@ -71,36 +57,35 @@ main {
 }
 
 h1 {
-  display:block;
-  float:none;
-  margin:0;
-  text-transform:uppercase;
-  letter-spacing:0.1em;
-  font-size:1.5em;
+  font-size:2rem;
+  margin:1rem 3rem;
+  height:auto;
+  line-height:1em;
 }
 
 h2 {
-  font-size:1.2em;
-  margin-top:2em;
+  font-size:1.3rem;
+  margin:3.5em 0 1.8em;
+  font-weight:var(--black-weight);
 }
 
-.icon {
-  height:28px;
-  display:block;
-  margin:1em auto 0.5em;
+h3 {
+  font-size:1.2rem;
+  font-weight:var(--black-weight);
+  border-bottom:2px dotted;
+  margin:2rem 0 1rem;
 }
 
-.inline-icon {
-  height:22px;
-  display:inline;
+h3, p {
+  text-align:left;
 }
 
-p {
-  margin:1.75em 0;
+footer p {
+  border-bottom:none;
 }
 
 a.now-button {
-  width:calc(100%-3px);
+  box-sizing:border-box;
   display:block;
   border:solid 1.5px;
   border-radius:10px;
@@ -108,44 +93,38 @@ a.now-button {
   padding:0.5em 1.5ch;
   margin:0 0 0.75em;
   text-decoration:none;
-  background-color:rgb(241, 240, 233);
-}
-
-.platforms {
-  display:flex;
-  flex-wrap: wrap;
-  gap:0 0.75em;
-  justify-content:center;
-}
-
-@media only screen and (max-width:315px) {
-  .platforms {
-    grid-template-columns:1fr;
-  }
-}
-
-.platforms a.now-button {
-  min-width:9ch;
+  filter:sepia(1);
 }
 
 @media (hover:hover) {
   a.now-button:hover {
     color:#ffffff;
-    background-color:rgb(175, 124, 163);
+    background-color:rgba(255, 255, 255, 0.3);
   }
 }
 
-.notes {
-  width:calc(100%-3px);
-  display:block;
-  border:solid 1.5px;
-  border-radius:10px;
-  margin-bottom:5px;
-  padding:0 3ch;
-  text-decoration:none;
-  background-color:rgb(241, 240, 233);
+/* SOCIAL LOGOS */
+
+.social-logos {
+  display:flex;
+  list-style-type:none;
+  gap:1em;
+  justify-content:center;
+  padding:0;
+  align-items:center;
 }
 
-footer p {
-  border-bottom:none;
+.social-logos img {
+  width:1.5em;
+  max-height:2em;
+}
+
+.social-logos a {
+  filter:var(--hover-filter) sepia(1);
+}
+
+@media (hover:hover) {
+  .social-logos a:hover {
+    filter:none;
+  }
 }

@@ -9,7 +9,10 @@
   --subtle-bg-color:#00000010;
   --unsubtle-bg-color:#00000017;
   --hover-filter:
+      grayscale(1)
       invert(96%)
+      brightness(2.5)
+      contrast(2)
       sepia(8%)
       hue-rotate(20deg);
   --svg-hover-filter:
@@ -356,11 +359,11 @@ a {
   }
 }
 
-.external-link, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.centered):not(.rainbutton) {
+.external-link, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.centered):not(.rainbutton):not(.social-logos *) {
   padding-right:0.7em;
 }
 
-.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.rainbutton):after {
+.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.rainbutton):not(.social-logos *):after {
   content:"";
   width:0.5em;
   height:0.5em;
@@ -432,8 +435,10 @@ details summary {
   height:1.4rem;
 }
 
-.about-title-graphic:hover {
-  transform: scaleX(-1);
+@media (hover:hover) {
+  .about-title-graphic:hover {
+    transform: scaleX(-1);
+  }
 }
 
 .pixel-art {
@@ -492,7 +497,7 @@ img-caption {
   flex-wrap:wrap;
   align-items:center;
   gap:2.5rem;
-  margin:0 0 2.4em;
+  margin:0 0 3em;
 }
 
 .about-header img {
