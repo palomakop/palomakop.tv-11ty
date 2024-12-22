@@ -93,6 +93,7 @@ a.now-button {
   padding:0.5em 1.5ch;
   margin:0 0 0.75em;
   text-decoration:none;
+  color:#ffffef;
 }
 
 @media (hover:hover) {
