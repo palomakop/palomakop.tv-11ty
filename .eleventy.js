@@ -169,6 +169,18 @@ export default function(eleventyConfig) {
     return `<div class="video-container"><div class="video-iframe-container" style="position:relative;overflow:hidden;max-height:max(90vh, 200px);width:auto;aspect-ratio:500/${height};margin-left:auto;margin-right:auto;"><iframe src="https://player.vimeo.com/video/${vimeoId}?dnt=1&title=0&byline=0&portrait=0" width="500" height="${height}" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100%;" loading="lazy"></iframe></div><video class="html-video-fallback" width="500" height="${height}" controls="controls" preload="metadata" playsinline poster="${thumbnailUrl}" style="aspect-ratio: 500/${height};max-height:max(90vh, 200px);height:auto;width:auto;max-width:100%;"><source src="${videoFileUrl}" type="video/mp4"><b>This browser does not support the video tag. Here is a direct link to the <a href="${videoFileUrl}">MP4 file</a>.</b></video><p class="video-caption">${duration}${watchLinksHtml}</p></div>`;
   });
 
+  // VIDEO EMBED WITH AUTOPLAY
+  eleventyConfig.addShortcode("autoplayVideoLoop", async function(vimeoId, videoFileUrl) {
+    let oEmbed = await fetch(`https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F${vimeoId}&width=500`).then((response) => response.json());
+
+    let thumbnailUrl = [oEmbed.thumbnail_url.split("-d_")[0], "-d_1440.jpg"].join("");
+    let thumbnailWithPlayButton = oEmbed.thumbnail_url_with_play_button.replace(/-d_[0-9]*x[0-9]*/g, "-d_720");
+    let height = oEmbed.height;
+
+    let aspectPaddingPercent = height / 500 * 100;
+    return `<div class="video-container"><div class="video-iframe-container" style="position:relative;overflow:hidden;max-height:max(90vh, 200px);width:auto;aspect-ratio:500/${height};margin-left:auto;margin-right:auto;"><iframe src="https://player.vimeo.com/video/${vimeoId}?dnt=1&background=true&pip=false" width="500" height="${height}" frameborder="0" allow="" style="position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100%;" loading="lazy"></iframe></div><video class="html-video-fallback" width="500" height="${height}" autoplay muted disablePictureInPicture preload="metadata" playsinline poster="${thumbnailUrl}" style="aspect-ratio: 500/${height};max-height:max(90vh, 200px);height:auto;width:auto;max-width:100%;"><source src="${videoFileUrl}" type="video/mp4"><b>This browser does not support the video tag. Here is a direct link to the <a href="${videoFileUrl}">MP4 file</a>.</b></video></div>`;
+  });
+
   // MUSIC PLAYER
   eleventyConfig.addPairedShortcode("musicPlayer", async function(content, albumTitle, albumArtUrl, releaseDate, bcUrl) {
     let id = makeId(10);
