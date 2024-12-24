@@ -4,10 +4,10 @@ workTags: ["sculpture"]
 workYear: "2019"
 description: A sculpture made with layers of laser-etched glass
 lightbox: true
+dark: true
 customStyle: >
   :root {
-    --main-bg-color:#c9e9ed;
-    --main-bg-gradient:radial-gradient(#ddd9d9, #c9e9ed);
+    --main-bg-color:#060d13;
   }
 thumbnail: https://s3.amazonaws.com/palomakop.tv/works/video-topography/video_topography_2_3000px.jpg
 thumbnailAlt: abstract glass sculpture with three-dimensional glowing lines floating inside a prism

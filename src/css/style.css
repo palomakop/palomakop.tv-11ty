@@ -328,7 +328,7 @@ h2, h3, h4, h5, h6 {
 
 h2 {
   font-size:var(--h2-font-size);
-  margin:1em 0 0.8em;
+  margin:2.75rem 0 0.8em;
 }
 
 h3 {

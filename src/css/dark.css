@@ -1,7 +1,11 @@
 :root {
-  --unsubtle-bg-color:#00000077;
-  --main-bg-color:#000000;
+  --unsubtle-bg-color:#ffffff0e;
+  --main-bg-color:#141414;
   --main-bg-gradient:none;
+  --normal-weight:320;
+  --medium-weight:370;
+  --bold-weight:420;
+  --black-weight:470;
 }
 
 body {

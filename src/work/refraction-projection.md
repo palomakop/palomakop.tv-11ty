@@ -4,10 +4,6 @@ workTags: ["video art"]
 workYear: "2020"
 description: A 2-channel video recording of light refracted through glass
 dark: true
-customStyle: >
-  :root {
-    --main-bg-color:#141414;
-  }
 thumbnail: https://s3.us-east-1.amazonaws.com/palomakop.tv/mfa/refraction_projection.jpg
 thumbnailAlt: abstract shapes and lines made of light
 lightbox: true
