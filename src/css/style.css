@@ -10,6 +10,8 @@
   --unsubtle-bg-color:#00000017;
   --hover-filter:
       invert(96%)
+      brightness(0.9)
+      contrast(1.3)
       sepia(8%)
       hue-rotate(20deg);
   --svg-invert-filter:
