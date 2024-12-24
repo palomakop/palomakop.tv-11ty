@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color:--main-bg-color;
+  background-color:var(--main-bg-color);
   color:#f2f2f2;
 }
 

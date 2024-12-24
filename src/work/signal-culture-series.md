@@ -6,7 +6,7 @@ description: A series of video works recorded during an artist residency
 dark: true
 customStyle: >
   :root {
-    --main-bg-color:#2b2f34;
+    --main-bg-color:#131617;
   }
 thumbnail: https://s3.amazonaws.com/palomakop.tv/works/signal-culture-series/raster_scan_forms_poster.jpg
 thumbnailAlt: a folded abstract shape of white light on a dark background

@@ -7,7 +7,7 @@ lightbox: true
 dark: true
 customStyle: >
   :root {
-  --main-bg-color:#100808;
+  --main-bg-color:#120d0d;
   }
 thumbnail: https://s3.amazonaws.com/palomakop.tv/works/lumiagraph/lumiagraph_3_3000px.jpg
 thumbnailAlt: red abstract light patterns in a dark space
