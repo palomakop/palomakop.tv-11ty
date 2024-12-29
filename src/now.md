@@ -52,19 +52,23 @@ layout: nowTemplate
 
 ### Current home base
 
-A yurt in the Catskills, but moving soon
+In the process of moving from a yurt in the Catskills to a new apartment in New Haven, CT
 
 ### Currently reading
 
-*Abaddon's Gate* - James S. A. Corey  
-(Vol. 3 of *The Expanse*)
+*Cibola Burn* - James S. A. Corey  
+(Vol. 4 of *The Expanse*)
 
 ### Recently watched
 
-*Peking Opera Blues* (1986)  
+*The Life Aquatic with Steve Zissou* (2004)  
 
 ### Current status
 
-Just finished my semester of teaching Animation at Hamilton College. It was my first time teaching at a college and I enjoyed it.
+We found a new apartment in New Haven and are in the process of moving there, so I'll be pretty occupied with moving my things and setting up the new space for the next week or so. I'm looking forward to being within walking/biking distance of things again, after spending most of 2024 in the middle of the woods.
 
-Now I'm hanging out with family, searching for a new apartment, and working on my website.
+I also got a new lens for my camera and have been taking photos with it. It is very satisfying to shoot with a real camera. (People usually ask me what camera I have so I'll mention that it's a Sony a6000, and the lens is 35mm f1.8, which on this sensor is equivalent to about 50mm.)
+
+I've been trying to post a new photo shot on my camera daily on {% extLink "izzzzi" "https://izzzzi.net" %}. (If you're on there, add me and let me know!)
+
+I'm working on adding a bunch of pieces and collaborations from the last few years to the <a href="/work">portfolio section</a> of my website.

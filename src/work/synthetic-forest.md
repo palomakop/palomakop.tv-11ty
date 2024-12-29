@@ -5,6 +5,10 @@ workYear: "2023"
 description: Collaborative audiovisual performance and installation
 lightbox: true
 dark: true
+customStyle: >
+  :root {
+  --main-bg-color:#101410;
+  }
 thumbnail: https://s3.amazonaws.com/palomakop.tv/news/2023/2023-10-31/synthetic_forest_1440px.jpg
 thumbnailAlt: photo of synthetic forest, a dark room with plants, fog, and a video projector
 ---
@@ -13,7 +17,7 @@ thumbnailAlt: photo of synthetic forest, a dark room with plants, fog, and a vid
 
 {% video "1027037030", "https://player.vimeo.com/progressive_redirect/playback/1027037030/rendition/720p/file.mp4?loc=external&signature=4545d0036980353580df14e69642b3f75ab03eeaf8fcbcf5162f5941de8350cf", '{"Youtube":"https://youtu.be/QWHza1Dvmqs","Peertube":"https://videos.scanlines.xyz/w/x7CNAiazwQDxTFBtixqZod"}' %}
 
-*Synthetic Forest* was an installation and a live performance I created with {% extLink "Andrei", "https://andreijaycreativecoding.com/" %} during an artist residency at {% extLink "Coaxial Arts", "https://coaxialarts.org/" %} in Los Angeles.
+*Synthetic Forest* was an installation and a live performance I created with {% extLink "Andrei Jay", "https://andreijaycreativecoding.com/" %} during an artist residency at {% extLink "Coaxial Arts", "https://coaxialarts.org/" %} in Los Angeles.
 
 The concept was inspired by the time we spent camping in national forests during our five-month road trip across the US. Throughout our travels, we made video and sound recordings in nature, which we sampled and remixed in the performance. At Coaxial, we created an environment that combined materials from the natural landscape with the synthetic elements of our electronic sound and video processing techniques. We used real and synthetic plants and moss, chalk on the floor, overhead projectors, CRT screens, and a fog machine.
 
