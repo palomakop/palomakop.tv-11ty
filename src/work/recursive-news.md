@@ -22,12 +22,12 @@ thumbnailAlt: Screenshot from Recursive News performance featuring Allen Riley t
 Andrei and I primarily controlled the video mixing and effects, while Rob and Allen played the news anchors, although I also appeared as a guest crystallography expert, and everyone did a little bit of everything. Find some behind-the-scenes photo documentation below.
 
 {% photoGrid "two-column" %}
-{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts1.jpg", "", false, false %}
-{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts2.jpg", "", false, false %}
-{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts3.jpg", "", false, false %}
-{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts4.jpg", "", false, false %}
-{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts5.jpg", "", false, false %}
-{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts6.jpg", "", false, false %}
-{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts7.png", "", false, false %}
-{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts8.png", "", false, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts1.jpg", "Paloma Kop and Andrei Jay in the Phase Space video studio", false, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts2.jpg", "Paloma Kop and Andrei Jay in the Phase Space video studio", false, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts3.jpg", "Analog video equipment arranged haphazardly", false, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts4.jpg", "Andrei Jay operating a camera", false, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts5.jpg", "Paloma Kop and Rob Yohe in the Phase Space studio", false, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts6.jpg", "Andrei Jay operating analog video equipment", false, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts7.png", "Paloma and Andrei", false, false %}
+{% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/recursive_news_bts8.png", "Analog video mixers", false, false %}
 {% endphotoGrid %}

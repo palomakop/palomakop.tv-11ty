@@ -640,7 +640,7 @@ photo-grid {
 }
 
 photo-grid:not(.tarot) {
-  margin-bottom:1.5em;
+  margin-bottom:1.6em;
 }
 
 photo-grid.tarot {
@@ -654,7 +654,7 @@ photo-grid.tarot {
 }
 
 photo-grid.vertical, photo-grid.two-column, photo-grid.three-column {
-  margin-top:1.5em;
+  margin-top:1.6em;
 }
 
 photo-grid.two-column img, photo-grid.three-column img {
@@ -758,8 +758,8 @@ photo-grid .video-thumb-caption li {
 .video-container {
   width:100%;
   height:auto;
-  margin-top:1.5em;
-  margin-bottom:1.5em;
+  margin-top:1.6em;
+  margin-bottom:1.6em;
 }
 
 video {
@@ -802,7 +802,6 @@ video.html-video-fallback {
 
 .video-caption {
   margin-top:0.2em;
-  margin-bottom:2em;
   text-align:center;
   background-color:var(--unsubtle-bg-color);
   border-radius:5px;
