@@ -21,7 +21,7 @@ thumbnailAlt: Reality Orp performance
 
 {% video "1027033030", "https://player.vimeo.com/progressive_redirect/playback/1027033030/rendition/720p/file.mp4?loc=external&signature=04667137545927f12dcde076dab5d3c040868591f60249c2afd83c7dfaaf03bb", '{"Youtube":"https://youtu.be/1cz4QXE4YLg","Peertube":"https://videos.scanlines.xyz/w/7sVx4Gj7TZ8Kg2rC69cgHs"}' %}
 
-*Reality Orp* is what {% extLink "Andrei Jay" "https://andreijaycreativecoding.com/" %} call ourselves when we perform live A/V as a duo. Generally, we trade off who creates visuals and who performs sound, since we both enjoy working in both mediums. We have performed three times under this moniker since 2022. Our performances tend to include traditional liquid light show techniques, real-time analog and digital video processing, audio loops, and synthesizers.
+*Reality Orp* is what {% extLink "Andrei Jay" "https://andreijaycreativecoding.com/" %} and I call ourselves when we perform live A/V as a duo. Generally, we trade off who creates visuals and who performs sound, since we both enjoy working in both mediums. We have performed three times under this moniker since 2022. Our performances tend to include traditional liquid light show techniques, real-time analog and digital video processing, audio loops, and synthesizers.
 
 The name was inspired by misreading a sign I passed on the B52 bus in Brooklyn. I think it used to say *Realty Corp*, but one of the letters had fallen off.
 

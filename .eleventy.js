@@ -136,12 +136,34 @@ export default function(eleventyConfig) {
     return `<a href="${await makeImageUrl(src, 2000)}" ${caption} ${fullWidthClass}>${await makeImage(src, description, widthInPixels)}</a>`;
   });
 
+  eleventyConfig.addShortcode("photoGridVimeo", async function(vimeoId, isFullWidth) {
+
+    let oEmbed = await fetch(`https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F${vimeoId}&width=500`).then((response) => response.json());
+
+    let description = `Still from the video: ${oEmbed.title}`
+
+    let thumbnailUrl = oEmbed.thumbnail_url.split("-d_")[0] + "-d_1440.jpg";
+
+    let widthInPixels;
+    if (isFullWidth) {
+      widthInPixels = 1440;
+    } else {
+      widthInPixels = 720;
+    }
+
+    let fullWidthClass = "";
+    if (isFullWidth) {
+      fullWidthClass = `class="full-width"`;
+    }
+    return `<a href="https://player.vimeo.com/video/${vimeoId}?dnt=1&title=1&byline=0&portrait=0" ${fullWidthClass}>${await makeImage(thumbnailUrl, description, widthInPixels)}</a>`;
+  });
+
   // VIDEO EMBED
   eleventyConfig.addShortcode("video", async function(vimeoId, videoFileUrl, watchLinksJson) {
     let oEmbed = await fetch(`https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F${vimeoId}&width=500`).then((response) => response.json());
 
-    let thumbnailUrl = [oEmbed.thumbnail_url.split("-d_")[0], "-d_1440.jpg"].join("");
-    let thumbnailWithPlayButton = oEmbed.thumbnail_url_with_play_button.replace(/-d_[0-9]*x[0-9]*/g, "-d_720");
+    let thumbnailUrl = oEmbed.thumbnail_url.split("-d_")[0] + "-d_1440.jpg";
+    // let thumbnailWithPlayButton = oEmbed.thumbnail_url_with_play_button.replace(/-d_[0-9]*x[0-9]*/g, "-d_720");
     let height = oEmbed.height;
 
     // set and format duration string
