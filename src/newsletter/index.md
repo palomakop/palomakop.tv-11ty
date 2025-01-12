@@ -6,7 +6,7 @@ customStyle: >
     --main-bg-color:#dadfd6;
     --main-bg-gradient:radial-gradient(#e4dfee, #f1dbdb, #d9e2d7);
   }
-latestIssue: https://buttondown.com/palomakop/archive/pk-newsletter-november/
+latestIssue: https://buttondown.com/palomakop/archive/pk-newsletter-january-2025/
 ---
 
 ## Subscribe to my Email Newsletter
