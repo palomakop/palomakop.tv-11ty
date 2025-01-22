@@ -194,6 +194,16 @@ nav ul li a {
   font-weight:var(--medium-weight);
 }
 
+nav ul li a.icon-link {
+  display:block;
+  border:solid 1.5px;
+  border-radius:5px;
+  padding:0.15em 0.5em;
+  text-decoration:none;
+  height:1.5em;
+  width:1.5em;
+}
+
 nav ul li b {
   display:block;
   padding:calc(0.1em + 1.5px) 0.3em;
@@ -208,6 +218,10 @@ nav ul li a.current-link {
   background-color:#000000;
 }
 
+nav ul li a.icon-link.current-link img {
+  filter:var(--hover-filter);
+}
+
 nav ul li a.unavailable {
   color:var(--white);
   background-color:rgb(25, 25, 0, 0.3);
@@ -219,6 +233,10 @@ nav ul li a.unavailable {
     color:var(--white);
     background-color:var(--button-hover-color);
     text-decoration:none;
+  }
+
+  nav ul li a.icon-link:hover img {
+    filter:var(--hover-filter);
   }
 }
 
@@ -894,6 +912,7 @@ form {
   width:100%;
   max-width:450px;
   margin-top:2em;
+  margin-bottom:4em;
 }
 
 form label {
@@ -948,13 +967,6 @@ form button {
   font-family:Menlo, Monaco, Consolas, Liberation Mono, Lucida Console, monospace;
   background:none transparent;
   cursor:pointer;
-}
-
-@media (hover:hover) {
-  form button:hover {
-    color:#000000;
-    filter:invert();
-  }
 }
 
 :focus-visible {

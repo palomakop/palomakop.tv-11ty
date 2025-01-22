@@ -36,8 +36,11 @@ customStyle: >
     <textarea name="message" required></textarea>
   </label>
   <label>
-    Subscribe to my newsletter?
+    Subscribe to my <a href="/newsletter/">newsletter</a>?
     <input type="checkbox" name="mailing-list">
   </label>
   <button type="submit">Send</button>
 </form>
+
+Or email me:  
+**paloma** *(at)* **palomakop** *(dot)* **tv**

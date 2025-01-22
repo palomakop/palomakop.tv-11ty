@@ -27,7 +27,7 @@ a {
   }
 }
 
-#header-image {
+#header-image, nav ul li a.icon-link img {
   filter:invert(0.95);
 }
 
