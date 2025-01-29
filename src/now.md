@@ -38,14 +38,14 @@ layout: nowTemplate
   <div class="caption">Private Location in Kingston, NY</div>
 </a>
 
-
-## Upcoming Online Classes
-
-<a href="https://polyphaseportal.xyz/2023/11/20/intro-to-video-feedback-with-cameras/" class="now-button" target="_blank" rel="noopener">
-  Intro to Video Feedback with Cameras
-</a>
-
 {% endcomment %}
+
+## Upcoming Workshops
+
+<a href="https://withfriends.co/event/22719582/weekend_website_workshop_htmlcss_2_day_intensive_with_paloma_kop" class="now-button" target="_blank" rel="noopener">
+  Weekend Intensive HTML/CSS Workshop
+  <div class="caption">March 8-9 in Brooklyn</div>
+</a>
 
 
 ## Notes
@@ -56,13 +56,13 @@ New Haven, CT (just moved)
 
 ### Currently reading
 
-*Nemesis Games* - James S. A. Corey  
-(Vol. 5 of *The Expanse*)
+*Persepolis Rising* - James S. A. Corey  
+(Vol. 7 of *The Expanse*)
 
 ### Recently watched
 
-*Holy Motors* (2012)  
+*The Bride with White Hair* (1993)
 
 ### Current status
 
-Just moved from Upstate NY to an apartment in New Haven, CT. Still adjusting and getting things set up.
+Settling into New Haven and searching for a new job
