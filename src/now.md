@@ -3,7 +3,7 @@ layout: nowTemplate
 ---
 
 <a href="/" class="now-button">
-  Visit my artist website
+  Visit my website
 </a>
 
 <a href="/newsletter" class="now-button">
@@ -20,11 +20,6 @@ layout: nowTemplate
 <a href="/zine-club/" class="now-button" target="_blank">
   Zine Club
   <div class="caption">subscribe for zines and mystery objects</div>
-</a>
-
-<a href="https://moonark.studio/" class="now-button" target="_blank" rel="noopener">
-  Moon Ark Studio
-  <div class="caption">creative tech services</div>
 </a>
 
 
