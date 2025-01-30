@@ -10,6 +10,8 @@ customStyle: >
 
 ## Contact
 
+Fill out the form below, or email me at <a href="mailto:paloma@palomakop.tv">paloma@palomakop.tv</a>.
+
 <form
   name="contact"
   method="POST"
@@ -41,6 +43,3 @@ customStyle: >
   </label>
   <button type="submit">Send</button>
 </form>
-
-Or email me:  
-**paloma** *(at)* **palomakop** *(dot)* **tv**

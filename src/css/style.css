@@ -851,9 +851,7 @@ video.html-video-fallback {
 /* CV */
 
 .cv h2 {
-  text-transform:none;
-  font-size:1.4em;
-  font-style:italic;
+  font-size:1.5em;
 }
 
 .cv h3 {
@@ -883,8 +881,16 @@ video.html-video-fallback {
   min-width:5ch;
 }
 
-.cv a {
-  font-style:italic;
+.cv p.subtitle {
+  text-indent:0;
+  margin-left:0;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.cv p.subtitle * {
+  text-indent:0;
+  margin-left:0;
 }
 
 /* TABLE OF CONTENTS */
@@ -911,8 +917,7 @@ video.html-video-fallback {
 form {
   width:100%;
   max-width:450px;
-  margin-top:2em;
-  margin-bottom:4em;
+  margin: 2em 0;
 }
 
 form label {
@@ -932,7 +937,7 @@ form input {
 }
 
 form input[type=checkbox] {
-  margin:0 0 2em;
+  margin:0 0 1em;
   width:1.2em;
   height:1.2em;
   display:inline-block;
@@ -967,6 +972,7 @@ form button {
   font-family:Menlo, Monaco, Consolas, Liberation Mono, Lucida Console, monospace;
   background:none transparent;
   cursor:pointer;
+  margin:0.5em 0 2em;
 }
 
 :focus-visible {
