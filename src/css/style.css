@@ -848,19 +848,19 @@ video.html-video-fallback {
   }
 }
 
-/* CV */
+/* CV & resume */
 
-.cv h2 {
+.cv h2, .resume h2 {
   font-size:1.5em;
 }
 
-.cv h3 {
+.cv h3, .resume h3 {
   border-bottom:2px dotted;
   margin-top:1.5em;
   font-size:1.2em;
 }
 
-.cv h4 {
+.cv h4, .resume h4 {
   border-bottom:2px dotted;
   margin-top:1.5em;
   font-size:0.9em;
@@ -881,7 +881,7 @@ video.html-video-fallback {
   min-width:5ch;
 }
 
-.cv p.subtitle {
+.cv p.subtitle, .resume p.subtitle {
   text-indent:0;
   margin-left:0;
   display:flex;
@@ -891,6 +891,34 @@ video.html-video-fallback {
 .cv p.subtitle * {
   text-indent:0;
   margin-left:0;
+}
+
+.resume ul {
+  margin-top:0.2em;
+}
+
+.resume li {
+  margin-bottom:0.2em;
+}
+
+resume-item {
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:column;
+  align-items:baseline;
+  gap:0.1em 1.5ch;
+}
+
+resume-item *:first-child {
+  font-weight:var(--black-weight);
+}
+
+resume-item *:last-child {
+  font-style:italic;
+  font-size:var(--small-font-size);
+  font-weight:var(--medium-weight);
+  text-transform:uppercase;
+  min-height:1.6rem;
 }
 
 /* TABLE OF CONTENTS */

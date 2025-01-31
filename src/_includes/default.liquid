@@ -6,7 +6,7 @@ layout: global
 
   {% include "header.liquid" %}
 
-  <main>
+  <main {% if mainClass %} class="{{mainClass}}" {% endif %} >
 
     {{content}}
 
