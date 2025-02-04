@@ -9,19 +9,24 @@
   --subtle-bg-color:#00000010;
   --unsubtle-bg-color:#00000017;
   --hover-filter:
-      invert(96%)
-      brightness(0.9)
-      contrast(1.3)
-      sepia(8%)
-      hue-rotate(20deg);
-  --svg-invert-filter:
-      grayscale(1)
-      invert(96%)
-      brightness(2.5)
-      contrast(2);
-  --svg-hover-filter:
-      var(--hover-filter)
-      drop-shadow(1.4px 1.4px 1px rgb(0, 0, 0, 1));
+    invert(96%)
+    brightness(0.9)
+    contrast(1.3)
+    sepia(8%)
+    hue-rotate(20deg);
+--svg-invert-filter:
+    grayscale(1)
+    invert(96%)
+    brightness(2.5)
+    contrast(2);
+--svg-hover-filter:
+    var(--hover-filter)
+    drop-shadow(1.4px 1.4px 1px rgb(0, 0, 0, 1));
+--teal-filter:
+    invert(0.5)
+    sepia(1)
+    saturate(1.3)
+    hue-rotate(120deg);
   --body-font:'Roboto Mono', Andale Mono, Consolas, monospace;
   --h1-font-size:2rem;
   --h2-font-size:1.4rem;
@@ -860,7 +865,7 @@ video.html-video-fallback {
   font-size:1.2em;
 }
 
-.cv h4, .resume h4 {
+.cv h4 {
   border-bottom:2px dotted;
   margin-top:1.5em;
   font-size:0.9em;
@@ -901,24 +906,44 @@ video.html-video-fallback {
   margin-bottom:0.2em;
 }
 
-resume-item {
+resume-org {
   display:flex;
-  flex-wrap:wrap;
-  flex-direction:column;
-  align-items:baseline;
-  gap:0.1em 1.5ch;
+  flex-wrap:nowrap;
+  gap:1em;
+  align-items:center;
 }
 
-resume-item *:first-child {
+resume-org img {
+  width:2em;
+  height:2em;
+  filter:var(--teal-filter);
+}
+
+resume-org h4 {
+  font-size:1.1em;
+  margin:0.5em 0;
   font-weight:var(--black-weight);
 }
 
-resume-item *:last-child {
+resume-role {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:0.2em 1.2ch;
+  margin:0.2em 0;
+}
+
+resume-role *:first-child {
+  font-weight:var(--bold-weight);
+}
+
+resume-role *:last-child {
   font-style:italic;
   font-size:var(--small-font-size);
-  font-weight:var(--medium-weight);
+  font-weight:var(--black-weight);
   text-transform:uppercase;
   min-height:1.6rem;
+  filter:var(--teal-filter);
 }
 
 /* TABLE OF CONTENTS */
