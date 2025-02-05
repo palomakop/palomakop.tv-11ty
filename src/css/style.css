@@ -301,13 +301,14 @@ footer ul {
   margin:1.2em 0;
   display:flex;
   flex-wrap:wrap;
-  gap:0.5em 1.3em;
+  gap:0.6em;
   align-items:baseline;
 }
 
 footer ul li {
   float:left;
   margin:0;
+  flex-basis:13ch;
 }
 
 footer ul li a{
@@ -334,15 +335,6 @@ footer li span {
   font-weight:var(--black-weight);
   font-size:var(--small-font-size);
   margin-left:0.7ch;
-}
-
-@media only screen and (max-width:784px) {
-  footer ul {
-    gap:0.6em;
-  }
-  footer ul li {
-    flex-basis:13ch;
-  }
 }
 
 /* TEXT */
