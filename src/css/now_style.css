@@ -77,8 +77,12 @@ h3 {
   margin:2rem 0 1rem;
 }
 
-h3, p {
+h3, p, ul {
   text-align:left;
+}
+
+ul {
+  padding-left:2ch;
 }
 
 footer p {

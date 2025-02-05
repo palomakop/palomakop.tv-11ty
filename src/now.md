@@ -47,7 +47,7 @@ layout: nowTemplate
 
 ### Current home base
 
-New Haven, CT (just moved)
+New Haven, CT
 
 ### Currently reading
 
@@ -56,8 +56,9 @@ New Haven, CT (just moved)
 
 ### Recently watched
 
-*The Bride with White Hair* (1993)
+*The Ballad of Buster Scruggs* (2018)
 
 ### Current status
 
-Settling into New Haven and searching for a new job
+- Settling into New Haven & searching for a new job (view my [resume](/resume)!)
+- Preparing to attend a coding retreat at {% extLink "Recurse Center" "https://recurse.com" %}
