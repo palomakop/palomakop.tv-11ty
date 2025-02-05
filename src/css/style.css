@@ -865,6 +865,10 @@ video.html-video-fallback {
   font-size:1.2em;
 }
 
+.resume h3 {
+  margin-bottom:1rem;
+}
+
 .cv h4 {
   border-bottom:2px dotted;
   margin-top:1.5em;
@@ -944,6 +948,12 @@ resume-role *:last-child {
   text-transform:uppercase;
   min-height:1.6rem;
   filter:var(--teal-filter);
+}
+
+.resume .skills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:0 0.8ch;
 }
 
 /* TABLE OF CONTENTS */
