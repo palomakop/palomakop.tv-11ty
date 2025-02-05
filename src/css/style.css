@@ -314,7 +314,7 @@ footer ul li {
 footer ul li a{
   text-decoration:none;
   display:flex;
-  flex-wrap:none;
+  flex-wrap:no-wrap;
   align-items:center;
 }
 
@@ -335,6 +335,12 @@ footer li span {
   font-weight:var(--black-weight);
   font-size:var(--small-font-size);
   margin-left:0.7ch;
+}
+
+footer li img.webring-icon {
+  margin-left:0.5ch;
+  height:1rem;
+  width:1rem;
 }
 
 /* TEXT */
