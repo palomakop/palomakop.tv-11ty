@@ -23,10 +23,10 @@
     var(--hover-filter)
     drop-shadow(1.4px 1.4px 1px rgb(0, 0, 0, 1));
 --teal-filter:
-    invert(0.5)
+    invert(0.48)
     sepia(1)
-    saturate(1.3)
-    hue-rotate(120deg);
+    saturate(2)
+    hue-rotate(130deg);
   --body-font:'Roboto Mono', Andale Mono, Consolas, monospace;
   --h1-font-size:2rem;
   --h2-font-size:1.4rem;
@@ -166,6 +166,7 @@ nav ul {
   display:flex;
   flex-wrap:wrap;
   gap:1rem;
+  align-items:baseline;
 }
 
 nav.centered ul {
