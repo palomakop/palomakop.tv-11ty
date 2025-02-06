@@ -169,6 +169,10 @@ nav ul {
   align-items:baseline;
 }
 
+header nav ul {
+  align-items:center;
+}
+
 nav.centered ul {
   justify-content:center;
 }
