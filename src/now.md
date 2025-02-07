@@ -19,13 +19,13 @@ layout: nowTemplate
 
 <a href="/zine-club/" class="now-button" target="_blank">
   Zine Club
-  <div class="caption">subscribe for zines and mystery objects</div>
+  <div class="caption">Subscribe for Zines and Mystery Objects</div>
 </a>
 
 
 {% comment %} 
 
-## Upcoming Events
+## Upcoming Shows
 
 <a href="https://vimeo.com/1001767004/a97408ed6d" class="now-button" target="_blank" rel="noopener">
   Friday August 30:<br>
@@ -47,18 +47,18 @@ layout: nowTemplate
 
 ### Current home base
 
-New Haven, CT
+New Haven, CT (and I'm also in NYC fairly often)
 
 ### Currently reading
 
-*Persepolis Rising* - James S. A. Corey  
-(Vol. 7 of *The Expanse*)
+*Tiamat's Wrath* - James S. A. Corey  
+(Vol. 8 of *The Expanse*)
 
 ### Recently watched
 
-*The Ballad of Buster Scruggs* (2018)
+*Oldboy* (2003)
 
 ### Current status
 
-- Settling into New Haven & searching for a new job (view my [resume](/resume)!)
-- Preparing to attend a coding retreat at {% extLink "Recurse Center" "https://recurse.com" %}
+- Settling into New Haven & searching for a [new job](/resume)
+- Preparing to attend a 6-week coding retreat at {% extLink "Recurse Center" "https://recurse.com" %}
