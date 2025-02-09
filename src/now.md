@@ -47,12 +47,13 @@ layout: nowTemplate
 
 ### Current home base
 
-New Haven, CT (and I'm also in NYC fairly often)
+New Haven, CT  
+(and I'm in NYC fairly often)
 
 ### Currently reading
 
-*Tiamat's Wrath* - James S. A. Corey  
-(Vol. 8 of *The Expanse*)
+*Leviathan Falls* - James S. A. Corey  
+(Last volume of of *The Expanse*)
 
 ### Recently watched
 
