@@ -2,3 +2,4 @@
 /works/*                /work/:splat
 /news                   /blog
 /about                  /
+/website-info           /colophon
