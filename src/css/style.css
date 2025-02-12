@@ -290,6 +290,7 @@ footer {
   clear:both;
   margin-top:2rem;
   padding:10px 0px;
+  max-width:720px;
 }
 
 footer p {
@@ -323,6 +324,31 @@ footer ul li a{
   align-items:center;
 }
 
+footer li span {
+  font-weight:var(--black-weight);
+  font-size:var(--small-font-size);
+  margin-left:0.7ch;
+}
+
+footer ul li#rc-webring{
+  text-decoration:none;
+  display:flex;
+  flex-wrap:no-wrap;
+  align-items:center;
+}
+
+footer ul li#rc-webring a:not(:first-child){
+  padding:0 .25ch;
+}
+
+footer ul li#rc-webring a:first-child{
+  padding:0 .25ch 0 0;
+}
+
+footer ul li#rc-webring span{
+  margin-left:0;
+}
+
 footer ul li img {
   height:1.1rem;
   width:1.1rem;
@@ -336,11 +362,7 @@ footer ul li img {
   }
 }
 
-footer li span {
-  font-weight:var(--black-weight);
-  font-size:var(--small-font-size);
-  margin-left:0.7ch;
-}
+
 
 footer li img.webring-icon {
   margin-left:0.5ch;
