@@ -3,15 +3,14 @@ layout: default
 title: Recurse Center Log
 customStyle: >
   :root {
-    --main-bg-color:#e2e2ef;
-    --main-bg-gradient:radial-gradient(#d2e6d7, #e3e6da, #e2e2ef);
+    --main-bg-color:#dbe2cc;
+    --main-bg-gradient:radial-gradient(#dcead8, #ceebd9, #dbe2cc);
   }
 ---
 
-<h2>{{title}}</h2>
+<h2 style="display:flex;flex-wrap:no-wrap;align-items:center;gap:1ch;color:#23a050;"><img src="https://s3.amazonaws.com/palomakop.tv/icons/recurse.svg" class="centered" style="margin:0;max-width:3ch;" alt=""/> <span>{{title}}</span></h2>
 
-<p>I'm currently attending a 6-week coding retreat at {% extLink "Recurse Center" "https://recurse.com" %} (Feb 17 - March 28, 2025). This is a log of my activities and projects.</p>
-
+<p>I'm currently attending a 6-week coding retreat at {% extLink "Recurse Center" "https://recurse.com" %} (Feb 17 - March 28, 2025). Below is a log of my activities and projects during this time.</p>
 
 {% assign recurseLogs = collections.recurseLogs %}
 <div class="article-list">

@@ -70,6 +70,9 @@ async function makeImageUrl(src, width) {
 
 export default function(eleventyConfig) {
 
+  eleventyConfig.setInputDirectory("src");
+  eleventyConfig.setOutputDirectory("_site");
+
   eleventyConfig.addPassthroughCopy("./src/fonts");
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addPassthroughCopy("./src/js");
@@ -214,9 +217,6 @@ export default function(eleventyConfig) {
   eleventyConfig.addShortcode("musicPlayerTrack", function(name, url) {
     return `<li><a href="${url}">${name}</a></li>`;
   });
-
-  eleventyConfig.setInputDirectory("src");
-  eleventyConfig.setOutputDirectory("_site");
 
   eleventyConfig.addTransform("prettier", function (content, outputPath) {
     if (content.startsWith("<!DOCTYPE HTML>")) {
