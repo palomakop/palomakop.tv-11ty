@@ -1,0 +1,25 @@
+---
+layout: default
+title: Recurse Center Log
+customStyle: >
+  :root {
+    --main-bg-color:#e2e2ef;
+    --main-bg-gradient:radial-gradient(#d2e6d7, #e3e6da, #e2e2ef);
+  }
+---
+
+<h2>{{title}}</h2>
+
+<p>I'm currently attending a 6-week coding retreat at {% extLink "Recurse Center" "https://recurse.com" %} (Feb 17 - March 28, 2025). This is a log of my activities and projects.</p>
+
+
+{% assign recurseLogs = collections.recurseLogs %}
+<div class="article-list">
+{% for log in recurseLogs %}
+  <article id="{{ log.data.title | slugify }}" class="blog-post">
+    <h3>{{ log.data.title }}</h3>
+    <p class="metadata">{{log.date | date: "%B %e, %Y"}}</p>
+    {{log.content}}
+  </article>
+{% endfor %}
+</div>
