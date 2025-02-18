@@ -47,19 +47,21 @@ layout: nowTemplate
 
 ### Current home base
 
-New Haven, CT  
-(and I'm in NYC fairly often)
+As of January 2025, I'm living in New Haven, Connecticut with my partner Andrei
 
+{% comment %}
 ### Currently reading
 
 *Leviathan Falls* - James S. A. Corey  
 (Last volume of of *The Expanse*)
+{% endcomment %}
 
 ### Recently watched
 
-*Oldboy* (2003)
+The first half of the movie *Goodfellas* (1990)
 
 ### Current status
 
-- Settling into New Haven & searching for a [new job](/resume)
-- Preparing to attend a 6-week coding retreat at {% extLink "Recurse Center" "https://recurse.com" %}
+- Settling into our new space in New Haven & searching for a [new job](/resume)
+- Just started a 6-week coding retreat at {% extLink "Recurse Center" "https://recurse.com" %} (view my <a href="/recurse">log</a>)
+- Joined an awesome {% extLink "makerspace" "https://www.makehaven.org/" %} in New Haven and used equipment there to make new Mystery Objects for Zine Club
