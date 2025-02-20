@@ -17,6 +17,7 @@ Here are some ideas of things I'd like to explore during the next six weeks. I m
 - A webpage that takes in a webcam feed and creates an ascii art version of the image (low resolution like a gameboy camera)
 - Just create some fun animations
 - Pixel art cellular automata in the browser
+- Playable generative mazes
 
 #### General idas to explore and chew on
 
