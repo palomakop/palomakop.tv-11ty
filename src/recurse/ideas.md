@@ -5,6 +5,8 @@ date: '2025-02-19'
 
 Here are some ideas of things I'd like to explore during the next six weeks. I might not necessarily get to them all, but they should provide me with a jumping-off point for what promises to be a meandering path forward.
 
+**Note:** This is a living list; I will keep updating it as I have more ideas.
+
 - A web app that allows the user to draw a spread of tarot cards
   - Use the {% extLink "Random.org random number api" "https://www.random.org/clients/http/api/" %}
   - Cards could be SVGs (perhaps generative)
@@ -18,6 +20,7 @@ Here are some ideas of things I'd like to explore during the next six weeks. I m
 - Just create some fun animations
 - Pixel art cellular automata in the browser
 - Playable generative mazes
+- Play with {% extLink "hydra" "https://hydra.ojack.xyz/" %} more and look at the code
 
 #### General idas to explore and chew on
 
