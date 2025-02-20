@@ -13,6 +13,14 @@ customStyle: >
 <p>I'm currently attending a 6-week coding retreat at {% extLink "Recurse Center" "https://recurse.com" %} (Feb 17 - March 28, 2025). Below is a log of my activities and projects during this time.</p>
 
 {% assign recurseLogs = collections.recurseLogs %}
+
+<h3>Table of Contents</h3>
+<ul class="table-of-contents">
+{% for log in recurseLogs %}
+  <li><a href="#{{ log.data.title | slugify }}">{{log.data.title}}</a></li>
+{% endfor %}
+</ul>
+
 <div class="article-list">
 {% for log in recurseLogs %}
   <article id="{{ log.data.title | slugify }}" class="blog-post">
