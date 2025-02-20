@@ -8,4 +8,4 @@ date: '2025-02-17'
 - Created this page to keep track of things I do and projects I work on during my batch.
 
 #### To-do:
-- Create a separate section of my website called "The Lab" to host web-based projects in progress!
+- ✅ Create a separate section of my website called "The Lab" to host web-based projects in progress!

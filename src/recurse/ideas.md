@@ -18,21 +18,23 @@ Here are some ideas of things I'd like to explore during the next six weeks. I m
 - Generative SVG truchet tiles
 - A webpage that takes in a webcam feed and creates an ascii art version of the image (low resolution like a gameboy camera)
 - Just create some fun animations
+  - A shader with colorful gradient-mapped noise
 - Pixel art cellular automata in the browser
 - Playable generative mazes
 - Play with {% extLink "hydra" "https://hydra.ojack.xyz/" %} more and look at the code
+- Add dark mode to websites
 
 #### General idas to explore and chew on
 
-- Javascript, webGL, p5.js
+- Javascript, webGL, p5.js, three.js
 - Web components
 - Webcam input
 - Progressive enhancement
 
 #### Next steps
 
-- Refresh my knowledge of javascript
-- Port my webGL shader playground to {% extLink "the lab" "https://lab.palomakop.tv" %}
+- ✅ Refresh my knowledge of javascript
+- ✅ Port my webGL shader playground to {% extLink "the lab" "https://lab.palomakop.tv" %}
 - Just start noodling around...
 
 #### Note to self

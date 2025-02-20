@@ -448,7 +448,7 @@ ul.larger-bullets li::marker {
 code {
   font-family:Courier, monospace;
   font-size:var(--body-font-size);
-  background-color:#dcdcdc96;
+  background-color:var(--unsubtle-bg-color);
   padding:1px 4px;
 }
 

@@ -10,5 +10,5 @@ date: '2025-02-18'
 
 #### To-do:
 
-- Make a list of ideas to work on
+- ✅ Make a list of ideas to work on
 - Start coding and exploring
