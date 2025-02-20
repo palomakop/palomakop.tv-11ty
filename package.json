@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@11ty/eleventy": "^3.0.0-beta.1",
-    "@11ty/eleventy-plugin-rss": "^2.0.2"
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "netlify-plugin-11ty": "^1.4.0"
   },
   "name": "palomakop.tv-11ty",
   "version": "1.0.0",
