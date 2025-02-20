@@ -22,7 +22,7 @@ Here are some ideas of things I'd like to explore during the next six weeks. I m
 - Pixel art cellular automata in the browser
 - Playable generative mazes
 - Play with {% extLink "hydra" "https://hydra.ojack.xyz/" %} more and look at the code
-- Add dark mode to websites
+- ✅ Add dark mode to a website
 
 #### General idas to explore and chew on
 

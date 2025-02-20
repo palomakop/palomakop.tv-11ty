@@ -17,6 +17,7 @@ date: '2025-02-20'
 - Did a bit of javascript review
   - `const` and `let` were introduced in ES6 and both have a block scope. `var` is older and always has a global scope. The value of `let` can be changed, while a `const` can not be changed. Also, `var` can be redeclared, while `let` cannot. (w3schools links: {% extLink "`let`" "https://www.w3schools.com/Js/js_let.asp" %} {% extLink "`const`" "https://www.w3schools.com/Js/js_const.asp" %})
 - Ported some fragment shaders I wrote a while ago to the lab. Also, I made the lab homepage read like a text adventure. ({% extLink "Visit the lab" "https://lab.palomakop.tv" %} or jump straight to the {% extLink "shaders page" "https://lab.palomakop.tv/shaders" %})
+- Added dark mode to the lab with `color-scheme: light dark;` ({% extLink "Reference" "https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme" %})
 
 #### To-do:
 
