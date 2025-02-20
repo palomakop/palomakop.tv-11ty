@@ -30,3 +30,7 @@ Here are some ideas of things I'd like to explore during the next six weeks. I m
 - Refresh my knowledge of javascript
 - Port my webGL shader playground to {% extLink "the lab" "https://lab.palomakop.tv" %}
 - Just start noodling around...
+
+#### Note to self
+
+- It's OK and valuable to "reinvent the wheel"
