@@ -21,14 +21,16 @@ Here are some ideas of things I'd like to explore during the next six weeks. I m
   - A shader with colorful gradient-mapped noise
 - Pixel art cellular automata in the browser
 - Playable generative mazes
-- Play with {% extLink "hydra" "https://hydra.ojack.xyz/" %} more and look at the code
+- ✅ Play with {% extLink "hydra" "https://hydra.ojack.xyz/" %} more and look at the {% extLink "code" "https://github.com/hydra-synth/hydra-server" %}
 - ✅ Add dark mode to a website
 
-#### General idas to explore and chew on
+#### Tools and methods to explore
 
-- Javascript, webGL, p5.js, three.js
-- Web components
-- Webcam input
+- Vanilla Javascript
+- HTML canvas
+- p5.js
+- WebGL
+- Three.js (?)
 - Progressive enhancement
 
 #### Next steps
@@ -40,3 +42,17 @@ Here are some ideas of things I'd like to explore during the next six weeks. I m
 #### Note to self
 
 - It's OK and valuable to "reinvent the wheel"
+
+#### References & Examples
+
+- {% extLink "Web-based art" "https://www.newrafael.com/internet/" %} by Rafaël Rozendaal
+- {% extLink "Ascii art webcam" "https://github.com/idevelop/ascii-camera" %}
+- {% extLink "Space invaders in browser" "https://github.com/kubowania/space-invaders" %}
+
+#### Things to read up about
+
+- How to store cookies in the browser
+- How to directly integrate with webGL
+- The canvas element
+- What is a web component and how to make & use them
+- How to grab data from a webcam in a webpage
