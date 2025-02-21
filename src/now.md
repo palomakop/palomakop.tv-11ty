@@ -39,15 +39,22 @@ layout: nowTemplate
 
 <a href="https://withfriends.co/event/22719582/weekend_website_workshop_htmlcss_2_day_intensive_with_paloma_kop" class="now-button" target="_blank" rel="noopener">
   Weekend Intensive HTML/CSS Workshop
-  <div class="caption">March 8-9 in Brooklyn</div>
+  <div class="caption">March 8-9 at Wavefield in Brooklyn</div>
 </a>
+
+<a href="https://charlesstudy.temple.edu/event/14200525" class="now-button" target="_blank" rel="noopener">
+  HTML Journal Workshop at Low Tech Electronics Faire*
+  <div class="caption">March 13 at Temple University in Philly</div>
+</a>
+
+<p style="text-align:center">*<small>Electronics Faire {% extLink "Full Schedule" "https://sites.temple.edu/efaire/schedule-and-registration/" %}</small></p>
 
 
 ## Notes
 
 ### Current home base
 
-As of January 2025, I'm living in New Haven, Connecticut with my partner Andrei
+New Haven, Connecticut
 
 {% comment %}
 ### Currently reading
@@ -58,10 +65,13 @@ As of January 2025, I'm living in New Haven, Connecticut with my partner Andrei
 
 ### Recently watched
 
-The first half of the movie *Goodfellas* (1990)
+*Goodfellas* (1990)
 
 ### Current status
 
-- Settling into our new space in New Haven & searching for a [new job](/resume)
-- Just started a 6-week coding retreat at {% extLink "Recurse Center" "https://recurse.com" %} (view my <a href="/recurse">log</a>)
-- Joined an awesome {% extLink "makerspace" "https://www.makehaven.org/" %} in New Haven and used equipment there to make new Mystery Objects for Zine Club
+- Doing a 6-week coding retreat at Recurse Center, where I've been working on my programming skills and meeting lots of cool people
+  - View my [Recurse Log](/recurse) or see what I'm cooking up in {% extLink "The Lab" "https://lab.palomakop.tv" %}
+- Joined an awesome makerspace in New Haven
+- Doing a weekly work trade at a local yoga studio
+- Making trips to NYC every week or two, I will be around there often through the end of March
+- Searching for a new [job](/resume)
