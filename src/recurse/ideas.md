@@ -57,3 +57,4 @@ Here are some ideas of things I'd like to explore during the next six weeks. I m
 - The canvas element
 - What is a web component and how to make & use them
 - How to grab data from a webcam in a webpage
+- Neural networks in image processing / pattern generation ({% extLink "Reference" "https://distill.pub/selforg/2021/textures/" %})
