@@ -48,6 +48,7 @@ Here are some ideas of things I'd like to explore during the next six weeks. I m
 - {% extLink "Web-based art" "https://www.newrafael.com/internet/" %} by Rafaël Rozendaal
 - {% extLink "Ascii art webcam" "https://github.com/idevelop/ascii-camera" %}
 - {% extLink "Space invaders in browser" "https://github.com/kubowania/space-invaders" %}
+- {% extLink "A webGL shader webcam filter" "https://github.com/bu3nAmigue/bu3npattern" %}
 
 #### Things to read up about
 
