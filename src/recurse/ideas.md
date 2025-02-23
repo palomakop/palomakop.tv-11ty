@@ -19,6 +19,7 @@ Here are some ideas of things I'd like to explore during the next six weeks. I m
 - A webpage that takes in a webcam feed and creates an ascii art version of the image (low resolution like a gameboy camera)
 - Just create some fun animations
   - A shader with colorful gradient-mapped noise
+  - Animated brushes playable with mouse or touch
 - Pixel art cellular automata in the browser
 - Playable generative mazes
 - ✅ Play with {% extLink "hydra" "https://hydra.ojack.xyz/" %} more and look at the {% extLink "code" "https://github.com/hydra-synth/hydra-server" %}
