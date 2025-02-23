@@ -31,6 +31,8 @@ Here are some ideas of things I'd like to explore during the next six weeks. I m
 - HTML canvas
 - p5.js
 - WebGL
+  - {% extLink "WebGL Fundamentals" "https://webglfundamentals.org/" %}
+  - {% extLink "TWGL" "https://twgljs.org/" %} - a low-level WebGL library
 - Three.js (?)
 - Progressive enhancement
 
