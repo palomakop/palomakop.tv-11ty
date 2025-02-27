@@ -26,6 +26,7 @@ date: '2025-02-27'
   - A p5.js game with icebergs that play Conway's game of life
   - How to make things beautiful in the terminal
   - A light bulb you can control by screaming
+- People voted on a time for the Critical AI group I proposed, so it's on the calendar now. We'll have our first meeting next Wednesday.
 
 #### To-do:
 
