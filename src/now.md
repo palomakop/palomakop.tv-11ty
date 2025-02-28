@@ -37,11 +37,6 @@ layout: nowTemplate
 
 ## Upcoming Workshops
 
-<a href="https://withfriends.co/event/22719582/weekend_website_workshop_htmlcss_2_day_intensive_with_paloma_kop" class="now-button" target="_blank" rel="noopener">
-  Weekend Intensive HTML/CSS Workshop
-  <div class="caption">March 8-9 at Wavefield in Brooklyn</div>
-</a>
-
 <a href="https://charlesstudy.temple.edu/event/14200525" class="now-button" target="_blank" rel="noopener">
   HTML Journal Workshop at Low Tech Electronics Faire*
   <div class="caption">March 13 at Temple University in Philly</div>
@@ -56,16 +51,13 @@ layout: nowTemplate
 
 New Haven, Connecticut
 
-{% comment %}
 ### Currently reading
 
-*Leviathan Falls* - James S. A. Corey  
-(Last volume of of *The Expanse*)
-{% endcomment %}
+*Co-Intelligence* - Ethan Mollick
 
 ### Recently watched
 
-*Goodfellas* (1990)
+*American Psycho* (1991)
 
 ### Current status
 
