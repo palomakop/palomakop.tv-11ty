@@ -593,6 +593,21 @@ img-caption {
   margin:1.8em 0 2.5em;
 }
 
+.about-text details {
+  background-color:var(--unsubtle-bg-color);
+  border-radius:10px;
+  padding:0.1em 0.5em 0.2em;
+}
+
+.about-text details summary {
+  font-weight:var(--bold-weight);
+  text-decoration:none;
+}
+
+.about-text details p:last-child {
+  margin-bottom:0;
+}
+
 /* GALLERY */
 
 .gallery {

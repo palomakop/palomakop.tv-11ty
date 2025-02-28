@@ -4,8 +4,8 @@ const elts = {
 };
 
 const texts = [
-	"Multimedia Artist",
-	"Creative Technologist",
+	"Artist",
+	"Coder",
 	"Visualist",
 	"Educator",
 	"Human Being"

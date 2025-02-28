@@ -59,61 +59,32 @@ customStyle: >
 
 <div class="about-text">
 
+  <h2>
+    <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/ramp.svg" class="about-title-graphic" alt=""/> About
+  </h2>
 
-  <h2><img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/ramp.svg" class="about-title-graphic" alt=""/> Artist Bio</h2>
+  <p>
+    I am an artist, software developer, and educator from NYC and Woodstock, NY. I recently moved to New Haven, Connecticut, but still visit NY often. I'm currently doing a batch at {% extLink "Recurse Center" "https://recurse.com" %}, where I'm building web apps and experimenting with code. In the past, I've taught art and coding classes and workshops, worked as a software developer and IT solutions architect, run community spaces both online and off, and performed live visuals and music at events and art spaces across North America.
+  </p>
+  <p>
+    This is my personal website. I feel that personal websites and blogs are very important, especially at this moment in the internet age, when most online social spaces are controlled by large companies with anti-social incentives. I also run open-source infrastructure on my own server (such as an RSS reader and meta-search-engine) and use decentralized social media (find me on the fediverse as <code>@palomakop@merveilles.town</code>, and on matrix as <code>@palomakop:polyphaseportal.xyz</code>).
+  </p>
 
-  <nav class="script-button">
-    <ul>
-      <li>
-        <button id="first-person-button" onclick="firstPerson()" class="current-link">First-Person Bio</button>
-      </li>
-      <li>
-        <button id="third-person-button" onclick="thirdPerson()">Third-Person Bio</button>
-      </li>
-    </ul>
-  </nav>
-
-  <div id="bio-text-1st-person">
-    <p>
-      I am an experimental multimedia artist and creative technologist currently based in New Haven, CT. My practice incorporates electronic media, from analog video and synthesizers to digital systems and code, as well as drawing, print, and liquids. I am especially interested in feedback loops, recursion, self-organizing and emergent structures, and patterns in nature.
-    </p>
-  
-    <p>
-      I received an <a href="/mfa/">MFA</a> in Electronic Integrated Arts at Alfred University in 2020, and a BS in Visual Arts and Computer Science from Purchase College in 2014. I have shown work and performed at spaces and events such as Ambient Church (NYC), Eastern Bloc (Montréal), and Ann Arbor Film Festival (Michigan). I have done visiting artist talks and workshops at universities such as CalArts, NYU, and SAIC.
-    </p>
-  </div>
-  <div id="bio-text-3rd-person" style="display:none;">
+  <details>
+    <summary>Third-person artist bio</summary>
     <p>
       Paloma Kop is an experimental multimedia artist and creative technologist currently based in New Haven, CT. Their practice incorporates electronic media, from analog video and synthesizers to digital systems and code, as well as drawing, print, and liquids. They are especially interested in feedback loops, recursion, self-organizing and emergent structures, and patterns in nature.
     </p>
-  
     <p>
       They received an <a href="/mfa/">MFA</a> in Electronic Integrated Arts at Alfred University in 2020, and a BS in Visual Arts and Computer Science from Purchase College in 2014. They have shown work and performed at spaces and events such as Ambient Church (NYC), Eastern Bloc (Montréal), and Ann Arbor Film Festival (Michigan). They have done visiting artist talks and workshops at universities such as CalArts, NYU, and SAIC.
     </p>
-  </div> 
- 
- <script>
-  var firstPersonBioText = document.getElementById("bio-text-1st-person");
-  var thirdPersonBioText = document.getElementById("bio-text-3rd-person");
-  var firstPersonButton = document.getElementById("first-person-button");
-  var thirdPersonButton = document.getElementById("third-person-button");
-
-  function firstPerson() {
-    firstPersonBioText.style.display = 'block';
-    thirdPersonBioText.style.display = 'none';
-    firstPersonButton.classList.add('current-link');
-    thirdPersonButton.classList.remove('current-link');
-  }
-
-  function thirdPerson() {
-    firstPersonBioText.style.display = 'none';
-    thirdPersonBioText.style.display = 'block';
-    firstPersonButton.classList.remove('current-link');
-    thirdPersonButton.classList.add('current-link');
-  }
- </script>
+  </details>
 
 </div>
+
+{% comment %} 
+<h2><img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/triangle.svg" class="about-title-graphic" alt=""/> Artist Bio</h2>
+{% endcomment %}
 
 <div class="about-text">
 
@@ -122,20 +93,10 @@ customStyle: >
   </h2>
 
   <p>
-    I'm currently in search of a new position in web development (front-end, full stack, or design engineer). I'm based in New Haven, and am also often in NYC. Feel free to take a look at my <a href="/resume">resumé</a>, check out some of my {% extLink "technical projects" "https://github.com/palomakop/technical-projects-list" %}, and <a href="/contact">get in touch</a>!
+    I'm currently in search of a new position in web development (front-end, full stack, design engineering, or something similar that straddles the creative and the technical). Feel free to take a look at my <a href="/resume">resumé</a>, check out some of my {% extLink "technical projects" "https://github.com/palomakop/technical-projects-list" %}, and <a href="/contact">get in touch</a>!
   </p>
 
 </div>
-
-{% comment %}
-<div class="about-text">
-
-  <h2>
-    <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/triangle.svg" class="about-title-graphic" alt=""/> Move Slow and Fix Things
-  </h2>
-
-</div>
-{% endcomment %}
 
 <div class="about-text">
 
@@ -193,6 +154,3 @@ customStyle: >
     </filter>
   </defs>
 </svg>
-
-
-
