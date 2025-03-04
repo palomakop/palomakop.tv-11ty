@@ -11,4 +11,5 @@ date: '2025-03-03'
   - References:
     - {% extLink "Set env vars in zsh" "https://apple.stackexchange.com/questions/356441/how-to-add-permanent-environment-variable-in-zsh" %}
 - Got a bit tired of working with this dry database stuff so I decided to start downloading the tarot card images for my tarot app. I downloaded and cropped them all and renamed the files consistently; tomorrow will try some batch processing on them with imagemagick.
+- Started reading the book for the critical AI discussion group, but so far it isn't very good. Others on Zulip said they felt the same way, so we might switch to a different reading or just share articles if most others agree.
 - I have a call scheduled for tomorrow for a potential job lead!
