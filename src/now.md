@@ -23,26 +23,31 @@ layout: nowTemplate
 </a>
 
 
-{% comment %} 
-
-## Upcoming Shows
-
-<a href="https://vimeo.com/1001767004/a97408ed6d" class="now-button" target="_blank" rel="noopener">
-  Friday August 30:<br>
-  Visuals @ live show with <i>Snark</i>, <i>Bungey Colle</i>, <i>The Spookfish</i>, and <i>headfullofhammers</i>
-  <div class="caption">Private Location in Kingston, NY</div>
-</a>
-
-{% endcomment %}
-
 ## Upcoming Workshops
 
 <a href="https://charlesstudy.temple.edu/event/14200525" class="now-button" target="_blank" rel="noopener">
-  HTML Journal Workshop at Low Tech Electronics Faire*
-  <div class="caption">March 13 at Temple University in Philly</div>
+  <b>Thursday March 13</b><br>
+  HTML Journal Workshop at<br>
+  <i>Low Tech Electronics Faire</i>*
+  <div class="caption">Temple University, Philly</div>
 </a>
 
 <p style="text-align:center">*<small>Electronics Faire {% extLink "Full Schedule" "https://sites.temple.edu/efaire/schedule-and-registration/" %}</small></p>
+
+
+## Upcoming Shows
+
+<a href="https://www.instagram.com/p/DGrRBmhRR9c/" class="now-button" target="_blank" rel="noopener">
+  <b>Sunday March 23</b><br>
+  Collab A/V set w/ <i>ExquisiteCorp</i>
+  <div class="caption">The Living Gallery, Brooklyn</div>
+</a>
+
+<a href="https://uniondocs.org/event/wise-in-waves-a-night-of-live-sound-and-visual-alchemy/" class="now-button" target="_blank" rel="noopener">
+  <b>Sunday March 30</b><br>
+  Solo A/V set at <i>WISE: In Waves</i>
+  <div class="caption">Union Docs, Ridgewood</div>
+</a>
 
 
 ## Notes
@@ -53,17 +58,16 @@ New Haven, Connecticut
 
 ### Currently reading
 
-*Co-Intelligence* - Ethan Mollick
+*Hum* - Helen Phillips
 
 ### Recently watched
 
-*American Psycho* (1991)
+*Hara-Kiri: Death of a Samurai* (2011)
 
 ### Current status
 
 - Doing a 6-week coding retreat at Recurse Center, where I've been working on my programming skills and meeting lots of cool people
   - View my [Recurse Log](/recurse) or see what I'm cooking up in {% extLink "The Lab" "https://lab.palomakop.tv" %}
-- Joined an awesome makerspace in New Haven
 - Doing a weekly work trade at a local yoga studio
-- Making trips to NYC every week or two, I will be around there often through the end of March
+- Getting ready for upcoming events in Philly and NYC this month
 - Searching for a new [job](/resume)
