@@ -8,10 +8,10 @@ date: '2025-03-07'
 - Also had a 1:1 meeting with Laura, the ever-helpful job fairy of RC.
 
 #### To-do:
-- Style links & add a hover
-- Add left and right padding to the about page content
-- Fix excessive top and bottom padding on homepage
-- Make button styles just an outline
+- ✅ Style links & add a hover
+- ✅ Add left and right padding to the about page content
+- ✅ Fix excessive top and bottom padding on homepage
+- ✅ Make button styles just an outline
 - Build the form for /pull/new
 - Make form submission on /pull/new make api call and route to /pull/{id} page
 - Build the /pull/{id} page with the data from payload response
@@ -22,4 +22,4 @@ date: '2025-03-07'
 - Add a fun background to the splash page
 - Make a loading animation for when the pull is submitted that looks like floating/shuffling cards
 - Animate the cards flipping over one at a time when pull page is loaded
-- Add an indicator for the current moon phase
+- ✅ Add an indicator for the current moon phase
