@@ -14,5 +14,5 @@ date: '2025-03-10'
   - I also made the `/pull` index route redirect to `/` (the homepage) since there was nothing there without a child route.
 
 #### To-do:
-- Create a form on `/pull/new` that {% extLink "submits a post request" "https://merveilles.town/@palomakop/114140847584173131" %} to the back end.
+- Create a form on `/pull/new` that {% extLink "submits a post request" "https://surajsharma.net/blog/axios-post-form-data" %} to the back end.
 - Make `/pull/:id` display the tarot pull with that ID based on data fetched from the back end.
