@@ -22,7 +22,7 @@ layout: nowTemplate
   <div class="caption">Subscribe for Zines and Mystery Objects</div>
 </a>
 
-
+{% comment %}
 ## Upcoming Workshops
 
 <a href="https://charlesstudy.temple.edu/event/14200525" class="now-button" target="_blank" rel="noopener">
@@ -33,7 +33,7 @@ layout: nowTemplate
 </a>
 
 <p style="text-align:center">*<small>Electronics Faire {% extLink "Full Schedule" "https://sites.temple.edu/efaire/schedule-and-registration/" %}</small></p>
-
+{% endcomment %}
 
 ## Upcoming Shows
 
@@ -58,16 +58,16 @@ New Haven, Connecticut
 
 ### Currently reading
 
-*Hum* - Helen Phillips
+*Stolen Focus* - Johann Hari
 
 ### Recently watched
 
-*Hara-Kiri: Death of a Samurai* (2011)
+*Mars Express* (2023)
 
 ### Current status
 
 - Doing a 6-week coding retreat at Recurse Center, where I've been working on my programming skills and meeting lots of cool people
   - View my [Recurse Log](/recurse) or see what I'm cooking up in {% extLink "The Lab" "https://lab.palomakop.tv" %}
 - Doing a weekly work trade at a local yoga studio
-- Getting ready for upcoming events in Philly and NYC this month
+- Getting ready for upcoming events NYC this month
 - Searching for a new [job](/resume)
