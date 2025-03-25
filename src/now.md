@@ -37,12 +37,6 @@ layout: nowTemplate
 
 ## Upcoming Shows
 
-<a href="https://www.instagram.com/p/DGrRBmhRR9c/" class="now-button" target="_blank" rel="noopener">
-  <b>Sunday March 23</b><br>
-  Collab A/V set w/ <i>ExquisiteCorp</i>
-  <div class="caption">The Living Gallery, Brooklyn</div>
-</a>
-
 <a href="https://uniondocs.org/event/wise-in-waves-a-night-of-live-sound-and-visual-alchemy/" class="now-button" target="_blank" rel="noopener">
   <b>Sunday March 30</b><br>
   Solo A/V set at <i>WISE: In Waves</i>
@@ -58,7 +52,7 @@ New Haven, Connecticut
 
 ### Currently reading
 
-*Stolen Focus* - Johann Hari
+*The Mercy of Gods* - James S. A. Corey
 
 ### Recently watched
 
@@ -66,8 +60,8 @@ New Haven, Connecticut
 
 ### Current status
 
-- Doing a 6-week coding retreat at Recurse Center, where I've been working on my programming skills and meeting lots of cool people
+- About to finish up a 6-week coding retreat at Recurse Center, where I've been working on my programming skills and meeting lots of cool people
   - View my [Recurse Log](/recurse) or see what I'm cooking up in {% extLink "The Lab" "https://lab.palomakop.tv" %}
 - Doing a weekly work trade at a local yoga studio
-- Getting ready for upcoming events NYC this month
+- Played 1 show this month, and getting ready to do another one soon
 - Searching for a new [job](/resume)
