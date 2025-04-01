@@ -2,18 +2,6 @@
 layout: nowTemplate
 ---
 
-<a href="/" class="now-button">
-  Visit my website
-</a>
-
-<a href="/newsletter" class="now-button">
-  Subscribe to my newsletter
-</a>
-
-<a href="/contact" class="now-button">
-  Contact me
-</a>
-
 
 ## Current Endeavors
 
@@ -33,7 +21,7 @@ layout: nowTemplate
 </a>
 
 <p style="text-align:center">*<small>Electronics Faire {% extLink "Full Schedule" "https://sites.temple.edu/efaire/schedule-and-registration/" %}</small></p>
-{% endcomment %}
+
 
 ## Upcoming Shows
 
@@ -42,6 +30,8 @@ layout: nowTemplate
   Solo A/V set at <i>WISE: In Waves</i>
   <div class="caption">Union Docs, Ridgewood</div>
 </a>
+
+{% endcomment %}
 
 
 ## Notes
@@ -52,16 +42,17 @@ New Haven, Connecticut
 
 ### Currently reading
 
-*The Mercy of Gods* - James S. A. Corey
+*The Mercy of Gods* - James S. A. Corey  
+(Just finished this... what to read next??)
 
 ### Recently watched
 
-*Mars Express* (2023)
+*Freak Orlando* (1981)
 
 ### Current status
 
-- About to finish up a 6-week coding retreat at Recurse Center, where I've been working on my programming skills and meeting lots of cool people
-  - View my [Recurse Log](/recurse) or see what I'm cooking up in {% extLink "The Lab" "https://lab.palomakop.tv" %}
-- Doing a weekly work trade at a local yoga studio
-- Played 1 show this month, and getting ready to do another one soon
-- Searching for a new [job](/resume)
+- Just finished up a 6-week coding retreat at Recurse Center, where I worked on my programming skills and met lots of cool people (need to make a blog post about this!)
+- Played two A/V shows in NYC (Need to post about those too!)
+- Planning more website updates!
+- Searching for a new job and/or more freelance opportunities
+- Helping my parents renovate their house
