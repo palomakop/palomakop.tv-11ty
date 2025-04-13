@@ -42,10 +42,7 @@ customStyle: >
           <div class="button"><a href="/newsletter">Newsletter</a></div>
         </li>
         <li>
-          <div class="button"><a href="/resume">Resumé</a></div>
-        </li>
-        <li>
-          <div class="button"><a href="/cv">CV</a></div>
+          <div class="button"><a href="/cv">Artist CV</a></div>
         </li>
         <li>
           <div class="button"><a href="/zine-club">Zine Club</a></div>
@@ -64,24 +61,118 @@ customStyle: >
   </h2>
 
   <p>
-    I am an artist, software developer, and educator from NYC and Woodstock, NY. I recently moved to New Haven, Connecticut, but still visit NY often. I'm currently doing a batch at {% extLink "Recurse Center" "https://recurse.com" %}, where I'm building web apps and experimenting with code. In the past, I've taught art and coding classes and workshops, worked as a software developer and IT solutions architect, run community spaces both online and off, and performed live visuals and music at events and art spaces across North America.
+    I am an artist, software developer, and educator from NYC and Woodstock, NY. I'm based in New Haven, Connecticut, and I often visit NYC via train. I've worked as a software engineer, solutions architect, and freelance web developer. I've also taught creative and technical classes and workshops, and run community spaces, both online and off. My art practice involves synthesizers, video feedback, and generative patterns inspired by nature and math. I've been performing audiovisual art since 2016, and have played live music and visuals at events and art spaces across North America.
   </p>
   <p>
-    This is my personal website, which I built from scratch with {% extLink "11ty" "https://11ty.dev" %}. I feel that personal websites and blogs are very important, especially at this moment in the internet age, when most online social spaces are controlled by large companies with anti-social incentives. I also run open-source infrastructure on my own server (such as an RSS reader and meta-search-engine) and use decentralized social media (find me on the fediverse as <code>@palomakop@merveilles.town</code>, and on matrix as <code>@palomakop:polyphaseportal.xyz</code>).
+    This is my personal website, which I built from scratch with {% extLink "11ty" "https://11ty.dev" %}. I feel that personal websites and blogs are very important, especially with the current state of the internet, where most online social spaces are controlled by large companies with anti-social incentives. I also run open-source infrastructure on my own server (such as an RSS reader and meta-search-engine) and use decentralized social media (find me on the fediverse as <code>@palomakop@merveilles.town</code>, and on matrix as <code>@palomakop:polyphaseportal.xyz</code>).
   </p>
   <p>
-    Other things I enjoy include bicycling, modular synthesis, yoga, meditation, and being in nature. I've spent time living in a yurt, a converted school bus, a camper van, and out of a backpack.
+    When I'm not crafting code and art, I enjoy bicycling, yoga, meditation, and spending time in the forest. I've lived in a yurt, a converted school bus, a camper van, and out of a backpack.
   </p>
 
   <details>
     <summary>Third-person artist bio</summary>
-    <p>
-      Paloma Kop is an experimental multimedia artist and creative technologist currently based in New Haven, CT. Their practice incorporates electronic media, from analog video and synthesizers to digital systems and code, as well as drawing, print, and liquids. They are especially interested in feedback loops, recursion, self-organizing and emergent structures, and patterns in nature.
-    </p>
-    <p>
-      They received an <a href="/mfa/">MFA</a> in Electronic Integrated Arts at Alfred University in 2020, and a BS in Visual Arts and Computer Science from Purchase College in 2014. They have shown work and performed at spaces and events such as Ambient Church (NYC), Eastern Bloc (Montréal), and Ann Arbor Film Festival (Michigan). They have done visiting artist talks and workshops at universities such as CalArts, NYU, and SAIC.
-    </p>
+    <div class="details-content">
+      <div id="artist-bio">
+        <p>
+          Paloma Kop is an experimental multimedia artist and creative technologist based in New Haven, CT. Their practice incorporates electronic media, from analog video and synthesizers to digital systems and code, as well as drawing, print, and liquids. They are especially interested in feedback loops, recursion, self-organizing and emergent structures, and patterns in nature.
+        </p>
+        <p>
+          They received an <a href="/mfa/">MFA</a> in Electronic Integrated Arts at Alfred University in 2020, and a BS in Visual Arts and Computer Science from Purchase College in 2014. They have shown work and performed at spaces and events such as Ambient Church (NYC), Eastern Bloc (Montréal), and Ann Arbor Film Festival (Michigan). They have done visiting artist talks and workshops at universities such as CalArts, NYU, and SAIC.
+        </p>
+      </div>
+      <button id="copy-button" onclick="copyContent()">Copy bio</button>
+    </div>
   </details>
+
+  <script>
+  // details toggle animation
+  document.addEventListener('DOMContentLoaded', function() {
+    const details = document.querySelector('.about-text details');
+    const content = details.querySelector('.about-text .details-content');
+    const summary = document.querySelector('.about-text details summary');
+    let animation = null;
+    content.style.height = details.hasAttribute('open') ? `${content.scrollHeight}px` : '0px';
+    summary.textContent = details.hasAttribute('open') ? "Hide third-person artist bio" : "Show third-person artist bio";
+
+    summary.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      if (animation) {
+        animation.cancel();
+      }
+
+      const isOpen = details.hasAttribute('open');
+
+      if (isOpen) {
+        // CLOSING
+        details.classList.remove('triangle-open');
+        summary.textContent = "Show third-person artist bio";
+        const startHeight = content.offsetHeight;
+
+        animation = content.animate(
+          [
+            { height: `${startHeight}px` },
+            { height: '0px' }
+          ],
+          { duration: 400, easing: 'ease' }
+        );
+        
+        animation.onfinish = () => {
+          details.removeAttribute('open');
+          content.style.height = '0px';
+          animation = null;
+        };
+      } else {
+        // OPENING
+        details.classList.add('triangle-open');
+        summary.textContent = "Hide third-person artist bio";
+        details.setAttribute('open', '');
+        
+        const endHeight = content.scrollHeight;
+        content.style.height = '0px';
+        void content.offsetHeight;
+
+        animation = content.animate(
+          [
+            { height: '0px' },
+            { height: `${endHeight}px` }
+          ],
+          { duration: 400, easing: 'ease' }
+        );
+
+        animation.onfinish = () => {
+          content.style.height = `${endHeight}px`;
+          animation = null;
+        };
+      }
+    });
+  });
+
+  // copy button function
+  const copyContent = async () => {
+    try {
+      let plainText = document.getElementById('artist-bio').textContent;
+      plainText = plainText
+        .replace(/^[ \t]+|[ \t]+$/gm, '')  // Remove leading/trailing whitespace from each line
+        .replace(/\n\s*\n/g, '||PARAGRAPH_BREAK||')  // Temporarily mark paragraph breaks
+        .replace(/\n/g, ' ')               // Replace single newlines with spaces
+        .replace(/\s{2,}/g, ' ')           // Replace multiple spaces with a single space
+        .replace(/\|\|PARAGRAPH_BREAK\|\|/g, '\n\n')  // Restore paragraph breaks
+        .trim();                           // Trim start and end of the entire text
+      await navigator.clipboard.writeText(plainText);
+      const copyButton = document.getElementById('copy-button');
+      const originalText = copyButton.textContent;
+      copyButton.textContent = "Copied!";
+      setTimeout(() => {
+        copyButton.textContent = originalText;
+      }, 2000);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+</script>
 
 </div>
 
@@ -96,7 +187,7 @@ customStyle: >
   </h2>
 
   <p>
-    I'm currently in search of a new position in web development (front-end, full stack, design engineering, or something similar that straddles the creative and the technical). Feel free to take a look at my <a href="/resume">resumé</a>, check out some of my {% extLink "technical projects" "https://github.com/palomakop/technical-projects-list" %}, and <a href="/contact">get in touch</a>!
+    I'm currently in search of a new position in web development (front-end, full stack, design engineering, or something similar that straddles the creative and the technical). Feel free to check out some of my {% extLink "technical projects" "https://github.com/palomakop/technical-projects-list" %}, and <a href="/contact">get in touch</a>!
   </p>
 
 </div>

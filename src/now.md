@@ -42,17 +42,16 @@ New Haven, Connecticut
 
 ### Currently reading
 
-*The Mercy of Gods* - James S. A. Corey  
-(Just finished this... what to read next??)
+I'm between books; thinking of reading *Moonbound* by Robin Sloan next
 
 ### Recently watched
 
-*Freak Orlando* (1981)
+*One Flew Over the Cuckoo's Nest* (1975)
 
 ### Current status
 
-- Just finished up a 6-week coding retreat at Recurse Center, where I worked on my programming skills and met lots of cool people (need to make a blog post about this!)
-- Played two A/V shows in NYC (Need to post about those too!)
-- Planning more website updates!
+- Doing some freelance work
+- Working on website updates and personal projects (more soon :D)
 - Searching for a new job and/or more freelance opportunities
-- Helping my parents renovate their house
+- Taking a break from events after playing [two shows](/blog/2025-04-01_march-shows-in-nyc/) last month
+- Wrote about my [coding retreat at Recurse Center!](/blog/2025-04-13_coding-retreat-at-recurse-center/)
