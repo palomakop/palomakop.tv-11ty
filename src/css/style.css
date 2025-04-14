@@ -187,8 +187,8 @@ desktop-sidebar ul a, mobile-nav ul a {
   }
 }
 
-mobile-nav ul a {
-  font-size:1.5em;
+mobile-nav ul {
+  font-size:min(1.5em, 6vh);
 }
 
 desktop-sidebar li .current-link, mobile-nav li .current-link {
