@@ -2,12 +2,18 @@
 layout: global
 ---
 
-{% include "header.liquid" %}
+<div class="container-flex">
 
-<main>
+  {% include "sidebar.liquid" %}
 
-  {{content}}
+  <div class="wide-container">
 
-</main>
+    <main {% if mainClass %} class="{{mainClass}}" {% endif %}>
+      {{content}}
+    </main>
 
-{% include "footer.liquid" %}
+    {% include "footer.liquid" %}
+
+  </div>
+
+</div>

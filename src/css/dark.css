@@ -27,12 +27,12 @@ a {
   }
 }
 
-#header-image, nav ul li a.icon-link img {
+.header-image, nav ul li a.icon-link img {
   filter:invert(0.95);
 }
 
 @media (hover:hover) {
-  #header-image:hover {
+  .header-image:hover {
     filter:invert(0.7);
   }
 }
