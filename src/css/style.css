@@ -98,6 +98,32 @@ main h2:first-child {
   background-attachment:fixed;
 }
 
+.column-container {
+  width:720px;
+  margin:0;
+}
+
+.wide-container {
+  width:100%;
+  max-width:1200px;
+  margin:0;
+  flex-shrink:1;
+}
+
+.bg {
+  width:100vw;
+  height:100vh;
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+  background-image:url("https://s3.amazonaws.com/palomakop.tv/mfa/refraction_projection.jpg");
+  background-size:cover;
+}
+
+/* RESPONSIVE LAYOUT ELEMENTS: MOBILE HEADER, SIDEBAR, AND MENU */
+
 .container-flex {
   padding-top:1.6em;
   display:flex;
@@ -165,11 +191,12 @@ desktop-sidebar ul {
   flex-direction:column;
   list-style-type:none;
   padding-left:0.5ch;
-  gap:0.3em;
+  gap:1em;
 }
 
 desktop-sidebar ul li, mobile-nav ul li {
   margin-bottom:0;
+  line-height:1em;
 }
 
 desktop-sidebar ul a, mobile-nav ul a {
@@ -189,6 +216,7 @@ desktop-sidebar ul a, mobile-nav ul a {
 
 mobile-nav ul {
   font-size:min(1.5em, 6vh);
+  text-align:center;
 }
 
 desktop-sidebar li .current-link, mobile-nav li .current-link {
@@ -198,7 +226,7 @@ desktop-sidebar li .current-link, mobile-nav li .current-link {
 desktop-sidebar li .current-link::before, mobile-nav li .current-link::before {
   content:"";
   position:absolute;
-  translate:-0.9em 0.55em;
+  translate:-0.9em 0.24em;
   width:0.65em;
   height:0.65em;
   background-image:url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0iY3VycmVudENvbG9yIiAvPgo8L3N2Zz4=");
@@ -206,17 +234,34 @@ desktop-sidebar li .current-link::before, mobile-nav li .current-link::before {
   background-repeat:no-repeat;
 }
 
-.column-container {
-  width:720px;
-  margin:0;
+mobile-header .header-image {
+  width:320px;
+  max-width:100%;
+  height:40px;
 }
 
-.wide-container {
+desktop-sidebar .header-image {
   width:100%;
-  max-width:1200px;
-  margin:0;
-  flex-shrink:1;
+  height:auto;
 }
+
+@media (hover:hover) {
+  .header-image:hover {
+    filter:var(--svg-hover-filter);
+  }
+}
+
+h1 {
+  display:block;
+  margin:0;
+  font-size:var(--h1-font-size);
+}
+
+#menu {
+  display:none;
+}
+
+/* mobile styles for header/nav */
 
 @media only screen and (max-width:784px) {
   .container {
@@ -266,7 +311,7 @@ desktop-sidebar li .current-link::before, mobile-nav li .current-link::before {
     width:100%;
     height:100%;
     margin:0;
-    padding:min(3ch,10vw);
+    padding:1.6em min(3ch,10vw);
     box-sizing:border-box;
   }
 
@@ -279,7 +324,7 @@ desktop-sidebar li .current-link::before, mobile-nav li .current-link::before {
     justify-content:center;
     align-items:center;
     padding:0;
-    gap:0.3em;
+    gap:1em;
   }
 
   desktop-sidebar {
@@ -291,44 +336,7 @@ desktop-sidebar li .current-link::before, mobile-nav li .current-link::before {
   }
 }
 
-.bg {
-  width:100vw;
-  height:100vh;
-  display:block;
-  position:fixed;
-  top:0;
-  left:0;
-  z-index:-1;
-  background-image:url("https://s3.amazonaws.com/palomakop.tv/mfa/refraction_projection.jpg");
-  background-size:cover;
-}
-
-/* HEADER */
-
-mobile-header .header-image {
-  width:320px;
-  max-width:100%;
-  height:40px;
-}
-
-desktop-sidebar .header-image {
-  width:100%;
-  height:auto;
-}
-
-@media (hover:hover) {
-  .header-image:hover {
-    filter:var(--svg-hover-filter);
-  }
-}
-
-h1 {
-  display:block;
-  margin:0;
-  font-size:var(--h1-font-size);
-}
-
-/* NAVIGATION */
+/* NAV BUTTONS */
 
 nav.bold a {
   font-weight:var(--black-weight);
@@ -342,10 +350,6 @@ nav ul {
   flex-wrap:wrap;
   gap:1rem;
   align-items:baseline;
-}
-
-header nav ul {
-  align-items:center;
 }
 
 nav.centered ul {
