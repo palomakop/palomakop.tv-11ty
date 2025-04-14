@@ -179,10 +179,12 @@ desktop-sidebar ul a, mobile-nav ul a {
   letter-spacing:-0.05em;
 }
 
-desktop-sidebar ul a:hover, mobile-nav ul a:hover {
-  text-decoration:none;
-  filter:var(--svg-hover-filter);
-  color:unset;
+@media (hover:hover) {
+  desktop-sidebar ul a:hover, mobile-nav ul a:hover {
+    text-decoration:none;
+    filter:var(--svg-hover-filter);
+    color:unset;
+  }
 }
 
 mobile-nav ul a {

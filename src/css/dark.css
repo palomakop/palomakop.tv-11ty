@@ -50,7 +50,7 @@ footer ul li img {
 }
 
 @media (hover:hover) {
-  footer ul li a:hover {
+  desktop-sidebar ul a:hover, mobile-nav ul a:hover, footer ul li a:hover {
     color:#f2f2f2;
     filter:invert(0.3);
   }
