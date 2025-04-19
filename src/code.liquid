@@ -1,0 +1,116 @@
+---
+layout: wide
+title: Code
+customStyle: >
+  :root {
+    --main-bg-color:var(--neutral-bg-color);
+    --main-bg-gradient:none;
+  }
+  #intro-container {
+    position:relative;
+    height:fit-content;
+  }
+  #intro-placeholder {
+    opacity:0;
+    pointer-events:none;
+  }
+  #intro {
+    position: absolute;
+    top:0;
+    left:0;
+    margin:0;
+  }
+  .caret {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='100%25' viewBox='0 0 2 100'%3E%3Cline x1='1' y1='0' x2='1' y2='100' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    vertical-align: text-bottom;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  @keyframes blink-caret {
+    from, to { opacity:1; }
+    50% { opacity:0; }
+  }
+  @media (scripting:none) {
+    #intro {
+      display:none;
+    }
+    #intro-placeholder {
+      opacity:1;
+      pointer-events:all;
+    }
+  }
+---
+
+<h2>Software Development Projects</h2>
+
+<div id="intro-container">
+  <p id="intro" aria-hidden="true"><span id="typed-text"></span><span class="caret"></span></p>
+  <p id="intro-placeholder">Hello! I'm Paloma Kop, and I love building things for the web. This is an index of my projects.</p>
+</div>
+
+<script>
+var i = 0;
+var txt = document.getElementById("intro-placeholder").innerHTML.trim();
+var speed = 50;
+var intro = document.getElementById("intro");
+var textContainer = document.getElementById('typed-text');
+var caret = document.querySelector('.caret');
+
+if (sessionStorage.getItem("typingComplete")) {
+  textContainer.textContent = txt;
+  intro.removeChild(caret);
+} else {
+  setTimeout(function() {
+    startTyping();
+  }, 1000);
+}
+
+function startTyping() {
+  if (i < txt.length) {
+    textContainer.textContent += txt.charAt(i);
+    i++;
+    setTimeout(startTyping, speed);
+  } else {
+    sessionStorage.setItem("typingComplete", "true");
+    setTimeout(function() {
+      intro.removeChild(caret);
+  }, 5000);
+  }
+}
+</script>
+
+<nav>
+  <ul>
+    <li>
+      <a href="/resume">Resumé</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="gallery">
+
+<p><i>Sorry, I haven't finished adding my projects to this page yet! In the meantime, please check out my {% extLink "GitHub profile" "https://github.com/palomakop" %}.</i></p>
+
+{% assign codeCollection = collections.code | sort: "data.workYear" | reverse %}
+
+{%- for project in codeCollection -%}
+  <div class="gallery-item">
+    <a href="{{ project.url }}">
+    {% image project.data.thumbnail, project.data.thumbnailAlt, 1440, "" %}
+    <div class="caption">
+      <h2><span class="title">{{ project.data.title }}</span>, {{ project.data.projectYear }}</h2>
+      <p>{{ project.data.description }}</p>
+      <p class="tags">
+      {%- for tag in project.data.projectTags -%}
+      <span>{{ tag }}</span>
+      {%- endfor -%}
+      </p>
+    </div>
+    </a>
+  </div>
+  {%- endfor -%}
+
+</div>

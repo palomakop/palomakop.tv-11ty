@@ -261,9 +261,20 @@ h1 {
   display:none;
 }
 
+@media only screen and (min-width:785px) {
+  .mobile-only {
+    display:none;
+  }
+}
+
 /* mobile styles for header/nav */
 
 @media only screen and (max-width:784px) {
+
+  .desktop-only {
+    display:none;
+  }
+
   .container {
     padding:0 min(3ch,10vw);
   }
@@ -350,6 +361,10 @@ nav ul {
   flex-wrap:wrap;
   gap:1rem;
   align-items:baseline;
+}
+
+nav.has-icon ul {
+  align-items:center;
 }
 
 nav.centered ul {

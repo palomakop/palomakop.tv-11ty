@@ -46,12 +46,11 @@ I'm between books; thinking of reading *Moonbound* by Robin Sloan next
 
 ### Recently watched
 
-*One Flew Over the Cuckoo's Nest* (1975)
+*Twilight of the Warriors: Walled In* (2024)
 
 ### Current status
 
-- Doing some freelance work
-- Working on website updates and personal projects (more soon :D)
+- Working on website updates and personal projects
 - Searching for a new job and/or more freelance opportunities
 - Taking a break from events after playing [two shows](/blog/2025-04-01_march-shows-in-nyc/) last month
-- Wrote about my [coding retreat at Recurse Center!](/blog/2025-04-13_coding-retreat-at-recurse-center/)
+- I finally wrote about my [coding retreat at Recurse Center!](/blog/2025-04-13_coding-retreat-at-recurse-center/)

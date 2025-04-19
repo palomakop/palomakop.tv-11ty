@@ -1,5 +1,6 @@
 # Redirects from what the browser requests to what we serve
-/works/*                /work/:splat
+/works/*                /art/:splat
+/work/*                 /art/:splat
 /news                   /blog
 /about                  /
 /website-info           /colophon

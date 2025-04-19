@@ -12,16 +12,16 @@ layout: default
 
 {{content}}
 
-{% assign workCollection = collections.work | sort: "data.workYear" | reverse %}
+{% assign artCollection = collections.art | sort: "data.workYear" | reverse %}
 
-{% assign previousWork = workCollection | getPreviousCollectionItem: page %}
+{% assign previousWork = artCollection | getPreviousCollectionItem: page %}
 {% unless previousWork %}
-{% assign previousWork = workCollection | last: page %}
+{% assign previousWork = artCollection | last: page %}
 {% endunless %}
 
-{% assign nextWork = workCollection | getNextCollectionItem: page %}
+{% assign nextWork = artCollection | getNextCollectionItem: page %}
 {% unless nextWork %}
-{% assign nextWork = workCollection | first: page %}
+{% assign nextWork = artCollection | first: page %}
 {% endunless %}
 
 <nav class="bottom bold">

@@ -1,17 +1,25 @@
 ---
 layout: wide
-title: Work
+title: Art
 ---
 
-<h2>Selected Work</h2>
+<h2>Multimedia Art</h2>
 
-<p>An index of creative projects from over the years. For a more technical overview of my work, see my {% extLink "technical projects list" "https://github.com/palomakop/technical-projects-list" %} on Github.
+<p>An index of my creative projects from over the years.</p>
+
+<nav>
+  <ul>
+    <li>
+      <a href="/cv">Artist CV</a>
+    </li>
+  </ul>
+</nav>
 
 <div class="gallery">
 
-{% assign workCollection = collections.work | sort: "data.workYear" | reverse %}
+{% assign artCollection = collections.art | sort: "data.workYear" | reverse %}
 
-{%- for work in workCollection -%}
+{%- for work in artCollection -%}
   <div class="gallery-item">
     <a href="{{ work.url }}">
     {% image work.data.thumbnail, work.data.thumbnailAlt, 1440, "" %}
