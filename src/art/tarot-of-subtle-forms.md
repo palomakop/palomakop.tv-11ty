@@ -1,7 +1,7 @@
 ---
 title: Tarot of Subtle Forms
-workTags: ["drawing"]
-workYear: "2023-"
+projectTags: ["drawing"]
+projectYear: "2023-"
 description: A visual lexicon of Buddhist teachings
 lightbox: true
 customStyle: >
@@ -13,7 +13,7 @@ thumbnail: https://s3.amazonaws.com/palomakop.tv/works/tarot-of-subtle-forms/tar
 thumbnailAlt: black and white drawing of an organic matrix
 ---
 
-## *{{title}}*, {{workYear}}
+## *{{title}}*, {{projectYear}}
 
 *Tarot of Subtle Forms* is a series of illustrated cards that form a visual lexicon of concepts from Buddhism and elsewhere. The order and symbology of the cards represent my own personal interpretations emerging from my study and practice of meditation and tarot. I occasionally add new cards to the series when inspiration strikes.
 

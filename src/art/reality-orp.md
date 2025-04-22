@@ -1,7 +1,7 @@
 ---
 title: Reality Orp
-workTags: ["collaboration"]
-workYear: "2022-"
+projectTags: ["collaboration"]
+projectYear: "2022-"
 description: Audiovisual performance project
 lightbox: true
 dark: true

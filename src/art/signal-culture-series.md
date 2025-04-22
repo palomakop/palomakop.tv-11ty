@@ -1,7 +1,7 @@
 ---
 title: Signal Culture Series
-workTags: ["video art"]
-workYear: "2017"
+projectTags: ["video art"]
+projectYear: "2017"
 description: A series of video works recorded during an artist residency
 dark: true
 customStyle: >
@@ -12,15 +12,15 @@ thumbnail: https://s3.amazonaws.com/palomakop.tv/works/signal-culture-series/ras
 thumbnailAlt: a folded abstract shape of white light on a dark background
 ---
 
-<h2 id="raster-scan-forms"><i>Raster Scan Forms</i>, {{workYear}}</h2>
+<h2 id="raster-scan-forms"><i>Raster Scan Forms</i>, {{projectYear}}</h2>
 
 {% video "997235204", "https://player.vimeo.com/progressive_redirect/playback/997235204/rendition/720p/file.mp4?loc=external&signature=dfa8eb9320398f7a8e7705a459a0684b503d2aff0f8aa52c5c9f37a321775629", '{"Youtube":"https://youtu.be/4yVsiaAiCJQ","Peertube":"https://videos.scanlines.xyz/w/31BTqdcHk8Mi5AhPXfEwuU"}' %}
 
-<h2 id="raster-scan-wanderer"><i>Raster Scan Wanderer</i>, {{workYear}}</h2>
+<h2 id="raster-scan-wanderer"><i>Raster Scan Wanderer</i>, {{projectYear}}</h2>
 
 {% video "997235269", "https://player.vimeo.com/progressive_redirect/playback/997235269/rendition/720p/file.mp4?loc=external&signature=f526304b0f6e617458a2b5d40ee0d4a93caef5d71a3f7ee126c2e602918afe5d", '{"Youtube":"https://youtu.be/xmaYB-xY1EM","Peertube":"https://videos.scanlines.xyz/w/7EpuuzuQ62mXi85Qmb2JLA"}' %}
 
-<h2 id="wobbulated-granary"><i>Wobbulated Granary</i>, {{workYear}}</h2>
+<h2 id="wobbulated-granary"><i>Wobbulated Granary</i>, {{projectYear}}</h2>
 
 {% video "997235452", "https://player.vimeo.com/progressive_redirect/playback/997235452/rendition/720p/file.mp4?loc=external&signature=c6cb55d585bbaf6d521a68ec412d8731a4072426a50d1735fad24ba3b315a5d0", '{"Youtube":"https://youtu.be/EEc6blab7W4","Peertube":"https://videos.scanlines.xyz/w/q5rbJrucX6hToXYDufVGiu"}' %}
 

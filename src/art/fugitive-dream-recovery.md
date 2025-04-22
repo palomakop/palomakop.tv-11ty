@@ -1,7 +1,7 @@
 ---
 title: Fugitive Dream Recovery
-workTags: ["collaboration"]
-workYear: "2016-2018"
+projectTags: ["collaboration"]
+projectYear: "2016-2018"
 description: Audiovisual experiments
 lightbox: true
 dark: true

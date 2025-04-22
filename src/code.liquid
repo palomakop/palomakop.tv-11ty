@@ -1,5 +1,6 @@
 ---
-layout: wide
+layout: default
+containerType: wide
 title: Code
 customStyle: >
   :root {
@@ -44,11 +45,11 @@ customStyle: >
   }
 ---
 
-<h2>Software Development Projects</h2>
+<h2>Web Development Projects</h2>
 
 <div id="intro-container">
   <p id="intro" aria-hidden="true"><span id="typed-text"></span><span class="caret"></span></p>
-  <p id="intro-placeholder">Hello! I'm Paloma Kop, and I love building things for the web. This is an index of my projects.</p>
+  <p id="intro-placeholder">Hello! I'm Paloma Kop, and I love building things for the web. Here are some of my projects.</p>
 </div>
 
 <script>
@@ -82,35 +83,161 @@ function startTyping() {
 }
 </script>
 
-<nav>
+{% comment %} <nav>
   <ul>
     <li>
       <a href="/resume">Resumé</a>
     </li>
   </ul>
-</nav>
+</nav> {% endcomment %}
 
-<div class="gallery">
-
-<p><i>Sorry, I haven't finished adding my projects to this page yet! In the meantime, please check out my {% extLink "GitHub profile" "https://github.com/palomakop" %}.</i></p>
-
-{% assign codeCollection = collections.code | sort: "data.workYear" | reverse %}
-
-{%- for project in codeCollection -%}
-  <div class="gallery-item">
-    <a href="{{ project.url }}">
-    {% image project.data.thumbnail, project.data.thumbnailAlt, 1440, "" %}
-    <div class="caption">
-      <h2><span class="title">{{ project.data.title }}</span>, {{ project.data.projectYear }}</h2>
-      <p>{{ project.data.description }}</p>
-      <p class="tags">
-      {%- for tag in project.data.projectTags -%}
-      <span>{{ tag }}</span>
-      {%- endfor -%}
-      </p>
+{% assign codeCollection = collections.code | sort: "data.projectIndex" %}
+<div class="code-projects">
+  {%- for project in codeCollection -%}
+  <article class="code-project">
+    <div class="code-project-header">
+      <div>
+        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "" %}
+        {% if project.data.mobileThumbnail %}
+        <div class="mobile-thumbnail">
+          {% image project.data.mobileThumbnail, "", 360, "" %}
+        </div>
+        {% endif %}
+      </div>
+      <div>
+        <h3><span class="title">{{ project.data.title }}</span></h3>
+        <p>{{ project.data.description }}</p>
+        <p class="tags">
+          {%- for tag in project.data.projectTags -%}
+          <span class="project-tag">{{ tag }}</span>
+          {%- endfor -%}
+        </p>
+        <nav>
+          <ul>
+            {% if project.data.codeLink %}
+            <li>
+              <a href="{{ project.data.codeLink }}" target="_blank">Code</a>
+            </li>
+            {% endif %}
+            {% if project.data.demoLink %}
+            <li>
+              <a href="{{ project.data.demoLink }}" target="_blank">Demo</a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
     </div>
-    </a>
-  </div>
+    <div class="project-details">
+      {{project.content}}
+    </div>
+  </article>
   {%- endfor -%}
+</div>
 
+<h2>Community Infrastructure</h2>
+
+<p>I deploy and administrate self-hosted services for community organizations.</p>
+
+{% assign communityCollection = collections.communityProjects | sort: "data.projectIndex" %}
+<div class="code-projects">
+  {%- for project in communityCollection -%}
+  <article class="code-project">
+    <div class="code-project-header">
+      <div>
+        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "" %}
+        {% if project.data.mobileThumbnail %}
+        <div class="mobile-thumbnail">
+          {% image project.data.mobileThumbnail, "", 360, "" %}
+        </div>
+        {% endif %}
+      </div>
+      <div>
+        <h3><span class="title">{{ project.data.title }}</span></h3>
+        <p>{{ project.data.description }}</p>
+        <p class="tags">
+          {%- for tag in project.data.projectTags -%}
+          <span class="project-tag">{{ tag }}</span>
+          {%- endfor -%}
+        </p>
+        <nav>
+          <ul>
+            {% if project.data.codeLink %}
+            <li>
+              <a href="{{ project.data.codeLink }}" target="_blank">Code</a>
+            </li>
+            {% endif %}
+            {% if project.data.demoLink %}
+            <li>
+              <a href="{{ project.data.demoLink }}" target="_blank">Link</a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="project-details">
+      {{project.content}}
+    </div>
+  </article>
+  {%- endfor -%}
+</div>
+
+<h2>Client Websites</h2>
+
+{% assign clientCollection = collections.clientSites | sort: "data.projectIndex" %}
+<div class="code-projects">
+  {%- for project in clientCollection -%}
+  <article class="code-project">
+    <div class="code-project-header">
+      <div>
+        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "" %}
+        {% if project.data.mobileThumbnail %}
+        <div class="mobile-thumbnail">
+          {% image project.data.mobileThumbnail, "", 360, "" %}
+        </div>
+        {% endif %}
+      </div>
+      <div>
+        <h3><span class="title">{{ project.data.title }}</span></h3>
+        <p>{{ project.data.description }}</p>
+        <p class="tags">
+          {%- for tag in project.data.projectTags -%}
+          <span class="project-tag">{{ tag }}</span>
+          {%- endfor -%}
+        </p>
+        <nav>
+          <ul>
+            {% if project.data.codeLink %}
+            <li>
+              <a href="{{ project.data.codeLink }}" target="_blank">Code</a>
+            </li>
+            {% endif %}
+            {% if project.data.demoLink %}
+            <li>
+              <a href="{{ project.data.demoLink }}" target="_blank">Link</a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="project-details">
+      {{project.content}}
+    </div>
+  </article>
+  {%- endfor -%}
+</div>
+
+<div class="call-to-action">
+  <h2>Thanks for checking out my projects!</h2>
+  <p>Interested in working together?</p>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="/contact" class="rainbutton">Get in touch</a>
+      </li>
+    </ul>
+  </nav>
 </div>

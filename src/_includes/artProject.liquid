@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<nav class="top bold">
+  <ul>
+    <li>
+      <a href="/art">&lt; Back to index</a>
+    </li>
+  </ul>
+</nav>
+
+{{content}}
+
+{% assign artCollection = collections.art | sort: "data.projectYear" | reverse %}
+
+{% assign previousProject = artCollection | getPreviousCollectionItem: page %}
+{% unless previousProject %}
+{% assign previousProject = artCollection | last: page %}
+{% endunless %}
+
+{% assign nextProject = artCollection | getNextCollectionItem: page %}
+{% unless nextProject %}
+{% assign nextProject = artCollection | first: page %}
+{% endunless %}
+
+<nav class="bottom bold">
+  <ul>
+    <li>
+      <a href="{{ previousProject.url }}">&lt; {{ previousProject.data.title }}</a>
+    </li>
+    <li>
+      <a href="{{ nextProject.url }}">{{ nextProject.data.title }} &gt;</a>
+    </li>
+  </ul>
+</nav>

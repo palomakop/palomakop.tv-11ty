@@ -1,7 +1,7 @@
 ---
 title: Recursive News
-workTags: ["performance"]
-workYear: "2020"
+projectTags: ["performance"]
+projectYear: "2020"
 description: A cable access station inside a cable access station inside a...
 lightbox: true
 customStyle: >
@@ -13,7 +13,7 @@ thumbnail: https://s3.us-east-1.amazonaws.com/palomakop.tv/works/recursive-news/
 thumbnailAlt: Screenshot from Recursive News performance featuring Allen Riley talking on the phone
 ---
 
-## *{{title}}*, {{workYear}}
+## *{{title}}*, {{projectYear}}
 
 {% video "1039738802", "https://player.vimeo.com/progressive_redirect/playback/1039738802/rendition/720p/file.mp4?loc=external&signature=77d76214a868ed8df085592796727d78a78dc3a5bbea4fd579478797257faefd", '{"Youtube":"https://youtu.be/lILELG89sYo","Peertube":"https://videos.scanlines.xyz/w/nJAEsD9w3ifiQQ9KeK9sfv"}' %}
 

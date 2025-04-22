@@ -1,7 +1,7 @@
 ---
 title: The Life Cycle of Artianian Flowers
-workTags: ["print"]
-workYear: "2024"
+projectTags: ["print"]
+projectYear: "2024"
 description: A deck of illustrated printed cards
 lightbox: true
 customStyle: >
@@ -13,7 +13,7 @@ thumbnail: https://s3.us-east-1.amazonaws.com/palomakop.tv/works/life-cycle-of-a
 thumbnailAlt: Spread of the first three cards
 ---
 
-## *{{title}}*, {{workYear}}
+## *{{title}}*, {{projectYear}}
 
 {% photoGrid "vertical" %}
 {% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/life-cycle-of-artianian-flowers/flowers_spread.jpg", thumbnailAlt, false, true %}

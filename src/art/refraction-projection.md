@@ -1,7 +1,7 @@
 ---
 title: Refraction/Projection
-workTags: ["video art"]
-workYear: "2020"
+projectTags: ["video art"]
+projectYear: "2020"
 description: A 2-channel video recording of light refracted through glass
 dark: true
 customStyle: >
@@ -11,9 +11,11 @@ customStyle: >
 thumbnail: https://s3.us-east-1.amazonaws.com/palomakop.tv/mfa/refraction_projection.jpg
 thumbnailAlt: abstract shapes and lines made of light
 lightbox: true
+layout: default
+containerType: wide
 ---
 
-## *{{title}}*, {{workYear}}
+## *{{title}}*, {{projectYear}}
 
 <div class="two-channel-video">
 {% autoplayVideoLoop "1038289551", "https://player.vimeo.com/progressive_redirect/playback/1038289551/rendition/720p/file.mp4?loc=external&signature=6bf576a936ec0caf3b9c5202f9069211f8e3c67c0659716f4e3f2ffc778701f2" %}

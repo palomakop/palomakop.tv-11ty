@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<nav class="top bold">
+  <ul>
+    <li>
+      <a href="/code">&lt; Back to projects</a>
+    </li>
+  </ul>
+</nav>
+
+{{content}}
+
+{% assign codeCollection = collections.code | sort: "data.projectYear" | reverse %}
+
+{% assign previousProject = codeCollection | getPreviousCollectionItem: page %}
+{% unless previousProject %}
+{% assign previousProject = codeCollection | last: page %}
+{% endunless %}
+
+{% assign nextProject = codeCollection | getNextCollectionItem: page %}
+{% unless nextProject %}
+{% assign nextProject = codeCollection | first: page %}
+{% endunless %}
+
+<nav class="bottom bold">
+  <ul>
+    <li>
+      <a href="{{ previousProject.url }}">&lt; {{ previousProject.data.title }}</a>
+    </li>
+    <li>
+      <a href="{{ nextProject.url }}">{{ nextProject.data.title }} &gt;</a>
+    </li>
+  </ul>
+</nav>

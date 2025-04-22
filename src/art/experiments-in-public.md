@@ -1,7 +1,7 @@
 ---
 title: Experiments in Public
-workTags: ["video art"]
-workYear: "2018"
+projectTags: ["video art"]
+projectYear: "2018"
 description: A series of audiovisual pieces created quickly and imperfectly
 lightbox: true
 dark: true
@@ -9,7 +9,7 @@ thumbnail: https://s3.us-east-1.amazonaws.com/palomakop.tv/mfa/plasmaplex.jpg
 thumbnailAlt: abstract video feedback still
 ---
 
-## *{{title}}*, {{workYear}}
+## *{{title}}*, {{projectYear}}
 
 <div class="video-container">
   <div class="video-iframe-container" style="position:relative;overflow:hidden;max-height:max(90vh, 200px);width:auto;aspect-ratio:500/281;margin-left:auto;margin-right:auto;">

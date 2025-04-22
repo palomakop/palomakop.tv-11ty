@@ -1,7 +1,7 @@
 ---
 title: Ambient Church
-workTags: ["performance"]
-workYear: "2018 & 2022"
+projectTags: ["performance"]
+projectYear: "2018 & 2022"
 description: Live visuals for concert series in a projection mapped church
 lightbox: true
 dark: true

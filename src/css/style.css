@@ -1,6 +1,6 @@
 :root {
   --main-bg-color:#dfd5db;
-  --neutral-bg-color:#f1f0e9;
+  --neutral-bg-color:rgb(241, 240, 233);
   --main-bg-gradient:radial-gradient(#d9e7eb, #e6d5d5);
   --white:#f9f9f0;
   --link-color:#000000;
@@ -578,9 +578,11 @@ h3 {
   margin-top:1.5em;
 }
 
-p, details {
+p, details, li {
   max-width:720px;
-  font-weight:var(--normal-weight);
+}
+
+p, details {
   margin:0.8em 0 1em;
 }
 
@@ -840,13 +842,13 @@ img-caption {
   margin-bottom:0.1em;
 }
 
-/* GALLERY */
+/* ART PROJECTS INDEX */
 
-.gallery {
+.art-projects {
   margin-top:35px;
 }
 
-.gallery-item img {
+.art-project img {
   border:solid 1.5px;
   border-radius:5px;
   object-fit:cover;
@@ -857,7 +859,7 @@ img-caption {
 }
 
 @media only screen and (min-width:785px) {
-  .gallery {
+  .art-projects {
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
     justify-content:flex-start;
@@ -865,48 +867,48 @@ img-caption {
     gap:3vw 4vw;
   }
 
-  .gallery-item {
+  .art-project {
     max-width:720px;
   }
 }
 
 @media only screen and (max-width:784px) {
-  .gallery-item {
+  .art-project {
     width:100%;
     margin-bottom:40px;
   }
 }
 
-.gallery-item a {
+.art-project a {
   text-decoration:none;
 }
 
 @media (hover:hover) {
-  .gallery-item a:hover {
+  .art-project a:hover {
     color:#000000;
   }
-  .gallery-item a:hover img {
+  .art-project a:hover img {
     filter:var(--hover-filter);
   }
-  .gallery-item a:hover .caption {
+  .art-project a:hover .caption {
     filter:var(--svg-hover-filter);
   }
 }
 
-.gallery-item h2 {
+.art-project h3 {
   text-align:center;
   margin:0;
   text-transform:none;
   font-size:var(--body-font-size);
 }
 
-.gallery-item p {
+.art-project p {
   text-align:center;
   margin:.2em 0 .5em 0;
   font-size:var(--small-font-size);
 }
 
-.gallery-item p.tags {
+.art-project p.tags {
   display:flex;
   justify-content:center;
   gap:0.5em;
@@ -914,15 +916,120 @@ img-caption {
   font-weight:var(--medium-weight);
 }
 
-.gallery-item .tags span {
+.art-project .title {
+  font-style:italic;
+}
+
+.art-project .project-tag {
   background:#000000;
   border-radius:5px;
   color:var(--white);
   padding:3px 6px;
 }
 
-.gallery-item .title {
-  font-style:italic;
+/* CODE PROJECTS INDEX */
+
+.code-projects {
+  margin-top:3.5em;
+  display:flex;
+  flex-direction:column;
+  gap:3.5em;
+}
+
+.code-project-header {
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  gap:1em 2em;
+  align-items:center;
+  margin-bottom:1em;
+}
+
+.code-project-header div {
+  flex-basis:60%;
+  position:relative;
+  max-width:400px;
+}
+
+.code-project-header div:first-child {
+  flex-basis:40%;
+}
+
+.code-project-header img {
+  object-fit:cover;
+  min-width:0;
+  border:solid 1.5px;
+  border-radius:5px;
+  position:relative;
+  box-sizing:border-box;
+}
+
+.code-project-header .mobile-thumbnail {
+  position:absolute;
+  bottom:0;
+  width:30%;
+  right:0;
+  filter:drop-shadow(-1.5px -1.5px 1.5px rgba(241, 240, 233, 0.2));
+}
+
+.code-project-header div:has(.mobile-thumbnail) {
+  padding-right:min(4.2em, 10vw);
+  padding-bottom:1.5em;
+}
+
+.code-project-header h3 {
+  margin-top:0;
+}
+
+.code-project .tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:0 1ch;
+}
+
+.code-project .project-tag {
+  opacity:0.4;
+}
+
+.code-project .project-tag:before {
+  content:"#";
+}
+
+@media screen and (max-width:784px) {
+  .code-project-header {
+    flex-direction:column;
+    align-items:flex-start;
+    margin-bottom:2em;
+  }
+
+  .code-project-header div {
+    max-width:unset;
+  }
+}
+
+.project-details li {
+  margin:0.6em 0;
+  line-height:1.4em;
+}
+
+.call-to-action {
+  margin:5em 0;
+  padding:5em;
+  border-radius:25px;
+  background-color:var(--subtle-bg-color);
+  width:fit-content;
+  max-width:720px;
+  text-align:center;
+  justify-content:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1.5em;
+}
+
+.call-to-action * {
+  margin:0;
+  font-weight:var(--bold-weight);
 }
 
 /* PHOTO GRIDS */
@@ -1103,12 +1210,12 @@ video.html-video-fallback {
 }
 
 .two-channel-video {
-  width:95vw;
-  padding-right:5vw;
+  width:100%;
   margin:1.5em 0 3em;
   display:flex;
   box-sizing:border-box;
   gap:0;
+  flex-direction:row;
 }
 
 .two-channel-video .video-container, .two-channel-video .video-container .video-iframe-container, .two-channel-video .video-container .html-video-fallback {
@@ -1117,9 +1224,7 @@ video.html-video-fallback {
 
 @media only screen and (max-width:784px) {
   .two-channel-video {
-    width:calc(100vw - min(3ch,10vw));
-    padding-right:min(3ch,10vw);
-    flex-wrap:wrap;
+    flex-direction:column;
   }
 }
 

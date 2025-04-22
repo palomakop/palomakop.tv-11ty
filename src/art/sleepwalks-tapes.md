@@ -1,7 +1,7 @@
 ---
 title: Sleepwalks Tapes
-workTags: ["music"]
-workYear: "2017-2018"
+projectTags: ["music"]
+projectYear: "2017-2018"
 description: Tapes released under my old ambient synth music project
 customStyle: >
   :root {
@@ -13,7 +13,7 @@ thumbnailAlt: a hand holding an irridescent blue cassette tape against the sky
 musicPlayer: true
 ---
 
-<h2><i>{{title}}</i>, {{workYear}}</h2>
+<h2><i>{{title}}</i>, {{projectYear}}</h2>
 
 {%- musicPlayer "SLEEPWALKS - YOUNG & UGLY", "https://s3.amazonaws.com/palomakop.tv/works/sleepwalks-tapes/young_and_ugly.jpg", "2017-04-20", "https://palomakop.bandcamp.com/album/young-ugly" -%}
 {%- musicPlayerTrack "young & ugly", "https://s3.amazonaws.com/palomakop.tv/works/sleepwalks-tapes/young-and-ugly/01_young_and_ugly.mp3" -%}

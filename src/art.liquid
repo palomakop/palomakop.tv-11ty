@@ -1,5 +1,6 @@
 ---
-layout: wide
+layout: default
+containerType: wide
 title: Art
 ---
 
@@ -15,20 +16,20 @@ title: Art
   </ul>
 </nav>
 
-<div class="gallery">
+<div class="art-projects">
 
-{% assign artCollection = collections.art | sort: "data.workYear" | reverse %}
+{% assign artCollection = collections.art | sort: "data.projectYear" | reverse %}
 
-{%- for work in artCollection -%}
-  <div class="gallery-item">
-    <a href="{{ work.url }}">
-    {% image work.data.thumbnail, work.data.thumbnailAlt, 1440, "" %}
+{%- for project in artCollection -%}
+  <div class="art-project">
+    <a href="{{ project.url }}">
+    {% image project.data.thumbnail, project.data.thumbnailAlt, 1440, "" %}
     <div class="caption">
-      <h2><span class="title">{{ work.data.title }}</span>, {{ work.data.workYear }}</h2>
-      <p>{{ work.data.description }}</p>
+      <h3><span class="title">{{ project.data.title }}</span>, {{ project.data.projectYear }}</h3>
+      <p>{{ project.data.description }}</p>
       <p class="tags">
-      {%- for tag in work.data.workTags -%}
-      <span>{{ tag }}</span>
+      {%- for tag in project.data.projectTags -%}
+      <span class="project-tag">{{ tag }}</span>
       {%- endfor -%}
       </p>
     </div>

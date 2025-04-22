@@ -1,14 +1,14 @@
 ---
 title: Chère Chambre
-workTags: ["video art"]
-workYear: "2019"
+projectTags: ["video art"]
+projectYear: "2019"
 description: Audiovisual piece with modular synth and oscillographics
 dark: true
 thumbnail: https://s3.us-east-1.amazonaws.com/palomakop.tv/mfa/chere_chambre.jpg
 thumbnailAlt: abstract still image of raster manipulation on an oscilloscope
 ---
 
-## *{{title}}*, {{workYear}}
+## *{{title}}*, {{projectYear}}
 
 {% video "1039120081", "https://player.vimeo.com/progressive_redirect/playback/1039120081/rendition/720p/file.mp4?loc=external&signature=723ac75c1bf0b0ee9e1dfa343e558ff603120481319be7c380859abb348b7115", '{"Youtube":"https://youtu.be/e37jAhDY3W4","Peertube":"https://videos.scanlines.xyz/w/45QAfppvYYrHxPbLfswSEB"}' %}
 

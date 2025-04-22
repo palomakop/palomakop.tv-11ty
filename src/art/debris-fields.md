@@ -1,7 +1,7 @@
 ---
 title: Debris Fields
-workTags: ["music video"]
-workYear: "2022"
+projectTags: ["music video"]
+projectYear: "2022"
 description: A music video for a track by a modular synth musician
 customStyle: >
   :root {
@@ -12,7 +12,7 @@ thumbnail: https://s3.us-east-1.amazonaws.com/palomakop.tv/works/debris-fields/d
 thumbnailAlt: oscilloscope patterns superimposed on a photo of a river
 ---
 
-## Matthew Ryals — *debris fields (take 2)*, {{workYear}}
+## Matthew Ryals — *debris fields (take 2)*, {{projectYear}}
 
 {% video "1038283597", "https://player.vimeo.com/progressive_redirect/playback/1038283597/rendition/720p/file.mp4?loc=external&signature=32d1fc2192b6ca263610072787b314f8de93ef1026100aa7514adb7d5037a590", '{"Youtube":"https://youtu.be/QJ8XqnRcD8o","Peertube":"https://videos.scanlines.xyz/w/hR9SndL529y4iKWu8AMH7x"}' %}
 

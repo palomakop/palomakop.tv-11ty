@@ -1,7 +1,7 @@
 ---
 title: Decoherence
-workTags: ["video art"]
-workYear: "2019"
+projectTags: ["video art"]
+projectYear: "2019"
 description: An audiovisual piece created with water-based cymatics
 customStyle: >
   :root {
@@ -12,7 +12,7 @@ thumbnail: https://s3.amazonaws.com/palomakop.tv/works/decoherence/poster.jpg
 thumbnailAlt: smoke-like abstract reflection patterns forming on the surface of water
 ---
 
-## *{{title}}*, {{workYear}}
+## *{{title}}*, {{projectYear}}
 
 {% video "997233812", "https://player.vimeo.com/progressive_redirect/playback/997233812/rendition/720p/file.mp4?loc=external&signature=4bbdbb47aaf237b492132e1aa2768d071a483fee6438e61fc941f60dd591ed6e", '{"Youtube":"https://youtu.be/QR2SEAlNO_4","Peertube":"https://videos.scanlines.xyz/w/fG14BjGhMy1akAUjD83vBS"}' %}
 

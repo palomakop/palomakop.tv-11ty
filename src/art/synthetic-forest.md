@@ -1,7 +1,7 @@
 ---
 title: Synthetic Forest
-workTags: ["performance"]
-workYear: "2023"
+projectTags: ["performance"]
+projectYear: "2023"
 description: Collaborative audiovisual performance and installation
 lightbox: true
 dark: true
@@ -13,7 +13,7 @@ thumbnail: https://s3.amazonaws.com/palomakop.tv/news/2023/2023-10-31/synthetic_
 thumbnailAlt: photo of synthetic forest, a dark room with plants, fog, and a video projector
 ---
 
-## *{{title}}*, {{workYear}}
+## *{{title}}*, {{projectYear}}
 
 {% video "1027037030", "https://player.vimeo.com/progressive_redirect/playback/1027037030/rendition/720p/file.mp4?loc=external&signature=4545d0036980353580df14e69642b3f75ab03eeaf8fcbcf5162f5941de8350cf", '{"Youtube":"https://youtu.be/QWHza1Dvmqs","Peertube":"https://videos.scanlines.xyz/w/x7CNAiazwQDxTFBtixqZod"}' %}
 

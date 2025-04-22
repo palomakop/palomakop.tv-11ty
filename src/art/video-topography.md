@@ -1,7 +1,7 @@
 ---
 title: Video Topography
-workTags: ["sculpture"]
-workYear: "2019"
+projectTags: ["sculpture"]
+projectYear: "2019"
 description: A sculpture made with layers of laser-etched glass
 lightbox: true
 dark: true
@@ -13,7 +13,7 @@ thumbnail: https://s3.amazonaws.com/palomakop.tv/works/video-topography/video_to
 thumbnailAlt: abstract glass sculpture with three-dimensional glowing lines floating inside a prism
 ---
 
-## *{{title}}*, {{workYear}}
+## *{{title}}*, {{projectYear}}
 
 {% photoGrid "vertical" %}
 {% photoGridItem "https://s3.amazonaws.com/palomakop.tv/works/video-topography/video_topography_1_3000px.jpg", "Video Topography sculpture - front view; it looks a bit like an empty glowing fish tank with floating patterns of lines inside", false, true %}
