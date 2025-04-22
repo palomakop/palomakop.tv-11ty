@@ -34,6 +34,19 @@ customStyle: >
     from, to { opacity:1; }
     50% { opacity:0; }
   }
+  .fade-in-image {
+    opacity:0;
+    transition: all 0.5s ease-in-out;
+    background-color:var(--neutral-bg-color);
+    transform:translateY(1em);
+  }
+  .mobile-thumbnail .fade-in-image {
+    transition-delay: 0.5s;
+  }
+  .fade-in-image.loaded {
+    opacity:1;
+    transform:translateY(0);
+  }
   @media (scripting:none) {
     #intro {
       display:none;
@@ -41,6 +54,10 @@ customStyle: >
     #intro-placeholder {
       opacity:1;
       pointer-events:all;
+    }
+    .fade-in-image {
+      opacity:1;
+      transform:translateY(0);
     }
   }
 ---
@@ -51,6 +68,17 @@ customStyle: >
   <p id="intro" aria-hidden="true"><span id="typed-text"></span><span class="caret"></span></p>
   <p id="intro-placeholder">Hello! I'm Paloma Kop, and I love building things for the web. Here are some of my projects.</p>
 </div>
+
+<nav>
+  <ul>
+    <li>
+      <a href="https://github.com/palomakop/" target="_blank">GitHub</a>
+    </li>
+    <li class="mobile-only">
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+</nav>
 
 <script>
 var i = 0;
@@ -97,10 +125,10 @@ function startTyping() {
   <article class="code-project">
     <div class="code-project-header">
       <div>
-        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "" %}
+        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "fade-in-image" %}
         {% if project.data.mobileThumbnail %}
         <div class="mobile-thumbnail">
-          {% image project.data.mobileThumbnail, "", 360, "" %}
+          {% image project.data.mobileThumbnail, "", 250, "fade-in-image" %}
         </div>
         {% endif %}
       </div>
@@ -145,10 +173,10 @@ function startTyping() {
   <article class="code-project">
     <div class="code-project-header">
       <div>
-        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "" %}
+        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "fade-in-image" %}
         {% if project.data.mobileThumbnail %}
         <div class="mobile-thumbnail">
-          {% image project.data.mobileThumbnail, "", 360, "" %}
+          {% image project.data.mobileThumbnail, "", 250, "fade-in-image" %}
         </div>
         {% endif %}
       </div>
@@ -191,10 +219,10 @@ function startTyping() {
   <article class="code-project">
     <div class="code-project-header">
       <div>
-        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "" %}
+        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "fade-in-image" %}
         {% if project.data.mobileThumbnail %}
         <div class="mobile-thumbnail">
-          {% image project.data.mobileThumbnail, "", 360, "" %}
+          {% image project.data.mobileThumbnail, "", 250, "fade-in-image" %}
         </div>
         {% endif %}
       </div>
@@ -241,3 +269,36 @@ function startTyping() {
     </ul>
   </nav>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const fadeImages = document.querySelectorAll('.fade-in-image');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        const handleLoad = function() {
+          img.classList.add('loaded');
+          img.removeEventListener('load', handleLoad);
+        };
+
+        img.addEventListener('load', handleLoad);
+
+        if (img.complete) {
+          img.classList.add('loaded');
+        }
+
+        observer.unobserve(img);
+      }
+    });
+  }, {
+    rootMargin: '100px 0px', // Start loading a bit before the image enters viewport
+    threshold: 0.01
+  });
+
+  fadeImages.forEach(img => {
+    observer.observe(img);
+  });
+});
+</script>
