@@ -1414,10 +1414,6 @@ form button {
   margin:0.5em 0 2em;
 }
 
-:focus-visible {
-  outline:none;
-}
-
 /* ZINE CLUB TIERS */
 
 .tier-gallery {
