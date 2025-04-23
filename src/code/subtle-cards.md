@@ -11,7 +11,7 @@ demoLink: 'https://subtle.cards'
 ---
 
 **Tools used:**
-- The frontend is written in React/Typescript. It uses [React Router](https://reactrouter.com/), [Vite](https://vite.dev/), and [Tailwind](https://tailwindcss.com/)
+- The frontend is written in React/TypeScript. It uses [React Router](https://reactrouter.com/), [Vite](https://vite.dev/), and [Tailwind](https://tailwindcss.com/)
 - The frontend builds & deploys via [Netlify](https://www.netlify.com/)
 - The backend is a REST API written in Python with [Flask](https://flask.palletsprojects.com/en/stable/), and is deployed to [Heroku](https://www.heroku.com/)
 - The database runs on [Supabase](https://supabase.com/)
