@@ -1,17 +1,17 @@
 <ul>
   <li>
-    <a href="/" class="{% if page.url == "/" %}current-link{% endif %}">about</a>
+    <a href="/" {% if page.url == "/" %}class="current-link" aria-current="page"{% endif %}>about</a>
   </li>
   <li>
-    <a href="/code" class="{% if page.url == "/code/" %}current-link{% endif %}">code</a>
+    <a href="/code" {% if page.url == "/code/" %}class="current-link" aria-current="page"{% endif %}>code</a>
   </li>
   <li>
-    <a href="/art" class="{% if page.url == "/art/" %}current-link{% endif %}">art</a>
+    <a href="/art" {% if page.url == "/art/" %}class="current-link" aria-current="page"{% endif %}>art</a>
   </li>
   <li>
-    <a href="/blog" class="{% if page.url == "/blog/" %}current-link{% endif %}">blog</a>
+    <a href="/blog" {% if page.url == "/blog/" %}class="current-link" aria-current="page"{% endif %}>blog</a>
   </li>
   <li>
-    <a href="/contact" class="{% if page.url == "/contact/" %}current-link{% endif %}">contact</a>
+    <a href="/contact" {% if page.url == "/contact/" %}class="current-link" aria-current="page"{% endif %}>contact</a>
   </li>
 </ul>
