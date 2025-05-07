@@ -42,15 +42,14 @@ New Haven, Connecticut
 
 ### Currently reading
 
-I'm between books; thinking of reading *Moonbound* by Robin Sloan next
+*Divine Cities* Trilogy - Robert Jackson Bennett
 
 ### Recently watched
 
-*Twilight of the Warriors: Walled In* (2024)
+*The Running Man* (1987)
 
 ### Current status
 
 - Working on website updates and personal projects
+- Doing freelance AV work for events
 - Searching for a new job and/or more freelance opportunities
-- Taking a break from events after playing [two shows](/blog/2025-04-01_march-shows-in-nyc/) last month
-- I finally wrote about my [coding retreat at Recurse Center!](/blog/2025-04-13_coding-retreat-at-recurse-center/)
