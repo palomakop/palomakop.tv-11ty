@@ -46,10 +46,10 @@ New Haven, Connecticut
 
 ### Recently watched
 
-*The Running Man* (1987)
+*Airplane!* (1980)
 
 ### Current status
 
-- Working on website updates and personal projects
-- Doing freelance AV work for events
+- Building a journaling web app for myself in Flask
+- Doing freelance web and AV tech work
 - Searching for a new job and/or more freelance opportunities
