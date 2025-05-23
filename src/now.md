@@ -50,6 +50,7 @@ New Haven, Connecticut
 
 ### Current status
 
-- Working on website updates and personal projects
-- Doing freelance AV work for events
-- Searching for a new job and/or more freelance opportunities
+- Getting ready to start a new job(!)
+- Making a new e-zine for [Zine Club](/zine-club)
+- Working on some personal coding projects & studies
+- Enjoying some hammock time in my backyard
