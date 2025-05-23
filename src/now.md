@@ -46,7 +46,7 @@ New Haven, Connecticut
 
 ### Recently watched
 
-*The Running Man* (1987)
+*Airplane!* (1980)
 
 ### Current status
 
