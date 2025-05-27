@@ -1,0 +1,23 @@
+{% if page.url == "/" %}
+<div class="about-text">
+  <h3>
+    <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/triangle.svg" class="about-title-graphic" alt=""/>
+    Upcoming Events
+  </h3>
+{% endif %}
+
+{% if page.url == "/now/" %}
+  <h2>
+    Upcoming Events
+  </h2>
+{% endif %}
+
+<a href="https://www.eventcreate.com/e/mshr-6-6" class="now-button" target="_blank" rel="noopener">
+  <b>Friday June 6</b><br>
+  Collaborative audivisual performance as REALITY ORP
+  <div class="caption">Light and Sound Design, Greenpoint, BK</div>
+</a>
+
+{% if page.url == "/" %}
+</div>
+{% endif %}

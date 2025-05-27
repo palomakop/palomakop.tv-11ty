@@ -5,6 +5,26 @@ customStyle: >
     --main-bg-color:#dae6e1;
     --main-bg-gradient:radial-gradient(#c1e0ca, #c2dde8, #e1e7d7);
   }
+  a.now-button {
+    text-decoration:none;
+    border:1.5px solid;
+    display:inline-block;
+    border-radius: 10px;
+    padding: 0.2em 0.6em 0.3em;
+  }
+  .now-button .caption {
+    width:fit-content;
+    font-size: 0.8em;
+    font-style: italic;
+    padding-bottom: 0.1em;
+  }
+  @media (hover:hover) {
+    a.now-button:hover {
+      color:var(--white);
+      background-color:var(--button-hover-color);
+      text-decoration:none;
+    }
+  }
 ---
 
 <div class="about-header">
@@ -64,7 +84,7 @@ customStyle: >
     I am an artist, developer, and educator from NYC and Woodstock, NY, now based in New Haven, Connecticut. I primarily work in web development, IT, and video, but I am a generalist by nature and my curiosity leads me down many paths. I've taught creative and technical classes and workshops, and run community spaces, both online and off. My art practice involves synthesizers, video feedback, and generative patterns inspired by nature and math. I've been performing audiovisual art since 2016, and have played live music and visuals at events and art spaces across North America.
   </p>
   <p>
-    I also enjoy bicycling, yoga, meditation, and wandering in nature. I've spent time living in a yurt, a converted school bus, a camper van, and out of a backpack.
+    I also enjoy bicycling, yoga, meditation, and being outdoors. I've spent time living in a yurt, a converted school bus, a camper van, and out of a backpack.
   </p>
 
   <details>
@@ -169,22 +189,20 @@ customStyle: >
       console.error('Failed to copy: ', err);
     }
   }
-</script>
+  </script>
 
 </div>
 
-{% comment %} 
-<h2><img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/triangle.svg" class="about-title-graphic" alt=""/> Artist Bio</h2>
-{% endcomment %}
+{% include 'upcoming.liquid' %}
 
 <div class="about-text">
 
   <h3>
-    <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/sine.svg" class="about-title-graphic" alt=""/> Available for Work
+    <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/sine.svg" class="about-title-graphic" alt=""/> Work With Me
   </h3>
 
   <p>
-    I'm currently in search of a new role in web development, IT, or something that straddles the creative and the technical. I'm also available for freelance projects, including websites and apps, video creation, and IT assistance for artists and small businesses. Feel free to check out some of my <a href="/code">web dev projects</a> and <a href="/contact">get in touch</a>!
+    I'm available for select freelance projects, including websites and apps, video creation, and IT assistance for artists and small businesses. Feel free to check out some of my <a href="/code">web dev projects</a> and <a href="/contact">get in touch</a>!
   </p>
 
 </div>
@@ -201,7 +219,7 @@ customStyle: >
 
   <ul>
     <li>
-      My <a href="/now">now</a> page holds links to current and upcoming things, and small notes about what I'm up to.
+      My <a href="/now">now</a> page contains currently relevant links and notes.
     </li>
     <li>
       I have two portfolios, one for <a href="/code">web development projects</a> and one for <a href="/art">multimedia art</a>.
