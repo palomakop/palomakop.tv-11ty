@@ -1,7 +1,7 @@
 ---
 title: The Lab
 projectTags: ["Eleventy", "GLSL", "p5.js", "Three.js"]
-projectIndex: 5
+projectIndex: 3
 description: A minimal, text-adventure themed website to showcase small web-based projects and experiments
 thumbnail: https://s3.us-east-1.amazonaws.com/palomakop.tv/code/lab.png
 mobileThumbnail: https://s3.us-east-1.amazonaws.com/palomakop.tv/code/lab_mobile.png
