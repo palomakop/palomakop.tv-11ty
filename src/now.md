@@ -11,14 +11,15 @@ New Haven, Connecticut
 
 ### Currently reading
 
-*Divine Cities* Trilogy - Robert Jackson Bennett  
-(Currently on Book 3: *City of Miracles*)
+Just finished the *Divine Cities* Trilogy by Robert Jackson Bennett  
+(I really enjoyed it, not sure what to read next yet)
 
 ### Recently watched
 
-*The Usual Suspects* (1995)  
+Alienoid: Return to the Future (2024)
 
 ### Current status
 
-- Working my new job as an artist/fabrication assistant
+- Working as an artist assistant & fabricator
 - Writing in my {% extLink "digital journal" "https://journal.palomakop.tv" %} (running on a raspberry pi in my house)
+- Working on various woodworking and home improvement projects
