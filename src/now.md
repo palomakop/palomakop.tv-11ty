@@ -11,12 +11,11 @@ New Haven, Connecticut
 
 ### Currently reading
 
-Just finished the *Divine Cities* Trilogy by Robert Jackson Bennett  
-(I really enjoyed it, not sure what to read next yet)
+Started reading *The Vorrh* by Brian Catling, but not so sure if it's for me yet... Will see
 
 ### Recently watched
 
-Alienoid: Return to the Future (2024)
+*The Nice Guys* (2016)
 
 ### Current status
 
