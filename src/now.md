@@ -15,10 +15,10 @@ Finished *The Vorrh* by Brian Catling, haven't started a new book yet
 
 ### Recently watched
 
-*Planet of the Apes* (1968)
+*THX 1138* (1971)
 
 ### Current status
 
 - Working as a studio assistant & fabricator for two local artists
-- Getting ready to play Weird Music Night at Ely Center on September 11 (no link/flyer yet!)
+- Getting ready to play with [Reality Orp](/art/reality-orp/) at Weird Music Night at Ely Center on September 11
 - Made a rock garden
