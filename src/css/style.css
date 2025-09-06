@@ -607,21 +607,15 @@ a {
 }
 
 .external-link, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.centered):not(.rainbutton):not(.social-logos *) {
-  padding-right:0.7em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 7 10 10'%3E%3Cpath d='M17 8v4a1 1 0 0 1-2 0v-1.586l-6.293 6.293a1 1 0 1 1-1.414-1.414L13.586 9H12a1 1 0 0 1 0-2h4a1 1 0 0 1 1 1z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:100% 60%;
+  background-size:0.5em;
+  padding-right:0.6em;
 }
 
-.external-link:after, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.rainbutton):not(.social-logos *):after {
-  content:"";
-  width:0.5em;
-  height:0.5em;
-  margin-left:0.1em;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 7 10 10'%3E%3Cpath d='M17 8v4a1 1 0 0 1-2 0v-1.586l-6.293 6.293a1 1 0 1 1-1.414-1.414L13.586 9H12a1 1 0 0 1 0-2h4a1 1 0 0 1 1 1z'/%3E%3C/svg%3E");
-  background-position:center;
-  background-repeat:no-repeat;
-  background-size:contain;
-  display:inline-block;
-  position:absolute;
-  translate:0.1em 0.6em;
+.external-link:hover, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.centered):not(.rainbutton):not(.social-logos *):hover {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 7 10 10'%3E%3Cpath d='M17 8v4a1 1 0 0 1-2 0v-1.586l-6.293 6.293a1 1 0 1 1-1.414-1.414L13.586 9H12a1 1 0 0 1 0-2h4a1 1 0 0 1 1 1z' fill='%23210acf'/%3E%3C/svg%3E");
 }
 
 ul {
@@ -1721,14 +1715,6 @@ links-item p {
   border-radius:20px;
   padding:0.6em 1em 0.8em;
   background-color:rgba(255, 255, 255, 0.15);
-}
-
-links-item a.external-link {
-  padding-right:0 !important;
-}
-
-links-item a.external-link:after {
-  display:none !important;
 }
 
 .bullet-char {
