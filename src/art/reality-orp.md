@@ -31,7 +31,11 @@ thumbnailAlt: Reality Orp performance
 
 {% video "1103292750", "https://player.vimeo.com/progressive_redirect/playback/1103292750/rendition/720p/file.mp4?loc=external&signature=f333919e24b378070deeb413ea85822add2f7c118d659912d1c1ec93b2717dda", '{"Youtube":"https://youtu.be/njjWkn3bpfI","Peertube":"https://videos.scanlines.xyz/w/fwC5QCzoRHPrBpUsVfVCep"}' %}
 
-*Reality Orp* is what {% extLink "Andrei Jay" "https://andreijaycreativecoding.com/" %} and I call ourselves when we perform live A/V as a duo. Generally, we trade off who creates visuals and who performs sound, since we both enjoy working in both mediums. We have performed 5 times under this moniker since 2022. Our performances tend to include traditional liquid light show techniques, real-time analog and digital video processing, audio loops, and synthesizers.
+## *Live Performance at Weird Music Night, Ely Center*, 2025
+
+{% video "1119282279", "https://player.vimeo.com/progressive_redirect/playback/1119282279/rendition/720p/file.mp4?loc=external&signature=c9ca7ca1e2ae6a033049062bfadfbb5b2fb9028d8069acf168dbf1631ec9f30f", '{"Youtube":"https://youtu.be/Pug-Twc7Y3o","Peertube":"https://videos.scanlines.xyz/w/9uify7jVvBCY98pwSew1RL"}' %}
+
+*Reality Orp* is what {% extLink "Andrei Jay" "https://andreijaycreativecoding.com/" %} and I call ourselves when we perform live A/V as a duo. Generally, we trade off who creates visuals and who performs sound, since we both enjoy working in both mediums. We have performed 6 times under this moniker since 2022. Our performances tend to include traditional liquid light show techniques, real-time analog and digital video processing, audio loops, and synthesizers.
 
 The name was inspired by misreading a sign I passed on the B52 bus in Brooklyn. I think it used to say *Realty Corp*, but one of the letters had fallen off.
 

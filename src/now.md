@@ -19,7 +19,7 @@ Finished *The Vorrh* by Brian Catling, haven't started a new book yet
 
 ### Current status
 
-- Just played a show in New Haven, need to make a blog post about it
-- Working as a studio assistant & fabricator for two local artists
+- We recently [played a fun show](/blog/) in New Haven
 - Made a rock garden
 - September is the busy season for events so I will also be working in NYC more often this month
+- My main work role currently is studio assistant & fabricator for two local artists who make moiré pattern paintings
