@@ -11,15 +11,12 @@ New Haven, Connecticut
 
 ### Currently reading
 
-Finished *The Vorrh* by Brian Catling, haven't started a new book yet
+Just finished *Moonbound* by Robin Sloan
 
 ### Recently watched
 
-*THX 1138* (1971)
+*Blade of the Immortal* (2017)
 
 ### Current status
 
-- We recently [played a fun show](/blog/) in New Haven
-- Made a rock garden
-- September is the busy season for events so I will also be working in NYC more often this month
-- My main work role currently is studio assistant & fabricator for two local artists who make moiré pattern paintings
+- I am sick :(
