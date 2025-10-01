@@ -136,3 +136,8 @@ a.now-button {
     filter:none;
   }
 }
+
+strong {
+  opacity:0.5;
+  white-space:nowrap;
+}

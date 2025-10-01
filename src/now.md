@@ -5,18 +5,39 @@ layout: nowTemplate
 
 ## Notes
 
-### Current home base
+### Living
 
-New Haven, Connecticut
+- Moved to New Haven, Connecticut  
+  **January 2025**
 
-### Currently reading
+### Working
 
-Just finished *Moonbound* by Robin Sloan
+- Joined as studio assistant and fabricator at Faruqee/Driscoll Studio  
+  **June 2025**
 
-### Recently watched
+### Reading
 
-*Blade of the Immortal* (2017)
+- Started *Annihilation* by Jeff Vandermeer  
+  **9/30**
 
-### Current status
+- Finished *Moonbound* by Robin Sloan  
+  **9/29**
 
-- I am sick :(
+### Watching
+
+- *Blade of the Immortal* (2017) **(film)**  
+  **9/29**
+
+- Started *Firefly* (2002) **(series)**  
+  **9/30**
+
+### Updates
+
+- Wrote in my [journal](https://journal.palomakop.tv/post/2025-09-30)  
+  **9/30**
+
+- I am sick :(  
+  **9/29**
+
+- Played a [show](/blog/2025-09-17_reality-orp-performance-at-ely/)  
+  **9/11**
