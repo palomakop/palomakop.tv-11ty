@@ -17,27 +17,24 @@ layout: nowTemplate
 
 ### Reading
 
-- Started *Annihilation* by Jeff Vandermeer  
-  **9/30**
+- Finished *Annihilation* by Jeff Vandermeer  
+  **10/10**
 
-- Finished *Moonbound* by Robin Sloan  
-  **9/29**
+- Started *Cryptonomicon* by Neal Stephenson  
+  **10/4**
 
 ### Watching
 
-- *Blade of the Immortal* (2017) **(film)**  
-  **9/29**
+- *Evil Dead II* (1987) **(film)**  
+  **10/12**
 
 - Started *Firefly* (2002) **(series)**  
   **9/30**
 
 ### Updates
 
-- Wrote in my [journal](https://journal.palomakop.tv/post/2025-09-30)  
-  **9/30**
+- Traveled to upstate NY; also my car is on the fritz (and very old) so I'm in the process of getting a new one  
+  **10/3**
 
-- I am sick :(  
-  **9/29**
-
-- Played a [show](/blog/2025-09-17_reality-orp-performance-at-ely/)  
-  **9/11**
+- Did a [performance](/blog/2025-10-03_reality-orp-virtual-performance-for/) for the staff of the Internet Archive  
+  **10/3**
