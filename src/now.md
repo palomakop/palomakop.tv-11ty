@@ -21,20 +21,23 @@ layout: nowTemplate
   **10/10**
 
 - Started *Cryptonomicon* by Neal Stephenson  
+  (Still in progress)  
   **10/4**
 
 ### Watching
 
-- *Evil Dead II* (1987) **(film)**  
-  **10/12**
+- *Passion* (2012)  
+  (Directed by Brian DePalma)  
+  **10/17**
 
-- Started *Firefly* (2002) **(series)**  
-  **9/30**
+- Finished *Firefly* (2002)  
+  (Still need to watch *Serenity*, the movie)  
+  **10/16**
 
 ### Updates
 
-- Traveled to upstate NY; also my car is on the fritz (and very old) so I'm in the process of getting a new one  
-  **10/3**
+- After a stressful week, I have succeeded in obtaining a new car  
+  **10/16**
 
 - Did a [performance](/blog/2025-10-03_reality-orp-virtual-performance-for/) for the staff of the Internet Archive  
   **10/3**
