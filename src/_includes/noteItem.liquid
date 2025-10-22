@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<nav class="top bold">
+  <ul>
+    <li>
+      <a href="/notes">&lt; Back to all notes</a>
+    </li>
+  </ul>
+</nav>
+
+<h2>{{ title }}</h2>
+
+<h3 class="note-subtitle">{{ subtitle }}</h3>
+
+<small><b>Created:</b> {{ dateCreated  | addTimeToIsoDate | date: "%B %e, %Y" }} | <b>Updated:</b> {{ page.date | date: "%B %e, %Y" }}</small>
+
+{{ content }}
