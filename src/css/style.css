@@ -1747,13 +1747,15 @@ notes-index a {
   background-color:var(--notecard-bg-color);
 }
 
-notes-index a:hover {
-  text-decoration:none;
-  color:var(--link-hover-color);
-}
-
-notes-index a.dark:hover {
-  color:#b1a0d2 !important;
+@media (hover:hover) {
+  notes-index a:hover {
+    text-decoration:none;
+    color:var(--link-hover-color);
+  }
+  
+  notes-index a.dark:hover {
+    color:#b1a0d2 !important;
+  }
 }
 
 notes-index a h3 {
