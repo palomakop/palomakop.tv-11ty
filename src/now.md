@@ -1,9 +1,14 @@
 ---
 layout: nowTemplate
+tags: notes
+title: Now
+description: A landing page with notes on my recent activities
+notecardStyle: 'background-image:url(https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/glitch_bg.jpg);color:#f2f2f2;'
+notecardDark: true
 ---
 
 
-## Notes
+## Now
 
 ### Living
 

@@ -31,6 +31,7 @@
   --h1-font-size:2rem;
   --h2-font-size:1.6rem;
   --h3-font-size:1.4rem;
+  --h4-font-size:1.25rem;
   --body-font-size:1.1rem;
   --small-font-size:0.9rem;
   --black-weight:500;
@@ -1726,36 +1727,66 @@ links-item p {
 
 /* NOTES INDEX */
 
-.notes-index {
-  display:flex;
+notes-index {
+  display:block;
   margin-top:2em;
 }
 
-.notes-index a {
+notes-index a {
+  display:block;
   text-decoration:none;
   border:solid 1.5px;
   box-sizing:border-box;
   border-radius:1.5px;
-  padding:1em;
+  padding:1em 1.2em;
   position:relative;
   box-shadow:-0.5em 0.5em;
   margin-left:0.5em;
+  margin-bottom:2em;
   clip-path: polygon(-0.5em -1px, calc(100% - 2em) -1px, calc(100% + 1px) calc(2em), calc(100% + 1px) calc(100% + 0.5em), -0.5em calc(100% + 0.5em));
-  background-color:var(--neutral-bg-color);
+  background-color:var(--notecard-bg-color);
 }
 
-.notes-index a h3 {
+notes-index a:hover {
+  text-decoration:none;
+  color:var(--link-hover-color);
+}
+
+notes-index a.dark:hover {
+  color:#b1a0d2 !important;
+}
+
+notes-index a h3 {
   margin:0;
+  width:calc(100% - 1em);
 }
 
-.notes-index a h4 {
-  margin:0;
+notes-index a h4 {
+  margin:0.2em 0 0;
 }
 
-.notes-index a svg.folded-corner {
+notes-index a svg.folded-corner {
   position:absolute;
   top:-2.5px;
   right:-2.5px;
   height:calc(2em + 2px);
   width:calc(2em + 2px);
+}
+
+note-footer {
+  display:flex;
+  flex-wrap:wrap;
+  gap:0 1ch;
+  margin-top:3em;
+  font-size:var(--small-font-size);
+  font-style:italic;
+}
+
+h2:has(+ h3.note-subtitle) {
+  margin-bottom:0.1em;
+}
+
+h3.note-subtitle {
+  margin-top:0;
+  font-size:var(--h4-font-size);
 }

@@ -12,8 +12,6 @@ layout: default
 
 <h2>{{ title }}</h2>
 
-<h3 class="note-subtitle">{{ subtitle }}</h3>
-
-<small><b>Created:</b> {{ dateCreated  | addTimeToIsoDate | date: "%B %e, %Y" }} | <b>Updated:</b> {{ page.date | date: "%B %e, %Y" }}</small>
+<h3 class="note-subtitle">{{ description }}</h3>
 
 {{ content }}

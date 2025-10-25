@@ -1,27 +1,28 @@
 ---
 layout: default
 title: Notes
-containerType: wide
 customStyle: >
   :root {
-    --main-bg-color:var(--neutral-bg-color);
+    --main-bg-color:#cfcfcf;
     --main-bg-gradient:none;
   }
 ---
 
 <h2>Notes</h2>
 
-<p>This new section is a work in progress. Please excuse the mess.</p>
+<p>A space for pages that I continue to update over time. Kind of like a wiki, or a digital garden. 🌱</p>
 
-<div class="notes-index">
+<notes-index>
 
 {% assign notesCollection = collections.notes | sort: "data.date" | reverse %}
 
 {%- for note in notesCollection -%}
-  <a href="{{ note.url }}">
+  <a href="{{ note.url }}" {% if note.data.notecardStyle %} style="{{ note.data.notecardStyle }}" {% endif %} {% if note.data.notecardDark %} class="dark" {% endif %} >
     <h3>{{ note.data.title }}</h3>
-    <h4>{{ note.data.subtitle }}</h4>
-    <small><b>Created:</b> {{ note.data.dateCreated  | addTimeToIsoDate | date: "%B %e, %Y" }} | <b>Updated:</b> {{ note.date | date: "%B %e, %Y" }}</small>
+    <h4>{{ note.data.description }}</h4>
+    <note-footer>
+      <b>Last updated:</b> <span>{{ note.date | date: "%B %e, %Y" }}</span>
+    </note-footer>
     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" class="folded-corner">
       <path d="M 2 2 L 38 38 L 2 38 Z" 
         fill="none" 
@@ -35,4 +36,4 @@ customStyle: >
   </a>
 {%- endfor -%}
 
-</div>
+</notes-index>
