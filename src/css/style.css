@@ -707,6 +707,7 @@ details summary {
 img {
   max-width:100%;
   height:auto;
+  border-radius:5px;
 }
 
 img-caption {
@@ -853,7 +854,6 @@ img-caption {
 
 .art-project img {
   border:solid 1.5px;
-  border-radius:5px;
   object-fit:cover;
   aspect-ratio:4/3 !important;
   width:100%;
@@ -962,7 +962,6 @@ img-caption {
   object-fit:cover;
   min-width:0;
   border:solid 1.5px;
-  border-radius:5px;
   position:relative;
   box-sizing:border-box;
 }
@@ -1098,7 +1097,6 @@ photo-grid.two-column img, photo-grid.three-column img {
 }
 
 photo-grid:not(.tarot) img {
-  border-radius:5px;
   margin-bottom:0;
   max-height:1080px;
 }
@@ -1572,7 +1570,6 @@ form button {
   display:block;
   margin-left:auto;
   margin-right:auto;
-  border-radius:5px;
   margin-bottom:1.4em;
 }
 
