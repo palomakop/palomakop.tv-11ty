@@ -595,7 +595,6 @@ a {
   color:var(--link-color);
   text-decoration:underline;
   text-decoration-thickness:1.25px;
-  font-weight:var(--normal-weight);
   text-underline-offset:2px;
 }
 
@@ -668,6 +667,13 @@ details summary {
   margin:2rem 0;
   clear:both;
   max-width:300px;
+}
+
+.full-width-graphic {
+  display:block;
+  margin:2rem 0;
+  clear:both;
+  max-width:100%;
 }
 
 .about-title-graphic {

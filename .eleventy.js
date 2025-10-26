@@ -68,6 +68,23 @@ async function makeImageUrl(src, width) {
   return data.url;
 }
 
+async function fetchVimeoOEmbed(vimeoId, width = 500) {
+  for (let i = 0; i < 3; i++) {
+    try {
+      const response = await fetch(`https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F${vimeoId}&width=${width}`);
+      const text = await response.text();
+      if (text.startsWith('<')) {
+        console.error(`[Vimeo ${vimeoId}] Got HTML response (attempt ${i + 1}/3):`, text.substring(0, 500));
+        throw new Error('Got HTML instead of JSON');
+      }
+      return JSON.parse(text);
+    } catch (error) {
+      if (i === 2) throw error; // Last attempt, rethrow
+      await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+  }
+}
+
 export default function(eleventyConfig) {
 
   eleventyConfig.setInputDirectory("src");
@@ -141,7 +158,7 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addShortcode("photoGridVimeo", async function(vimeoId, isFullWidth) {
 
-    let oEmbed = await fetch(`https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F${vimeoId}&width=500`).then((response) => response.json());
+    let oEmbed = await fetchVimeoOEmbed(vimeoId);
 
     let description = `Still from the video: ${oEmbed.title}`
 
@@ -163,7 +180,7 @@ export default function(eleventyConfig) {
 
   // VIDEO EMBED
   eleventyConfig.addShortcode("video", async function(vimeoId, videoFileUrl, watchLinksJson) {
-    let oEmbed = await fetch(`https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F${vimeoId}&width=500`).then((response) => response.json());
+    let oEmbed = await fetchVimeoOEmbed(vimeoId);
 
     let thumbnailUrl = oEmbed.thumbnail_url.split("-d_")[0] + "-d_1440.jpg";
     // let thumbnailWithPlayButton = oEmbed.thumbnail_url_with_play_button.replace(/-d_[0-9]*x[0-9]*/g, "-d_720");
@@ -202,7 +219,7 @@ export default function(eleventyConfig) {
 
   // VIDEO EMBED WITH AUTOPLAY
   eleventyConfig.addShortcode("autoplayVideoLoop", async function(vimeoId, videoFileUrl) {
-    let oEmbed = await fetch(`https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com%2F${vimeoId}&width=500`).then((response) => response.json());
+    let oEmbed = await fetchVimeoOEmbed(vimeoId);
 
     let thumbnailUrl = [oEmbed.thumbnail_url.split("-d_")[0], "-d_1440.jpg"].join("");
     let thumbnailWithPlayButton = oEmbed.thumbnail_url_with_play_button.replace(/-d_[0-9]*x[0-9]*/g, "-d_720");
