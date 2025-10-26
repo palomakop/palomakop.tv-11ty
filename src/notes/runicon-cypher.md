@@ -101,7 +101,7 @@ Once I resigned myself to the necessity of learning how to make a font, I recogn
 - One can type Latin letters into the keyboard and have them show up instantly in the glyphs of the cypher.
 - Convert any existing text instantly to the cypher by changing the font. If it includes "illegal" glyphs (such as the letter `e`, any capital letters, or punctuation marks besides the asterisk), they stand out like a sore thumb due to being displayed in a fallback font or a box with an X in it.
 - Custom fonts can easily be used on websites, so I can display text in the cypher on any webpage where I control the CSS.
-- Any text displayed in the cypher can be decoded by copying it as text from a webpage and pasted elsewhere on the computer, creating a simple but slightly easter-eggy way to read the text without memorizing the cypher.
+- Any text displayed in the cypher can be decoded by copying it as text from a webpage and pasting it elsewhere on the computer, creating a simple but slightly easter-eggy way to read the text without memorizing the cypher.
 
 ### Tools for font-making
 
