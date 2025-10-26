@@ -165,8 +165,6 @@ This also shows how to use the star symbol `*` as punctuation (in this case it's
 
 You made it this far down the page, so perhaps you want to try using the Runicon Cypher yourself? Here are some downloadable font files that you can install on your computer or use on the web. Feel free to use them as you wish under the {% extLink "CC-BY-NC-SA license" "https://creativecommons.org/licenses/by-nc-sa/4.0/" %}. (For other uses [contact me](/contact).)
 
-**{% extLink "runicon_cypher.otf" "https://s3.us-east-1.amazonaws.com/palomakop.tv/fonts/runicon_cypher.otf" %}** (OpenType)
-
 **{% extLink "runicon_cypher.ttf" "https://s3.us-east-1.amazonaws.com/palomakop.tv/fonts/runicon_cypher.ttf" %}** (TrueType)
 
 **{% extLink "runicon_cypher.woff" "https://s3.us-east-1.amazonaws.com/palomakop.tv/fonts/runicon_cypher.woff" %}** (Web font - legacy standard for compatibility)
