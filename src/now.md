@@ -22,27 +22,24 @@ notecardDark: true
 
 ### Reading
 
-- Finished *Annihilation* by Jeff Vandermeer  
-  **10/10**
-
-- Started *Cryptonomicon* by Neal Stephenson  
-  (Still in progress)  
+- Still reading *Cryptonomicon* by Neal Stephenson  
   **10/4**
 
 ### Watching
 
-- *Passion* (2012)  
-  (Directed by Brian DePalma)  
-  **10/17**
+- Started watching **Red Dwarf**  
+  **10/31**
 
-- Finished *Firefly* (2002)  
-  (Still need to watch *Serenity*, the movie)  
-  **10/16**
+- *Yes Madam* (1985)  
+  **10/29**
 
 ### Updates
 
-- After a stressful week, I have succeeded in obtaining a new car  
-  **10/16**
+- Wrote in my {% extLink "journal" "https://journal.palomakop.tv" %}  
+  **11/2**
 
-- Did a [performance](/blog/2025-10-03_reality-orp-virtual-performance-for/) for the staff of the Internet Archive  
-  **10/3**
+- Made a weird [font](/notes/runicon-cypher)  
+  **11/2**
+
+- Made a new section of my website for [notes](/notes)  
+  **10/26**
