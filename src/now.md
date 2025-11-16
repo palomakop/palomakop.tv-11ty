@@ -22,18 +22,20 @@ notecardDark: true
 
 ### Reading
 
-- Still reading *Cryptonomicon* by Neal Stephenson  
-  **10/4**
+- Finished *Cryptonomicon* by Neal Stephenson  
+  **11/6**
+
+- Haven't started a new book yet...
 
 ### Watching
 
-- Started watching **Red Dwarf**  
-  **10/31**
-
-- *Yes Madam* (1985)  
-  **10/29**
+- The first half of *Mulholland Drive* (2001)  
+  **11/15**
 
 ### Updates
+
+- Revealed a batch of [mystery objects](/blog/2025-11-16_more-mystery-objects-revealed/)  
+  **11/16**
 
 - Wrote in my {% extLink "journal" "https://journal.palomakop.tv" %}  
   **11/2**
