@@ -29,19 +29,22 @@ notecardDark: true
 
 ### Watching
 
-- The first half of *Mulholland Drive* (2001)  
-  **11/15**
+- Started *Battlestar Galactica*  
+  **11/21**
+
+- *Sakra* (2023)  
+  **11/18**
 
 ### Updates
+
+- Doing some sewing and other craft projects, playing **Cyberpunk 2077**, and hibernating  
+  **11/22**
+
+- Writing in my {% extLink "journal" "https://journal.palomakop.tv" %}  
+  **11/17**
 
 - Revealed a batch of [mystery objects](/blog/2025-11-16_more-mystery-objects-revealed/)  
   **11/16**
 
-- Wrote in my {% extLink "journal" "https://journal.palomakop.tv" %}  
-  **11/2**
-
 - Made a weird [font](/notes/runicon-cypher)  
   **11/2**
-
-- Made a new section of my website for [notes](/notes)  
-  **10/26**
