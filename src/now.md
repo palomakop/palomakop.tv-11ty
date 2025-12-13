@@ -41,7 +41,7 @@ notecardDark: true
 - Working on miscellaneous projects, playing *Cyberpunk 2077*, and hibernating  
   **12/13**
 
-- Did an artist visit to *TV Club* class at Hamilton College (blog update coming!)  
+- Did an [artist visit](/blog) to *TV Club* class at Hamilton College  
   **12/9**
 
 - Revealed a batch of [mystery objects](/blog/2025-11-16_more-mystery-objects-revealed/)  
