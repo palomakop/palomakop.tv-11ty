@@ -22,29 +22,33 @@ notecardDark: true
 
 ### Reading
 
+- Haven't chosen a new book yet, just been reading my RSS feeds for now  
+  **12/13**
+
 - Finished *Cryptonomicon* by Neal Stephenson  
   **11/6**
 
-- Haven't started a new book yet...
-
 ### Watching
+
+- *Dragon* (2011) (Chinese title: *Wu Xia*)  
+  **12/12**
 
 - Started *Battlestar Galactica*  
   **11/21**
 
-- *Sakra* (2023)  
-  **11/18**
-
 ### Updates
 
-- Doing some sewing and other craft projects, playing **Cyberpunk 2077**, and hibernating  
-  **11/22**
+- Working on miscellaneous projects, playing *Cyberpunk 2077*, and hibernating  
+  **12/13**
 
-- Writing in my {% extLink "journal" "https://journal.palomakop.tv" %}  
-  **11/17**
+- Did an artist visit to *TV Club* class at Hamilton College (blog update coming!)  
+  **12/9**
 
 - Revealed a batch of [mystery objects](/blog/2025-11-16_more-mystery-objects-revealed/)  
   **11/16**
 
 - Made a weird [font](/notes/runicon-cypher)  
   **11/2**
+
+- Writing in my {% extLink "journal" "https://journal.palomakop.tv" %}  
+  **Sporadically**
