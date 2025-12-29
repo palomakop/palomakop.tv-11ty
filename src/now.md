@@ -22,21 +22,24 @@ notecardDark: true
 
 ### Reading
 
-- Haven't chosen a new book yet, just been reading my RSS feeds for now  
-  **12/13**
+- *{% extLink "AI Must Die (Zine)" "https://www.aimustdie.info/" %}* by Myke Walton and Cam Smith  
+  **12/26**
 
 - Finished *Cryptonomicon* by Neal Stephenson  
   **11/6**
 
 ### Watching
 
-- *Dragon* (2011) (Chinese title: *Wu Xia*)  
-  **12/12**
+- *Seven Swords* (2005)  
+  **12/27**
 
 - Started *Battlestar Galactica*  
   **11/21**
 
 ### Updates
+
+- Turned 34 years old!  
+  **12/26**
 
 - Working on miscellaneous projects, playing *Cyberpunk 2077*, and hibernating  
   **12/13**
