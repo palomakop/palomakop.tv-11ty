@@ -1,5 +1,5 @@
 ---
-title: The Life Cycle of Artianian Flowers
+title: The Life Cycle of Aritanian Flowers
 projectTags: ["print"]
 projectYear: "2024"
 description: A deck of illustrated printed cards
