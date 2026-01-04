@@ -86,7 +86,7 @@ It was really satisfying to see all of my ideas gathered in one place. But it wa
 
 I sketched out some possible methods for grabbing my data from the Are.na API and creating a custom interface that allowed me to organize my ideas in different views, put some of them into a "roadmap" for what to explore next, or even grab ones at random for when I have trouble deciding what to do. It was that last one that steered me towards physical cards, because I wanted to consult my "deck" of ideas intuitively in a way that reminded me of tarot cards.
 
-The more I thought about it, the more I liked the idea of having physical cards. I could spread them out in physical space, and do my thinking in a tactile way, away from a computer screen. I could shuffle them and pull ones at random, and see how I felt about the ones I pulled — whether they felt "right" or not.
+The more I thought about it, the more I liked the idea of having physical cards. I could spread them out in physical space, and do my thinking in a tactile way, away from a computer screen. I could shuffle them and pull ones at random, and see how I felt about the ones I pulled — whether they felt "right" or not. (Plus, I seem to just [really](/art/tarot-of-subtle-forms) [like](/art/life-cycle-of-aritanian-flowers) {% extLink "cards" "https://subtle.cards" %}.)
 
 This method seemed to fit in well with the mysterious, intuitive process of creating things, where a lot of the actual work takes place subconsciously. It also helped me understand why it was so hard to plan the arc of my creative practice, and accept not always knowing what my next step will be.
 
