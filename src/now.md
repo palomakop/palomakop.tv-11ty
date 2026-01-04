@@ -30,28 +30,25 @@ notecardDark: true
 
 ### Watching
 
-- *Seven Swords* (2005)  
-  **12/27**
+- *The Thin Man* (1934)  
+  **1/2**
 
 - Started *Battlestar Galactica*  
   **11/21**
 
 ### Updates
 
-- Turned 34 years old!  
+- Made a [deck of cards](/notes/arena-cards) of my creative ideas  
+  **1/4**
+
+- Went to the {% extLink "aquarium" "https://journal.palomakop.tv/post/2026-01-03" %} and took some photos  
+  **1/3**
+
+- Turned 34 years old  
   **12/26**
 
 - Working on miscellaneous projects, playing *Cyberpunk 2077*, and hibernating  
   **12/13**
-
-- Did an [artist visit](/blog) to *TV Club* class at Hamilton College  
-  **12/9**
-
-- Revealed a batch of [mystery objects](/blog/2025-11-16_more-mystery-objects-revealed/)  
-  **11/16**
-
-- Made a weird [font](/notes/runicon-cypher)  
-  **11/2**
 
 - Writing in my {% extLink "journal" "https://journal.palomakop.tv" %}  
   **Sporadically**

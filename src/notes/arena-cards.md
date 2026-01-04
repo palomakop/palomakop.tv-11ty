@@ -105,7 +105,7 @@ Since the script downloads a snapshot of my Are.na channels at the time it's run
 
 The code I created is kind of bespoke, but just in case anyone wants to try to use it for something, I have shared it on my {% extLink "github" "https://github.com/palomakop/arena-card-generator" %} along with some instructions and notes.
 
-Once I'd gotten a satisfactory PDF file, I printed it out on 110 lb cardstock and then proceeded to cut out all of the cards and punch the corners with a rounded-corner-punch. I love rounded corners, plus for cards they are pretty crucial, to avoid the corners getting dented. It also makes any slight differences in size between the cards less noticeable. I had to cut them all individually because my old paper guillotine can't handle more than a single sheet of cardstock. Then time passed quickly thanks to *Battlestar Galactica*.
+Once I'd gotten a satisfactory PDF file, I printed it out on 110 lb cardstock and then proceeded to cut out all of the cards and punch the corners with a rounded-corner-punch. I love rounded corners, plus for cards they are pretty crucial, to avoid the corners getting dented. It also makes any slight differences in size between the cards less noticeable. I had to cut them all individually because my old paper guillotine can't handle more than a single sheet of cardstock. The time passed quickly thanks to *Battlestar Galactica*.
 
 After all of the cards were done, I stacked them all up and felt very satisfied. 164 cards makes for a pretty hefty stack. Here are a few of them:
 
