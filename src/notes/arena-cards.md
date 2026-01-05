@@ -65,7 +65,7 @@ Some of my content in Are.na already fit under the category of "ideas," but I wa
   <li>spaces</li>
 </ul>
 
-I won't bother trying to explain what all of these mean; some are self-explanatory and some might be more specific to me personally. But between going through scattered notes in my to-do lists, Obsidian notes, previous Are.na content, and some stuff straight from my head, ended up gathering a total of 164 ideas.
+I won't bother trying to explain what all of these mean; some are self-explanatory and some might be more specific to me personally. But between going through scattered notes in my to-do lists, Obsidian notes, previous Are.na content, and some stuff straight from my head, I ended up gathering a total of 164 ideas.
 
 {% photoGrid "two-column" %}
 {% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/notes/arena-cards/prompts_screenshot.jpg", "Screenshot of my 'prompts' channel on Are.na", false, false %}
