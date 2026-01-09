@@ -30,8 +30,8 @@ notecardDark: true
 
 ### Watching
 
-- *The Thin Man* (1934)  
-  **1/2**
+- *The Godfather Part II* (1974)  
+  **1/7**
 
 - Started *Battlestar Galactica*  
   **11/21**
