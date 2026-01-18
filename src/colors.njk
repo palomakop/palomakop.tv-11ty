@@ -1,0 +1,8 @@
+---
+permalink: /colors.json
+eleventyExcludeFromCollections: true
+---
+{
+  "css": {{ css_colors | dump(2) | safe }},
+  "frontmatter": {{ collections.frontmatterColors | dump(2) | safe }}
+}

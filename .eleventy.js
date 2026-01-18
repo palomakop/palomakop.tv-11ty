@@ -2,6 +2,7 @@ import path from "path";
 import Image from "@11ty/eleventy-img";
 import prettier from "prettier";
 import pluginRss from "@11ty/eleventy-plugin-rss";
+const postcss = await import('postcss');
 
 function makeId(length) {
   let result = 'id';
@@ -239,6 +240,54 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addShortcode("musicPlayerTrack", function(name, url) {
     return `<li><a href="${url}">${name}</a></li>`;
+  });
+
+  eleventyConfig.addCollection("frontmatterColors", function(collectionApi) {
+    const results = {};
+    const seen = new Set();
+    
+    collectionApi.getAll().forEach(item => {
+      if (item.data.customStyle) {
+        const root = postcss.default.parse(item.data.customStyle);
+        
+        root.walkRules(rule => {
+          // Only process :root selector
+          if (rule.selector.trim() === ':root') {
+            rule.walkDecls(decl => {
+              const value = decl.value.trim();
+              let type = null;
+              
+              // Check if it's a gradient
+              if (value.match(/gradient\(/)) {
+                if (value.match(/#[0-9a-fA-F]{3,6}(?![0-9a-fA-F])/)) {
+                  type = 'gradient';
+                }
+              }
+              // Check if it's a plain hex color (3 or 6 digits, no alpha)
+              else if (value.match(/^#[0-9a-fA-F]{3}$|^#[0-9a-fA-F]{6}$/)) {
+                type = 'color';
+              }
+              
+              if (type && !seen.has(value)) {
+                seen.add(value);
+                
+                const filename = (item.inputPath || item.url)  .replace('./src/', '').replace(/\.(md|liquid)$/, '').replace(/\/index$/, '');
+                const property = decl.prop;
+                
+                // Initialize file object if it doesn't exist
+                if (!results[filename]) {
+                  results[filename] = {};
+                }
+                
+                results[filename][property] = { type, value };
+              }
+            });
+          }
+        });
+      }
+    });
+    
+    return results;
   });
 
   eleventyConfig.addTransform("prettier", function (content, outputPath) {

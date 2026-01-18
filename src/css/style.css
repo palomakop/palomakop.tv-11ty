@@ -1,6 +1,6 @@
 :root {
   --main-bg-color:#dfd5db;
-  --neutral-bg-color:rgb(241, 240, 233);
+  --neutral-bg-color:#f1f0e9;
   --main-bg-gradient:radial-gradient(#d9e7eb, #e6d5d5);
   --white:#f9f9f0;
   --link-color:#000000;
@@ -1451,7 +1451,7 @@ form button {
 
 .tier-lower {
   border:solid 1.5px;
-  background-color:#f3f0ea;
+  background-color:var(--neutral-bg-color);
   border-radius:0 0 25px 25px;
 }
 
@@ -1628,7 +1628,7 @@ form button {
   margin:2em auto 3em;
   max-width:45ch;
   background-color:var(--subtle-bg-color);
-  background-color:#f3f0ea;
+  background-color:var(--neutral-bg-color);
 }
 
 .quote-card blockquote {
