@@ -38,11 +38,17 @@ notecardDark: true
 
 ### Updates
 
+- I have some things coming up in February but we don't have links/flyers yet... stay tuned :)  
+  **1/19**
+
+- Made a [2025 Year in Review](/blog/2026-01-18_2025-year-in-review/) blog post  
+  **1/18**
+
+- Made myself some {% extLink "website editing tools" "https://tools.palomakop.tv" %}  
+  **1/18**
+
 - Made a [deck of cards](/notes/arena-cards) of my creative ideas  
   **1/4**
 
 - Turned 34 years old  
   **12/26**
-
-- Working on miscellaneous projects, playing *Cyberpunk 2077*, and hibernating  
-  **12/13**
