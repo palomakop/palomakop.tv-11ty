@@ -198,7 +198,7 @@ class VideoContentSetup {
 
         content.element = document.createElement('iframe');
         content.element.setAttribute('allowfullscreen', '');
-        content.element.setAttribute('allow', 'fullscreen; picture-in-picture');
+        content.element.setAttribute('allow', 'fullscreen');
         content.element.setAttribute('frameborder', '0');
         content.element.setAttribute('loading', 'lazy');
         content.element.src = content.data.iframeSrc;
