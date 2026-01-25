@@ -69,6 +69,28 @@ async function makeImageUrl(src, width) {
   return data.url;
 }
 
+async function makeImageWithMetadata(src, width) {
+  let metadata = await Image(src, {
+    widths: [width],
+    formats: ["auto"],
+    outputDir: "./_site/img/",
+    filenameFormat: function (id, src, width, format, options) {
+      const extension = path.extname(src);
+      const name = path.basename(src, extension);
+      return `${name}-${width}w-${id}.${format}`;
+    },
+    sharpOptions: {
+      animated: true,
+    },
+  });
+  let data = metadata[Object.keys(metadata)[0]][0];
+  return {
+    url: data.url,
+    width: data.width,
+    height: data.height
+  };
+}
+
 async function fetchVimeoOEmbed(vimeoId, width = 500) {
   for (let i = 0; i < 3; i++) {
     try {
@@ -137,7 +159,7 @@ export default function(eleventyConfig) {
   // types: vertical, two-column, three-column, tarot
   eleventyConfig.addPairedShortcode("photoGrid", function(content, type) {
     let id = makeId(10);
-    return `<photo-grid class="${type} ${id}">${content}</photo-grid><script>var ${id} = new SimpleLightbox({elements: '.${id} a:not(.lightbox-ignore)'});</script>`;
+    return `<photo-grid class="${type}" id="${id}">${content}</photo-grid><script type="module">window.initPhotoSwipe('#${id}');</script>`;
   });
 
   eleventyConfig.addShortcode("photoGridItem", async function(src, description, showCaption, isFullWidth) {
@@ -155,7 +177,9 @@ export default function(eleventyConfig) {
     if (isFullWidth) {
       fullWidthClass = `class="full-width"`;
     }
-    return `<a href="${await makeImageUrl(src, 2000)}" ${caption} ${fullWidthClass}>${await makeImage(src, description, widthInPixels)}</a>`;
+    // Get full-size image metadata for PhotoSwipe
+    let fullSizeImage = await makeImageWithMetadata(src, 2000);
+    return `<a href="${fullSizeImage.url}" data-pswp-width="${fullSizeImage.width}" data-pswp-height="${fullSizeImage.height}" ${caption} ${fullWidthClass}>${await makeImage(src, description, widthInPixels)}</a>`;
   });
 
   eleventyConfig.addShortcode("photoGridVimeo", async function(vimeoId, isFullWidth) {
