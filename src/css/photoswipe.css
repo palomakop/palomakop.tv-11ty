@@ -336,6 +336,12 @@ div.pswp__img--placeholder,
   visibility: visible;
 }
 
+/* always show arrows for video/iframe content, even on touch */
+.pswp--touch.pswp--video .pswp__button--arrow,
+.pswp--touch.pswp--iframe .pswp__button--arrow {
+  visibility: visible;
+}
+
 .pswp__button--arrow--prev {
   right: auto;
   left: 0px;

@@ -191,6 +191,10 @@ export default function(eleventyConfig) {
 
     let thumbnailUrl = oEmbed.thumbnail_url.split("-d_")[0] + "-d_1440.jpg";
 
+    // Get aspect ratio from oEmbed and scale up 4x for better display
+    let width = oEmbed.width * 4;
+    let height = oEmbed.height * 4;
+
     let widthInPixels;
     if (isFullWidth) {
       widthInPixels = 1440;
@@ -202,7 +206,10 @@ export default function(eleventyConfig) {
     if (isFullWidth) {
       fullWidthClass = `class="full-width"`;
     }
-    return `<a href="https://player.vimeo.com/video/${vimeoId}?dnt=1&title=1&byline=0&portrait=0" ${fullWidthClass}>${await makeImage(thumbnailUrl, description, widthInPixels)}</a>`;
+
+    let iframeUrl = `https://player.vimeo.com/video/${vimeoId}?dnt=1&title=1&byline=0&portrait=0`;
+
+    return `<a href="${iframeUrl}" data-pswp-type="iframe" data-pswp-width="${width}" data-pswp-height="${height}" ${fullWidthClass}>${await makeImage(thumbnailUrl, description, widthInPixels)}</a>`;
   });
 
   // VIDEO EMBED

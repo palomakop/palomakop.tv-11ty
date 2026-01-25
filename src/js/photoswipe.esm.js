@@ -1,6 +1,6 @@
 /*!
   * PhotoSwipe 5.4.4 - https://photoswipe.com
-  * (c) 2024 Dmytro Semenov (MODIFIED BY PK)
+  * (c) 2024 Dmytro Semenov (MODIFIED BY PK - just removed TS hints for file size)
   */
 
 function createElement(className, tagName, appendToEl) {

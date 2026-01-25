@@ -22,6 +22,16 @@ function isVideoContent(content) {
   return (content && content.data && content.data.type === 'video');
 }
 
+/**
+ * Check if slide has iframe content
+ *
+ * @param {Slide|Content} content Slide or Content object
+ * @returns Boolean
+ */
+function isIframeContent(content) {
+  return (content && content.data && content.data.type === 'iframe');
+}
+
 class VideoContentSetup {
   constructor(lightbox, options) {
     this.options = options;
@@ -53,23 +63,50 @@ class VideoContentSetup {
         } else {
           itemData.videoSrc = linkEl.href;
         }
+      } else if (itemData.type === 'iframe' && linkEl) {
+        if (linkEl.dataset.pswpIframeSrc) {
+          itemData.iframeSrc = linkEl.dataset.pswpIframeSrc;
+        } else {
+          itemData.iframeSrc = linkEl.href;
+        }
       }
+
+      // Allow custom placeholder image via data-pswp-msrc
+      if (linkEl && linkEl.dataset.pswpMsrc) {
+        itemData.msrc = linkEl.dataset.pswpMsrc;
+      }
+
       return itemData;
     });
   }
 
   initPswpEvents(pswp) {
-    // Prevent draggin when pointer is in bottom part of the video
-    // todo: add option for this
+    // Add CSS class based on content type for styling (e.g., showing arrows on mobile)
+    pswp.on('change', () => {
+      const currContent = pswp.currSlide.content;
+      pswp.element.classList.remove('pswp--video', 'pswp--iframe');
+      if (isVideoContent(currContent)) {
+        pswp.element.classList.add('pswp--video');
+      } else if (isIframeContent(currContent)) {
+        pswp.element.classList.add('pswp--iframe');
+      }
+    });
+
+    // Prevent dragging when pointer is over iframe (entire area) or bottom part of video
     pswp.on('pointerDown', (e) => {
       const slide = pswp.currSlide;
-      if (isVideoContent(slide) && this.options.preventDragOffset) {
-        const origEvent = e.originalEvent;
-        if (origEvent.type === 'pointerdown') {
+      const origEvent = e.originalEvent;
+
+      if (origEvent.type === 'pointerdown') {
+        if (isIframeContent(slide)) {
+          // For iframes, prevent drag over entire content area
+          e.preventDefault();
+        } else if (isVideoContent(slide) && this.options.preventDragOffset) {
+          // For videos, only prevent drag in bottom area (controls)
           const videoHeight = Math.ceil(slide.height * slide.currZoomLevel);
           const verticalEnding = videoHeight + slide.bounds.center.y;
           const pointerYPos = origEvent.pageY - pswp.offset.y;
-          if (pointerYPos > verticalEnding - this.options.preventDragOffset 
+          if (pointerYPos > verticalEnding - this.options.preventDragOffset
               && pointerYPos < verticalEnding) {
             e.preventDefault();
           }
@@ -77,30 +114,33 @@ class VideoContentSetup {
       }
     });
 
-    // do not append video on nearby slides
+    // do not append video/iframe on nearby slides
     pswp.on('appendHeavy', (e) => {
-      if (isVideoContent(e.slide) && !e.slide.isActive) {
+      if ((isVideoContent(e.slide) || isIframeContent(e.slide)) && !e.slide.isActive) {
         e.preventDefault();
       }
     });
 
     pswp.on('close', () => {
-      if (isVideoContent(pswp.currSlide.content)) {
+      const currContent = pswp.currSlide.content;
+      if (isVideoContent(currContent) || isIframeContent(currContent)) {
         // Switch from zoom to fade closing transition,
-        // as zoom transition is choppy for videos
+        // as zoom transition is choppy for videos/iframes
         if (!pswp.options.showHideAnimationType
           || pswp.options.showHideAnimationType === 'zoom') {
           pswp.options.showHideAnimationType = 'fade';
         }
 
-        // pause video when closing
-        this.pauseVideo(pswp.currSlide.content);
+        // pause video when closing (iframes don't need pause)
+        if (isVideoContent(currContent)) {
+          this.pauseVideo(currContent);
+        }
       }
     });
   }
 
   onContentDestroy({ content }) {
-    if (isVideoContent(content)) {
+    if (isVideoContent(content) || isIframeContent(content)) {
       if (content._videoPosterImg) {
         content._videoPosterImg.onload =  content._videoPosterImg.onerror = null;
         content._videoPosterImg = null;
@@ -109,7 +149,7 @@ class VideoContentSetup {
   }
 
   onContentResize(e) {
-    if (isVideoContent(e.content)) {
+    if (isVideoContent(e.content) || isIframeContent(e.content)) {
       e.preventDefault();
 
       const width = e.width;
@@ -120,9 +160,9 @@ class VideoContentSetup {
         content.element.style.width = width + 'px';
         content.element.style.height = height + 'px';
       }
-  
+
       if (content.slide && content.slide.placeholder) {
-        // override placeholder size, so it more accurately matches the video
+        // override placeholder size, so it more accurately matches the video/iframe
         const placeholderElStyle = content.slide.placeholder.element.style;
         placeholderElStyle.transform = 'none';
         placeholderElStyle.width = width + 'px';
@@ -133,14 +173,14 @@ class VideoContentSetup {
 
 
   isKeepingPlaceholder(isZoomable, content) {
-    if (isVideoContent(content)) {
+    if (isVideoContent(content) || isIframeContent(content)) {
       return false;
     }
     return isZoomable;
   }
 
   isContentZoomable(isZoomable, content) {
-    if (isVideoContent(content)) {
+    if (isVideoContent(content) || isIframeContent(content)) {
       return false;
     }
     return isZoomable;
@@ -148,18 +188,57 @@ class VideoContentSetup {
 
   onContentActivate({ content }) {
     if (isVideoContent(content) && this.options.autoplay) {
+      // Autoplay videos
       this.playVideo(content);
+    } else if (isIframeContent(content)) {
+      // Recreate iframe if it was removed
+      if (!content.element && content.data.iframeSrc && content.slide) {
+        content.state = 'loading';
+        content.type = 'iframe';
+
+        content.element = document.createElement('iframe');
+        content.element.setAttribute('allowfullscreen', '');
+        content.element.setAttribute('allow', 'fullscreen; picture-in-picture');
+        content.element.setAttribute('frameborder', '0');
+        content.element.setAttribute('loading', 'lazy');
+        content.element.src = content.data.iframeSrc;
+
+        content.element.style.position = 'absolute';
+        content.element.style.left = 0;
+        content.element.style.top = 0;
+        content.element.style.width = '100%';
+        content.element.style.height = '100%';
+
+        // Append directly to the slide's zoom wrap
+        const holderElement = content.slide.holderElement;
+        if (holderElement) {
+          const zoomWrap = holderElement.querySelector('.pswp__zoom-wrap');
+          if (zoomWrap) {
+            zoomWrap.appendChild(content.element);
+          }
+        }
+
+        // Mark as loaded and trigger resize
+        content.state = 'loaded';
+        content.isAttached = true;
+        content.slide.updateContentSize(true);
+      }
     }
   }
 
   onContentDeactivate({ content }) {
     if (isVideoContent(content)) {
+      // Pause videos
       this.pauseVideo(content);
+    } else if (isIframeContent(content) && content.element) {
+      // Remove iframe from DOM to stop playback
+      content.element.remove();
+      content.element = null;
     }
   }
 
   onContentAppend(e) {
-    if (isVideoContent(e.content)) {
+    if (isVideoContent(e.content) || isIframeContent(e.content)) {
       e.preventDefault();
       e.content.isAttached = true;
       e.content.appendImage();
@@ -167,9 +246,9 @@ class VideoContentSetup {
   }
 
   onContentLoad(e) {
-    const content = e.content; // todo: videocontent
+    const content = e.content;
 
-    if (!isVideoContent(e.content)) {
+    if (!isVideoContent(e.content) && !isIframeContent(e.content)) {
       return;
     }
 
@@ -181,36 +260,60 @@ class VideoContentSetup {
     }
 
     content.state = 'loading';
-    content.type = 'video'; // TODO: move this to pswp core?
 
-    content.element = document.createElement('video');
+    if (isIframeContent(e.content)) {
+      // Create iframe element
+      content.type = 'iframe';
+      content.element = document.createElement('iframe');
 
-    if (this.options.videoAttributes) {
-      for(let key in this.options.videoAttributes) {
-        content.element.setAttribute(key, this.options.videoAttributes[key] || '');
+      content.element.setAttribute('allowfullscreen', '');
+      content.element.setAttribute('allow', 'fullscreen; picture-in-picture');
+      content.element.setAttribute('frameborder', '0');
+      content.element.setAttribute('loading', 'lazy');
+
+      if (content.data.iframeSrc) {
+        content.element.src = content.data.iframeSrc;
       }
-    }
 
-    content.element.setAttribute('poster', content.data.msrc);
+      this.preloadVideoPoster(content, content.data.msrc);
 
-    this.preloadVideoPoster(content, content.data.msrc);
+      content.element.style.position = 'absolute';
+      content.element.style.left = 0;
+      content.element.style.top = 0;
+      content.element.style.width = '100%';
+      content.element.style.height = '100%';
+    } else {
+      // Create video element
+      content.type = 'video';
+      content.element = document.createElement('video');
 
-    content.element.style.position = 'absolute';
-    content.element.style.left = 0;
-    content.element.style.top = 0;
-    
-    if (content.data.videoSources) {
-      content.data.videoSources.forEach((source) => {
-        let sourceEl = document.createElement('source');
-        sourceEl.src = source.src;
-        sourceEl.type = source.type;
-        content.element.appendChild(sourceEl);
-      });
-    } else if (content.data.videoSrc) {
-      // Force video preload
-      // https://muffinman.io/blog/hack-for-ios-safari-to-display-html-video-thumbnail/
-      // this.element.src = this.data.videoSrc + '#t=0.001';
-      content.element.src = content.data.videoSrc;
+      if (this.options.videoAttributes) {
+        for(let key in this.options.videoAttributes) {
+          content.element.setAttribute(key, this.options.videoAttributes[key] || '');
+        }
+      }
+
+      content.element.setAttribute('poster', content.data.msrc);
+
+      this.preloadVideoPoster(content, content.data.msrc);
+
+      content.element.style.position = 'absolute';
+      content.element.style.left = 0;
+      content.element.style.top = 0;
+
+      if (content.data.videoSources) {
+        content.data.videoSources.forEach((source) => {
+          let sourceEl = document.createElement('source');
+          sourceEl.src = source.src;
+          sourceEl.type = source.type;
+          content.element.appendChild(sourceEl);
+        });
+      } else if (content.data.videoSrc) {
+        // Force video preload
+        // https://muffinman.io/blog/hack-for-ios-safari-to-display-html-video-thumbnail/
+        // this.element.src = this.data.videoSrc + '#t=0.001';
+        content.element.src = content.data.videoSrc;
+      }
     }
   }
 
@@ -242,7 +345,7 @@ class VideoContentSetup {
   }
 
   useContentPlaceholder(usePlaceholder, content) {
-    if (isVideoContent(content)) {
+    if (isVideoContent(content) || isIframeContent(content)) {
       return true;
     }
     return usePlaceholder;
