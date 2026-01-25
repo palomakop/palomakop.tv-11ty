@@ -30,6 +30,6 @@ The second channel was recorded with a normal video camera (with a lens), which 
 
 The drawing below shows a top-down view of the recording setup for channel 1.
 
-{% photoGrid "vertical" %}
+{% photoGrid "vertical", "var(--main-bg-color)" %}
 {% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/works/refraction-projection/refraction_diagram.png", "Diagram of Refraction/Projection recording setup", false, true %}
 {% endphotoGrid %}

@@ -157,9 +157,10 @@ export default function(eleventyConfig) {
 
   // LIGHTBOX / PHOTO GRID SHORTCODES
   // types: vertical, two-column, three-column, tarot
-  eleventyConfig.addPairedShortcode("photoGrid", function(content, type) {
+  eleventyConfig.addPairedShortcode("photoGrid", function(content, type, bgColor) {
     let id = makeId(10);
-    return `<photo-grid class="${type}" id="${id}">${content}</photo-grid><script type="module">window.initPhotoSwipe('#${id}');</script>`;
+    let bgColorArg = bgColor ? `, '${bgColor}'` : '';
+    return `<photo-grid class="${type}" id="${id}">${content}</photo-grid><script type="module">window.initPhotoSwipe('#${id}'${bgColorArg});</script>`;
   });
 
   eleventyConfig.addShortcode("photoGridItem", async function(src, description, showCaption, isFullWidth) {

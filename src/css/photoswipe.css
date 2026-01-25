@@ -15,7 +15,7 @@
   --pswp-icon-color: var(--white);
   --pswp-icon-color-secondary: #4f4f4f;
   --pswp-icon-stroke-color: #4f4f4f;
-  --pswp-icon-stroke-width: 5px;
+  --pswp-icon-stroke-width: 6px;
 
   --pswp-error-text-color: var(--pswp-icon-color);
 }
@@ -205,7 +205,7 @@ and show (for example fade in) when PhotoSwipe is opened
 	background: none;
 	border: 0;
 	box-shadow: none;
-	opacity: 0.85;
+	opacity: 0.8;
 	-webkit-appearance: none;
 	-webkit-touch-callout: none;
 }
@@ -239,6 +239,7 @@ and show (for example fade in) when PhotoSwipe is opened
   height: 32px;
   overflow: hidden;
   pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
 }
 
 .pswp__icn-shadow {
@@ -371,6 +372,12 @@ div.pswp__img--placeholder,
 
 /* "+" => "-" */
 .pswp--zoomed-in .pswp__zoom-icn-bar-v {
+  display: none;
+}
+
+/* Hide vertical bar shadow when zoomed in */
+.pswp--zoomed-in use[href="#pswp__zoom-icn-bar-v"],
+.pswp--zoomed-in use[*|href="#pswp__zoom-icn-bar-v"] {
   display: none;
 }
 
