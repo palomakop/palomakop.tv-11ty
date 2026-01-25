@@ -92,7 +92,6 @@
         gallery: galleryId,
         children: 'a:not(.lightbox-ignore)',
         pswpModule: () => import('/js/photoswipe.esm.js'),
-        spacing: 0,
         paddingFn: (viewportSize, itemData, index) => {
           // Add 60px padding on left and right for video/iframe in landscape mode
           const isLandscape = viewportSize.x > viewportSize.y;
