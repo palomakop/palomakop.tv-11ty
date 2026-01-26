@@ -1,0 +1,9 @@
+{
+    "External Link": {
+    "prefix": "extLink",
+    "body": [
+      "{% extLink \"$1\", \"\" %}",
+    ],
+    "description": "extLink 11ty shortcode"
+  }
+}
