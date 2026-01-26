@@ -100,10 +100,21 @@ async function fetchVimeoOEmbed(vimeoId, width = 500) {
         console.error(`[Vimeo ${vimeoId}] Got HTML response (attempt ${i + 1}/3):`, text.substring(0, 500));
         throw new Error('Got HTML instead of JSON');
       }
-      return JSON.parse(text);
+      const data = JSON.parse(text);
+
+      // Validate that we got the expected properties
+      if (!data.thumbnail_url || !data.width || !data.height) {
+        console.error(`[Vimeo ${vimeoId}] Invalid oEmbed data (attempt ${i + 1}/3):`, data);
+        throw new Error('Invalid oEmbed response - missing required properties');
+      }
+
+      return data;
     } catch (error) {
-      if (i === 2) throw error; // Last attempt, rethrow
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      if (i === 2) {
+        console.error(`[Vimeo ${vimeoId}] All retry attempts failed:`, error);
+        throw error; // Last attempt, rethrow
+      }
+      await new Promise(resolve => setTimeout(resolve, 500));
     }
   }
 }

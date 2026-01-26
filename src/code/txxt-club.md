@@ -13,7 +13,6 @@ codeLink: 'https://github.com/palomakop/txxt-bridge'
   - Twilio provides a phone number to receive incoming SMS, and an API endpoint for launching a function when a new message is received, as well as sending outgoing SMS messages
 - [WriteFreely](https://writefreely.org/), an open-source blog platform with an API
   - The WriteFreely instance, hosted on my server, provides the front-end blog site, as well as an RSS feed and ActivityPub stream
-- [ImgBB](https://api.imgbb.com/), an image hosting service with an API
 
 **Highlights:**
 - I wrote a bridge that takes incoming SMS text and image messages and posts them to the WriteFreely blog

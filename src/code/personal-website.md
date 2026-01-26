@@ -18,6 +18,7 @@ demoLink: '/'
 - Custom build configs written in JavaScript for shortcodes and other build-time goodies ([code](https://github.com/palomakop/palomakop.tv-11ty/blob/main/.eleventy.js))
 - Custom video embeds via the [Vimeo Developer API](https://developer.vimeo.com/api/guides/start), with thumbnail images and a JavaScript-free fallback via the html5 `video` tag
 - Custom music player written in JavaScript for embedding music albums ([demo](https://palomakop.tv/work/sleepwalks-tapes/), [code](https://github.com/palomakop/palomakop.tv-11ty/blob/main/src/js/musicplayer.js))
-- Custom lightbox viewer in JavaScript for image galleries based on [Simple Lightbox](https://github.com/dbrekalo/simpleLightbox) ([demo - scroll down and click any image to open lightbox](https://palomakop.tv/work/synthetic-forest/))
+- Custom lightbox viewer for image galleries based on [PhotoSwipe](https://photoswipe.com/) ([demo: scroll down and click any image to open lightbox](/work/synthetic-forest/))
+- Custom plugin to support iframe videos in lightbox ([demo: scroll down and click on thumbnails to open video player](/art/experiments-in-public/))
 - Custom templates written in [Liquid](https://shopify.github.io/liquid/)
 - Font subsetting with [Python FontTools](https://github.com/fonttools/fonttools) for improved site load performance
