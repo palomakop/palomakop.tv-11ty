@@ -37,10 +37,9 @@ customStyle: >
   .fade-in-image {
     opacity:0;
     transition: all 0.5s ease-in-out;
-    background-color:var(--neutral-bg-color);
     transform:translateY(1em);
   }
-  .mobile-thumbnail .fade-in-image {
+  .mobile-thumbnail.fade-in-image {
     transition-delay: 0.5s;
   }
   .fade-in-image.loaded {
@@ -125,10 +124,12 @@ function startTyping() {
   <article class="code-project">
     <div class="code-project-header">
       <div>
-        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "fade-in-image" %}
+        <div class="code-project-image-wrapper fade-in-image">
+          {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "" %}
+        </div>
         {% if project.data.mobileThumbnail %}
-        <div class="mobile-thumbnail">
-          {% image project.data.mobileThumbnail, "", 250, "fade-in-image" %}
+        <div class="mobile-thumbnail fade-in-image">
+          {% image project.data.mobileThumbnail, "", 250, "" %}
         </div>
         {% endif %}
       </div>
@@ -173,10 +174,12 @@ function startTyping() {
   <article class="code-project">
     <div class="code-project-header">
       <div>
-        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "fade-in-image" %}
+        <div class="code-project-image-wrapper fade-in-image">
+          {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "" %}
+        </div>
         {% if project.data.mobileThumbnail %}
-        <div class="mobile-thumbnail">
-          {% image project.data.mobileThumbnail, "", 250, "fade-in-image" %}
+        <div class="mobile-thumbnail fade-in-image">
+          {% image project.data.mobileThumbnail, "", 250, "" %}
         </div>
         {% endif %}
       </div>
@@ -219,10 +222,12 @@ function startTyping() {
   <article class="code-project">
     <div class="code-project-header">
       <div>
-        {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "fade-in-image" %}
+        <div class="code-project-image-wrapper fade-in-image">
+          {% image project.data.thumbnail, project.data.thumbnailAlt, 720, "" %}
+        </div>
         {% if project.data.mobileThumbnail %}
-        <div class="mobile-thumbnail">
-          {% image project.data.mobileThumbnail, "", 250, "fade-in-image" %}
+        <div class="mobile-thumbnail fade-in-image">
+          {% image project.data.mobileThumbnail, "", 250, "" %}
         </div>
         {% endif %}
       </div>
@@ -272,24 +277,33 @@ function startTyping() {
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const fadeImages = document.querySelectorAll('.fade-in-image');
+  const fadeElements = document.querySelectorAll('.fade-in-image');
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const img = entry.target;
-        const handleLoad = function() {
-          img.classList.add('loaded');
-          img.removeEventListener('load', handleLoad);
-        };
+        const element = entry.target;
 
-        img.addEventListener('load', handleLoad);
+        // Check if element is an img or contains an img
+        const img = element.tagName === 'IMG' ? element : element.querySelector('img');
 
-        if (img.complete) {
-          img.classList.add('loaded');
+        if (img) {
+          const handleLoad = function() {
+            element.classList.add('loaded');
+            img.removeEventListener('load', handleLoad);
+          };
+
+          img.addEventListener('load', handleLoad);
+
+          if (img.complete) {
+            element.classList.add('loaded');
+          }
+        } else {
+          // If no img found, just add loaded class immediately
+          element.classList.add('loaded');
         }
 
-        observer.unobserve(img);
+        observer.unobserve(element);
       }
     });
   }, {
@@ -297,8 +311,8 @@ document.addEventListener("DOMContentLoaded", function() {
     threshold: 0.01
   });
 
-  fadeImages.forEach(img => {
-    observer.observe(img);
+  fadeElements.forEach(element => {
+    observer.observe(element);
   });
 });
 </script>

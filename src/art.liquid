@@ -23,7 +23,9 @@ title: Art
 {%- for project in artCollection -%}
   <div class="art-project">
     <a href="{{ project.url }}">
-    {% image project.data.thumbnail, project.data.thumbnailAlt, 1440, "" %}
+    <div class="art-project-image-wrapper">
+      {% image project.data.thumbnail, project.data.thumbnailAlt, 1440, "" %}
+    </div>
     <div class="caption">
       <h3><span class="title">{{ project.data.title }}</span>, {{ project.data.projectYear }}</h3>
       <p>{{ project.data.description }}</p>
