@@ -13,8 +13,8 @@
   --pswp-transition-duration: 333ms; */
 
   --pswp-icon-color: var(--white);
-  --pswp-icon-color-secondary: #4f4f4f;
-  --pswp-icon-stroke-color: #4f4f4f;
+  --pswp-icon-color-secondary: rgba(40, 40, 40, 0.85);
+  --pswp-icon-stroke-color: rgb(40, 40, 40, 0.85);
   --pswp-icon-stroke-width: 6px;
 
   --pswp-error-text-color: var(--pswp-icon-color);
@@ -249,10 +249,10 @@ and show (for example fade in) when PhotoSwipe is opened
   top: 14px;
   left: 9px;
   width: 32px;
-  height: 32px;
+  height: 36px;
   overflow: hidden;
   pointer-events: none;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0 2px 3.5px rgba(0, 0, 0, 0.9));
 }
 
 .pswp__icn-shadow {
@@ -330,7 +330,7 @@ div.pswp__img--placeholder,
   top: 50%;
   margin-top: -19px;
   width: 38px;
-  height: 38px;
+  height: 42px;
   background: none;
   border-radius: 0;
 }
