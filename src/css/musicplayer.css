@@ -16,6 +16,7 @@ music-player .album-art-container {
 
 music-player .album-art {
   display:block;
+  border-radius:0;
 }
 
 music-player .button {
