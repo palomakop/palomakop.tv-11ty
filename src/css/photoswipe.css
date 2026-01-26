@@ -57,6 +57,16 @@
   max-width: none;
 }
 
+@keyframes radius-to-zero {
+  to {
+    border-radius: 0;
+  }
+}
+
+.pswp--open img {
+  animation: radius-to-zero 333ms cubic-bezier(.4,0,.22,1) forwards;
+}
+
 .pswp--open {
 	display: block;
 }

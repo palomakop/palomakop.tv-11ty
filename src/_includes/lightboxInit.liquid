@@ -9,6 +9,7 @@
     const options = {
       gallery: galleryId,
       children: 'a:not(.lightbox-ignore)',
+      showAnimationDuration: 333,
       pswpModule: () => import('/js/photoswipe.esm.js'),
       paddingFn: (viewportSize, itemData, index) => {
         // Add 60px padding on left and right for video/iframe in landscape mode
