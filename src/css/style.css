@@ -1046,6 +1046,10 @@ photo-grid {
   gap:1.2em;
 }
 
+photo-grid * {
+  min-width:0;
+}
+
 photo-grid:not(.tarot) {
   margin-bottom:1.6em;
 }
@@ -1110,6 +1114,12 @@ photo-grid img {
   min-width:100%;
 }
 
+@media only screen and (max-width:625px) {
+  photo-grid.three-column:has(.video-grid-item) {
+    grid-template-columns:1fr 1fr;
+  }
+}
+
 @media only screen and (min-width:501px) {
   photo-grid.two-column {
     grid-template-columns:1fr 1fr;
@@ -1126,7 +1136,7 @@ photo-grid img {
 }
 
 @media only screen and (max-width:500px) {
-  photo-grid.two-column, photo-grid.three-column {
+  photo-grid.two-column, photo-grid.three-column, photo-grid.three-column:has(.video-grid-item) {
     grid-template-columns:1fr;
   }
 }
