@@ -598,6 +598,10 @@ a {
   text-underline-offset:2px;
 }
 
+::selection {
+  background:rgba(0, 137, 144, 0.25);
+}
+
 @media (hover:hover) {
   a:hover, details summary:hover {
     text-decoration:dotted underline;
@@ -652,12 +656,6 @@ details summary {
   text-underline-offset:2px;
   text-decoration-thickness:1.25px;
   width:fit-content;
-}
-
-::selection {
-  color:var(--white);
-  background:var(--button-hover-color);
-  border-radius:5px;
 }
 
 /* IMAGES */

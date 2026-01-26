@@ -13,6 +13,10 @@ body {
   color:#f2f2f2;
 }
 
+::selection {
+  background:rgba(0, 242, 255, 0.25);
+}
+
 a {
   color:#f2f2f2;
   text-decoration:underline;
