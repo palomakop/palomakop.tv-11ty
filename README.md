@@ -19,7 +19,7 @@ Visit the site here: [palomakop.tv](https://palomakop.tv)
 ╠═╝╠═╣║  ║ ║║║║╠═╣╠╩╗║ ║╠═╝ ║ ╚╗╔╝
 ╩  ╩ ╩╩═╝╚═╝╩ ╩╩ ╩╩ ╩╚═╝╩o  ╩  ╚╝
 
-♦ built with 11ty by paloma kop, 2024-2025 ♦
+♦ built with 11ty by paloma kop, 2024-present ♦
 
 ╔══════════════════════════════════════════╗
 ║ This website and its contents are        ║

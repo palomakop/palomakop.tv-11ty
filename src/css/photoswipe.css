@@ -339,9 +339,8 @@ div.pswp__img--placeholder,
   visibility: visible;
 }
 
-/* always show arrows for video/iframe content, even on touch */
-.pswp--touch.pswp--video .pswp__button--arrow,
-.pswp--touch.pswp--iframe .pswp__button--arrow {
+/* always show arrows for galleries with video/iframe content, even on touch */
+.pswp--touch.pswp--has-video-content .pswp__button--arrow {
   visibility: visible;
 }
 
@@ -362,8 +361,7 @@ div.pswp__img--placeholder,
 
 /* Move arrows to bottom for video/iframe on portrait screens or short screens */
 @media (orientation: portrait) {
-  .pswp--video .pswp__button--arrow,
-  .pswp--iframe .pswp__button--arrow {
+  .pswp--touch.pswp--has-video-content .pswp__button--arrow {
     top: auto;
     bottom: 10px;
     margin-top: 0;
