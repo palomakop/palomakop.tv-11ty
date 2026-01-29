@@ -151,6 +151,14 @@ export default function(eleventyConfig) {
     return date;
   });
 
+  // FORMAT DATE WITHOUT TIMEZONE CONVERSION
+  eleventyConfig.addFilter("formatDateOnly", function (dateString) {
+    const [year, month, day] = dateString.split('-');
+    const date = new Date(year, month - 1, day);
+    const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
+    return date.toLocaleDateString('en-US', options);
+  });
+
   // EXTERNAL LINK
   eleventyConfig.addShortcode("extLink", function(linkText, url, optionalClass) {
     return makeExtLink(linkText, url, optionalClass);

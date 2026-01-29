@@ -25,7 +25,7 @@ lightbox: true
 {% for post in posts %}
   <article id="{{post.data.date}}" class="blog-post">
     <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-    <p class="metadata">{{post.data.date | addTimeToIsoDate | date: "%B %e, %Y"}} | <a href="{{ post.url }}">Permalink</a></p>
+    <p class="metadata">{{post.data.date | formatDateOnly}} | <a href="{{ post.url }}">Permalink</a></p>
     {% image post.data.thumbnail, post.data.thumbnailAlt, 1440, "" %}
     {{post.content}}
   </article>

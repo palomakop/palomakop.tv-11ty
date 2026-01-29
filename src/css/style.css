@@ -39,6 +39,8 @@
   --medium-weight:400;
   --normal-weight:350;
   --text-size-adjust:100%;
+  --line-height-em:1.6em;
+  --line-height:1.6;
 }
 
 @font-face {
@@ -72,7 +74,7 @@ body {
   font-family:var(--body-font);
   font-size:var(--body-font-size);
   font-weight:var(--normal-weight);
-  line-height:1.6;
+  line-height:var(--line-height);
   overflow-wrap:break-word;
   word-wrap:break-word;
 }
@@ -126,11 +128,11 @@ main h2:first-child {
 /* RESPONSIVE LAYOUT ELEMENTS: MOBILE HEADER, SIDEBAR, AND MENU */
 
 .container-flex {
-  padding-top:1.6em;
+  padding-top:var(--line-height-em);
   display:flex;
   flex-direction:row;
   flex-wrap:nowrap;
-  gap:1.6em 4vw;
+  gap:var(--line-height-em) 4vw;
   width:100%;
 }
 
@@ -175,7 +177,7 @@ html:has(#menu:not(:target)) .mobile-nav-icon[href="##"] {
 
 .close-button {
   position:absolute;
-  top:1.6em;
+  top:var(--line-height-em);
   right:min(3ch,10vw);
 }
 
@@ -323,7 +325,7 @@ h1 {
     width:100%;
     height:100%;
     margin:0;
-    padding:1.6em min(3ch,10vw);
+    padding:var(--line-height-em) min(3ch,10vw);
     box-sizing:border-box;
   }
 
@@ -454,7 +456,7 @@ button {
   border-radius:5px;
   padding:0.1em 0.5em;
   font-size:1rem;
-  line-height:1.6;
+  line-height:var(--line-height);
   font-family:var(--body-font);
   cursor:pointer;
 }
@@ -567,6 +569,7 @@ footer li img.webring-icon {
 
 h2, h3, h4, h5, h6 {
   font-weight:var(--bold-weight);
+  min-height:var(--line-height-em);
 }
 
 h2 {
@@ -1069,7 +1072,7 @@ photo-grid * {
 }
 
 photo-grid:not(.tarot) {
-  margin-bottom:1.6em;
+  margin-bottom:var(--line-height-em);
 }
 
 photo-grid.tarot {
@@ -1083,7 +1086,7 @@ photo-grid.tarot {
 }
 
 photo-grid.vertical, photo-grid.two-column, photo-grid.three-column {
-  margin-top:1.6em;
+  margin-top:var(--line-height-em);
 }
 
 photo-grid.two-column img, photo-grid.three-column img {
@@ -1192,8 +1195,8 @@ photo-grid .video-thumb-caption li {
 .video-container {
   width:100%;
   height:auto;
-  margin-top:1.6em;
-  margin-bottom:1.6em;
+  margin-top:var(--line-height-em);
+  margin-bottom:var(--line-height-em);
 }
 
 video {
@@ -1822,4 +1825,32 @@ h2:has(+ h3.note-subtitle) {
 h3.note-subtitle {
   margin-top:0;
   font-size:var(--h4-font-size);
+}
+
+/* CUSTOM STYLES FOR CENTERED-NO-MENU PAGES */
+
+.centered-container {
+  margin-top:2em;
+}
+
+.centered-container h1 {
+  font-size:var(--h2-font-size);
+  text-align:center;
+}
+
+.centered-container h2 {
+  font-size:var(--h3-font-size);
+  text-align:center;
+}
+
+.centered-container p {
+  max-width: 70ch;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.centered-container img {
+  max-height:85vh;
+  margin-left:auto;
+  margin-right:auto;
 }

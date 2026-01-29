@@ -1,0 +1,10 @@
+---
+layout: noMenuCentered
+dark: true
+---
+
+<h1><i>{{title}}</i></h1>
+<p>{{type}} at {{location}}</p>
+<p>{{eventDate | formatDateOnly}}{% if eventEndDate %} – {{eventEndDate | formatDateOnly}}{% endif %}</p>
+
+{{ content }}

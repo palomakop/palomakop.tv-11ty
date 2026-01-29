@@ -25,7 +25,7 @@ customStyle: >
 {% for log in recurseLogs %}
   <article id="{{ log.data.title | slugify }}" class="blog-post">
     <h3>{{ log.data.title }}</h3>
-    <p class="metadata">{{log.data.date | addTimeToIsoDate | date: "%B %e, %Y"}}</p>
+    <p class="metadata">{{log.data.date | formatDateOnly}}</p>
     {{log.content}}
   </article>
 {% endfor %}

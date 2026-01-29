@@ -3,7 +3,7 @@
   <p>
     Page last updated: 
     {% if tags contains "posts" %}
-      {{date | addTimeToIsoDate | date: "%B %e, %Y"}}
+      {{date | formatDateOnly}}
     {% else %}
       {{page.date | date: "%B %e, %Y"}}
     {% endif %}
