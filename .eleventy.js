@@ -37,7 +37,7 @@ function formatDate(date, options) {
 async function makeImage(src, alt, width, classes) {
   let metadata = await Image(src, {
     widths: [width],
-    formats: ["auto"],
+    formats: ["webp"],
     outputDir: "./_site/img/",
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src);
@@ -64,7 +64,7 @@ async function makeImage(src, alt, width, classes) {
 async function makeImageUrl(src, width) {
   let metadata = await Image(src, {
     widths: [width],
-    formats: ["auto"],
+    formats: ["webp"],
     outputDir: "./_site/img/",
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src);
@@ -82,7 +82,7 @@ async function makeImageUrl(src, width) {
 async function makeImageWithMetadata(src, width) {
   let metadata = await Image(src, {
     widths: [width],
-    formats: ["auto"],
+    formats: ["webp"],
     outputDir: "./_site/img/",
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src);
