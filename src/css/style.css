@@ -34,6 +34,7 @@
   --h4-font-size:1.25rem;
   --body-font-size:1.1rem;
   --small-font-size:0.9rem;
+  --really-small-font-size:0.75rem;
   --black-weight:500;
   --bold-weight:450;
   --medium-weight:400;
@@ -162,9 +163,11 @@ mobile-header {
   height:100%;
 }
 
-.mobile-nav-icon:hover {
-  color:unset;
-  opacity:0.5;
+@media (hover:hover) {
+  .mobile-nav-icon:hover {
+    color:unset;
+    opacity:0.5;
+  }
 }
 
 html:has(#menu:target) .mobile-nav-icon[href="#menu"] {
@@ -621,6 +624,12 @@ a {
   padding-right:0.6em;
 }
 
+nav ul li a.external-link {
+  background-size:0.7em;
+  padding-right:1.5em;
+  background-position:calc(100% - 0.5em) 50%;
+}
+
 @media (hover:hover) {
   .external-link:hover, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.centered):not(.rainbutton):not(.social-logos *):hover {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 7 10 10'%3E%3Cpath d='M17 8v4a1 1 0 0 1-2 0v-1.586l-6.293 6.293a1 1 0 1 1-1.414-1.414L13.586 9H12a1 1 0 0 1 0-2h4a1 1 0 0 1 1 1z' fill='%23210acf'/%3E%3C/svg%3E");
@@ -684,6 +693,7 @@ details summary {
   clear:both;
   width:7ch;
   height:1.4rem;
+  border-radius:0;
 }
 
 @media (hover:hover) {
@@ -1065,6 +1075,7 @@ img-caption {
 photo-grid {
   display:grid;
   gap:1.2em;
+  justify-items:center;
 }
 
 photo-grid * {
@@ -1292,7 +1303,7 @@ video.html-video-fallback {
 }
 
 .cv .year {
-  font-weight:bold;
+  font-weight:var(--bold-weight);
   display:inline-block;
   text-indent:0;
   min-width:5ch;
@@ -1581,7 +1592,7 @@ form button {
 .funding-caption {
   text-align:center;
   margin:0.2em 0;
-  font-weight:bold;
+  font-weight:var(--bold-weight);
 }
 
 /* BLOG */
@@ -1606,9 +1617,7 @@ form button {
 
 @media only screen and (min-width:785px) {
   .blog-post img {
-    max-width:100%;
     max-height:max(100vh, 500px);
-    height:auto;
     width:auto;
   }
 }
@@ -1704,7 +1713,6 @@ ul.post-archive {
   width:6ch;
   height:fit-content;
   flex-shrink:0;
-  font-style:italic;
 }
 
 .subtle-caption {
@@ -1830,12 +1838,13 @@ h3.note-subtitle {
 /* CUSTOM STYLES FOR CENTERED-NO-MENU PAGES */
 
 .centered-container {
-  margin-top:2em;
+  margin:var(--line-height-em) 0;
 }
 
 .centered-container h1 {
   font-size:var(--h2-font-size);
   text-align:center;
+  margin:0.2em 0;
 }
 
 .centered-container h2 {
@@ -1849,8 +1858,122 @@ h3.note-subtitle {
   margin-right:auto;
 }
 
-.centered-container img {
-  max-height:85vh;
+.centered-container .subtitles, .centered-container header, .centered-container footer {
+  display:flex;
+  flex-direction:column;
+  gap:0.2em;
+  margin:0.2em 0;
+}
+
+.centered-container .subtitles p {
+  max-width:100%;
+  text-align:center;
+  font-weight:var(--bold-weight);
+  margin:0;
+}
+
+.centered-container .subtitles p:nth-child(2) {
+  font-size:var(--small-font-size);
+  font-weight:var(--black-weight);
+  opacity:0.5;
+}
+
+.centered-container photo-grid {
+  margin: 2.5em 0;
+}
+
+.centered-container photo-grid a {
+  display:block;
+  width:fit-content;
+  border:1.5px solid;
+  border-radius:5px;
+  background-color:currentColor;
+  overflow:hidden;
+}
+
+.centered-container photo-grid img {
+  max-height:max(80vh, 350px);
+  width:auto;
+  display:block;
+  min-width:0;
+  border-radius:0;
+}
+
+.centered-container nav {
+  margin: 2.5em 0;
+}
+
+.centered-container header {
+  margin:1em 0 2.5em;
+  text-align:center;
+  font-weight:var(--black-weight);
+}
+
+.centered-container header a {
+  text-transform:uppercase;
+  opacity:0.7;
+  text-decoration:none;
+  letter-spacing:0.2em;
+  width:fit-content;
+  margin:0 auto;
+}
+
+@media (hover:hover) {
+  .centered-container header a:hover {
+    opacity:1;
+  }
+}
+
+.centered-container footer {
+  text-align:center;
+  max-width:100%;
+  font-size: var(--small-font-size);
+  opacity:0.5;
+  margin-top:4em;
+}
+
+.centered-container footer p {
+  border-bottom:none;
+  padding:0;
+}
+
+.centered-container footer nav {
+  margin:0 auto;
+}
+
+.centered-container footer nav ul {
+  margin:0;
+}
+
+.centered-container footer nav ul li {
+  flex-basis:auto;
+  font-size: var(--really-small-font-size);
+  font-weight:var(--black-weight);
+}
+
+/* EVENTS PAGES */
+
+.event-info {
+  max-width: 70ch;
   margin-left:auto;
   margin-right:auto;
+  text-align:center;
+  margin:2.5em auto;
+  display:flex;
+  flex-direction:column;
+  gap:2.5em;
+}
+
+.event-info span {
+  display:block;
+  font-weight:var(--black-weight);
+  text-transform:uppercase;
+  opacity:0.5;
+  font-size:var(--small-font-size);
+  letter-spacing:0.2em;
+  margin-bottom:0.5em;
+}
+
+.event-info p {
+  margin:0;
 }

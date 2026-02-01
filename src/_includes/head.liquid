@@ -25,7 +25,7 @@
     -->
 
   <!-- page title -->
-  <title>{{title}}{% unless title == "Paloma Kop" or title == "This page intentionally left blank" %} ✦ Paloma Kop {% endunless %}</title>
+  <title>{{title}}{% unless title contains "Paloma Kop" or title == "This page intentionally left blank" %} ✦ Paloma Kop {% endunless %}</title>
 
   <link rel="icon" type="image/x-icon" sizes="any" href="https://s3.amazonaws.com/palomakop.tv/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="https://s3.amazonaws.com/palomakop.tv/favicon.svg">
@@ -75,7 +75,7 @@
   {% endif %}
 
   <!-- opengraph tags -->
-  <meta property="og:description" content="{{description}}">
+  <meta property="og:description" content="{% if tags contains 'events' and description == '' %}{{ eventDate | formatDateRange: eventEndDate }} • {{type}} at {{location}}{% else %}{{description}}{% endif %}">
   <meta property="og:image" content="https://palomakop.tv{% imageUrl thumbnail 1200 %}">
 
   {% if lightbox %}

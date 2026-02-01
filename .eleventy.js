@@ -24,6 +24,16 @@ function makeExtLink(linkText, url, optionalClass) {
   return `<a href="${url}" target="_blank" rel="noopener" class="${classString}">${linkText}</a>`;
 }
 
+// Date helper functions
+function parseDateString(dateString) {
+  const [year, month, day] = dateString.split('-');
+  return new Date(year, month - 1, day);
+}
+
+function formatDate(date, options) {
+  return date.toLocaleDateString('en-US', { ...options, timeZone: 'UTC' });
+}
+
 async function makeImage(src, alt, width, classes) {
   let metadata = await Image(src, {
     widths: [width],
@@ -145,7 +155,7 @@ export default function(eleventyConfig) {
     return content;
   })
 
-  // TO UTC STRING
+  // TO UTC STRING - FOR RSS FEEDS, THEY REQUIRE A TIME, NOT JUST A DATE
   eleventyConfig.addFilter("addTimeToIsoDate", async function (date) {
     date = date + "T09:00:00Z";
     return date;
@@ -153,10 +163,68 @@ export default function(eleventyConfig) {
 
   // FORMAT DATE WITHOUT TIMEZONE CONVERSION
   eleventyConfig.addFilter("formatDateOnly", function (dateString) {
-    const [year, month, day] = dateString.split('-');
-    const date = new Date(year, month - 1, day);
-    const options = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
-    return date.toLocaleDateString('en-US', options);
+    return formatDate(parseDateString(dateString), { year: 'numeric', month: 'long', day: 'numeric' });
+  });
+
+  // FORMAT DATE WITH DAY OF WEEK
+  eleventyConfig.addFilter("formatDateWithDay", function (dateString) {
+    return formatDate(parseDateString(dateString), { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  });
+
+  // FORMAT DATE RANGE WITHOUT TIMEZONE CONVERSION
+  eleventyConfig.addFilter("formatDateRange", function (startDate, endDate) {
+    if (!endDate) {
+      return formatDate(parseDateString(startDate), { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    const [startYear] = startDate.split('-');
+    const [endYear] = endDate.split('-');
+
+    const start = parseDateString(startDate);
+    const end = parseDateString(endDate);
+
+    if (startYear === endYear) {
+      const startFormatted = formatDate(start, { weekday: 'long', month: 'long', day: 'numeric' });
+      const endFormatted = formatDate(end, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      return `${startFormatted} – ${endFormatted}`;
+    } else {
+      const startFormatted = formatDate(start, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      const endFormatted = formatDate(end, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      return `${startFormatted} – ${endFormatted}`;
+    }
+  });
+
+  // FORMAT DATE RANGE WITHOUT YEAR (unless years differ)
+  eleventyConfig.addFilter("formatDateRangeYearOptional", function (startDate, endDate) {
+    if (!endDate) {
+      return formatDate(parseDateString(startDate), { weekday: 'long', month: 'long', day: 'numeric' });
+    }
+
+    const [startYear] = startDate.split('-');
+    const [endYear] = endDate.split('-');
+
+    const start = parseDateString(startDate);
+    const end = parseDateString(endDate);
+
+    if (startYear === endYear) {
+      const startFormatted = formatDate(start, { weekday: 'long', month: 'long', day: 'numeric' });
+      const endFormatted = formatDate(end, { weekday: 'long', month: 'long', day: 'numeric' });
+      return `${startFormatted} – ${endFormatted}`;
+    } else {
+      const startFormatted = formatDate(start, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      const endFormatted = formatDate(end, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      return `${startFormatted} – ${endFormatted}`;
+    }
+  });
+
+  // FORMAT SHORT DATE (Mon dd) WITHOUT TIMEZONE CONVERSION
+  eleventyConfig.addFilter("formatShortDate", function (dateString) {
+    return formatDate(parseDateString(dateString), { month: 'short', day: '2-digit' });
+  });
+
+  // GET YEAR FROM DATE STRING
+  eleventyConfig.addFilter("getYear", function (dateString) {
+    return formatDate(parseDateString(dateString), { year: 'numeric' });
   });
 
   // EXTERNAL LINK
@@ -292,6 +360,12 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addShortcode("musicPlayerTrack", function(name, url) {
     return `<li><a href="${url}">${name}</a></li>`;
+  });
+
+  eleventyConfig.addCollection("upcomingEvents", function(collectionApi) {
+    return collectionApi.getFilteredByTag("events")
+      .filter(item => !item.data.tags || !item.data.tags.includes("archived"))
+      .sort((a, b) => a.data.eventDate.localeCompare(b.data.eventDate));
   });
 
   eleventyConfig.addCollection("frontmatterColors", function(collectionApi) {

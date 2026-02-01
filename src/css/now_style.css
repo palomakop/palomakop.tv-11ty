@@ -141,3 +141,19 @@ strong {
   opacity:0.5;
   white-space:nowrap;
 }
+
+ul.event-title {
+  text-align:center;
+  padding-left:0;
+  list-style-type:none;
+  margin:0.5em 0;
+}
+
+ul.event-title li {
+  margin:0.5em 0;
+  line-height:1.4;
+}
+
+a.now-button:has(ul) {
+  padding:1em 1.5ch 1.05em;
+}

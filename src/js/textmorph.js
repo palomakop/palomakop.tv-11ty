@@ -5,8 +5,7 @@ const elts = {
 
 const texts = [
 	"Artist",
-	"Web Developer",
-	"Visualist",
+	"Technologist",
 	"Educator",
 	"Human Being"
 ];

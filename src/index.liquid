@@ -5,17 +5,23 @@ customStyle: >
     --main-bg-color:#dae6e1;
     --main-bg-gradient:radial-gradient(#c1e0ca, #c2dde8, #e1e7d7);
   }
+  .events-grid {
+    display:grid;
+    grid-template-columns:minmax(0, max-content);
+    gap:1em;
+  }
   a.now-button {
     text-decoration:none;
-    border:1.5px solid;
     display:block;
-    border-radius: 10px;
-    padding: 0.5em 0.6em 0.6em;
+    padding:1em 2em 1.1em;
+    margin:0;
+    border:1.5px solid;
+    box-shadow:0.3em 0.3em;
   }
   .now-button .caption {
-    font-size: 0.8em;
-    font-style: italic;
-    padding-bottom: 0.1em;
+    font-size:0.8em;
+    font-style:italic;
+    padding-bottom:0.1em;
   }
   @media (hover:hover) {
     a.now-button:hover {
@@ -23,6 +29,14 @@ customStyle: >
       background-color:var(--button-hover-color);
       text-decoration:none;
     }
+  }
+  ul.event-title {
+    padding-left:0;
+    margin:0;
+  }
+  ul.event-title li {
+    margin:0.2em 0;
+    line-height:1.4;
   }
 ---
 
@@ -83,7 +97,7 @@ customStyle: >
   </h3>
 
   <p>
-    I am a new media artist and creative technologist from NYC and Woodstock, NY, now based in New Haven, Connecticut. I've taught creative and technical classes and workshops, and run community spaces, both online and off. My art practice involves synthesizers, video feedback, and generative patterns inspired by nature and math. I've been performing audiovisual art since 2016, and have played live music and visuals at events and art spaces across North America.
+    I am a multimedia artist and creative technologist from NYC and Woodstock, NY, now based in New Haven, Connecticut. I've taught creative and technical classes and workshops, and run community spaces, both online and off. My art practice involves synthesizers, video feedback, and generative patterns inspired by nature and math. I've been performing audiovisual art since 2016, and have played live music and visuals at events and art spaces across North America.
   </p>
   <p>
     I also enjoy bicycling, yoga, meditation, and being outdoors. I've spent time living in a yurt, a converted school bus, a camper van, and out of a backpack.
@@ -94,7 +108,7 @@ customStyle: >
     <div class="details-content">
       <div id="artist-bio">
         <p>
-          Paloma Kop is an experimental multimedia artist and creative technologist based in New Haven, CT. Their practice incorporates electronic media, from analog video and synthesizers to digital systems and code, as well as drawing, print, and liquids. They are especially interested in feedback loops, recursion, self-organizing and emergent structures, and patterns in nature.
+          Paloma Kop is a multimedia artist and creative technologist based in New Haven, CT. Their practice incorporates electronic media, from analog video and synthesizers to digital systems and code, as well as drawing, print, and liquids. They are especially interested in feedback loops, recursion, self-organizing and emergent structures, and patterns in nature.
         </p>
         <p>
           They received an <a href="/mfa/">MFA</a> in Electronic Integrated Arts at Alfred University in 2020, and a BS in Visual Arts and Computer Science from Purchase College in 2014. They have shown work and performed at spaces and events such as Ambient Church (NYC), Eastern Bloc (Montréal), and Ann Arbor Film Festival (Michigan). They have done visiting artist talks and workshops at universities such as CalArts, NYU, and SAIC.
@@ -204,7 +218,7 @@ customStyle: >
   </h3>
 
   <p>
-    I'm available for freelance projects, including custom websites and code, video creation, and IT consulting. Feel free to check out some of my <a href="/code">web dev projects</a> and/or <a href="/contact">get in touch</a>!
+    I'm currently available for select freelance projects. Feel free to <a href="/contact">get in touch</a>.
   </p>
 
 </div>

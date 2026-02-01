@@ -1,10 +1,69 @@
 ---
 layout: noMenuCentered
 dark: true
+customStyle: >
+  body, body a {
+    color:#ffffef;
+  }
 ---
 
-<h1><i>{{title}}</i></h1>
-<p>{{type}} at {{location}}</p>
-<p>{{eventDate | formatDateOnly}}{% if eventEndDate %} – {{eventEndDate | formatDateOnly}}{% endif %}</p>
+{% if tags contains 'archived' %}
+<p style="text-align:center;font-weight:var(--black-weight);margin-bottom:3em;color:#b1a0d2;text-transform:uppercase;letter-spacing:0.1em;border-bottom:2px dotted;max-width:100%;padding-bottom:1em;">This event has been archived</p>
+{% endif %}
+
+<header>
+<a href="/"><img src="https://s3.amazonaws.com/palomakop.tv/legible_logotype.svg" style="filter:var(--svg-invert-filter) sepia(1); width:12ch;"></a>
+<span style="font-size:var(--small-font-size);opacity:0.5;">✦ invites you to ✦</span>
+</header>
+
+<h1><i>{{ title | split: ' / ' | join: '<br>' }}</i></h1>
+<div class="subtitles">
+  <p>{{type}} at {{location}}</p>
+  <p>{{eventDate | formatDateRange: eventEndDate}}</p>
+</div>
+
+{% unless thumbnail == 'https://s3.amazonaws.com/palomakop.tv/og_image.jpg' %}
+{% photoGrid "vertical" %}
+{% photoGridItem thumbnail, thumbnailAlt, false, true %}
+{% endphotoGrid %}
+{% endunless %}
+
+<div class="event-info">
+  <div>
+    <span>Where</span>
+    <p>{% if locationLink %}{% extLink location locationLink %}{% else %}{{location}}{% endif %}</p>
+    {% if locationAddress %}<p>{{locationAddress}}</p>{% endif %}
+    {% if locationCity %}<p>{{locationCity}}</p>{% endif %}
+  </div>
+  <div>
+    <span>When</span>
+    <p>{{eventDate | formatDateRange: eventEndDate}}</p>
+    {% if eventTime %}<p>{{eventTime}}</p>{% endif %}
+  </div>
+</div>
 
 {{ content }}
+
+{% if eventLink %}
+<nav class="centered bold">
+  <ul>
+    <li>
+      {% extLink eventLinkLabel eventLink %}
+    </li>
+  </ul>
+</nav>
+{% endif %}
+
+<footer>
+<p>Page last updated: {{page.date | date: "%B %e, %Y"}}</p>
+<nav class="centered">
+  <ul>
+    <li>
+      <a href="/">&lt; Main Site</a>
+    </li>
+    <li>
+      <a href="/now">&lt; Now</a>
+    </li>
+  </ul>
+</nav>
+</footer>

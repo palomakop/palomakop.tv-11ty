@@ -1,4 +1,6 @@
-{% comment %}
+{% assign eventCollection = collections.upcomingEvents %}
+
+{% unless eventCollection.size == 0 %}
 
 {% if page.url == "/" %}
 <div class="about-text">
@@ -6,6 +8,7 @@
     <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/triangle.svg" class="about-title-graphic" alt=""/>
     Events
   </h3>
+  <div class="events-grid">
 {% endif %}
 
 {% if page.url == "/now/" %}
@@ -14,14 +17,19 @@
   </h2>
 {% endif %}
 
-<a href="https://www.instagram.com/ecoca_nhv/" class="now-button" target="_blank" rel="noopener">
-  <b>Sunday, February 8, 1pm</b><br>
-  Opening of *Intervals* Exhibition
-  <div class="caption">Ely Center of Contemporary Art, New Haven, CT</div>
+{%- for event in eventCollection -%}
+<a href="{{ event.url }}" class="now-button">
+  <b>{{ event.data.eventDate | formatDateRangeYearOptional: event.data.eventEndDate }}{% if event.data.eventTime %}, {{ event.data.eventTime }}{% endif %}</b>
+  <br>
+  <ul class="event-title"><li><i>{{ event.data.title | split: ' / ' | join: '</i></li><li><i>' }}</i>
+  {% unless event.data.title.size > 50 or event.data.title contains ' / ' %}{{ event.data.type }}{% endunless %}</li></ul>
+  <div class="caption">{% if event.data.locationShortName %}{{ event.data.locationShortName }}{% else %}{{ event.data.location }}{% endif %}{% if event.data.locationCity %}, {{ event.data.locationCity }}{% endif %}</div>
 </a>
+{%- endfor -%}
 
 {% if page.url == "/" %}
+  </div>
 </div>
 {% endif %}
 
-{% endcomment %}
+{% endunless %}
