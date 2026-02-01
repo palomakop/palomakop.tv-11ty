@@ -4,9 +4,5 @@
   "description": "",
   "permalink": "events/{{eventDate}}_{{ title| truncatewords: 5 | slugify }}/",
   "lightbox": true,
-  "eventLink": null,
-  "eventLinkLabel": "More Info",
-  "eventEndDate": null,
-  "eventTime": null,
-  "locationLink": null
+  "eventLinkLabel": "More Info"
 }

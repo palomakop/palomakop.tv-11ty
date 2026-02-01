@@ -774,7 +774,6 @@ img-caption {
 .about-header img {
   border-radius:10px;
   flex:1 1 0px;
-  mix-blend-mode:multiply;
 }
 
 .about-header-text {
