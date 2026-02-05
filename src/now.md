@@ -23,7 +23,7 @@ notecardDark: true
 ### Updates
 
 - Preparing for some events coming up this month, I made a template for sharing events on my site. Click one of the events listed above to see it!  
-  **2/1**
+  **2/4**
 
 - Intentionally left a page [blank](/blank)  
   **1/29**
