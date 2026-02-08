@@ -1913,11 +1913,16 @@ h3.note-subtitle {
 }
 
 .centered-container photo-grid img {
-  max-height:max(80vh, 350px);
-  width:auto;
   display:block;
   min-width:0;
   border-radius:0;
+}
+
+@media (min-width: 70ch) {
+  .centered-container photo-grid img {
+    max-height: max(80vh, 350px);
+    width: auto;
+  }
 }
 
 .centered-container nav {
