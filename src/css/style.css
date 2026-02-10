@@ -745,6 +745,16 @@ img-caption {
   margin:0 auto;
 }
 
+figure {
+  margin-top:2em;
+  margin-bottom:2em;
+}
+
+figcaption {
+  text-align:center;
+  font-size:var(--small-font-size);
+}
+
 /* MORPHING TEXT */
 
 #morph-text {
