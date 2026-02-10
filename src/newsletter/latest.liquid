@@ -1,17 +1,22 @@
 ---
 layout: default
-title: Newsletter
+title: Latest PK Newsletter
 customStyle: >
   :root {
     --main-bg-color:#dadfd6;
     --main-bg-gradient:radial-gradient(#e4dfee, #f1dbdb, #d9e2d7);
   }
-latestIssue: https://buttondown.com/palomakop/archive/pk-newsletter-february-2026/
 ---
 
-## Subscribe to my Email Newsletter
+<h2>{{ buttondown.subject }}</h2>
 
-I usually send out updates every 1-3 months about my activities as an artist and human
+<p style="margin:-1em 0 2em;"><b>{{ buttondown.publish_date |  date: "%B %e, %Y"}}</b></p>
+
+{{ buttondown.body }}
+
+<hr style="margin:5em 0 2em;">
+
+<p><i>This was an issue of my email newsletter, where I sporadically share updates about my activities as an artist and human. If you'd like to receive future updates, subscribe below!</i></p>
 
 <form
   action="https://buttondown.email/api/emails/embed-subscribe/palomakop"
@@ -24,5 +29,3 @@ I usually send out updates every 1-3 months about my activities as an artist and
   <input type="email" name="email" id="bd-email" />
   <button type="submit" value="Subscribe">Subscribe</button>
 </form>
-
-<p style="margin-top:2em;">Read the latest issue <a href="/newsletter/latest">here</a>.</p>
