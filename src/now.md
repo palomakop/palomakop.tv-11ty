@@ -22,8 +22,11 @@ notecardDark: true
 
 ### Updates
 
-- Preparing for some events coming up this month, I made a template for sharing events on my site. Click one of the events listed above to see it!  
-  **2/4**
+- Preparing to perform visuals at an [upcoming show](/events/2026-02-21_imaginary-prisons-ruby/)  
+  **2/12**
+
+- Attended a nice [art opening](/events/2026-02-08_intervals/) (that I had a piece in!)  
+  **2/8**
 
 - Intentionally left a page [blank](/blank)  
   **1/29**
