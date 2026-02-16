@@ -1,0 +1,33 @@
+---
+layout: default
+title: Updates
+permalink: "updates/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
+pagination:
+  data: collections.allUpdates
+  size: 20
+  alias: updates
+customStyle: >
+  :root {
+    --main-bg-color:#e0d4ef;
+    --main-bg-gradient:radial-gradient(#f0ebc7, #fbd9d9, #e0d4ef);
+  }
+---
+
+<h2>Updates</h2>
+
+<p>Updates to this website, and stuff I'm doing in general. You can follow these via <a href="/rss.xml">RSS</a>, or <a href="/newsletter">join my newsletter</a> for less frequent, more in-depth updates.</p>
+
+<div class="updates-list">
+  {% for update in updates %}
+    <article id="{{ update.slug }}" class="update-item">
+      <p><span class="metadata">{{ update.date | formatDateShort }}</span> {{ update.message | markdownLinks }}</p>
+      {% if update.image %}
+        {% if update.linkUrl %}<a href="{{ update.linkUrl }}">{% endif %}
+        {% image update.image, "", 400, "" %}
+        {% if update.linkUrl %}</a>{% endif %}
+      {% endif %}
+    </article>
+  {% endfor %}
+</div>
+
+{% include "paginav.liquid" %}

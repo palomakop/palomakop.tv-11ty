@@ -1,0 +1,36 @@
+---
+layout: default
+pagination:
+  data: collections.allUpdates
+  size: 1
+  alias: update
+permalink: "updates/{{ update.slug }}/"
+eleventyExcludeFromCollections: true
+customStyle: >
+  :root {
+    --main-bg-color:#e0d4ef;
+    --main-bg-gradient:radial-gradient(#f0ebc7, #fbd9d9, #e0d4ef);
+  }
+---
+
+<article class="update-item">
+
+  <h2>Update • {{ update.date | formatDateShort }}</h2>
+
+  <p>{{ update.message | markdownLinks }}</p>
+
+  {% if update.image %}
+    {% if update.linkUrl %}<a href="{{ update.linkUrl }}">{% endif %}
+    {% image update.image, "", 400, "" %}
+    {% if update.linkUrl %}</a>{% endif %}
+  {% endif %}
+
+</article>
+
+<nav class="bold">
+  <ul>
+    <li>
+      <a href="/updates/">&lt; See all updates</a>
+    </li>
+  </ul>
+</nav>

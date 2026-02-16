@@ -7,35 +7,36 @@ export default async function() {
 
   if (!apiKey) {
     console.warn('BUTTONDOWN_KEY environment variable is not set');
-    return null;
+    return [];
   }
 
   try {
-    const response = await fetch('https://api.buttondown.com/v1/emails', {
-      headers: {
-        'Authorization': `Token ${apiKey}`
+    const emails = [];
+    let url = 'https://api.buttondown.com/v1/emails';
+
+    while (url) {
+      const response = await fetch(url, {
+        headers: {
+          'Authorization': `Token ${apiKey}`
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`Buttondown API error: ${response.status} ${response.statusText}`);
       }
-    });
 
-    if (!response.ok) {
-      throw new Error(`Buttondown API error: ${response.status} ${response.statusText}`);
+      const data = await response.json();
+
+      if (!data.results) break;
+      emails.push(...data.results);
+      url = data.next || null;
     }
 
-    const data = await response.json();
-
-    if (!data.results || data.results.length === 0) {
-      console.warn('No emails found in Buttondown');
-      return null;
-    }
-
-    // Find the email with the most recent creation_date
-    const mostRecent = data.results.reduce((latest, current) => {
-      return new Date(current.creation_date) > new Date(latest.creation_date) ? current : latest;
-    });
-
-    return mostRecent;
+    return emails.sort((a, b) =>
+      new Date(b.publish_date) - new Date(a.publish_date)
+    );
   } catch (error) {
     console.error('Error fetching Buttondown data:', error);
-    return null;
+    return [];
   }
 }

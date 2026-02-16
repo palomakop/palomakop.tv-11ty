@@ -3,7 +3,7 @@
   "permalink": "rss.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    "title": "Paloma Kop ♦ RSS Feed",
+    "title": "Paloma Kop ✦ Updates",
     "description": "Multimedia art, experiments, and explorations.",
     "language": "en",
     "base": "https://palomakop.tv",
@@ -21,18 +21,18 @@
     <atom:link href="{{ permalink | htmlBaseUrl(metadata.base) }}" rel="self" type="application/rss+xml" />
     <description>{{ metadata.description }}</description>
     <language>{{ metadata.language or page.lang }}</language>
-    {%- for post in collections.posts | reverse %}
-    {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
+    {%- for i in range(0, 50) %}{%- set update = collections.allUpdates[i] %}{%- if update %}
+    {%- set absoluteUpdateUrl = (metadata.base + "/updates/" + update.slug + "/") %}
     <item>
-      <title>{{ post.data.title }}</title>
-      <link>{{ absolutePostUrl }}</link>
+      <title>{{ update.message | stripMarkdownLinks | truncate(80) }}</title>
+      <link>{{ absoluteUpdateUrl }}</link>
       <description>
-        <![CDATA[<a href="{{ absolutePostUrl }}"><img src="{{ post.data.thumbnail }}" alt="{{ post.data.thumbnailAlt }}" style="width: 400px;height: auto;"/></a>]]>{{ post.content | rssSanitize | renderTransforms(post.data.page, metadata.base) }}
+        <![CDATA[<p>{{ update.message | markdownLinks | makeLinksAbsolute(metadata.base) | safe }}</p>{% if update.rssMessage %}<p>{{ update.rssMessage | markdownLinks | makeLinksAbsolute(metadata.base) | safe }}</p>{% endif %}{% if update.image %}<p>{% if update.linkUrl %}<a href="{{ update.linkUrl | htmlBaseUrl(metadata.base) }}">{% endif %}<img src="{{ metadata.base }}{% imageUrl update.image, 600 %}" alt="" style="width:600px;height:auto;"/>{% if update.linkUrl %}</a>{% endif %}</p>{% endif %}]]>
       </description>
-      <pubDate>{{ post.data.date | addTimeToIsoDate | dateToRfc822 }}</pubDate>
+      <pubDate>{{ update.date | addTimeToIsoDate | dateToRfc822 }}</pubDate>
       <dc:creator>{{ metadata.author.name }}</dc:creator>
-      <guid>{{ absolutePostUrl }}</guid>
+      <guid>{{ absoluteUpdateUrl }}</guid>
     </item>
-    {%- endfor %}
+    {%- endif %}{%- endfor %}
   </channel>
 </rss>

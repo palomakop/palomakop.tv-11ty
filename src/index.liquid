@@ -215,12 +215,24 @@ customStyle: >
 <div class="about-text">
 
   <h3>
-    <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/sine.svg" class="about-title-graphic" alt=""/> Work With Me
+    <img src="https://s3.us-east-1.amazonaws.com/palomakop.tv/graphics/sine.svg" class="about-title-graphic" alt=""/> Recent Updates
   </h3>
 
-  <p>
-    I'm currently available for select freelance projects. Feel free to <a href="/contact">get in touch</a>.
-  </p>
+  <ul class="updates">
+    {% for update in collections.allUpdates limit:5 %}
+      <li><strong>{{ update.date | formatDateShort }} —</strong> {{ update.message | markdownLinks }}<br>
+        {% if update.image %}
+          {% if update.linkUrl %}<a href="{{ update.linkUrl }}">{% endif %}
+          {% image update.image, "", 400, "" %}
+          {% if update.linkUrl %}</a>{% endif %}
+          <br>
+        {% endif %}
+      </li>
+    {% endfor %}
+    <li>
+      <a href="/updates">See all updates…</a>
+    </li>
+  </ul>
 
 </div>
 

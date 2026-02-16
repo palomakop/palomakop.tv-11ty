@@ -2013,3 +2013,55 @@ h3.note-subtitle {
 .event-info p {
   margin:0;
 }
+
+/* UPDATES FEED */
+
+.updates-list {
+  margin-top:2.5rem;
+}
+
+.updates-list .update-item {
+  border:1.5px solid;
+  border-radius:1.2em;
+  padding:0.5em 1.5em 1em;
+  background-color:rgba(255, 255, 255, 0.15);
+}
+
+.update-item {
+  margin-bottom:2rem;
+}
+
+.update-item img {
+  width: 200px;
+  height: auto;
+  border-radius:0.8em;
+}
+
+.update-item .metadata {
+  font-weight:var(--black-weight);
+}
+
+.update-item .metadata::after {
+  content:' •';
+}
+
+.about-text .updates img {
+  width:200px;
+  margin-top:0.5em;
+  filter:grayscale() brightness(1.2);
+  mix-blend-mode:multiply;
+  opacity:0.9;
+  border:1.5px solid;
+}
+
+@media (hover:hover) {
+  .about-text .updates img:hover {
+    filter:none;
+    mix-blend-mode:normal;
+    opacity:1;
+  }
+}
+
+.about-text .updates strong {
+  opacity:0.5;
+}

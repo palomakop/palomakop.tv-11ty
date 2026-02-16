@@ -9,6 +9,10 @@ customStyle: >
   }
 lightbox: true
 thumbnail: 'https://s3.us-east-1.amazonaws.com/palomakop.tv/notes/arena-cards/stack.jpg'
+updates:
+  - date: "2026-01-04"
+    message: "Made a [deck of cards]() of my creative ideas"
+    image: True
 ---
 
 {% image "https://s3.us-east-1.amazonaws.com/palomakop.tv/notes/arena-cards/stack.jpg", "A stack of cards on a blue cutting mat", "1440" %}

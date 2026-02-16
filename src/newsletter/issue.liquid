@@ -1,6 +1,11 @@
 ---
 layout: default
-title: Newsletter — Latest Issue
+pagination:
+  data: collections.buttondownEmails
+  size: 1
+  alias: issue
+permalink: "newsletter/{{ issue.slug }}/"
+eleventyExcludeFromCollections: true
 customStyle: >
   :root {
     --main-bg-color:#dadfd6;
@@ -8,11 +13,11 @@ customStyle: >
   }
 ---
 
-<h2>Newsletter — Latest Issue</h2>
+<h2>{{ issue.subject }}</h2>
 
-<p style="margin:-1em 0 2em;"><b>{{ buttondown[0].publish_date | date: "%B %e, %Y"}}</b></p>
+<p style="margin:-1em 0 2em;"><b>{{ issue.publish_date | date: "%B %e, %Y"}}</b></p>
 
-{{ buttondown[0].body }}
+{{ issue.body }}
 
 <hr style="margin:5em 0 2em;">
 

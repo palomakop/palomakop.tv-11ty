@@ -1,0 +1,11 @@
+# Global site updates not tied to a specific page.
+# For page-specific updates, add an `updates` key to that page's frontmatter.
+#
+# Fields:
+#   date     (required) YYYY-MM-DD
+#   message  (required) text with optional markdown links: [link text](url)
+#   image    (optional) image url
+
+- date: '2026-02-15'
+  message: 'Made a new [updates feed](/updates) for my website (meta!) — the most recent items show on the [now page](/now), [homepage](/), and [RSS feed](/rss.xml)'
+  rssMessage: "Apologies to anyone following on RSS, since a bunch of new items will probably all appear at once! (Also if you're following on RSS, please [say hi!](/contact))"

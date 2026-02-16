@@ -4,7 +4,7 @@
     Page last updated: 
     {% if tags contains "posts" %}
       {{date | formatDateOnly}}
-    {% elsif page.url == "/newsletter/latest/" %}
+    {% elsif publishDate %}
       {{publishDate | date: "%B %e, %Y"}}
     {% else %}
       {{page.date | date: "%B %e, %Y"}}

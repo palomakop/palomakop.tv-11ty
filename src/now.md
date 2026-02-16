@@ -20,19 +20,3 @@ notecardDark: true
 - Joined as studio assistant and fabricator at Faruqee/Driscoll Studio  
   **June 2025**
 
-### Updates
-
-- Preparing to perform visuals at an [upcoming show](/events/2026-02-21_imaginary-prisons-ruby/)  
-  **2/12**
-
-- Attended a nice [art opening](/events/2026-02-08_intervals/) (that I had a piece in!)  
-  **2/8**
-
-- Intentionally left a page [blank](/blank)  
-  **1/29**
-
-- Made a [2025 Year in Review](/blog/2026-01-18_2025-year-in-review/) blog post  
-  **1/18**
-
-- Made a [deck of cards](/notes/arena-cards) of my creative ideas  
-  **1/4**

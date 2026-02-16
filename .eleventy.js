@@ -1,4 +1,8 @@
 import path from "path";
+import { createHash } from "crypto";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const yaml = require("js-yaml");
 import Image from "@11ty/eleventy-img";
 import prettier from "prettier";
 import pluginRss from "@11ty/eleventy-plugin-rss";
@@ -134,6 +138,8 @@ export default function(eleventyConfig) {
   eleventyConfig.setInputDirectory("src");
   eleventyConfig.setOutputDirectory("_site");
 
+  eleventyConfig.addDataExtension("yaml,yml", contents => yaml.load(contents));
+
   eleventyConfig.addPassthroughCopy("./src/fonts");
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addPassthroughCopy("./src/js");
@@ -164,6 +170,14 @@ export default function(eleventyConfig) {
   // FORMAT DATE WITHOUT TIMEZONE CONVERSION
   eleventyConfig.addFilter("formatDateOnly", function (dateString) {
     return formatDate(parseDateString(dateString), { year: 'numeric', month: 'long', day: 'numeric' });
+  });
+
+  eleventyConfig.addFilter("formatDateShort", function (dateString) {
+    const date = parseDateString(dateString);
+    const options = date.getFullYear() === new Date().getFullYear()
+      ? { month: 'short', day: 'numeric' }
+      : { month: 'short', day: 'numeric', year: 'numeric' };
+    return formatDate(date, options);
   });
 
   // FORMAT DATE WITH DAY OF WEEK
@@ -360,6 +374,102 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addShortcode("musicPlayerTrack", function(name, url) {
     return `<li><a href="${url}">${name}</a></li>`;
+  });
+
+  // RENDER INLINE MARKDOWN LINKS: [text](url) → <a href="url">text</a>
+  eleventyConfig.addFilter("markdownLinks", function(content) {
+    if (!content) return "";
+    return content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  });
+
+  // STRIP MARKDOWN LINKS: [text](url) → text (for RSS titles)
+  eleventyConfig.addFilter("stripMarkdownLinks", function(content) {
+    if (!content) return "";
+    return content.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  });
+
+  // MAKE RELATIVE HREF/SRC ATTRIBUTES ABSOLUTE IN HTML FRAGMENTS (for RSS)
+  eleventyConfig.addFilter("makeLinksAbsolute", function(content, base) {
+    if (!content) return "";
+    return content.replace(/(href|src)="(\/[^"]+)"/g, `$1="${base}$2"`);
+  });
+
+  // UPDATES FEED - aggregates from globalUpdates.yaml and page frontmatter `updates` arrays
+  eleventyConfig.addCollection("allUpdates", function(collectionApi) {
+    const allItems = collectionApi.getAll();
+    const updates = [];
+
+    function makeSlug(date, message) {
+      const hash = createHash("sha1").update(String(message)).digest("hex").slice(0, 8);
+      return `${date}_${hash}`;
+    }
+
+    function firstLinkUrl(message) {
+      const match = String(message).match(/\[([^\]]*)\]\(([^)]+)\)/);
+      return match ? match[2] : null;
+    }
+
+    // Global updates from _data/globalUpdates.yaml
+    const globalUpdates = allItems.find(item => item.data?.globalUpdates)?.data?.globalUpdates || [];
+    for (const update of globalUpdates) {
+      if (!update.date) continue;
+      const date = String(update.date);
+      const message = update.message || "";
+      updates.push({
+        date,
+        message,
+        rssMessage: update.rssMessage || null,
+        image: update.image || null,
+        sourceUrl: null,
+        pageTitle: null,
+        slug: makeSlug(date, message),
+        linkUrl: firstLinkUrl(message),
+      });
+    }
+
+    // Newsletter issues from _data/buttondown.js
+    const emails = allItems.find(item => Array.isArray(item.data?.buttondown))?.data?.buttondown || [];
+    for (const email of emails) {
+      if (!email.publish_date || !email.slug) continue;
+      const date = email.publish_date.split("T")[0];
+      const message = `Sent out a new issue of my [newsletter](/newsletter/${email.slug}/)`;
+      updates.push({
+        date,
+        message,
+        image: email.image || null,
+        sourceUrl: `/newsletter/${email.slug}/`,
+        pageTitle: email.subject || null,
+        slug: makeSlug(date, message),
+        linkUrl: `/newsletter/${email.slug}/`,
+      });
+    }
+
+    // Page-specific updates from frontmatter `updates` key
+    for (const item of allItems) {
+      if (!Array.isArray(item.data.updates)) continue;
+      for (const update of item.data.updates) {
+        if (!update.date) continue;
+        const date = String(update.date);
+        // Replace empty links [text]() with [text](page.url)
+        const message = (update.message || "").replace(/\[([^\]]*)\]\(\)/g, `[$1](${item.url})`);
+        updates.push({
+          date,
+          message,
+          rssMessage: update.rssMessage || null,
+          image: update.image === true ? (item.data.thumbnail || null) : (update.image || null),
+          sourceUrl: item.url,
+          pageTitle: item.data.title || null,
+          slug: makeSlug(date, message),
+          linkUrl: item.url,
+        });
+      }
+    }
+
+    return updates.sort((a, b) => b.date.localeCompare(a.date));
+  });
+
+  eleventyConfig.addCollection("buttondownEmails", function(collectionApi) {
+    return collectionApi.getAll().find(item => item.data?.buttondown)?.data?.buttondown || [];
   });
 
   eleventyConfig.addCollection("upcomingEvents", function(collectionApi) {

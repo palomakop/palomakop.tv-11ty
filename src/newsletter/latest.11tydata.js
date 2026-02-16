@@ -1,6 +1,6 @@
 export default {
   eleventyComputed: {
-    thumbnail: (data) => data.buttondown?.image,
-    publishDate: (data) => data.buttondown?.publish_date
+    thumbnail: (data) => data.buttondown?.[0]?.image,
+    publishDate: (data) => data.buttondown?.[0]?.publish_date
   }
 };

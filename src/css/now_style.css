@@ -85,6 +85,10 @@ ul {
   padding-left:2ch;
 }
 
+li {
+  margin:1.3em 0;
+}
+
 footer p {
   border-bottom:none;
 }
@@ -156,4 +160,24 @@ ul.event-title li {
 
 a.now-button:has(ul) {
   padding:1em 1.5ch 1.05em;
+}
+
+ul.updates img {
+  width:200px;
+  margin-top:0.5em;
+  filter:sepia() grayscale(0.75);
+  opacity:0.9;
+}
+
+@media (hover:hover) {
+  ul.updates img:hover {
+    filter:none;
+    opacity:1;
+  }
+}
+
+.events-grid {
+  display:flex;
+  flex-direction:column;
+  gap:1em;
 }
