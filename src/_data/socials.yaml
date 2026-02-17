@@ -1,0 +1,34 @@
+- name: mastodon
+  url: https://merveilles.town/@palomakop
+  logo: https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/masto.svg
+  active: true
+
+- name: peertube
+  url: https://videos.scanlines.xyz/c/palomakop_channel/video-playlists
+  logo: https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/pt.svg
+  active: true
+
+- name: youtube
+  url: https://www.youtube.com/@palomakop
+  logo: https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/yt.svg
+  active: true
+
+- name: instagram
+  url: https://instagram.com/palomakop
+  logo: https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/ig.svg
+  active: true
+
+- name: bandcamp
+  url: https://palomakop.bandcamp.com
+  logo: https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/bc.svg
+  active: false
+
+- name: linkedin
+  url: https://www.linkedin.com/in/palomakop/
+  logo: https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/in.svg
+  active: false
+
+- name: github
+  url: https://github.com/palomakop/
+  logo: https://s3.us-east-1.amazonaws.com/palomakop.tv/now/logos/gh.svg
+  active: true

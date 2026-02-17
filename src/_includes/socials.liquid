@@ -1,23 +1,9 @@
 <ul>
-  <li>
-    <a href="https://merveilles.town/@palomakop" target="_blank" rel="noopener">mastodon</a>
-  </li>
-  <li>
-    <a href="https://videos.scanlines.xyz/c/palomakop_channel/video-playlists" target="_blank" rel="noopener">peertube</a>
-  </li>
-  <li>
-    <a href="https://www.youtube.com/@palomakop" target="_blank" rel="noopener">youtube</a>
-  </li>
-  <li>
-    <a href="https://instagram.com/palomakop" target="_blank" rel="noopener">instagram</a>
-  </li>
-  {% comment %} <li>
-    <a href="https://palomakop.bandcamp.com" target="_blank" rel="noopener">bandcamp</a>
-  </li> {% endcomment %}
-  <li>
-    <a href="https://www.linkedin.com/in/palomakop/" target="_blank" rel="noopener">linkedin</a>
-  </li>
-  <li>
-    <a href="https://github.com/palomakop/" target="_blank" rel="noopener">github</a>
-  </li>
+  {% for social in socials %}
+    {% if social.active %}
+      <li>
+        <a href="{{ social.url }}" target="_blank" rel="noopener">{{ social.name }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
 </ul>

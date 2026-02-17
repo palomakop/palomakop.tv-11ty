@@ -8,6 +8,7 @@
   --button-hover-color:rgb(25, 25, 0, 0.5);
   --subtle-bg-color:#00000010;
   --unsubtle-bg-color:#00000017;
+  --light-subtle-bg:rgba(255, 255, 255, 0.15);
   --hover-filter:
     invert(96%)
     brightness(0.9)
@@ -753,6 +754,13 @@ figure {
 figcaption {
   text-align:center;
   font-size:var(--small-font-size);
+  opacity:0.6;
+}
+
+.newsletter-body figure img {
+  width:480px;
+  display:block;
+  margin:0 auto 0.3em;
 }
 
 /* MORPHING TEXT */
@@ -1784,7 +1792,7 @@ links-item p {
   border:1.5px solid;
   border-radius:20px;
   padding:0.6em 1em 0.8em;
-  background-color:rgba(255, 255, 255, 0.15);
+  background-color:var(--light-subtle-bg);
 }
 
 .bullet-char {
@@ -2024,7 +2032,7 @@ h3.note-subtitle {
   border:1.5px solid;
   border-radius:1.2em;
   padding:0.5em 1.5em 1em;
-  background-color:rgba(255, 255, 255, 0.15);
+  background-color:var(--light-subtle-bg);
 }
 
 .update-item {
