@@ -2055,8 +2055,12 @@ h3.note-subtitle {
 
 /* UPDATES FEED ON ABOUT PAGE */
 
+.about-text .updates {
+  max-width:40ch;
+}
+
 .about-text .updates img {
-  width:150px;
+  width:20ch;
   margin-top:0.5em;
   filter:grayscale() brightness(1.2);
   mix-blend-mode:multiply;
@@ -2073,5 +2077,5 @@ h3.note-subtitle {
 }
 
 .about-text .updates strong {
-  opacity:0.5;
+  opacity:0.4;
 }

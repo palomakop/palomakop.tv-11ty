@@ -220,13 +220,14 @@ customStyle: >
 
   <ul class="updates">
     {% for update in collections.allUpdates limit:5 %}
-      <li><strong>{{ update.date | formatDateShort }} —</strong> {{ update.message | markdownLinks }}<br>
+      <li>{{ update.message | markdownLinks }}<br>
         {% if update.image %}
           {% if update.linkUrl %}<a href="{{ update.linkUrl }}">{% endif %}
           {% image update.image, "", 400, "" %}
           {% if update.linkUrl %}</a>{% endif %}
           <br>
         {% endif %}
+        <strong>{{ update.date | formatDateShort }}</strong>
       </li>
     {% endfor %}
     <li>
