@@ -167,7 +167,15 @@ ul.updates img {
   filter:sepia() grayscale(0.75);
   opacity:0.9;
   display:block;
-  margin:0.5em 0 0.3em;
+  margin:0.75em 0;
+}
+
+ul.updates strong {
+  display:block;
+  width:calc(100% - 2ch);
+  padding-bottom:1em;
+  border-bottom:dotted 1.5px;
+  margin-top:0.3em;
 }
 
 @media (hover:hover) {

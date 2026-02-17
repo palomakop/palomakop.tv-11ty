@@ -227,7 +227,7 @@ customStyle: >
           {% if update.linkUrl %}</a>{% endif %}
           <br>
         {% endif %}
-        <strong>{{ update.date | formatDateShort }}</strong>
+        <strong><span class="bullet-char">✶</span> {{ update.date | formatDateShort }}</strong>
       </li>
     {% endfor %}
     <li>

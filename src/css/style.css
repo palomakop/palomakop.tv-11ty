@@ -2077,5 +2077,9 @@ h3.note-subtitle {
 }
 
 .about-text .updates strong {
-  opacity:0.4;
+  display:block;
+  width:calc(100% - 2.5ch);
+  opacity:0.35;
+  padding-bottom:1em;
+  border-bottom:dotted 2px;
 }
