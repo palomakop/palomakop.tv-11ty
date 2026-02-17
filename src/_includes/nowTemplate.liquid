@@ -49,14 +49,14 @@ bgImageOpacity: 0.7
     <h3>Recent Updates</h3>
     <ul class="updates">
       {% for update in collections.allUpdates limit:5 %}
-        <li>{{ update.message | markdownLinks }}<br>
+        <li>{{ update.message | markdownLinks }}
           {% if update.image %}
             {% if update.linkUrl %}<a href="{{ update.linkUrl }}">{% endif %}
             {% image update.image, "", 400, "" %}
             {% if update.linkUrl %}</a>{% endif %}
-            <br>
           {% endif %}
-        <strong>{{ update.date | formatDateShort }}</strong></li>
+          <strong style="display:block">{{ update.date | formatDateShort }}</strong>
+        </li>
       {% endfor %}
       <li><a href="/updates">See all updates…</a></li>
     </ul>

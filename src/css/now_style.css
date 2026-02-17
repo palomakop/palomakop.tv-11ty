@@ -164,9 +164,10 @@ a.now-button:has(ul) {
 
 ul.updates img {
   width:200px;
-  margin-top:0.5em;
   filter:sepia() grayscale(0.75);
   opacity:0.9;
+  display:block;
+  margin:0.5em 0 0.3em;
 }
 
 @media (hover:hover) {
