@@ -55,7 +55,7 @@ bgImageOpacity: 0.7
             {% image update.image, "", 400, "" %}
             {% if update.linkUrl %}</a>{% endif %}
           {% endif %}
-          <strong><span class="bullet-char">✶</span> {{ update.date | formatDateShort }}</strong>
+          <strong>{{ update.date | formatDateShort }}</strong>
         </li>
       {% endfor %}
       <li><a href="/updates">See all updates…</a></li>
