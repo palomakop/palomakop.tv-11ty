@@ -2056,8 +2056,7 @@ h3.note-subtitle {
 /* UPDATES FEED ON ABOUT PAGE */
 
 .about-text .updates img {
-  height:100px !important;
-  width:auto;
+  width:150px;
   margin-top:0.5em;
   filter:grayscale() brightness(1.2);
   mix-blend-mode:multiply;
