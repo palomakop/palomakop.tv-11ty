@@ -79,7 +79,8 @@
   <meta property="og:image" content="https://palomakop.tv{% imageUrl thumbnail 1200 %}">
 
   {% if lightbox %}
-  {% include "lightboxInit.liquid" %}
+  <link href="/css/photoswipe.css" rel="stylesheet">
+  <script type="module" src="/js/photoswipe-init.js"></script>
   {% endif %}
 
    {% if musicPlayer %}
