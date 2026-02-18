@@ -2,15 +2,14 @@
   "dependencies": {
     "@11ty/eleventy": "^3.0.0-beta.1",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
-    "dotenv": "^17.2.4",
     "netlify-plugin-11ty": "^1.4.0"
   },
   "name": "palomakop.tv-11ty",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve",
+    "build": "node --env-file-if-exists=.env ./node_modules/.bin/eleventy",
+    "start": "node --env-file=.env ./node_modules/.bin/eleventy --serve",
     "clear": "rm -r _site;rm -r .cache"
   },
   "keywords": [],

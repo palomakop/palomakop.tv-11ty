@@ -1,7 +1,3 @@
-import dotenv from 'dotenv';
-
-dotenv.config();
-
 export default async function() {
   const apiKey = process.env.BUTTONDOWN_KEY;
 
