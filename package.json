@@ -8,7 +8,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "node --env-file-if-exists=.env ./node_modules/.bin/eleventy",
+    "build": "npx @11ty/eleventy",
     "start": "node --env-file=.env ./node_modules/.bin/eleventy --serve",
     "clear": "rm -r _site;rm -r .cache"
   },
