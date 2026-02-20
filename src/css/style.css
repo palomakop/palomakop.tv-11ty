@@ -43,6 +43,8 @@
   --text-size-adjust:100%;
   --line-height-em:1.6em;
   --line-height:1.6;
+  --link-arrow:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 7 10 10'%3E%3Cpath d='M17 8v4a1 1 0 0 1-2 0v-1.586l-6.293 6.293a1 1 0 1 1-1.414-1.414L13.586 9H12a1 1 0 0 1 0-2h4a1 1 0 0 1 1 1z'/%3E%3C/svg%3E");
+  --link-arrow-hover:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 7 10 10'%3E%3Cpath d='M17 8v4a1 1 0 0 1-2 0v-1.586l-6.293 6.293a1 1 0 1 1-1.414-1.414L13.586 9H12a1 1 0 0 1 0-2h4a1 1 0 0 1 1 1z' fill='%23210acf'/%3E%3C/svg%3E");
 }
 
 @font-face {
@@ -627,7 +629,7 @@ a {
 }
 
 .external-link, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.centered):not(.rainbutton):not(.social-logos *):not(:has(img)) {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 7 10 10'%3E%3Cpath d='M17 8v4a1 1 0 0 1-2 0v-1.586l-6.293 6.293a1 1 0 1 1-1.414-1.414L13.586 9H12a1 1 0 0 1 0-2h4a1 1 0 0 1 1 1z'/%3E%3C/svg%3E");
+  background-image:var(--link-arrow);
   background-repeat:no-repeat;
   background-position:100% 60%;
   background-size:0.5em;
@@ -642,7 +644,7 @@ nav ul li a.external-link {
 
 @media (hover:hover) {
   .external-link:hover, a[href^="http"]:not(nav *):not(footer *):not(photo-grid *:not(.lightbox-ignore)):not(.tier-upper *):not([href*="palomakop.tv"]):not(.now-button):not(.centered):not(.rainbutton):not(.social-logos *):hover {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='7 7 10 10'%3E%3Cpath d='M17 8v4a1 1 0 0 1-2 0v-1.586l-6.293 6.293a1 1 0 1 1-1.414-1.414L13.586 9H12a1 1 0 0 1 0-2h4a1 1 0 0 1 1 1z' fill='%23210acf'/%3E%3C/svg%3E");
+    background-image:var(--link-arrow-hover);
   }
 }
 
