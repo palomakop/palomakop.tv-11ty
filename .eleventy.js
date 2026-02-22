@@ -7,6 +7,7 @@ import Image from "@11ty/eleventy-img";
 import prettier from "prettier";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 const postcss = await import('postcss');
+import { isEventArchived } from "./src/_utils/eventArchive.js";
 
 function makeId(length) {
   let result = 'id';
@@ -463,7 +464,9 @@ export default function(eleventyConfig) {
           pageTitle: item.data.title || null,
           slug: makeSlug(date, message),
           linkUrl: item.url,
-          archived: update.archived !== undefined ? update.archived : (item.data.archived || false),
+          archived: update.archived !== undefined
+            ? update.archived
+            : (item.data.tags && item.data.tags.includes('events') ? isEventArchived(item.data) : (item.data.archived || false)),
         });
       }
     }
@@ -477,7 +480,7 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addCollection("upcomingEvents", function(collectionApi) {
     return collectionApi.getFilteredByTag("events")
-      .filter(item => !item.data.archived)
+      .filter(item => !isEventArchived(item.data))
       .sort((a, b) => a.data.eventDate.localeCompare(b.data.eventDate));
   });
 
