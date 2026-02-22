@@ -19,7 +19,7 @@
 <div class="events-grid">
   {%- for event in eventCollection -%}
   <a href="{{ event.url }}" class="now-button">
-    <b>{{ event.data.eventDate | formatDateRangeYearOptional: event.data.eventEndDate }}{% if event.data.eventTime %}, {{ event.data.eventTime }}{% endif %}</b>
+    <b>{{ event.data.eventDate | formatDateRangeYearOptionalNoWrap: event.data.eventEndDate }}{% if event.data.eventTime %}, {{ event.data.eventTime }}{% endif %}</b>
     <ul class="event-title"><li><i>{{ event.data.title | split: ' / ' | join: '</i></li><li><i>' }}</i>
     {% unless event.data.title.size > 50 or event.data.title contains ' / ' %}{{ event.data.type }}{% endunless %}</li></ul>
     <div class="caption">{% if event.data.locationShortName %}{{ event.data.locationShortName }}{% else %}{{ event.data.location }}{% endif %}{% if event.data.locationCity %}, {{ event.data.locationCity }}{% endif %}</div>

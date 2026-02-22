@@ -232,6 +232,37 @@ export default function(eleventyConfig) {
     }
   });
 
+  // FORMAT DATE RANGE WITHOUT YEAR (unless years differ) WITH NOWRAP SPANS
+  eleventyConfig.addFilter("formatDateRangeYearOptionalNoWrap", function (startDate, endDate) {
+    if (!endDate) {
+      const formatted = formatDate(parseDateString(startDate), { weekday: 'long', month: 'long', day: 'numeric' });
+      // Wrap month+day in nowrap span
+      return formatted.replace(/([A-Z][a-z]+ \d+)/, '<span style="white-space:nowrap">$1</span>');
+    }
+
+    const [startYear] = startDate.split('-');
+    const [endYear] = endDate.split('-');
+
+    const start = parseDateString(startDate);
+    const end = parseDateString(endDate);
+
+    if (startYear === endYear) {
+      const startFormatted = formatDate(start, { weekday: 'long', month: 'long', day: 'numeric' });
+      const endFormatted = formatDate(end, { weekday: 'long', month: 'long', day: 'numeric' });
+      // Wrap month+day in nowrap spans
+      const startWrapped = startFormatted.replace(/([A-Z][a-z]+ \d+)/, '<span style="white-space:nowrap">$1</span>');
+      const endWrapped = endFormatted.replace(/([A-Z][a-z]+ \d+)/, '<span style="white-space:nowrap">$1</span>');
+      return `${startWrapped} – ${endWrapped}`;
+    } else {
+      const startFormatted = formatDate(start, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      const endFormatted = formatDate(end, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      // Wrap month+day in nowrap spans
+      const startWrapped = startFormatted.replace(/([A-Z][a-z]+ \d+)/, '<span style="white-space:nowrap">$1</span>');
+      const endWrapped = endFormatted.replace(/([A-Z][a-z]+ \d+)/, '<span style="white-space:nowrap">$1</span>');
+      return `${startWrapped} – ${endWrapped}`;
+    }
+  });
+
   // FORMAT SHORT DATE (Mon dd) WITHOUT TIMEZONE CONVERSION
   eleventyConfig.addFilter("formatShortDate", function (dateString) {
     return formatDate(parseDateString(dateString), { month: 'short', day: '2-digit' });
