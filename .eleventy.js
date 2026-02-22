@@ -463,7 +463,7 @@ export default function(eleventyConfig) {
           pageTitle: item.data.title || null,
           slug: makeSlug(date, message),
           linkUrl: item.url,
-          archived: update.archived !== undefined ? update.archived : ((item.data.tags && item.data.tags.includes("archived")) || false),
+          archived: update.archived !== undefined ? update.archived : (item.data.archived || false),
         });
       }
     }
@@ -477,7 +477,7 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addCollection("upcomingEvents", function(collectionApi) {
     return collectionApi.getFilteredByTag("events")
-      .filter(item => !item.data.tags || !item.data.tags.includes("archived"))
+      .filter(item => !item.data.archived)
       .sort((a, b) => a.data.eventDate.localeCompare(b.data.eventDate));
   });
 
