@@ -9,8 +9,9 @@
   "main": "index.js",
   "scripts": {
     "build": "npx @11ty/eleventy",
-    "start": "node --env-file=.env ./node_modules/.bin/eleventy --serve",
-    "clear": "rm -r _site;rm -r .cache"
+    "start": "npx @11ty/eleventy --serve",
+    "clear": "rm -r _site;rm -r .cache",
+    "fetch-buttondown": "node --env-file=.env scripts/fetch-buttondown.js"
   },
   "keywords": [],
   "author": "",

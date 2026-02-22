@@ -26,6 +26,9 @@ customStyle: >
         {% image update.image, "", 400, "" %}
         {% if update.linkUrl %}</a>{% endif %}
       {% endif %}
+      {% if update.archived %}
+      <p style="opacity:0.5;"><i><b>Note:</b> This update has been archived, so it no longer appears on the homepage.</i></p>
+      {% endif %}
     </article>
   {% endfor %}
 </div>

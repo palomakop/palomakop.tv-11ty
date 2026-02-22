@@ -424,6 +424,7 @@ export default function(eleventyConfig) {
         pageTitle: null,
         slug: makeSlug(date, message),
         linkUrl: firstLinkUrl(message),
+        archived: update.archived || false,
       });
     }
 
@@ -441,6 +442,7 @@ export default function(eleventyConfig) {
         pageTitle: email.subject || null,
         slug: makeSlug(date, message),
         linkUrl: `/newsletter/${email.slug}/`,
+        archived: false,
       });
     }
 
@@ -461,6 +463,7 @@ export default function(eleventyConfig) {
           pageTitle: item.data.title || null,
           slug: makeSlug(date, message),
           linkUrl: item.url,
+          archived: update.archived !== undefined ? update.archived : ((item.data.tags && item.data.tags.includes("archived")) || false),
         });
       }
     }

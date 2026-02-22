@@ -219,7 +219,8 @@ customStyle: >
   </h3>
 
   <ul class="updates">
-    {% for update in collections.allUpdates limit:5 %}
+    {% assign nonArchivedUpdates = collections.allUpdates | where: "archived", false %}
+    {% for update in nonArchivedUpdates limit:5 %}
       <li>{{ update.message | markdownLinks }}<br>
         {% if update.image %}
           {% if update.linkUrl %}<a href="{{ update.linkUrl }}">{% endif %}
