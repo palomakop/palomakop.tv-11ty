@@ -2,7 +2,7 @@
     "External Link": {
     "prefix": "extLink",
     "body": [
-      "{% extLink \"$TM_SELECTED_TEXT\", \"$2\" %}",
+      "{% extLink \"$TM_SELECTED_TEXT$1\", \"$2\" %}",
     ],
     "description": "extLink 11ty shortcode"
   }

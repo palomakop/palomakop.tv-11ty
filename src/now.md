@@ -8,8 +8,6 @@ notecardDark: true
 ---
 
 
-## Now
-
 ### Living
 
 - Moved to New Haven, Connecticut  
@@ -19,4 +17,3 @@ notecardDark: true
 
 - Joined as studio assistant and fabricator at Faruqee/Driscoll Studio  
   **June 2025**
-

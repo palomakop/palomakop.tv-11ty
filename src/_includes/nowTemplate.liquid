@@ -44,7 +44,7 @@ bgImageOpacity: 0.7
 
     {% include 'upcoming.liquid' %}
 
-    {{content}}
+    <h2>Now</h2>
 
     <h3>Recent Updates</h3>
     <ul class="updates">
@@ -59,8 +59,19 @@ bgImageOpacity: 0.7
           <strong>{{ update.date | formatDateShort }}</strong>
         </li>
       {% endfor %}
-      <li><a href="/updates">See all updates…</a></li>
     </ul>
+
+    {{content}}
+
+    <nav class="centered">
+      <ul>
+        <li>
+          <a href="/updates">
+            See all updates
+          </a>
+        </li>
+      </ul>
+    </nav>
 
   </main>
 
