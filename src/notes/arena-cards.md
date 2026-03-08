@@ -13,6 +13,10 @@ updates:
   - date: "2026-01-04"
     message: "Made a [deck of cards]() of my creative ideas"
     image: True
+  - date: "2026-03-08"
+    message: "Built an [idea card puller](https://lab.palomakop.tv/ideas) for my lab, and wrote about it in a [new section]() of my Are.na Cards page"
+    anchor: "#card-puller"
+    image: https://s3.amazonaws.com/palomakop.tv/notes/arena-cards/card_puller_big.gif
 ---
 
 {% image "https://s3.us-east-1.amazonaws.com/palomakop.tv/notes/arena-cards/stack.jpg", "A stack of cards on a blue cutting mat", "1440" %}
@@ -132,6 +136,22 @@ The cards that are currently "active" found a home on a magnetic whiteboard next
 {% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/notes/arena-cards/whiteboard.jpg", "A whiteboard with four idea cards pinned up by magnets", false, false %}
 {% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/notes/arena-cards/studio.jpg", "The whiteboard in situ in my studio next to the desk", false, false %}
 {% endphotoGrid %}
+
+<a id="card-puller"></a>
+
+### Addendum: A Virtual Card Puller
+
+After using the cards for a few months, and adding even more to the deck, I found that physically shuffling this many cards is actually quite cumbersome (even if you are good at shuffling normal amounts of cards, which I am not!) (Insert meme of person trying to hold too many of something)
+
+Even though having this deck as a tactile, physical entity is important to the experience, I decided to also enlist the help of computers. Besides making it easier to pull random cards, I also felt that having a virtual version of the deck would be nice for when I'm traveling and can't access the physical deck for a while. While all the data technically exists in Are.na, the format of the cards makes them feel more like an oracle.
+
+I decided to build something similar to my {% extLink "Subtle Cards", "https://subtle.cards" %} tarot web app, but with a simpler interface, and simpler code behind the scenes. Instead of making it a standalone tool, I integrated it into my {% extLink "lab", "https://lab.palomakop.tv" %}, which is where I put some of my web-based experiments. There, it can exist more as an easter egg than a main feature.
+
+I added time delays and animations, to try to replicate some of the natural suspense of drawing from a physical deck. After I finished building it, I used it to draw four cards to decide what to work on next. I then sifted through the physical deck to find them and put them on my whiteboard. Despite the thought I had put into my decisions, I was still a tiny bit worried that incorporating a computer would harsh my vibe. Thankfully, that wasn't the case; I found the process quite enjoyable!
+
+If you'd like to try out the card puller, you can do so here: {% extLink "lab.palomakop.tv/ideas", "https://lab.palomakop.tv/ideas" %}
+
+<a href="https://lab.palomakop.tv/ideas" target="_blank">{% image "https://s3.amazonaws.com/palomakop.tv/notes/arena-cards/card_puller_big.gif", "an animated gif of a webpage showing an idea card animating onto screen", "1440" %}</a>
 
 ### Onward
 
