@@ -29,6 +29,16 @@ function makeExtLink(linkText, url, optionalClass) {
   return `<a href="${url}" target="_blank" rel="noopener" class="${classString}">${linkText}</a>`;
 }
 
+function replaceEmptyLinks(text, pageUrl) {
+  if (!text) return text;
+  // Replace empty links [text]() with [text](pageUrl)
+  return text.replace(/\[([^\]]*)\]\(\)/g, `[$1](${pageUrl})`);
+}
+
+function isExternalUrl(url) {
+  return url && (url.startsWith('http://') || url.startsWith('https://'));
+}
+
 // Date helper functions
 function parseDateString(dateString) {
   const [year, month, day] = dateString.split('-');
@@ -51,6 +61,7 @@ async function makeImage(src, alt, width, classes) {
     },
     sharpOptions: {
       animated: true,
+      limitInputPixels: false,
     },
   });
   let data = metadata[Object.keys(metadata)[0]][0];
@@ -78,6 +89,7 @@ async function makeImageUrl(src, width) {
     },
     sharpOptions: {
       animated: true,
+      limitInputPixels: false,
     },
   });
   let data = metadata[Object.keys(metadata)[0]][0];
@@ -96,6 +108,7 @@ async function makeImageWithMetadata(src, width) {
     },
     sharpOptions: {
       animated: true,
+      limitInputPixels: false,
     },
   });
   let data = metadata[Object.keys(metadata)[0]][0];
@@ -411,7 +424,10 @@ export default function(eleventyConfig) {
   // RENDER INLINE MARKDOWN LINKS: [text](url) → <a href="url">text</a>
   eleventyConfig.addFilter("markdownLinks", function(content) {
     if (!content) return "";
-    return content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+    return content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
+      const targetBlank = isExternalUrl(url) ? ' target="_blank" rel="noopener"' : '';
+      return `<a href="${url}"${targetBlank}>${text}</a>`;
+    });
   });
 
   // STRIP MARKDOWN LINKS: [text](url) → text (for RSS titles)
@@ -447,6 +463,7 @@ export default function(eleventyConfig) {
       if (!update.date) continue;
       const date = String(update.date);
       const message = update.message || "";
+      const linkUrl = firstLinkUrl(message);
       updates.push({
         date,
         message,
@@ -455,7 +472,8 @@ export default function(eleventyConfig) {
         sourceUrl: null,
         pageTitle: null,
         slug: makeSlug(date, message),
-        linkUrl: firstLinkUrl(message),
+        linkUrl,
+        isExternalLink: isExternalUrl(linkUrl),
         archived: update.archived || false,
       });
     }
@@ -474,6 +492,7 @@ export default function(eleventyConfig) {
         pageTitle: email.subject || null,
         slug: makeSlug(date, message),
         linkUrl: `/newsletter/${email.slug}/`,
+        isExternalLink: false,
         archived: false,
       });
     }
@@ -484,17 +503,21 @@ export default function(eleventyConfig) {
       for (const update of item.data.updates) {
         if (!update.date) continue;
         const date = String(update.date);
-        // Replace empty links [text]() with [text](page.url)
-        const message = (update.message || "").replace(/\[([^\]]*)\]\(\)/g, `[$1](${item.url})`);
+        const anchor = update.anchor || "";
+        const urlWithAnchor = item.url + anchor;
+        const message = replaceEmptyLinks(update.message, urlWithAnchor);
+        const firstLink = firstLinkUrl(update.message);
+        const linkUrl = firstLink || urlWithAnchor;
         updates.push({
           date,
           message,
           rssMessage: update.rssMessage || null,
           image: update.image === true ? (item.data.thumbnail || null) : (update.image || null),
-          sourceUrl: item.url,
+          sourceUrl: urlWithAnchor,
           pageTitle: item.data.title || null,
           slug: makeSlug(date, message),
-          linkUrl: item.url,
+          linkUrl,
+          isExternalLink: isExternalUrl(linkUrl),
           archived: update.archived !== undefined
             ? update.archived
             : (item.data.tags && item.data.tags.includes('events') ? isEventArchived(item.data) : (item.data.archived || false)),

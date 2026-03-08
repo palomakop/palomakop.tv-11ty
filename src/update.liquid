@@ -20,7 +20,7 @@ customStyle: >
   <p>{{ update.message | markdownLinks }}</p>
 
   {% if update.image %}
-    {% if update.linkUrl %}<a href="{{ update.linkUrl }}">{% endif %}
+    {% if update.linkUrl %}<a href="{{ update.linkUrl }}"{% if update.isExternalLink %} target="_blank" rel="noopener"{% endif %}>{% endif %}
     {% image update.image, "", 400, "" %}
     {% if update.linkUrl %}</a>{% endif %}
   {% endif %}
