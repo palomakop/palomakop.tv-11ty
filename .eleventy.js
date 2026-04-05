@@ -161,7 +161,6 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/_redirects");
   eleventyConfig.addPassthroughCopy("./src/_headers");
   eleventyConfig.addPassthroughCopy("./src/button.gif");
-  eleventyConfig.addPassthroughCopy("./src/Paloma_Kop_CV.pdf");
 
   eleventyConfig.addPlugin(pluginRss);
 
