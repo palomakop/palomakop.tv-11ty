@@ -13,3 +13,5 @@
   message: "Added an [image gallery](https://journal.palomakop.tv/images) to my digital journal"
   rssMessage: "(And an images-only RSS feed, so my journal can be part of the [subversive.pics webring](https://img.triapul.cz/sect.html))"
   image: https://s3.amazonaws.com/palomakop.tv/global-updates/2026_03_22_journal_gallery.png
+- date: "2026-04-05"
+  message: "Updated my [artist CV](/cv)"
