@@ -39,9 +39,13 @@ thumbnailAlt: Reality Orp performance
 
 {% video "1126864000", "https://player.vimeo.com/progressive_redirect/playback/1126864000/rendition/720p/file.mp4?loc=external&signature=1531810fe9dfa8ea38f45d47028c2f867796ba45797511cc27ad9cf8bd7e3d2e", '{"Youtube":"https://youtu.be/iCUVbZlYSnM","Peertube":"https://videos.scanlines.xyz/w/fsoXfiH1Po7F82DvU7iHL1"}' %}
 
-*Reality Orp* is what {% extLink "Andrei Jay" "https://andreijaycreativecoding.com/" %} and I call ourselves when we perform live A/V as a duo. Generally, we trade off who creates visuals and who performs sound, since we both enjoy working in both mediums. We have performed 6 times under this moniker since 2022. Our performances tend to include traditional liquid light show techniques, real-time analog and digital video processing, audio loops, and synthesizers.
+### *Live Performance at Orbits*, SomArt @ The Hive, 2026
 
-The name was inspired by misreading a sign I passed on the B52 bus in Brooklyn. I think it used to say *Realty Corp*, but one of the letters had fallen off.
+{% video "1195184405", "https://player.vimeo.com/progressive_redirect/playback/1195184405/rendition/720p/file.mp4%20%28720p%29.mp4?loc=external&signature=e17594458bf4b676a16d4a511a0808ceb24d671f996bb2b3acbecd48baefdb2b", '{"Youtube":"https://youtu.be/9V3JdJhPv6c","Peertube":"https://videos.scanlines.xyz/w/tSiD3tiD5NqAztH5tAYuQ7"}' %}
+
+*Reality Orp* is what {% extLink "Andrei Jay" "https://andreijaycreativecoding.com/" %} and I call ourselves when we perform live A/V as a duo. Generally, we trade off who creates visuals and who performs sound, since we both enjoy working in both mediums. We have performed 8 times under this moniker since 2022. Our performances tend to include traditional liquid light show techniques, real-time analog and digital video processing, audio loops, and synthesizers.
+
+The name was inspired by misreading a sign I passed on the B26 bus in Brooklyn. I think it used to say *Realty Corp*, but one of the letters had fallen off.
 
 {% photoGrid "two-column" %}
 {% photoGridItem "https://s3.amazonaws.com/palomakop.tv/news/2022/2022-08-27/mercuralia_7_2000px.jpg", "Performance at Mercuralia", false, false %}
