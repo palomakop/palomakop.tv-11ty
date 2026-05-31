@@ -63,3 +63,9 @@ If you plan to share your progress on another platform, it's encouraged to get o
 ### Enjoy
 
 This event is meant to be a low-stress, open-ended invitation to create some things and engage with a creative practice each day, if possible, for one week. The first instance is planned for **July 6-12, 2026**. If you plan to participate, mark your calendar, and I look forward to seeing what you create!
+
+---
+
+## Community Patch Logs
+
+- {% extLink "metagrowing.org/patching", "https://metagrowing.org/patching/" %}
