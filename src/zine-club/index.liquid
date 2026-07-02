@@ -9,9 +9,9 @@ customStyle: >
   }
 lightbox: true
 clubMembers: 42
-mysteryObjectsSent: 280
+mysteryObjectsSent: 318
 quarterlyEzinesSent: 246
-monthlyIncome: 274
+monthlyIncome: 270
 fundingGoal: 300
 tags: notes
 description: A subscription for strange zines and mysterious objects
@@ -19,6 +19,12 @@ notecardStyle: 'background-image:radial-gradient(#e1f6dd, #eeefdd, #f8ecf2, #eef
 ---
 
 <div class="column-container">
+
+  <div style="border:1.5px solid #940f1a;border-radius:25px;padding:0 2ch;background-color:#940f1a11">
+    <h3 style="color:#940f1a;font-weight:var(--black-weight);margin:0.6em 0 0;">Important Notice</h3>
+    <p style="color:#940f1a;font-weight:var(--bold-weight)">As of July 2026, Zine Club has been discontinued. It has been succeeded by a new project, called <b>{% extLink "AV Club", "https://avclub.palomakop.tv" %}</b>. Please check that out if you're interested in joining something similar.</p>
+    <p style="color:#940f1a;font-weight:var(--bold-weight)">Over its 2 year run, Zine Club gathered a total of 42 members. A total of 318 Mystery Objects were mailed to people, and 246 Digital E-Zines were sent out. This page will remain up as an archive.</p>
+  </div>
 
   <p>
     <i>Zine Club</i> is a thing where you can send me a small payment each month in exchange for getting cool stuff at regular intervals. (It's basically my version of a P*treon, except payments go directly through Stripe.) Every subscription helps enable me to spend a little more time each month making weird art.
@@ -172,13 +178,10 @@ notecardStyle: 'background-image:radial-gradient(#e1f6dd, #eeefdd, #f8ecf2, #eef
   <h2 style="margin-top:2em;" id="stats">Current Stats</h2>
 
   <ul>
-    <li>🗓️ <b>Club has existed for:</b> {% assign myVar="now" | date: "%s" %}{{ '2024-04-01' | date: "%s" | minus: myVar | divided_by: 3600 | divided_by: 24  | divided_by: 30.437 | round | abs }} months</li>
+    <li>🗓️ <b>Club existed for:</b> 27 months</li>
     <li>👤 <b>Members:</b> {{clubMembers}}</li>
     <li>✉️ <b>Mystery Objects sent:</b> {{mysteryObjectsSent}}</li>
     <li>📖 <b>E-zines sent:</b> {{quarterlyEzinesSent}}</li>
-    <li>💸 <b>Monthly income:</b> ${{monthlyIncome}}</li>
-    <li>🏁 <b>Current goal:</b> ${{fundingGoal}}/month</li>
-    <li>🌀 <b>Weird art is being supported:</b> Yes!</li>
   </ul>
 
   {% assign fundingPercentage=monthlyIncome | divided_by: fundingGoal | times: 100 | round %}
