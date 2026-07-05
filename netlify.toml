@@ -8,3 +8,5 @@
         # eleventy-fetch cacheDir, path relative to publish directory
         cache_assets = '../.cache/'
         cache_other = []
+[build.environment]
+  NODE_VERSION = "24"
