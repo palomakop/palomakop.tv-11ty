@@ -9,6 +9,7 @@ customStyle: >
 tags: notes
 description: About this website
 notecardStyle: 'background-image:radial-gradient(#ebe8d5, #d9eacf, #f1e3be);'
+permalink: colophon/
 ---
 
 This website was built with {% extLink "11ty", "https://www.11ty.dev/" %} and is hosted on Netlify. I began working on this version of the site in June 2024. The previous version, which I began in 2022, was built with plain HTML and CSS, with a tiny bit of optional JavaScript. This version uses much of the same code, but thanks to 11ty and the power of *static site generation*, it's much easier to update and maintain.
