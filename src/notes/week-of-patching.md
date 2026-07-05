@@ -26,6 +26,7 @@ permalink: week-of-patching/
 
 - {% extLink "metagrowing.org/patching", "https://metagrowing.org/patching/" %}
 - {% extLink "zoyander.cc/wop2026", "https://zoyander.cc/wop2026/" %}
+- [palomakop.tv/notes/patch-log](/notes/patch-log)
 - {% extLink "#weekOfPatching", "https://merveilles.town/tags/weekOfPatching" %} on the fediverse
 
 ### What is Patching?

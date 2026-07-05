@@ -1,0 +1,27 @@
+---
+title: Patch Log
+description: A log of my patches created during Week of Patching
+notecardStyle: 'background-image:radial-gradient(#bae8f3, #a8d3c8);'
+customStyle: >
+  :root {
+    --main-bg-color:#a8d3c8;
+    --main-bg-gradient:radial-gradient(#bae8f3, #a8d3c8);
+  }
+---
+
+<h3>Table of Contents</h3>
+<ul class="table-of-contents">
+{% for log in patchLogs %}
+  <li><a href="#{{ log.data.title | slugify }}">{{log.data.title}}</a></li>
+{% endfor %}
+</ul>
+
+<div class="article-list">
+{% for log in patchLogs %}
+  <article id="{{ log.data.title | slugify }}" class="blog-post">
+    <h3>{{ log.data.title }}</h3>
+    <p class="metadata">{{log.data.date | formatDateOnly}}</p>
+    {{log.content}}
+  </article>
+{% endfor %}
+</div>
