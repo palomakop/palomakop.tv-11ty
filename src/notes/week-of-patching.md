@@ -22,6 +22,12 @@ permalink: week-of-patching/
 
 *Week of Patching* is a playful invitation to spend a week, in parallel with other people across the internet, engaging with a patching-based practice.
 
+### Community Patch Logs
+
+- {% extLink "metagrowing.org/patching", "https://metagrowing.org/patching/" %}
+- {% extLink "zoyander.cc/wop2026", "https://zoyander.cc/wop2026/" %}
+- {% extLink "#weekOfPatching", "https://merveilles.town/tags/weekOfPatching" %} on the fediverse
+
 ### What is Patching?
 
 The main definition of "patching" that I have in mind here describes creating signal chains by connecting node-based elements in a realtime audio and/or visual system. Examples could include:
@@ -63,9 +69,3 @@ If you plan to share your progress on another platform, it's encouraged to get o
 ### Enjoy
 
 This event is meant to be a low-stress, open-ended invitation to create some things and engage with a creative practice each day, if possible, for one week. The first instance is planned for **July 6-12, 2026**. If you plan to participate, mark your calendar, and I look forward to seeing what you create!
-
----
-
-## Community Patch Logs
-
-- {% extLink "metagrowing.org/patching", "https://metagrowing.org/patching/" %}
