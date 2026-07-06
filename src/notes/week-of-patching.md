@@ -27,6 +27,7 @@ permalink: week-of-patching/
 - {% extLink "metagrowing.org/patching", "https://metagrowing.org/patching/" %}
 - {% extLink "zoyander.cc/wop2026", "https://zoyander.cc/wop2026/" %}
 - {% extLink "leetusman.com/nosebook/log/#week-of-patching-2026", "https://leetusman.com/nosebook/log/#week-of-patching-2026" %}
+- {% extLink "lyk.so/patch-week-2026.html", "http://lyk.so/patch-week-2026.html" %}
 - [palomakop.tv/notes/patch-log](/notes/patch-log)
 - {% extLink "#weekOfPatching", "https://merveilles.town/tags/weekOfPatching" %} on the fediverse
 
