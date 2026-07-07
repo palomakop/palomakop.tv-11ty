@@ -689,6 +689,11 @@ details summary {
   opacity:0.62;
 }
 
+.footnotes-sep {
+  opacity:0.3;
+  margin:2.5em 0 1.6em;
+}
+
 /* IMAGES */
 
 .graphic {

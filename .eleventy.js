@@ -8,6 +8,7 @@ import prettier from "prettier";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 const postcss = await import('postcss');
 import { isEventArchived } from "./src/_utils/eventArchive.js";
+import footnote_plugin from 'markdown-it-footnote';
 
 function makeId(length) {
   let result = 'id';
@@ -163,6 +164,8 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/button.gif");
 
   eleventyConfig.addPlugin(pluginRss);
+
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(footnote_plugin));
 
   // REMOVE CERTAIN TAGS FOR RSS
   eleventyConfig.addNunjucksFilter("rssSanitize", function(content) {
