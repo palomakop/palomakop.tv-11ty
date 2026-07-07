@@ -28,6 +28,7 @@ permalink: week-of-patching/
 - {% extLink "zoyander.cc/wop2026", "https://zoyander.cc/wop2026/" %}
 - {% extLink "leetusman.com/nosebook/log/#week-of-patching-2026", "https://leetusman.com/nosebook/log/#week-of-patching-2026" %}
 - {% extLink "lyk.so/patch-week-2026.html", "http://lyk.so/patch-week-2026.html" %}
+- {% extLink "nashhigh.com/music/week-of-patching", "https://nashhigh.com/music/week-of-patching" %}
 - [palomakop.tv/notes/patch-log](/notes/patch-log)
 - {% extLink "#weekOfPatching", "https://merveilles.town/tags/weekOfPatching" %} on the fediverse
 
@@ -63,7 +64,7 @@ It is strongly encouraged to document each one of your patches and write a short
 
 You might choose to create a web page to share your patch log and recordings. If you do, [send me the link](/contact) and I'll add it to this page!
 
-You might also share both the recordings and documentation on social media. My main social media is Mastodon (part of the Fediverse), a non-commercial social plaform comprised of smaller servers that act as interconnected nodes. If you're on there, you can use the hashtag **#weekOfPatching** combined with the day (**#day1**, **#day2**, etc.) I am also working on setting up a group, which would be an account you can tag and follow to see all posts.
+You might also share both the recordings and documentation on social media. My main social media is Mastodon (part of the Fediverse), a non-commercial social plaform comprised of smaller servers that act as interconnected nodes. If you're on there, you can use the hashtag **#weekOfPatching**.
 
 If you're unfamiliar with the Fediverse and want to join, check out {% extLink "this guide", "https://the-counterforce.org/guide-to-mastodon-fediverse/" %} or [contact me](/contact).
 
