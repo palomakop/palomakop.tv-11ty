@@ -15,9 +15,37 @@ pageCollection: notes
 
 <notes-index>
 
-{% assign notesCollection = collections.notes | sort: "data.lastUpdated" | reverse %}
+{% assign notesCollection = collections.notes | reject: "data.archived" | sort: "data.lastUpdated" | reverse %}
 
 {%- for note in notesCollection -%}
+  <a href="{{ note.url }}" {% if note.data.notecardStyle %} style="{{ note.data.notecardStyle }}" {% endif %} {% if note.data.notecardDark %} class="dark" {% endif %} >
+    <h3>{{ note.data.title }}</h3>
+    <h4>{{ note.data.description }}</h4>
+    <note-footer>
+      <b>Last updated:</b> <span>{{ note.data.lastUpdated | formatDateOnly }}</span>
+    </note-footer>
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" class="folded-corner">
+      <path d="M 2 2 L 38 38 L 2 38 Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5px"
+        vector-effect="non-scaling-stroke"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </a>
+{%- endfor -%}
+
+</notes-index>
+
+<h3 style="margin:3em 0 0"><i>Archived Notes</i></h3>
+
+<notes-index>
+
+{% assign archivedNotesCollection = collections.notes | where: "data.archived" | sort: "data.lastUpdated" | reverse %}
+
+{%- for note in archivedNotesCollection -%}
   <a href="{{ note.url }}" {% if note.data.notecardStyle %} style="{{ note.data.notecardStyle }}" {% endif %} {% if note.data.notecardDark %} class="dark" {% endif %} >
     <h3>{{ note.data.title }}</h3>
     <h4>{{ note.data.description }}</h4>
