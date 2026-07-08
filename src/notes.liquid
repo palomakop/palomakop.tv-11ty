@@ -6,6 +6,7 @@ customStyle: >
     --main-bg-color:#cfcfcf;
     --main-bg-gradient:none;
   }
+pageCollection: notes
 ---
 
 <h2>Notes</h2>
@@ -14,14 +15,14 @@ customStyle: >
 
 <notes-index>
 
-{% assign notesCollection = collections.notes | sort: "data.date" | reverse %}
+{% assign notesCollection = collections.notes | sort: "data.lastUpdated" | reverse %}
 
 {%- for note in notesCollection -%}
   <a href="{{ note.url }}" {% if note.data.notecardStyle %} style="{{ note.data.notecardStyle }}" {% endif %} {% if note.data.notecardDark %} class="dark" {% endif %} >
     <h3>{{ note.data.title }}</h3>
     <h4>{{ note.data.description }}</h4>
     <note-footer>
-      <b>Last updated:</b> <span>{{ note.date | date: "%B %e, %Y" }}</span>
+      <b>Last updated:</b> <span>{{ note.data.lastUpdated | formatDateOnly }}</span>
     </note-footer>
     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" class="folded-corner">
       <path d="M 2 2 L 38 38 L 2 38 Z" 

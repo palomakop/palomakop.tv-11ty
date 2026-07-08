@@ -1,14 +1,7 @@
 <footer>
 
   <p>
-    Page last updated: 
-    {% if tags contains "posts" %}
-      {{date | formatDateOnly}}
-    {% elsif publishDate %}
-      {{publishDate | date: "%B %e, %Y"}}
-    {% else %}
-      {{page.date | date: "%B %e, %Y"}}
-    {% endif %}
+    Page last updated: {{lastUpdated | formatDateOnly}}
   </p>
 
   <ul>

@@ -50,6 +50,27 @@ function formatDate(date, options) {
   return date.toLocaleDateString('en-US', { ...options, timeZone: 'UTC' });
 }
 
+function toDateOnlyString(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function matchDateOnly(value) {
+  const match = typeof value === "string" && value.match(/^\d{4}-\d{2}-\d{2}/);
+  return match ? match[0] : null;
+}
+
+// gets a page/collection-item's date as "YYYY-MM-DD"
+function extractDateOnly(item) {
+  const resolvedDate = item?.date;
+  if (resolvedDate instanceof Date && !isNaN(resolvedDate)) {
+    return matchDateOnly(item?.data?.date) ?? toDateOnlyString(resolvedDate);
+  }
+  return matchDateOnly(item?.data?.date) ?? matchDateOnly(resolvedDate);
+}
+
 async function makeImage(src, alt, width, classes) {
   let metadata = await Image(src, {
     widths: [width],
@@ -287,6 +308,29 @@ export default function(eleventyConfig) {
   // GET YEAR FROM DATE STRING
   eleventyConfig.addFilter("getYear", function (dateString) {
     return formatDate(parseDateString(dateString), { year: 'numeric' });
+  });
+
+  // "last updated" date for a page, used by footer.liquid and sortable in
+  // page-index templates (e.g. `collections.notes | sort: "data.lastUpdated"`).
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    lastUpdated: (data) => {
+      if (data.publishDate) {
+        return String(data.publishDate).split("T")[0];
+      }
+
+      const pageDate = extractDateOnly({ data, date: data.page.date });
+
+      if (data.pageCollection) {
+        const collection = data.collections[data.pageCollection] || [];
+        const latestDate = collection.reduce((latest, item) => {
+          const itemDate = extractDateOnly(item);
+          return itemDate && (!latest || itemDate > latest) ? itemDate : latest;
+        }, null);
+        return latestDate && latestDate > pageDate ? latestDate : pageDate;
+      }
+
+      return pageDate;
+    },
   });
 
   // EXTERNAL LINK

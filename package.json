@@ -23,5 +23,9 @@
     "@11ty/eleventy-img": "^4.0.2",
     "postcss": "^8.5.15",
     "prettier": "^3.3.3"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "sharp@0.33.5": true
   }
 }

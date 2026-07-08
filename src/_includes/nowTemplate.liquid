@@ -76,15 +76,8 @@ bgImageOpacity: 0.7
   </main>
 
   <footer>
-    {% assign latestUpdateDate = collections.allUpdates[0].date %}
-    {% assign pageDate = page.date | date: "%Y-%m-%d" %}
-    {% if latestUpdateDate > pageDate %}
-      {% assign displayDate = latestUpdateDate | formatDateOnly %}
-    {% else %}
-      {% assign displayDate = page.date | date: "%B %e, %Y" %}
-    {% endif %}
     <p>
-      This is my /now page. It was last updated on {{ displayDate }}. <a href="/notes">See all notes</a>.
+      This is my /now page. It was last updated on {{ lastUpdated | formatDateOnly }}. <a href="/notes">See all notes</a>.
     </p>
   </footer>
 
