@@ -30,6 +30,7 @@ permalink: week-of-patching/
 - {% extLink "lyk.so/patch-week-2026.html", "http://lyk.so/patch-week-2026.html" %}
 - {% extLink "nashhigh.com/music/week-of-patching", "https://nashhigh.com/music/week-of-patching" %}
 - {% extLink "Patch log thread by @ahihi@anticapitalist.party", "https://anticapitalist.party/@ahihi/116869942075768885" %}
+- {% extLink "jrconduit.net/weekofpatching", "https://jrconduit.net/weekofpatching" %}
 - [palomakop.tv/notes/patch-log](/notes/patch-log)
 - {% extLink "#weekOfPatching", "https://merveilles.town/tags/weekOfPatching" %} on the fediverse
 
