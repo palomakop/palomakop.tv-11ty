@@ -1131,7 +1131,7 @@ photo-grid.tarot {
   margin:2rem 0;
   border-radius:10px;
   justify-items:center;
-  padding:5.5rem 0 5rem;
+  padding:4rem 0;
   background-color:none;
   transition:background-color 1s;
 }
