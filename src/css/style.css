@@ -1115,7 +1115,6 @@ figcaption {
 photo-grid {
   display:grid;
   gap:1.2em;
-  justify-items:center;
 }
 
 photo-grid * {
@@ -1123,6 +1122,7 @@ photo-grid * {
 }
 
 photo-grid:not(.tarot) {
+  justify-items:stretch;
   margin-bottom:var(--line-height-em);
 }
 
