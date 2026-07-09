@@ -563,8 +563,7 @@ export default function(eleventyConfig) {
         const anchor = update.anchor || "";
         const urlWithAnchor = item.url + anchor;
         const message = replaceEmptyLinks(update.message, urlWithAnchor);
-        const firstLink = firstLinkUrl(update.message);
-        const linkUrl = firstLink || urlWithAnchor;
+        const linkUrl = firstLinkUrl(message) || urlWithAnchor;
         updates.push({
           date,
           message,
