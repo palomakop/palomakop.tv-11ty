@@ -1913,6 +1913,7 @@ h3.note-subtitle {
 
 .centered-container photo-grid {
   margin: 2.5em 0;
+  justify-items: center;
 }
 
 .centered-container photo-grid a {
