@@ -1174,7 +1174,6 @@ photo-grid.two-column img, photo-grid.three-column img {
 
 photo-grid:not(.tarot) img {
   margin-bottom:0;
-  max-height:1080px;
 }
 
 photo-grid a:not(.lightbox-ignore) {
@@ -1649,24 +1648,12 @@ form button {
 }
 
 .blog-post img {
+  width: 100%;
+  height: auto;
   display:block;
   margin-left:auto;
   margin-right:auto;
   margin-bottom:1.4em;
-}
-
-@media only screen and (min-width:785px) {
-  .blog-post img {
-    max-height:max(100vh, 500px);
-    width:auto;
-  }
-}
-
-@media only screen and (max-width:784px) {
-  .blog-post img {
-    width:100%;
-    height:auto;
-  }
 }
 
 .blog-post h2, .archive-year {
