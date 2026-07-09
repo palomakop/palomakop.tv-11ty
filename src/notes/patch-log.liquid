@@ -27,10 +27,11 @@ pageCollection: patchLogs
 
 <div class="article-list">
 {% for log in patchLogs %}
-  <article id="{{ log.data.title | slugify }}" class="blog-post">
+  {% assign logSlug = log.data.title | slugify %}
+  <article id="{{ logSlug }}" class="blog-post">
     <h3>{{ log.data.title }}</h3>
     <p class="metadata">{{log.data.date | formatDateOnly}}</p>
-    {{log.content}}
+    {{log.content | namespaceFootnotes: logSlug}}
   </article>
 {% endfor %}
 </div>

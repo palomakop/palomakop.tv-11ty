@@ -468,6 +468,16 @@ export default function(eleventyConfig) {
     return `<li><a href="${url}">${name}</a></li>`;
   });
 
+  // NAMESPACE FOOTNOTE IDs to avoid collisions when multiple docs render on one page
+  eleventyConfig.addFilter("namespaceFootnotes", function(content, namespace) {
+    if (!content || !namespace) return content;
+    return content
+      .replace(/\bid="fn(\d+)"/g, `id="fn-${namespace}-$1"`)
+      .replace(/\bid="fnref(\d+)([^"]*)"/g, `id="fnref-${namespace}-$1$2"`)
+      .replace(/href="#fn(\d+)"/g, `href="#fn-${namespace}-$1"`)
+      .replace(/href="#fnref(\d+)([^"]*)"/g, `href="#fnref-${namespace}-$1$2"`);
+  });
+
   // RENDER INLINE MARKDOWN LINKS: [text](url) → <a href="url">text</a>
   eleventyConfig.addFilter("markdownLinks", function(content) {
     if (!content) return "";
