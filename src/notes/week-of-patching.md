@@ -31,6 +31,7 @@ permalink: week-of-patching/
 - {% extLink "nashhigh.com/music/week-of-patching", "https://nashhigh.com/music/week-of-patching" %}
 - {% extLink "Patch log thread by @ahihi@anticapitalist.party", "https://anticapitalist.party/@ahihi/116869942075768885" %}
 - {% extLink "jrconduit.net/weekofpatching", "https://jrconduit.net/weekofpatching" %}
+- {% extLink "agilebuckle.github.io/week-of-patching", "https://agilebuckle.github.io/week-of-patching/" %}
 - [palomakop.tv/notes/patch-log](/notes/patch-log)
 - {% extLink "#weekOfPatching", "https://merveilles.town/tags/weekOfPatching" %} on the fediverse
 
