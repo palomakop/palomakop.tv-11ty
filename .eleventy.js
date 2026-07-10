@@ -51,9 +51,11 @@ function formatDate(date, options) {
 }
 
 function toDateOnlyString(date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
+  // Approximate Eastern time (UTC-4) for display and sort consistency
+  const eastern = new Date(date.getTime() - 4 * 60 * 60 * 1000);
+  const year = eastern.getUTCFullYear();
+  const month = String(eastern.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(eastern.getUTCDate()).padStart(2, '0');
   return `${year}-${month}-${day}`;
 }
 
