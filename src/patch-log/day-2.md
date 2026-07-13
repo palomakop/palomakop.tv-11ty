@@ -3,7 +3,7 @@ title: 'Day 2: Sphere'
 date: '2026-07-07'
 ---
 
-Second day patch! This is a weird one, and it isn't really what I set out to do... But then, I don't really know what I was trying to do anyway. I definitely figured out some more quirks of Touch Designer. The aesthetic result is... questionable? IDK, it looks like this:
+Second day patch! This is a weird one, and it isn't really what I set out to do... But then, I don't really know what I was trying to do anyway. I definitely figured out some more quirks of TouchDesigner. The aesthetic result is... questionable? IDK, it looks like this:
 
 {% autoplayVideoLoop "1207884727", "https://player.vimeo.com/progressive_redirect/playback/1207884727/rendition/720p/file.mp4%20%28720p%29.mp4?loc=external&signature=0b8c81f379527c86515275ebf49a1167bd4a7177aff98c260c4151d959762b61" %}
 
@@ -23,6 +23,6 @@ Weird, right? At some point in the process, I also tried animating the resolutio
 
 Anyway, I'm out of time for today. Looking forward to seeing what else happens, now that I kind of know how to use this program better!
 
-Here is the Touch Designer file if anyone wants to play with it:
+Here is the TouchDesigner file if anyone wants to play with it:
 
 📁 {% extLink "sphere.6.toe.zip", "https://s3.amazonaws.com/palomakop.tv/notes/patch-logs/sphere.6.toe.zip" %}

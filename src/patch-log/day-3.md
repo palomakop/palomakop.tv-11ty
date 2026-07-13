@@ -23,4 +23,4 @@ I realized while clipping the file afterwards that I was dropping a lot of frame
 
 📁 {% extLink "reaction_diffusion_orb.7.toe.zip", "https://s3.amazonaws.com/palomakop.tv/notes/patch-logs/reaction_diffusion_orb.7.toe.zip" %}
 
-[^1]: Sharpen is not a built-in node type in Touch Designer, but it's available as one of the default image processing components.
+[^1]: Sharpen is not a built-in node type in TouchDesigner, but it's available as one of the default image processing components.

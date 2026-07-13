@@ -18,7 +18,9 @@ permalink: week-of-patching/
 
 {% image "https://s3.amazonaws.com/palomakop.tv/notes/week-of-patching/week-of-patching-transparent.webp", "", "1440" %}
 
-<h2 style="margin-top:0;">The next <i>Week of Patching</i> is scheduled for July 6-12, 2026.</h2>
+<h2 style="margin-top:0;">The most recent <i>Week of Patching</i> happened on July 6-12, 2026.</h2>
+
+**Perhaps we will have another one in July of 2027? Stay tuned.**
 
 *Week of Patching* is a playful invitation to spend a week, in parallel with other people across the internet, engaging with a patching-based practice.
 
@@ -75,4 +77,4 @@ If you plan to share your progress on another platform, it's encouraged to get o
 
 ### Enjoy
 
-This event is meant to be a low-stress, open-ended invitation to create some things and engage with a creative practice each day, if possible, for one week. The first instance is planned for **July 6-12, 2026**. If you plan to participate, mark your calendar, and I look forward to seeing what you create!
+This event is meant to be a low-stress, open-ended invitation to create some things and engage with a creative practice each day, if possible, for one week. The first instance happened on **July 6-12, 2026**, and the next one is TBA. If you plan to participate, follow th #weekOfPatching hashtag on the Fediverse for announcements, and I look forward to seeing what you create!
