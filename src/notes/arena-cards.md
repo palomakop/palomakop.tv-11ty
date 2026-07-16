@@ -163,5 +163,5 @@ Thanks for reading this note, and I hope you found it interesting. If you have a
 
 ### Stats
 
-- **Current number of idea cards:** 185
-- **Timestamp of cards last printed:** 2026-03-07T00:00:00.000Z
+- **Current number of idea cards:** 200
+- **Timestamp of cards last printed:** 2026-07-16T00:00:00.000Z
