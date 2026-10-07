@@ -41,4 +41,5 @@ My first show with them was at a church in Bushwick, where I performed with musi
 {% photoGridItem "https://s3.us-east-1.amazonaws.com/palomakop.tv/news/2022/2022-03-05/ambient_church_2_hi_res.jpg", "Suzanne Ciani performing in the church with visuals", false, false %}
 {% photoGridItem "https://s3.amazonaws.com/palomakop.tv/news/2026/2026-10-06/IMG_3258.jpg", "A dark church with colorful visuals by Paloma Kop projected onto the architecture", false, false %}
 {% photoGridItem "https://s3.amazonaws.com/palomakop.tv/news/2026/2026-10-06/IMG_2728.jpg", "A dark church with colorful visuals by Paloma Kop projected onto the architecture", false, false %}
+{% photoGridItem "https://s3.amazonaws.com/palomakop.tv/news/2026/2026-10-06/IMG_3270.jpg", "A dark church with colorful visuals by Paloma Kop projected onto the architecture", false, true %}
 {% endphotoGrid %}
