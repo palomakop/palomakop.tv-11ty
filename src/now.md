@@ -11,10 +11,14 @@ notecardDark: true
 
 ### Living
 
-- Moved to New Haven, Connecticut  
-  **January 2025**
+- Moved to Woodbridge, Connecticut  
+  (20 minutes northeast of New Haven)
+  **December 2026**
 
 ### Working
 
-- Joined as studio assistant and fabricator at Faruqee/Driscoll Studio  
-  **June 2025**
+- Studio manager and technologist at {% extLink "Faruqee Driscoll Studio", "https://faruqeedriscollstudio.com/" %}  
+  **June 2025–Present**
+
+- Freelance video technician and operator at Frost Productions  
+  **September 2024–Present**
